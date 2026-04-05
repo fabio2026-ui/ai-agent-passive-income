@@ -1,0 +1,267 @@
+<!-- Direct Crypto Payment Page - Multi-Coin Support -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with Crypto - CodeGuard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: #0f172a; 
+            color: white; 
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 700px; 
+            width: 100%;
+            background: #1e293b;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+        }
+        h1 { font-size: 2rem; margin-bottom: 8px; }
+        .subtitle { color: #94a3b8; margin-bottom: 32px; }
+        
+        /* Coin Selector */
+        .coin-selector {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .coin-btn {
+            padding: 12px 24px;
+            background: #334155;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .coin-btn:hover { background: #475569; }
+        .coin-btn.active { 
+            border-color: #3b82f6; 
+            background: #3b82f620;
+        }
+        .coin-btn.btc:hover, .coin-btn.btc.active { border-color: #f59e0b; background: #f59e0b20; }
+        .coin-btn.eth:hover, .coin-btn.eth.active { border-color: #627eea; background: #627eea20; }
+        
+        .package-info { 
+            background: #334155; 
+            padding: 20px; 
+            border-radius: 12px; 
+            margin-bottom: 32px;
+        }
+        .package-name { font-size: 1.5rem; font-weight: 700; color: #3b82f6; }
+        .package-price { font-size: 2rem; font-weight: 800; margin: 8px 0; }
+        .crypto-amount { font-family: monospace; font-size: 1.2rem; }
+        .crypto-amount.btc { color: #f59e0b; }
+        .crypto-amount.eth { color: #627eea; }
+        
+        .wallet-section { margin: 32px 0; }
+        .wallet-label { color: #94a3b8; margin-bottom: 8px; }
+        .wallet-address {
+            background: #0f172a;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            border: 2px solid;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .wallet-address.btc { border-color: #f59e0b; }
+        .wallet-address.eth { border-color: #627eea; }
+        .wallet-address:hover { background: #1e293b; }
+        
+        .copy-btn {
+            margin-top: 12px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn.btc { background: #f59e0b; color: #000; }
+        .copy-btn.btc:hover { background: #d97706; }
+        .copy-btn.eth { background: #627eea; color: white; }
+        .copy-btn.eth:hover { background: #4c63bb; }
+        .copy-btn.copied { background: #22c55e !important; color: white !important; }
+        
+        .network-warning {
+            padding: 12px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .network-warning.btc { background: #f59e0b20; border: 1px solid #f59e0b; }
+        .network-warning.eth { background: #627eea20; border: 1px solid #627eea; }
+        
+        .instructions {
+            background: #334155;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 32px;
+            text-align: left;
+        }
+        .instructions h3 { margin-bottom: 12px; }
+        .instructions ol { padding-left: 20px; color: #cbd5e1; }
+        .instructions li { margin: 8px 0; }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        .back-link:hover { color: #3b82f6; }
+        
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pay with Crypto</h1>
+        <p class="subtitle">Choose your preferred cryptocurrency</p>
+
+        <!-- Coin Selector -->
+        <div class="coin-selector">
+            <button class="coin-btn btc active" onclick="selectCoin('btc')">
+                ₿ Bitcoin
+            </button>
+            <button class="coin-btn eth" onclick="selectCoin('eth')">
+                Ξ Ethereum
+            </button>
+        </div>
+
+        <div class="package-info">
+            <div class="package-name" id="packageName">Loading...</div>
+            <div class="package-price" id="packagePrice">--</div>
+            <div class="crypto-amount btc" id="btcAmount">--</div>
+            <div class="crypto-amount eth hidden" id="ethAmount">--</div>
+        </div>
+
+        <!-- BTC Section -->
+        <div id="btcSection">
+            <div class="network-warning btc">
+                ⚠️ Send only **Bitcoin (BTC)** on the **Bitcoin Network**
+            </div>
+            
+            <div class="wallet-section">
+                <div class="wallet-label">Send to this BTC address:</div>
+                <div class="wallet-address btc" onclick="copyAddress('btc')">
+                    bc1q6d6zffkv4h6g7qjx8g6527g3tz3qptnxg5cuvg
+                </div>
+                <button class="copy-btn btc" onclick="copyAddress('btc')">Copy BTC Address</button>
+            </div>
+        </div>
+
+        <!-- ETH Section -->
+        <div id="ethSection" class="hidden">
+            <div class="network-warning eth">
+                ⚠️ Send only **Ethereum (ETH)** on the **ERC-20 Network**
+            </div>
+            
+            <div class="wallet-section">
+                <div class="wallet-label">Send to this ETH address:</div�e
+                <div class="wallet-address eth" onclick="copyAddress('eth')">
+                    0xb8ff64CDE31013D2c4Ad6c11B12F0e7b54EfECCB
+                </div>
+                <button class="copy-btn eth" onclick="copyAddress('eth')">Copy ETH Address</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Instructions</h3>
+            <ol id="instructionsList">
+                <li>Copy the address above</li>
+                <li>Open your crypto wallet</li>
+                <li>Send the exact amount shown</li>
+                <li id="networkInstruction">Use Bitcoin Network</li>
+                <li>Wait for confirmations (BTC: 3, ETH: 12)</li>
+                <li>Credits added automatically!</li>
+            </ol>
+        </div>
+
+        <a href="pricing.html" class="back-link">← Back to Pricing</a>
+    </div>
+
+    <script>
+        // Pricing data
+        const packages = {
+            starter: { name: 'Starter', usd: 10, btc: 0.00015, eth: 0.0031, credits: 100 },
+            pro: { name: 'Pro', usd: 85, btc: 0.0013, eth: 0.026, credits: 1000 },
+            enterprise: { name: 'Enterprise', usd: 750, btc: 0.011, eth: 0.23, credits: 10000 }
+        };
+
+        let currentCoin = 'btc';
+
+        // Get package from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const packageType = urlParams.get('package') || 'starter';
+        const pkg = packages[packageType];
+
+        if (pkg) {
+            document.getElementById('packageName').textContent = pkg.name + ' Package';
+            document.getElementById('packagePrice').textContent = '$' + pkg.usd + ' USD';
+            document.getElementById('btcAmount').textContent = '₿ ' + pkg.btc + ' BTC';
+            document.getElementById('ethAmount').textContent = 'Ξ ' + pkg.eth + ' ETH';
+        }
+
+        function selectCoin(coin) {
+            currentCoin = coin;
+            
+            // Update buttons
+            document.querySelectorAll('.coin-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.coin-btn.' + coin).classList.add('active');
+            
+            // Toggle sections
+            if (coin === 'btc') {
+                document.getElementById('btcSection').classList.remove('hidden');
+                document.getElementById('ethSection').classList.add('hidden');
+                document.getElementById('btcAmount').classList.remove('hidden');
+                document.getElementById('ethAmount').classList.add('hidden');
+                document.getElementById('networkInstruction').textContent = 'Use Bitcoin Network';
+            } else {
+                document.getElementById('btcSection').classList.add('hidden');
+                document.getElementById('ethSection').classList.remove('hidden');
+                document.getElementById('btcAmount').classList.add('hidden');
+                document.getElementById('ethAmount').classList.remove('hidden');
+                document.getElementById('networkInstruction').textContent = 'Use ERC-20 Network';
+            }
+        }
+
+        function copyAddress(coin) {
+            const address = coin === 'btc' 
+                ? 'bc1q6d6zffkv4h6g7qjx8g6527g3tz3qptnxg5cuvg'
+                : '0xb8ff64CDE31013D2c4Ad6c11B12F0e7b54EfECCB';
+                
+            navigator.clipboard.writeText(address).then(() => {
+                const btn = document.querySelector('.copy-btn.' + coin);
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
