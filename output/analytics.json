@@ -1,0 +1,46 @@
+{
+  "startDate": "2026-04-07T13:34:18.123Z",
+  "metrics": {
+    "website": {
+      "visits": 0,
+      "pageViews": 0
+    },
+    "github": {
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0
+    },
+    "content": {
+      "articles": 24,
+      "words": 24
+    },
+    "revenue": {
+      "credits": 0,
+      "products": 0,
+      "affiliate": 0
+    }
+  },
+  "history": [
+    {
+      "date": "2026-04-07T13:34:18.536Z",
+      "website": {
+        "visits": 0,
+        "pageViews": 0
+      },
+      "github": {
+        "stars": 0,
+        "forks": 0,
+        "watchers": 0
+      },
+      "content": {
+        "articles": 24,
+        "words": 24
+      },
+      "revenue": {
+        "credits": 0,
+        "products": 0,
+        "affiliate": 0
+      }
+    }
+  ]
+}

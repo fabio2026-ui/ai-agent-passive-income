@@ -1,0 +1,14 @@
+# 小七AI Agent - Cron配置
+# 添加到crontab: crontab -e
+
+# 每小时执行监控
+0 * * * * cd /root/.openclaw/workspace/ai-agent-projects && ./cron-executor.sh >> logs/cron.log 2>&1
+
+# 每天3点生成分析报告
+0 3 * * * cd /root/.openclaw/workspace/ai-agent-projects && node analytics.js >> logs/analytics.log 2>&1
+
+# 每周一早上8点生成社媒内容
+0 8 * * 1 cd /root/.openclaw/workspace/ai-agent-projects && node social-media-system.js >> logs/social.log 2>&1
+
+# 每3天生成新内容
+0 2 */3 * * cd /root/.openclaw/workspace/ai-agent-projects && node batch4-generator.js >> logs/content.log 2>&1
