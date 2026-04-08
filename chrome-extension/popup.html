@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      width: 380px; 
+      min-height: 500px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      padding: 20px;
+      text-align: center;
+    }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header p { font-size: 12px; opacity: 0.9; margin-top: 5px; }
+    .search-box {
+      padding: 15px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      background: #1e293b;
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+    .categories {
+      padding: 10px;
+    }
+    .category {
+      margin-bottom: 15px;
+    }
+    .category-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      padding: 0 5px;
+    }
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .article-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .article-item:hover {
+      background: #1e293b;
+    }
+    .article-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-size: 14px;
+    }
+    .article-info { flex: 1; }
+    .article-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #f1f5f9;
+    }
+    .article-desc {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .footer {
+      padding: 15px;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      font-size: 11px;
+      color: #64748b;
+    }
+    .footer a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3b82f6;
+    }
+    .stat-label {
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🛡️ CyberSec Hub</h1>
+    <p>Quick Reference for Security Professionals</p>
+  </div>
+  
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value">51</div>
+      <div class="stat-label">Articles</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">18</div>
+      <div class="stat-label">Topics</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Free</div>
+    </div>
+  </div>
+  
+  <div class="search-box">
+    <input type="text" placeholder="Search articles..." id="searchInput">
+  </div>
+  
+  <div class="categories" id="categories">
+    <div class="category">
+      <div class="category-title">Web Security</div>
+      <div class="article-list">
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch1_xxx_XSS防护.html" class="article-item" target="_blank">
+          <div class="article-icon">🛡️</div>
+          <div class="article-info">
+            <div class="article-title">XSS防护指南</div>
+            <div class="article-desc">跨站脚本攻击防御策略</div>
+          </div>
+        </a>
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch1_xxx_SQL注入防护.html" class="article-item" target="_blank">
+          <div class="article-icon">🗄️</div>
+          <div class="article-info">
+            <div class="article-title">SQL注入防护</div>
+            <div class="article-desc">数据库安全最佳实践</div>
+          </div>
+        </a>
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_xxx_API安全设计.html" class="article-item" target="_blank">
+          <div class="article-icon">🔌</div>
+          <div class="article-info">
+            <div class="article-title">API安全设计</div>
+            <div class="article-desc">RESTful API安全架构</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <div class="category">
+      <div class="category-title">DevSecOps</div>
+      <div class="article-list">
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_xxx_DevSecOps管道.html" class="article-item" target="_blank">
+          <div class="article-icon">🔄</div>
+          <div class="article-info">
+            <div class="article-title">DevSecOps管道</div>
+            <div class="article-desc">CI/CD安全集成</div>
+          </div>
+        </a>
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_xxx_GitHub安全扫描.html" class="article-item" target="_blank">
+          <div class="article-icon">🐙</div>
+          <div class="article-info">
+            <div class="article-title">GitHub安全扫描</div>
+            <div class="article-desc">代码库安全检查</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <div class="category">
+      <div class="category-title">Cloud Security</div>
+      <div class="article-list">
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_xxx_云安全配置.html" class="article-item" target="_blank">
+          <div class="article-icon">☁️</div>
+          <div class="article-info">
+            <div class="article-title">云安全配置</div>
+            <div class="article-desc">AWS/Azure/GCP安全</div>
+          </div>
+        </a>
+        <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_xxx_容器安全加固.html" class="article-item" target="_blank">
+          <div class="article-icon">🐳</div>
+          <div class="article-info">
+            <div class="article-title">容器安全加固</div>
+            <div class="article-desc">Docker/K8s安全</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>Made with ❤️ by <a href="https://github.com/fabio2026-ui/ai-agent-passive-income" target="_blank">AI Agent</a></p>
+    <p style="margin-top:5px;"><a href="https://fabio2026-ui.github.io/ai-agent-passive-income" target="_blank">View Full Site →</a></p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
