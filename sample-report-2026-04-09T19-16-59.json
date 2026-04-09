@@ -1,0 +1,2836 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-09T19:16:59.171Z",
+    "period": "30d",
+    "reportVersion": "1.0.0"
+  },
+  "executiveSummary": {
+    "kpis": {
+      "overallHealth": 72,
+      "traffic": {
+        "totalPageViews": 51,
+        "uniqueVisitors": 51,
+        "avgPagesPerSession": "1.00"
+      },
+      "content": {
+        "totalPieces": 4,
+        "avgScore": "74.8",
+        "topPerformer": "如何通过AI实现被动收入"
+      },
+      "financial": {
+        "revenue": "1726.00",
+        "profit": "1196.00",
+        "margin": "69.29%",
+        "mrr": "29.00",
+        "growth": "0%"
+      },
+      "development": null
+    },
+    "keyFindings": [
+      {
+        "type": "positive",
+        "area": "finance",
+        "message": "利润率健康，达到 69.29%"
+      },
+      {
+        "type": "positive",
+        "area": "content",
+        "message": "内容质量良好，平均得分 74.8"
+      }
+    ],
+    "topRecommendations": [
+      {
+        "priority": "high",
+        "area": "traffic",
+        "action": "增加内容产出频率以提升有机流量",
+        "impact": "medium"
+      }
+    ]
+  },
+  "sections": {
+    "website": {
+      "period": "30d",
+      "summary": {
+        "totalPageViews": 51,
+        "uniqueVisitors": 51,
+        "uniqueSessions": 51,
+        "avgPagesPerSession": "1.00",
+        "avgSessionDuration": 0
+      },
+      "realTime": {
+        "activeUsers": 51,
+        "pageViews": 51,
+        "topPages": [
+          {
+            "path": "",
+            "count": 50
+          },
+          {
+            "path": "/",
+            "count": 1
+          }
+        ]
+      },
+      "deviceDistribution": [
+        {
+          "name": "unknown",
+          "count": 51,
+          "percentage": "100.0"
+        }
+      ],
+      "browserDistribution": [
+        {
+          "name": "Other",
+          "count": 51,
+          "percentage": "100.0"
+        }
+      ],
+      "countryDistribution": [
+        {
+          "name": "unknown",
+          "count": 51,
+          "percentage": "100.0"
+        }
+      ],
+      "topPages": [
+        {
+          "path": "",
+          "views": 50,
+          "uniqueVisitors": 50
+        },
+        {
+          "path": "/",
+          "views": 1,
+          "uniqueVisitors": 1
+        }
+      ],
+      "trafficSources": [
+        {
+          "source": "direct",
+          "count": 51,
+          "percentage": "100.0"
+        },
+        {
+          "source": "search",
+          "count": 0,
+          "percentage": "0.0"
+        },
+        {
+          "source": "social",
+          "count": 0,
+          "percentage": "0.0"
+        },
+        {
+          "source": "referral",
+          "count": 0,
+          "percentage": "0.0"
+        },
+        {
+          "source": "other",
+          "count": 0,
+          "percentage": "0.0"
+        }
+      ],
+      "eventStats": {
+        "signup": 2,
+        "download": 1,
+        "share": 1
+      },
+      "hourlyDistribution": [
+        {
+          "hour": 0,
+          "count": 0
+        },
+        {
+          "hour": 1,
+          "count": 0
+        },
+        {
+          "hour": 2,
+          "count": 0
+        },
+        {
+          "hour": 3,
+          "count": 51
+        },
+        {
+          "hour": 4,
+          "count": 0
+        },
+        {
+          "hour": 5,
+          "count": 0
+        },
+        {
+          "hour": 6,
+          "count": 0
+        },
+        {
+          "hour": 7,
+          "count": 0
+        },
+        {
+          "hour": 8,
+          "count": 0
+        },
+        {
+          "hour": 9,
+          "count": 0
+        },
+        {
+          "hour": 10,
+          "count": 0
+        },
+        {
+          "hour": 11,
+          "count": 0
+        },
+        {
+          "hour": 12,
+          "count": 0
+        },
+        {
+          "hour": 13,
+          "count": 0
+        },
+        {
+          "hour": 14,
+          "count": 0
+        },
+        {
+          "hour": 15,
+          "count": 0
+        },
+        {
+          "hour": 16,
+          "count": 0
+        },
+        {
+          "hour": 17,
+          "count": 0
+        },
+        {
+          "hour": 18,
+          "count": 0
+        },
+        {
+          "hour": 19,
+          "count": 0
+        },
+        {
+          "hour": 20,
+          "count": 0
+        },
+        {
+          "hour": 21,
+          "count": 0
+        },
+        {
+          "hour": 22,
+          "count": 0
+        },
+        {
+          "hour": 23,
+          "count": 0
+        }
+      ],
+      "dailyTrend": [
+        {
+          "date": "2026-03-11",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-12",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-13",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-14",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-15",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-16",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-17",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-18",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-19",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-20",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-21",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-22",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-23",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-24",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-25",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-26",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-27",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-28",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-29",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-30",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-03-31",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-01",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-02",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-03",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-04",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-05",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-06",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-07",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-08",
+          "pageViews": 0,
+          "uniqueVisitors": 0
+        },
+        {
+          "date": "2026-04-09",
+          "pageViews": 51,
+          "uniqueVisitors": 51
+        }
+      ],
+      "health": 65
+    },
+    "content": {
+      "topContent": {
+        "content": {
+          "id": "aaf2fwjpyej",
+          "title": "AI Passive Income Guide 2025",
+          "platform": "blog",
+          "type": "blog",
+          "age": 16,
+          "publishDate": "2026-03-25T19:16:59.158Z"
+        },
+        "period": "30d",
+        "summary": {
+          "totalViews": 2,
+          "uniqueViews": 0,
+          "avgDailyViews": "0.1",
+          "totalEngagements": 2,
+          "totalConversions": 1,
+          "conversionRate": "50.00",
+          "revenue": 0
+        },
+        "engagement": {
+          "total": 2,
+          "rate": "1.0000",
+          "ratePercent": "100.00%",
+          "byType": [
+            {
+              "type": "like",
+              "count": 1,
+              "percentage": "50.0"
+            },
+            {
+              "type": "share",
+              "count": 1,
+              "percentage": "50.0"
+            }
+          ],
+          "breakdown": {
+            "like": 1,
+            "share": 1
+          }
+        },
+        "conversions": {
+          "total": 1,
+          "rate": "0.5000",
+          "ratePercent": "50.00%",
+          "totalValue": "0.00",
+          "avgValue": "0.00",
+          "byType": [
+            {
+              "type": "signup",
+              "count": 1,
+              "value": "0.00"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "source": "organic",
+            "count": 1,
+            "percentage": "50.0"
+          },
+          {
+            "source": "social",
+            "count": 1,
+            "percentage": "50.0"
+          }
+        ],
+        "trend": [
+          {
+            "date": "2026-03-11",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-12",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-13",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-14",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-15",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-16",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-17",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-18",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-19",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-20",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-21",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-22",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-23",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-24",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-25",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-26",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-27",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-28",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-29",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-30",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-03-31",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-01",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-02",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-03",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-04",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-05",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-06",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-07",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-08",
+            "views": 0,
+            "engagements": 0,
+            "conversions": 0
+          },
+          {
+            "date": "2026-04-09",
+            "views": 2,
+            "engagements": 0,
+            "conversions": 1
+          }
+        ],
+        "benchmarkComparison": {
+          "avgReadTime": {
+            "actual": "0.0000",
+            "benchmark": 180,
+            "difference": "-180.0000",
+            "percentDiff": "-100.0%",
+            "status": "below"
+          },
+          "avgBounceRate": {
+            "actual": "0.0000",
+            "benchmark": 0.65,
+            "difference": "-0.6500",
+            "percentDiff": "-100.0%",
+            "status": "below"
+          },
+          "avgShareRate": {
+            "actual": "0.0000",
+            "benchmark": 0.02,
+            "difference": "-0.0200",
+            "percentDiff": "-100.0%",
+            "status": "below"
+          }
+        },
+        "score": 71,
+        "recommendations": [
+          {
+            "priority": "medium",
+            "area": "benchmark",
+            "message": "avgReadTime 低于平台平均水平，需要改进"
+          },
+          {
+            "priority": "medium",
+            "area": "benchmark",
+            "message": "avgBounceRate 低于平台平均水平，需要改进"
+          },
+          {
+            "priority": "medium",
+            "area": "benchmark",
+            "message": "avgShareRate 低于平台平均水平，需要改进"
+          }
+        ]
+      },
+      "portfolio": {
+        "period": "30d",
+        "totalContent": 4,
+        "summary": {
+          "avgScore": "74.8",
+          "totalViews": 1702,
+          "totalConversions": 35,
+          "totalRevenue": "0.00"
+        },
+        "topPerformers": [
+          {
+            "content": {
+              "id": "uf6tbj47z5e",
+              "title": "如何通过AI实现被动收入",
+              "platform": "blog",
+              "type": "blog",
+              "age": 1,
+              "publishDate": "2026-04-09T19:16:59.124Z"
+            },
+            "period": "30d",
+            "summary": {
+              "totalViews": 1000,
+              "uniqueViews": 0,
+              "avgDailyViews": "1000.0",
+              "totalEngagements": 50,
+              "totalConversions": 20,
+              "conversionRate": "2.00",
+              "revenue": 0
+            },
+            "engagement": {
+              "total": 50,
+              "rate": "0.0500",
+              "ratePercent": "5.00%",
+              "byType": [
+                {
+                  "type": "comment",
+                  "count": 12,
+                  "percentage": "24.0"
+                },
+                {
+                  "type": "share",
+                  "count": 18,
+                  "percentage": "36.0"
+                },
+                {
+                  "type": "like",
+                  "count": 20,
+                  "percentage": "40.0"
+                }
+              ],
+              "breakdown": {
+                "comment": 12,
+                "share": 18,
+                "like": 20
+              }
+            },
+            "conversions": {
+              "total": 20,
+              "rate": "0.0200",
+              "ratePercent": "2.00%",
+              "totalValue": "0.00",
+              "avgValue": "0.00",
+              "byType": [
+                {
+                  "type": "signup",
+                  "count": 20,
+                  "value": "0.00"
+                }
+              ]
+            },
+            "sources": [
+              {
+                "source": "social",
+                "count": 343,
+                "percentage": "34.3"
+              },
+              {
+                "source": "email",
+                "count": 331,
+                "percentage": "33.1"
+              },
+              {
+                "source": "organic",
+                "count": 326,
+                "percentage": "32.6"
+              }
+            ],
+            "trend": [
+              {
+                "date": "2026-03-11",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-12",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-13",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-14",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-15",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-16",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-17",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-18",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-19",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-20",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-21",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-22",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-23",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-24",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-25",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-26",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-27",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-28",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-29",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-30",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-31",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-01",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-02",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-03",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-04",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-05",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-06",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-07",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-08",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-09",
+                "views": 1000,
+                "engagements": 50,
+                "conversions": 20
+              }
+            ],
+            "benchmarkComparison": {
+              "avgReadTime": {
+                "actual": "0.0000",
+                "benchmark": 180,
+                "difference": "-180.0000",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgBounceRate": {
+                "actual": "0.0000",
+                "benchmark": 0.65,
+                "difference": "-0.6500",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgShareRate": {
+                "actual": "0.0000",
+                "benchmark": 0.02,
+                "difference": "-0.0200",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              }
+            },
+            "score": 76,
+            "recommendations": [
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgReadTime 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgBounceRate 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgShareRate 低于平台平均水平，需要改进"
+              }
+            ]
+          },
+          {
+            "content": {
+              "id": "1z1qn3mjanc",
+              "title": "2025年最佳副业项目",
+              "platform": "blog",
+              "type": "blog",
+              "age": 1,
+              "publishDate": "2026-04-09T19:16:59.124Z"
+            },
+            "period": "30d",
+            "summary": {
+              "totalViews": 500,
+              "uniqueViews": 0,
+              "avgDailyViews": "500.0",
+              "totalEngagements": 25,
+              "totalConversions": 10,
+              "conversionRate": "2.00",
+              "revenue": 0
+            },
+            "engagement": {
+              "total": 25,
+              "rate": "0.0500",
+              "ratePercent": "5.00%",
+              "byType": [
+                {
+                  "type": "share",
+                  "count": 9,
+                  "percentage": "36.0"
+                },
+                {
+                  "type": "like",
+                  "count": 10,
+                  "percentage": "40.0"
+                },
+                {
+                  "type": "comment",
+                  "count": 6,
+                  "percentage": "24.0"
+                }
+              ],
+              "breakdown": {
+                "share": 9,
+                "like": 10,
+                "comment": 6
+              }
+            },
+            "conversions": {
+              "total": 10,
+              "rate": "0.0200",
+              "ratePercent": "2.00%",
+              "totalValue": "0.00",
+              "avgValue": "0.00",
+              "byType": [
+                {
+                  "type": "signup",
+                  "count": 10,
+                  "value": "0.00"
+                }
+              ]
+            },
+            "sources": [
+              {
+                "source": "organic",
+                "count": 175,
+                "percentage": "35.0"
+              },
+              {
+                "source": "email",
+                "count": 171,
+                "percentage": "34.2"
+              },
+              {
+                "source": "social",
+                "count": 154,
+                "percentage": "30.8"
+              }
+            ],
+            "trend": [
+              {
+                "date": "2026-03-11",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-12",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-13",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-14",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-15",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-16",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-17",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-18",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-19",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-20",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-21",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-22",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-23",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-24",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-25",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-26",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-27",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-28",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-29",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-30",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-31",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-01",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-02",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-03",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-04",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-05",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-06",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-07",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-08",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-09",
+                "views": 500,
+                "engagements": 25,
+                "conversions": 10
+              }
+            ],
+            "benchmarkComparison": {
+              "avgReadTime": {
+                "actual": "0.0000",
+                "benchmark": 180,
+                "difference": "-180.0000",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgBounceRate": {
+                "actual": "0.0000",
+                "benchmark": 0.65,
+                "difference": "-0.6500",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgShareRate": {
+                "actual": "0.0000",
+                "benchmark": 0.02,
+                "difference": "-0.0200",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              }
+            },
+            "score": 76,
+            "recommendations": [
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgReadTime 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgBounceRate 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgShareRate 低于平台平均水平，需要改进"
+              }
+            ]
+          },
+          {
+            "content": {
+              "id": "eqq2x9d6ctc",
+              "title": "AI工具完整教程",
+              "platform": "youtube",
+              "type": "video",
+              "age": 1,
+              "publishDate": "2026-04-09T19:16:59.124Z"
+            },
+            "period": "30d",
+            "summary": {
+              "totalViews": 200,
+              "uniqueViews": 0,
+              "avgDailyViews": "200.0",
+              "totalEngagements": 10,
+              "totalConversions": 4,
+              "conversionRate": "2.00",
+              "revenue": 0
+            },
+            "engagement": {
+              "total": 10,
+              "rate": "0.0500",
+              "ratePercent": "5.00%",
+              "byType": [
+                {
+                  "type": "share",
+                  "count": 3,
+                  "percentage": "30.0"
+                },
+                {
+                  "type": "comment",
+                  "count": 4,
+                  "percentage": "40.0"
+                },
+                {
+                  "type": "like",
+                  "count": 3,
+                  "percentage": "30.0"
+                }
+              ],
+              "breakdown": {
+                "share": 3,
+                "comment": 4,
+                "like": 3
+              }
+            },
+            "conversions": {
+              "total": 4,
+              "rate": "0.0200",
+              "ratePercent": "2.00%",
+              "totalValue": "0.00",
+              "avgValue": "0.00",
+              "byType": [
+                {
+                  "type": "signup",
+                  "count": 4,
+                  "value": "0.00"
+                }
+              ]
+            },
+            "sources": [
+              {
+                "source": "organic",
+                "count": 74,
+                "percentage": "37.0"
+              },
+              {
+                "source": "social",
+                "count": 74,
+                "percentage": "37.0"
+              },
+              {
+                "source": "email",
+                "count": 52,
+                "percentage": "26.0"
+              }
+            ],
+            "trend": [
+              {
+                "date": "2026-03-11",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-12",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-13",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-14",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-15",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-16",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-17",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-18",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-19",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-20",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-21",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-22",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-23",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-24",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-25",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-26",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-27",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-28",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-29",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-30",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-31",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-01",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-02",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-03",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-04",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-05",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-06",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-07",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-08",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-09",
+                "views": 200,
+                "engagements": 10,
+                "conversions": 4
+              }
+            ],
+            "benchmarkComparison": {
+              "avgWatchTime": {
+                "actual": "0.0000",
+                "benchmark": 0.45,
+                "difference": "-0.4500",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgCTR": {
+                "actual": "0.0000",
+                "benchmark": 0.06,
+                "difference": "-0.0600",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgEngagement": {
+                "actual": "0.0000",
+                "benchmark": 0.05,
+                "difference": "-0.0500",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              }
+            },
+            "score": 76,
+            "recommendations": [
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgWatchTime 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgCTR 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgEngagement 低于平台平均水平，需要改进"
+              }
+            ]
+          },
+          {
+            "content": {
+              "id": "aaf2fwjpyej",
+              "title": "AI Passive Income Guide 2025",
+              "platform": "blog",
+              "type": "blog",
+              "age": 16,
+              "publishDate": "2026-03-25T19:16:59.158Z"
+            },
+            "period": "30d",
+            "summary": {
+              "totalViews": 2,
+              "uniqueViews": 0,
+              "avgDailyViews": "0.1",
+              "totalEngagements": 2,
+              "totalConversions": 1,
+              "conversionRate": "50.00",
+              "revenue": 0
+            },
+            "engagement": {
+              "total": 2,
+              "rate": "1.0000",
+              "ratePercent": "100.00%",
+              "byType": [
+                {
+                  "type": "like",
+                  "count": 1,
+                  "percentage": "50.0"
+                },
+                {
+                  "type": "share",
+                  "count": 1,
+                  "percentage": "50.0"
+                }
+              ],
+              "breakdown": {
+                "like": 1,
+                "share": 1
+              }
+            },
+            "conversions": {
+              "total": 1,
+              "rate": "0.5000",
+              "ratePercent": "50.00%",
+              "totalValue": "0.00",
+              "avgValue": "0.00",
+              "byType": [
+                {
+                  "type": "signup",
+                  "count": 1,
+                  "value": "0.00"
+                }
+              ]
+            },
+            "sources": [
+              {
+                "source": "organic",
+                "count": 1,
+                "percentage": "50.0"
+              },
+              {
+                "source": "social",
+                "count": 1,
+                "percentage": "50.0"
+              }
+            ],
+            "trend": [
+              {
+                "date": "2026-03-11",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-12",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-13",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-14",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-15",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-16",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-17",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-18",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-19",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-20",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-21",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-22",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-23",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-24",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-25",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-26",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-27",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-28",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-29",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-30",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-03-31",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-01",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-02",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-03",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-04",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-05",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-06",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-07",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-08",
+                "views": 0,
+                "engagements": 0,
+                "conversions": 0
+              },
+              {
+                "date": "2026-04-09",
+                "views": 2,
+                "engagements": 0,
+                "conversions": 1
+              }
+            ],
+            "benchmarkComparison": {
+              "avgReadTime": {
+                "actual": "0.0000",
+                "benchmark": 180,
+                "difference": "-180.0000",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgBounceRate": {
+                "actual": "0.0000",
+                "benchmark": 0.65,
+                "difference": "-0.6500",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              },
+              "avgShareRate": {
+                "actual": "0.0000",
+                "benchmark": 0.02,
+                "difference": "-0.0200",
+                "percentDiff": "-100.0%",
+                "status": "below"
+              }
+            },
+            "score": 71,
+            "recommendations": [
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgReadTime 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgBounceRate 低于平台平均水平，需要改进"
+              },
+              {
+                "priority": "medium",
+                "area": "benchmark",
+                "message": "avgShareRate 低于平台平均水平，需要改进"
+              }
+            ]
+          }
+        ],
+        "underPerformers": []
+      },
+      "health": 74.8
+    },
+    "revenue": {
+      "period": "30d",
+      "summary": {
+        "totalRevenue": "1726.00",
+        "totalExpenses": "530.00",
+        "profit": "1196.00",
+        "margin": "69.29%",
+        "mrr": "29.00",
+        "arr": "348.00",
+        "recurringPercentage": "1.7%",
+        "transactionCount": 8,
+        "expenseCount": 6
+      },
+      "revenue": {
+        "bySource": [
+          {
+            "name": "product",
+            "amount": "697.00",
+            "percentage": "40.4"
+          },
+          {
+            "name": "service",
+            "amount": "500.00",
+            "percentage": "29.0"
+          },
+          {
+            "name": "affiliate",
+            "amount": "300.00",
+            "percentage": "17.4"
+          },
+          {
+            "name": "ad",
+            "amount": "200.00",
+            "percentage": "11.6"
+          },
+          {
+            "name": "subscription",
+            "amount": "29.00",
+            "percentage": "1.7"
+          }
+        ],
+        "byChannel": [
+          {
+            "name": "stripe",
+            "amount": "898.00",
+            "percentage": "52.0"
+          },
+          {
+            "name": "paypal",
+            "amount": "799.00",
+            "percentage": "46.3"
+          },
+          {
+            "name": "other",
+            "amount": "29.00",
+            "percentage": "1.7"
+          }
+        ],
+        "breakdown": [
+          {
+            "id": "2ddpocc6s8a",
+            "date": "2026-04-09",
+            "amount": 99,
+            "currency": "USD",
+            "amountBase": "99.00",
+            "source": "product",
+            "channel": "stripe",
+            "description": "Pro Plan"
+          },
+          {
+            "id": "2bbxq16aaj5",
+            "date": "2026-04-09",
+            "amount": 299,
+            "currency": "USD",
+            "amountBase": "299.00",
+            "source": "product",
+            "channel": "paypal",
+            "description": "Enterprise Plan"
+          },
+          {
+            "id": "tww6dms417p",
+            "date": "2026-04-09",
+            "amount": 150,
+            "currency": "USD",
+            "amountBase": "150.00",
+            "source": "affiliate",
+            "channel": "paypal",
+            "description": "Tool Affiliate"
+          },
+          {
+            "id": "i8wkzgy8s1",
+            "date": "2026-04-09",
+            "amount": 200,
+            "currency": "USD",
+            "amountBase": "200.00",
+            "source": "ad",
+            "channel": "paypal",
+            "description": "Ad Revenue"
+          },
+          {
+            "id": "m2p41sj6rip",
+            "date": "2026-04-09",
+            "amount": 500,
+            "currency": "USD",
+            "amountBase": "500.00",
+            "source": "service",
+            "channel": "stripe",
+            "description": "Consulting"
+          },
+          {
+            "id": "lby6laxskk",
+            "date": "2026-04-09",
+            "amount": 29,
+            "currency": "USD",
+            "amountBase": "29.00",
+            "source": "subscription"
+          },
+          {
+            "id": "h7w73b5rkd8",
+            "date": "2026-04-09",
+            "amount": 299,
+            "currency": "USD",
+            "amountBase": "299.00",
+            "source": "product",
+            "channel": "stripe",
+            "description": "Premium Subscription"
+          },
+          {
+            "id": "eujjfdri1bw",
+            "date": "2026-04-09",
+            "amount": 150,
+            "currency": "USD",
+            "amountBase": "150.00",
+            "source": "affiliate",
+            "channel": "paypal",
+            "description": "Affiliate Commission"
+          }
+        ]
+      },
+      "expenses": {
+        "byCategory": [
+          {
+            "name": "marketing",
+            "amount": "200.00",
+            "percentage": "37.7"
+          },
+          {
+            "name": "salary",
+            "amount": "200.00",
+            "percentage": "37.7"
+          },
+          {
+            "name": "hosting",
+            "amount": "100.00",
+            "percentage": "18.9"
+          },
+          {
+            "name": "software",
+            "amount": "30.00",
+            "percentage": "5.7"
+          }
+        ],
+        "breakdown": [
+          {
+            "id": "tofb00pjaa",
+            "date": "2026-04-09",
+            "amount": 50,
+            "currency": "USD",
+            "amountBase": "50.00",
+            "category": "hosting",
+            "description": "Server Costs"
+          },
+          {
+            "id": "7udzo3iwiy2",
+            "date": "2026-04-09",
+            "amount": 30,
+            "currency": "USD",
+            "amountBase": "30.00",
+            "category": "software",
+            "description": "Tools & Services"
+          },
+          {
+            "id": "ff8k43wavmn",
+            "date": "2026-04-09",
+            "amount": 100,
+            "currency": "USD",
+            "amountBase": "100.00",
+            "category": "marketing",
+            "description": "Ad Spend"
+          },
+          {
+            "id": "peqvp4cju0d",
+            "date": "2026-04-09",
+            "amount": 200,
+            "currency": "USD",
+            "amountBase": "200.00",
+            "category": "salary",
+            "description": "Contractor"
+          },
+          {
+            "id": "kukdfgmevh",
+            "date": "2026-04-09",
+            "amount": 50,
+            "currency": "USD",
+            "amountBase": "50.00",
+            "category": "hosting",
+            "description": "Server costs"
+          },
+          {
+            "id": "2n5n2vrdjn",
+            "date": "2026-04-09",
+            "amount": 100,
+            "currency": "USD",
+            "amountBase": "100.00",
+            "category": "marketing",
+            "description": "Ad spend"
+          }
+        ]
+      },
+      "dailyTrend": [
+        {
+          "date": "2026-03-11",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-12",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-13",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-14",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-15",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-16",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-17",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-18",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-19",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-20",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-21",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-22",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-23",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-24",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-25",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-26",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-27",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-28",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-29",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-30",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-03-31",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-01",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-02",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-03",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-04",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-05",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-06",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-07",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-08",
+          "revenue": "0.00",
+          "expenses": "0.00",
+          "profit": "0.00"
+        },
+        {
+          "date": "2026-04-09",
+          "revenue": "1726.00",
+          "expenses": "530.00",
+          "profit": "1196.00"
+        }
+      ],
+      "customerMetrics": {
+        "totalCustomers": 1,
+        "avgRevenuePerCustomer": "1726.00",
+        "topCustomerRevenue": "29.00",
+        "top10PercentContribution": "1.7%"
+      },
+      "comparison": {
+        "revenue": {
+          "current": "1726.00",
+          "previous": "0.00",
+          "change": "0%",
+          "trend": "flat"
+        },
+        "expenses": {
+          "current": "530.00",
+          "previous": "0.00",
+          "change": "0%",
+          "trend": "flat"
+        }
+      },
+      "goals": {
+        "target": 2000,
+        "current": "1726.00",
+        "progress": "86.3%",
+        "status": "on-track"
+      },
+      "health": 75
+    },
+    "development": {
+      "status": "skipped",
+      "message": "未提供GitHub配置，跳过开发统计"
+    }
+  },
+  "insights": {
+    "keyFindings": [
+      {
+        "type": "positive",
+        "area": "finance",
+        "message": "利润率健康，达到 69.29%"
+      },
+      {
+        "type": "positive",
+        "area": "content",
+        "message": "内容质量良好，平均得分 74.8"
+      }
+    ],
+    "topRecommendations": [
+      {
+        "priority": "high",
+        "area": "traffic",
+        "action": "增加内容产出频率以提升有机流量",
+        "impact": "medium"
+      }
+    ],
+    "detailed": {
+      "traffic": [
+        {
+          "type": "opportunity",
+          "message": "SEO流量占比偏低，有优化空间",
+          "action": "优化关键页面SEO，增加长尾关键词内容"
+        }
+      ],
+      "content": [],
+      "financial": [
+        {
+          "type": "opportunity",
+          "message": "重复收入占比偏低",
+          "action": "增加订阅服务或会员产品"
+        }
+      ]
+    }
+  },
+  "projections": {
+    "revenueForecast": {
+      "next30Days": "1726.00",
+      "next90Days": "5178.00",
+      "dailyProjections": [
+        {
+          "day": 1,
+          "projectedRevenue": "57.53",
+          "cumulative": "57.53"
+        },
+        {
+          "day": 2,
+          "projectedRevenue": "57.53",
+          "cumulative": "115.07"
+        },
+        {
+          "day": 3,
+          "projectedRevenue": "57.53",
+          "cumulative": "172.60"
+        },
+        {
+          "day": 4,
+          "projectedRevenue": "57.53",
+          "cumulative": "230.13"
+        },
+        {
+          "day": 5,
+          "projectedRevenue": "57.53",
+          "cumulative": "287.67"
+        },
+        {
+          "day": 6,
+          "projectedRevenue": "57.53",
+          "cumulative": "345.20"
+        },
+        {
+          "day": 7,
+          "projectedRevenue": "57.53",
+          "cumulative": "402.73"
+        },
+        {
+          "day": 8,
+          "projectedRevenue": "57.53",
+          "cumulative": "460.27"
+        },
+        {
+          "day": 9,
+          "projectedRevenue": "57.53",
+          "cumulative": "517.80"
+        },
+        {
+          "day": 10,
+          "projectedRevenue": "57.53",
+          "cumulative": "575.33"
+        },
+        {
+          "day": 11,
+          "projectedRevenue": "57.53",
+          "cumulative": "632.87"
+        },
+        {
+          "day": 12,
+          "projectedRevenue": "57.53",
+          "cumulative": "690.40"
+        },
+        {
+          "day": 13,
+          "projectedRevenue": "57.53",
+          "cumulative": "747.93"
+        },
+        {
+          "day": 14,
+          "projectedRevenue": "57.53",
+          "cumulative": "805.47"
+        },
+        {
+          "day": 15,
+          "projectedRevenue": "57.53",
+          "cumulative": "863.00"
+        },
+        {
+          "day": 16,
+          "projectedRevenue": "57.53",
+          "cumulative": "920.53"
+        },
+        {
+          "day": 17,
+          "projectedRevenue": "57.53",
+          "cumulative": "978.07"
+        },
+        {
+          "day": 18,
+          "projectedRevenue": "57.53",
+          "cumulative": "1035.60"
+        },
+        {
+          "day": 19,
+          "projectedRevenue": "57.53",
+          "cumulative": "1093.13"
+        },
+        {
+          "day": 20,
+          "projectedRevenue": "57.53",
+          "cumulative": "1150.67"
+        },
+        {
+          "day": 21,
+          "projectedRevenue": "57.53",
+          "cumulative": "1208.20"
+        },
+        {
+          "day": 22,
+          "projectedRevenue": "57.53",
+          "cumulative": "1265.73"
+        },
+        {
+          "day": 23,
+          "projectedRevenue": "57.53",
+          "cumulative": "1323.27"
+        },
+        {
+          "day": 24,
+          "projectedRevenue": "57.53",
+          "cumulative": "1380.80"
+        },
+        {
+          "day": 25,
+          "projectedRevenue": "57.53",
+          "cumulative": "1438.33"
+        },
+        {
+          "day": 26,
+          "projectedRevenue": "57.53",
+          "cumulative": "1495.87"
+        },
+        {
+          "day": 27,
+          "projectedRevenue": "57.53",
+          "cumulative": "1553.40"
+        },
+        {
+          "day": 28,
+          "projectedRevenue": "57.53",
+          "cumulative": "1610.93"
+        },
+        {
+          "day": 29,
+          "projectedRevenue": "57.53",
+          "cumulative": "1668.47"
+        },
+        {
+          "day": 30,
+          "projectedRevenue": "57.53",
+          "cumulative": "1726.00"
+        },
+        {
+          "day": 31,
+          "projectedRevenue": "57.53",
+          "cumulative": "1783.53"
+        },
+        {
+          "day": 32,
+          "projectedRevenue": "57.53",
+          "cumulative": "1841.07"
+        },
+        {
+          "day": 33,
+          "projectedRevenue": "57.53",
+          "cumulative": "1898.60"
+        },
+        {
+          "day": 34,
+          "projectedRevenue": "57.53",
+          "cumulative": "1956.13"
+        },
+        {
+          "day": 35,
+          "projectedRevenue": "57.53",
+          "cumulative": "2013.67"
+        },
+        {
+          "day": 36,
+          "projectedRevenue": "57.53",
+          "cumulative": "2071.20"
+        },
+        {
+          "day": 37,
+          "projectedRevenue": "57.53",
+          "cumulative": "2128.73"
+        },
+        {
+          "day": 38,
+          "projectedRevenue": "57.53",
+          "cumulative": "2186.27"
+        },
+        {
+          "day": 39,
+          "projectedRevenue": "57.53",
+          "cumulative": "2243.80"
+        },
+        {
+          "day": 40,
+          "projectedRevenue": "57.53",
+          "cumulative": "2301.33"
+        },
+        {
+          "day": 41,
+          "projectedRevenue": "57.53",
+          "cumulative": "2358.87"
+        },
+        {
+          "day": 42,
+          "projectedRevenue": "57.53",
+          "cumulative": "2416.40"
+        },
+        {
+          "day": 43,
+          "projectedRevenue": "57.53",
+          "cumulative": "2473.93"
+        },
+        {
+          "day": 44,
+          "projectedRevenue": "57.53",
+          "cumulative": "2531.47"
+        },
+        {
+          "day": 45,
+          "projectedRevenue": "57.53",
+          "cumulative": "2589.00"
+        },
+        {
+          "day": 46,
+          "projectedRevenue": "57.53",
+          "cumulative": "2646.53"
+        },
+        {
+          "day": 47,
+          "projectedRevenue": "57.53",
+          "cumulative": "2704.07"
+        },
+        {
+          "day": 48,
+          "projectedRevenue": "57.53",
+          "cumulative": "2761.60"
+        },
+        {
+          "day": 49,
+          "projectedRevenue": "57.53",
+          "cumulative": "2819.13"
+        },
+        {
+          "day": 50,
+          "projectedRevenue": "57.53",
+          "cumulative": "2876.67"
+        },
+        {
+          "day": 51,
+          "projectedRevenue": "57.53",
+          "cumulative": "2934.20"
+        },
+        {
+          "day": 52,
+          "projectedRevenue": "57.53",
+          "cumulative": "2991.73"
+        },
+        {
+          "day": 53,
+          "projectedRevenue": "57.53",
+          "cumulative": "3049.27"
+        },
+        {
+          "day": 54,
+          "projectedRevenue": "57.53",
+          "cumulative": "3106.80"
+        },
+        {
+          "day": 55,
+          "projectedRevenue": "57.53",
+          "cumulative": "3164.33"
+        },
+        {
+          "day": 56,
+          "projectedRevenue": "57.53",
+          "cumulative": "3221.87"
+        },
+        {
+          "day": 57,
+          "projectedRevenue": "57.53",
+          "cumulative": "3279.40"
+        },
+        {
+          "day": 58,
+          "projectedRevenue": "57.53",
+          "cumulative": "3336.93"
+        },
+        {
+          "day": 59,
+          "projectedRevenue": "57.53",
+          "cumulative": "3394.47"
+        },
+        {
+          "day": 60,
+          "projectedRevenue": "57.53",
+          "cumulative": "3452.00"
+        },
+        {
+          "day": 61,
+          "projectedRevenue": "57.53",
+          "cumulative": "3509.53"
+        },
+        {
+          "day": 62,
+          "projectedRevenue": "57.53",
+          "cumulative": "3567.07"
+        },
+        {
+          "day": 63,
+          "projectedRevenue": "57.53",
+          "cumulative": "3624.60"
+        },
+        {
+          "day": 64,
+          "projectedRevenue": "57.53",
+          "cumulative": "3682.13"
+        },
+        {
+          "day": 65,
+          "projectedRevenue": "57.53",
+          "cumulative": "3739.67"
+        },
+        {
+          "day": 66,
+          "projectedRevenue": "57.53",
+          "cumulative": "3797.20"
+        },
+        {
+          "day": 67,
+          "projectedRevenue": "57.53",
+          "cumulative": "3854.73"
+        },
+        {
+          "day": 68,
+          "projectedRevenue": "57.53",
+          "cumulative": "3912.27"
+        },
+        {
+          "day": 69,
+          "projectedRevenue": "57.53",
+          "cumulative": "3969.80"
+        },
+        {
+          "day": 70,
+          "projectedRevenue": "57.53",
+          "cumulative": "4027.33"
+        },
+        {
+          "day": 71,
+          "projectedRevenue": "57.53",
+          "cumulative": "4084.87"
+        },
+        {
+          "day": 72,
+          "projectedRevenue": "57.53",
+          "cumulative": "4142.40"
+        },
+        {
+          "day": 73,
+          "projectedRevenue": "57.53",
+          "cumulative": "4199.93"
+        },
+        {
+          "day": 74,
+          "projectedRevenue": "57.53",
+          "cumulative": "4257.47"
+        },
+        {
+          "day": 75,
+          "projectedRevenue": "57.53",
+          "cumulative": "4315.00"
+        },
+        {
+          "day": 76,
+          "projectedRevenue": "57.53",
+          "cumulative": "4372.53"
+        },
+        {
+          "day": 77,
+          "projectedRevenue": "57.53",
+          "cumulative": "4430.07"
+        },
+        {
+          "day": 78,
+          "projectedRevenue": "57.53",
+          "cumulative": "4487.60"
+        },
+        {
+          "day": 79,
+          "projectedRevenue": "57.53",
+          "cumulative": "4545.13"
+        },
+        {
+          "day": 80,
+          "projectedRevenue": "57.53",
+          "cumulative": "4602.67"
+        },
+        {
+          "day": 81,
+          "projectedRevenue": "57.53",
+          "cumulative": "4660.20"
+        },
+        {
+          "day": 82,
+          "projectedRevenue": "57.53",
+          "cumulative": "4717.73"
+        },
+        {
+          "day": 83,
+          "projectedRevenue": "57.53",
+          "cumulative": "4775.27"
+        },
+        {
+          "day": 84,
+          "projectedRevenue": "57.53",
+          "cumulative": "4832.80"
+        },
+        {
+          "day": 85,
+          "projectedRevenue": "57.53",
+          "cumulative": "4890.33"
+        },
+        {
+          "day": 86,
+          "projectedRevenue": "57.53",
+          "cumulative": "4947.87"
+        },
+        {
+          "day": 87,
+          "projectedRevenue": "57.53",
+          "cumulative": "5005.40"
+        },
+        {
+          "day": 88,
+          "projectedRevenue": "57.53",
+          "cumulative": "5062.93"
+        },
+        {
+          "day": 89,
+          "projectedRevenue": "57.53",
+          "cumulative": "5120.47"
+        },
+        {
+          "day": 90,
+          "projectedRevenue": "57.53",
+          "cumulative": "5178.00"
+        }
+      ]
+    },
+    "trafficForecast": {
+      "message": "基于当前增长趋势预测"
+    }
+  },
+  "actionItems": [
+    {
+      "priority": "high",
+      "area": "traffic",
+      "action": "增加内容产出频率以提升有机流量",
+      "impact": "medium",
+      "status": "pending",
+      "createdAt": "2026-04-09T19:16:59.171Z",
+      "dueDate": null,
+      "assignedTo": null
+    }
+  ]
+}

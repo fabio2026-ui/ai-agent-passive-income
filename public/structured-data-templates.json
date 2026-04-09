@@ -1,0 +1,25 @@
+{
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI Agent被动收入导航",
+    "url": "https://ai-agent-income.com",
+    "description": "一站式AI变现资源中心",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ai-agent-income.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI Agent被动收入",
+    "url": "https://ai-agent-income.com",
+    "logo": "https://ai-agent-income.com/logo.png",
+    "sameAs": [
+      "https://twitter.com/aiagentincome",
+      "https://github.com/aiagent-income"
+    ]
+  }
+}

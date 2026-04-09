@@ -1,166 +1,637 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小七AI Agent 项目仪表板</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .container { max-width: 1200px; margin: 0 auto; }
-    h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 2.5rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .card:hover { transform: translateY(-5px); }
-    .card h2 { color: #333; font-size: 1.2rem; margin-bottom: 16px; }
-    .metric { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; }
-    .metric-value { font-size: 2rem; font-weight: bold; color: #667eea; }
-    .metric-label { color: #666; font-size: 0.9rem; }
-    .progress-bar {
-      height: 8px;
-      background: #e0e0e0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: 8px;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #667eea, #764ba2);
-      border-radius: 4px;
-    }
-    .status { 
-      display: inline-block; 
-      padding: 4px 12px; 
-      border-radius: 20px; 
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    .status-online { background: #d4edda; color: #155724; }
-    .status-pending { background: #fff3cd; color: #856404; }
-    .links { margin-top: 20px; text-align: center; }
-    .links a {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 24px;
-      background: white;
-      color: #667eea;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    .links a:hover { background: #f0f0f0; transform: scale(1.05); }
-    .footer { text-align: center; color: rgba(255,255,255,0.8); margin-top: 30px; }
-    .revenue-card { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
-    .revenue-card h2, .revenue-card .metric-label { color: white; }
-    .revenue-card .metric-value { color: white; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent被动收入 - 数据分析仪表板</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-right: 1px solid var(--border);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--text-muted);
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .header h1 {
+            font-size: 1.75rem;
+        }
+        
+        .date-range {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .date-range button {
+            padding: 0.5rem 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .date-range button:hover, .date-range button.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+        }
+        
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .change {
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .stat-card .change.positive {
+            color: var(--success);
+        }
+        
+        .stat-card .change.negative {
+            color: var(--danger);
+        }
+        
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+        }
+        
+        .chart-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 250px;
+        }
+        
+        /* Tables */
+        .table-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+        
+        .table-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-success {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+        
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+        
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary);
+        }
+        
+        /* Progress bars */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 小七AI Agent 项目仪表板</h1>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">🤖 AI Dashboard</div>
+            <nav>
+                <div class="nav-item active">
+                    <span>📊</span> 总览
+                </div>
+                <div class="nav-item">
+                    <span>👥</span> 用户分析
+                </div>
+                <div class="nav-item">
+                    <span>💰</span> 收入追踪
+                </div>
+                <div class="nav-item">
+                    <span>📈</span> 内容表现
+                </div>
+                <div class="nav-item">
+                    <span>🔗</span> 流量来源
+                </div>
+                <div class="nav-item">
+                    <span>🎯</span> 转化漏斗
+                </div>
+                <div class="nav-item">
+                    <span>📧</span> 邮件营销
+                </div>
+                <div class="nav-item">
+                    <span>⚙️</span> 设置
+                </div>
+            </nav>
+        </aside>
+        
+        <main class="main">
+            <div class="header">
+                <h1>数据分析仪表板</h1>
+                <div class="date-range">
+                    <button>今日</button>
+                    <button>本周</button>
+                    <button class="active">本月</button>
+                    <button>本年</button>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="label">总访问量</div>
+                    <div class="value">45,231</div>
+                    <div class="change positive">
+                        <span>↑</span> 23.5% 较上月
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">独立访客</div>
+                    <div class="value">12,847</div>
+                    <div class="change positive">
+                        <span>↑</span> 18.2% 较上月
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">订阅用户</div>
+                    <div class="value">3,456</div>
+                    <div class="change positive">
+                        <span>↑</span> 12.8% 较上月
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">月收入</div>
+                    <div class="value">$8,420</div>
+                    <div class="change positive">
+                        <span>↑</span> 31.4% 较上月
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">转化率</div>
+                    <div class="value">4.2%</div>
+                    <div class="change negative">
+                        <span>↓</span> 0.3% 较上月
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">平均停留</div>
+                    <div class="value">5:32</div>
+                    <div class="change positive">
+                        <span>↑</span> 45秒 较上月
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>📈 流量趋势</h3>
+                    <div class="chart-container">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>💰 收入来源分布</h3>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>👥 用户来源</h3>
+                    <div class="chart-container">
+                        <canvas id="sourceChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>📊 内容类别热度</h3>
+                    <div class="chart-container">
+                        <canvas id="contentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Content -->
+            <div class="table-card">
+                <h3>🔥 热门内容 TOP 10</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>类别</th>
+                            <th>浏览量</th>
+                            <th>转化率</th>
+                            <th>趋势</th>
+                        </tr>
+                    </thead>
+                    <tbody id="topContentTable">
+                        <!-- JS will populate this -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Conversion Funnel -->
+            <div class="table-card">
+                <h3>🎯 转化漏斗</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>阶段</th>
+                            <th>用户数</th>
+                            <th>转化率</th>
+                            <th>进度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>网站访问</td>
+                            <td>45,231</td>
+                            <td>100%</td>
+                            <td><div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>阅读文章</td>
+                            <td>28,142</td>
+                            <td>62.2%</td>
+                            <td><div class="progress-bar"><div class="progress-fill" style="width: 62%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>邮件订阅</td>
+                            <td>3,456</td>
+                            <td>7.6%</td>
+                            <td><div class="progress-bar"><div class="progress-fill" style="width: 7.6%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>点击产品</td>
+                            <td>892</td>
+                            <td>2.0%</td>
+                            <td><div class="progress-bar"><div class="progress-fill" style="width: 2%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>完成购买</td>
+                            <td>178</td>
+                            <td>0.4%</td>
+                            <td><div class="progress-bar"><div class="progress-fill" style="width: 0.4%"></div></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Email Campaigns -->
+            <div class="table-card">
+                <h3>📧 邮件营销活动</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>活动名称</th>
+                            <th>发送数</th>
+                            <th>打开率</th>
+                            <th>点击率</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>欢迎序列 #1</td>
+                            <td>1,234</td>
+                            <td>68.5%</td>
+                            <td>32.1%</td>
+                            <td><span class="badge badge-success">活跃</span></td>
+                        </tr>
+                        <tr>
+                            <td>每周通讯 #12</td>
+                            <td>3,456</td>
+                            <td>45.2%</td>
+                            <td>18.7%</td>
+                            <td><span class="badge badge-success">活跃</span></td>
+                        </tr>
+                        <tr>
+                            <td>课程促销</td>
+                            <td>3,456</td>
+                            <td>52.3%</td>
+                            <td>24.5%</td>
+                            <td><span class="badge badge-warning">进行中</span></td>
+                        </tr>
+                        <tr>
+                            <td>工具推荐</td>
+                            <td>2,890</td>
+                            <td>38.9%</td>
+                            <td>15.2%</td>
+                            <td><span class="badge badge-primary">已结束</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
     
-    <div class="grid">
-      <!-- 内容统计 -->
-      <div class="card">
-        <h2>📝 内容资产</h2>
-        <div class="metric">
-          <span class="metric-label">文章总数</span>
-          <span class="metric-value">24</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 48%"></div>
-        </div>
-        <div class="metric" style="margin-top: 16px;">
-          <span class="metric-label">总字数</span>
-          <span class="metric-value">24</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">目标</span>
-          <span style="color: #667eea; font-weight: 600;">50篇</span>
-        </div>
-      </div>
-
-      <!-- GitHub统计 -->
-      <div class="card">
-        <h2>🐙 GitHub</h2>
-        <div class="metric">
-          <span class="metric-label">⭐ Stars</span>
-          <span class="metric-value">0</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">🍴 Forks</span>
-          <span class="metric-value">0</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">提交数</span>
-          <span class="metric-value">14</span>
-        </div>
-      </div>
-
-      <!-- 收入预估 -->
-      <div class="card revenue-card">
-        <h2>💰 收入预估 (月)</h2>
-        <div class="metric">
-          <span class="metric-label">Credits系统</span>
-          <span class="metric-value">€1,500</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">数字产品</span>
-          <span class="metric-value">€800</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">Affiliate</span>
-          <span class="metric-value">~€110</span>
-        </div>
-        <div class="metric" style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 12px;">
-          <span class="metric-label">总计</span>
-          <span class="metric-value">€2,410</span>
-        </div>
-      </div>
-
-      <!-- 系统状态 -->
-      <div class="card">
-        <h2>⚙️ 系统状态</h2>
-        <div class="metric">
-          <span class="metric-label">网站</span>
-          <span class="status status-online">在线</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">自动化</span>
-          <span class="status status-online">运行中</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">GitHub同步</span>
-          <span class="status status-online">已同步</span>
-        </div>
-        <div class="metric">
-          <span class="metric-label">Affiliate</span>
-          <span class="status status-pending">待注册</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="links">
-      <a href="https://fabio2026-ui.github.io/ai-agent-passive-income" target="_blank">🌐 访问网站</a>
-      <a href="https://github.com/fabio2026-ui/ai-agent-passive-income" target="_blank">📦 GitHub仓库</a>
-      <a href="content/" target="_blank">📄 查看文章</a>
-    </div>
-
-    <div class="footer">
-      <p>最后更新: 2026/4/7 21:34:26 | 小七AI Agent 自动生成</p>
-    </div>
-  </div>
+    <script>
+        // Chart configuration
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#334155';
+        
+        // Traffic Chart
+        new Chart(document.getElementById('trafficChart'), {
+            type: 'line',
+            data: {
+                labels: ['1日', '5日', '10日', '15日', '20日', '25日', '30日'],
+                datasets: [{
+                    label: '访问量',
+                    data: [1200, 1500, 1800, 1650, 2100, 2400, 2800],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: '独立访客',
+                    data: [800, 950, 1100, 1050, 1300, 1500, 1700],
+                    borderColor: '#ec4899',
+                    backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Revenue Chart
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['SaaS订阅', '联盟佣金', '广告收入', '课程销售', '咨询服务'],
+                datasets: [{
+                    data: [3500, 2100, 1200, 1420, 200],
+                    backgroundColor: ['#6366f1', '#ec4899', '#10b981', '#f59e0b', '#8b5cf6']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
+        // Source Chart
+        new Chart(document.getElementById('sourceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Google搜索', '直接访问', '社交媒体', '邮件', '推荐链接'],
+                datasets: [{
+                    label: '访问量',
+                    data: [18000, 12000, 8500, 4200, 2531],
+                    backgroundColor: '#6366f1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Content Chart
+        new Chart(document.getElementById('contentChart'), {
+            type: 'radar',
+            data: {
+                labels: ['AI Agent', '被动收入', '自动化', '开发技术', '营销推广', '工具推荐'],
+                datasets: [{
+                    label: '浏览量',
+                    data: [95, 80, 65, 75, 60, 70],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.2)'
+                }, {
+                    label: '互动率',
+                    data: [85, 70, 80, 65, 55, 75],
+                    borderColor: '#ec4899',
+                    backgroundColor: 'rgba(236, 72, 153, 0.2)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
+        // Top Content Data
+        const topContent = [
+            { title: 'AI Agent完全入门指南', category: 'AI Agent', views: '12.5K', conversion: '8.5%', trend: '↑' },
+            { title: 'LangChain完全指南', category: '开发技术', views: '10.2K', conversion: '7.2%', trend: '↑' },
+            { title: '被动收入5种模式', category: '被动收入', views: '9.8K', conversion: '6.8%', trend: '↑' },
+            { title: 'n8n自动化工作流', category: '自动化', views: '8.5K', conversion: '5.9%', trend: '→' },
+            { title: 'ChatGPT API商业化', category: '被动收入', views: '7.9K', conversion: '6.2%', trend: '↑' },
+            { title: '向量数据库指南', category: '开发技术', views: '7.2K', conversion: '4.8%', trend: '→' },
+            { title: 'Prompt工程精通', category: 'AI技能', views: '6.8K', conversion: '5.5%', trend: '↓' },
+            { title: 'AutoGen多Agent协作', category: 'AI Agent', views: '6.5K', conversion: '7.1%', trend: '↑' },
+            { title: 'SEO优化工具集', category: '营销推广', views: '5.9K', conversion: '4.2%', trend: '→' },
+            { title: 'LLM微调实战', category: '开发技术', views: '5.4K', conversion: '6.5%', trend: '↑' }
+        ];
+        
+        // Populate table
+        document.getElementById('topContentTable').innerHTML = topContent.map((item, i) => `
+            <tr>
+                <td>${i + 1}. ${item.title}</td>
+                <td><span class="badge badge-primary">${item.category}</span></td>
+                <td>${item.views}</td>
+                <td>${item.conversion}</td>
+                <td style="color: ${item.trend === '↑' ? '#10b981' : item.trend === '↓' ? '#ef4444' : '#94a3b8'}">${item.trend}</td>
+            </tr>
+        `).join('');
+    </script>
 </body>
 </html>

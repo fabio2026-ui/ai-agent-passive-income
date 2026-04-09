@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Weekly - {{week_date}}</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; }
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px 20px; text-align: center; }
+        .header h1 { color: white; margin: 0; font-size: 24px; }
+        .header .tagline { color: #667eea; margin: 5px 0 0; font-size: 14px; }
+        .issue-info { background: #667eea; color: white; text-align: center; padding: 10px; font-size: 12px; }
+        .content { padding: 30px; }
+        .section { margin-bottom: 35px; }
+        .section-title { font-size: 20px; color: #1a1a2e; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-bottom: 20px; }
+        .news-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .news-item:last-child { border-bottom: none; }
+        .news-tag { display: inline-block; background: #667eea; color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; margin-bottom: 8px; }
+        .news-tag.tool { background: #28a745; }
+        .news-tag.opportunity { background: #dc3545; }
+        .news-tag.tutorial { background: #ffc107; color: #333; }
+        .news-title { font-size: 16px; font-weight: bold; margin-bottom: 8px; color: #1a1a2e; }
+        .news-excerpt { color: #666; font-size: 14px; margin-bottom: 10px; }
+        .read-more { color: #667eea; text-decoration: none; font-weight: bold; font-size: 13px; }
+        .featured-box { background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%); border-radius: 12px; padding: 25px; margin: 25px 0; }
+        .featured-box h3 { margin: 0 0 15px; color: #1a1a2e; }
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .tool-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; }
+        .tool-card .icon { font-size: 30px; margin-bottom: 8px; }
+        .tool-card .name { font-weight: bold; margin-bottom: 5px; }
+        .tool-card .desc { font-size: 12px; color: #666; }
+        .cta-box { background: #1a1a2e; color: white; padding: 25px; border-radius: 12px; text-align: center; margin: 30px 0; }
+        .cta-button { display: inline-block; background: #667eea; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 15px; }
+        .footer { background: #f8f9fa; padding: 30px; text-align: center; color: #666; font-size: 13px; }
+        @media (max-width: 480px) {
+            .tool-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Agent Weekly</h1>
+            <p class="tagline">每周精选 AI 自动化资讯与被动收入机会</p>
+        </div>
+        <div class="issue-info">
+            第 {{issue_number|1}} 期 | {{week_date|2025年4月第2周}} | Kimi 精选
+        </div>
+        
+        <div class="content">
+            <!-- 编辑推荐 -->
+            <div class="featured-box">
+                <h3>🌟 本周精选：{{featured_title|OpenAI 发布全新 Agent SDK}}</h3>
+                <p>{{featured_summary|OpenAI 刚刚发布了全新的 Agent SDK，让构建 AI Agent 变得更加简单。这个版本支持多 Agent 协作、工具调用优化，以及更好的错误处理机制。对于想要快速构建自动化工作流的你来说，这是一个巨大的利好。}}</p>
+                <a href="{{featured_link|#}}" class="read-more">阅读完整分析 →</a>
+            </div>
+            
+            <!-- 本周要闻 -->
+            <div class="section">
+                <h2 class="section-title">📰 本周要闻</h2>
+                
+                <div class="news-item">
+                    <span class="news-tag">行业动态</span>
+                    <div class="news-title">{{news1_title|Anthropic 发布 Claude 4，代码能力大幅提升}}</div>
+                    <div class="news-excerpt">{{news1_excerpt|Claude 4 在编程任务上的表现超越了 GPT-4，特别是在处理复杂代码库和长上下文方面。这意味着我们可以构建更复杂的自动化 Agent...}}</div>
+                    <a href="{{news1_link|#}}" class="read-more">阅读更多</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-tag tool">工具更新</span>
+                    <div class="news-title">{{news2_title|n8n 1.50 版本发布，新增 AI 工作流节点}}</div>
+                    <div class="news-excerpt">{{news2_excerpt|n8n 最新版本增加了对 LangChain 的原生支持，现在可以直接在可视化界面中构建 AI Agent 工作流，无需编写代码...}}</div>
+                    <a href="{{news2_link|#}}" class="read-more">阅读更多</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-tag opportunity">收入机会</span>
+                    <div class="news-title">{{news3_title|AI 内容农场新趋势：自动化新闻站月入 $5000+}}</div>
+                    <div class="news-excerpt">{{news3_excerpt|通过组合使用 RSS、AI 重写和自动发布工具，一些创作者正在构建完全自动化的内容网站。本周我们详细拆解了一个成功案例...}}</div>
+                    <a href="{{news3_link|#}}" class="read-more">阅读更多</a>
+                </div>
+            </div>
+            
+            <!-- 工具推荐 -->
+            <div class="section">
+                <h2 class="section-title">🛠️ 本周工具推荐</h2>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <div class="icon">⚡</div>
+                        <div class="name">{{tool1_name|Dify}}</div>
+                        <div class="desc">{{tool1_desc|开源 LLM 应用开发平台}}</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="icon">🔗</div>
+                        <div class="name">{{tool2_name|Make}}</div>
+                        <div class="desc">{{tool2_desc|可视化自动化平台}}</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="icon">📝</div>
+                        <div class="name">{{tool3_name|Notion AI}}</div>
+                        <div class="desc">{{tool3_desc|AI 驱动的内容管理}}</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="icon">🎨</div>
+                        <div class="name">{{tool4_name|Midjourney API}}</div>
+                        <div class="desc">{{tool4_desc|自动化图像生成}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 社区亮点 -->
+            <div class="section">
+                <h2 class="section-title">💡 社区亮点</h2>
+                <p><strong>{{community_highlight_title|@张三的 SEO Agent 实战分享}}</strong></p>
+                <p>{{community_highlight_content|社区成员 @张三 分享了他如何使用 n8n + GPT-4 构建了一个全自动 SEO 内容生成系统，3 个月内将网站流量从 0 提升到 50,000 月访问量，目前通过广告和联盟营销每月稳定收入 $2,000+。}}</p>
+                <a href="{{community_link|#}}" class="read-more">查看完整案例 →</a>
+            </div>
+            
+            <!-- 行动号召 -->
+            <div class="cta-box">
+                <h3>🚀 准备好开始你的 AI Agent 之旅了吗？</h3>
+                <p>加入我们的 Discord 社区，与 1000+ 创作者一起交流</p>
+                <a href="{{discord_link|#}}" class="cta-button">加入社区</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>AI Agent Weekly | 每周精选，助你构建被动收入</p>
+            <p>
+                <a href="{{twitter_link|#}}">Twitter</a> | 
+                <a href="{{discord_link|#}}">Discord</a> | 
+                <a href="{{website_link|#}}">网站</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 11px;">
+                <a href="{{preferences_link|#}}">管理订阅偏好</a> | 
+                <a href="{{unsubscribe_link|#}}">取消订阅</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

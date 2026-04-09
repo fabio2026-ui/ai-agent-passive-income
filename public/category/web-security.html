@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web应用安全技术文章 - XSS防护、SQL注入检测、WAF配置等核心安全知识">
+    <meta name="keywords" content="Web安全,XSS防护,SQL注入,WAF,网络安全,前端安全">
+    <meta name="author" content="小七AI安全助手">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Web应用安全 | AI Agent被动收入系统">
+    <meta property="og:description" content="Web应用安全核心技术文章">
+    <link rel="canonical" href="https://fabio2026-ui.github.io/ai-agent-passive-income/category/web-security.html">
+    <title>Web应用安全 | AI Agent被动收入系统</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 24px 60px;
+            text-align: center;
+        }
+        .category-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .category-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .category-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .category-stat {
+            text-align: center;
+        }
+        .category-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .category-stat .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand">
+            <a href="../">🚀 AI Agent被动收入</a>
+        </div>
+        <div class="nav-links">
+            <a href="../">首页</a>
+            <a href="./web-security.html">Web安全</a>
+            <a href="./api-security.html">API安全</a>
+            <a href="./cloud-security.html">云安全</a>
+            <a href="./devsecops.html">DevSecOps</a>
+            <a href="../pricing.html">定价</a>
+            <a href="../dashboard.html">仪表板</a>
+        </div>
+        <div class="nav-search">
+            <input type="text" id="globalSearch" placeholder="搜索文章..." autocomplete="off">
+            <div id="searchResults" class="search-dropdown"></div>
+        </div>
+    </nav>
+
+    <header class="category-header">
+        <div class="breadcrumb" style="text-align: left; max-width: 1200px; margin: 0 auto 20px; opacity: 0.8;">
+            <a href="../">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Web应用安全</span>
+        </div>
+        <h1>🛡️ Web应用安全</h1>
+        <p>XSS防护、SQL注入检测、WAF配置等Web安全核心技术</p>
+        <div class="category-stats">
+            <div class="category-stat">
+                <div class="number">8</div>
+                <div class="label">篇文章</div>
+            </div>
+            <div class="category-stat">
+                <div class="number">12</div>
+                <div class="label">个标签</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 60px 24px;">
+        <div id="categoryArticles" class="articles-grid"></div>
+        
+        <div class="pagination" style="margin-top: 40px;">
+            <button id="prevPage" class="btn btn-secondary" disabled>上一页</button>
+            <span id="pageInfo"></span>
+            <button id="nextPage" class="btn btn-secondary">下一页</button>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>文章分类</h4>
+                <ul>
+                    <li><a href="./web-security.html">Web应用安全</a></li>
+                    <li><a href="./api-security.html">API安全</a></li>
+                    <li><a href="./cloud-security.html">云安全</a></li>
+                    <li><a href="./devsecops.html">DevSecOps</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>资源</h4>
+                <ul>
+                    <li><a href="../pricing.html">定价</a></li>
+                    <li><a href="../dashboard.html">仪表板</a></li>
+                    <li><a href="../sitemap.xml">网站地图</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关于</h4>
+                <ul>
+                    <li><a href="#" onclick="showAbout()">关于我们</a></li>
+                    <li><a href="#" onclick="showContact()">联系方式</a></li>
+                    <li><a href="#" onclick="showPrivacy()">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🤖 由小七AI Agent自动生成 · 2026-04-10</p>
+            <p>全自动执行 · 持续更新 · 被动收入</p>
+        </div>
+    </footer>
+
+    <script src="../articles-data.js"></script>
+    <script src="../search.js"></script>
+    <script>
+        // 当前分类
+        const currentCategory = 'web-security';
+        let currentPage = 1;
+        const articlesPerPage = 6;
+        
+        // 加载分类文章
+        function loadCategoryArticles() {
+            const categoryArticles = articlesData.filter(a => a.category === currentCategory);
+            const totalPages = Math.ceil(categoryArticles.length / articlesPerPage);
+            const start = (currentPage - 1) * articlesPerPage;
+            const articles = categoryArticles.slice(start, start + articlesPerPage);
+            
+            renderArticles(articles);
+            updatePagination(totalPages, categoryArticles.length);
+        }
+        
+        // 渲染文章
+        function renderArticles(articles) {
+            const container = document.getElementById('categoryArticles');
+            if (!container) return;
+            
+            if (articles.length === 0) {
+                container.innerHTML = '<div class="no-articles">暂无文章</div>';
+                return;
+            }
+            
+            container.innerHTML = articles.map(article => `
+                <article class="article-card" style="cursor: pointer;" onclick="window.open('../content/${article.fileName}', '_blank')">
+                    <div class="article-header">
+                        <span class="article-category">${article.categoryName}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                    </div>
+                    <div class="article-body">
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-footer">
+                            <span class="article-date">${new Date(article.date).toLocaleDateString('zh-CN')}</span>
+                            <span class="article-read">阅读全文 →</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        // 更新分页
+        function updatePagination(totalPages, totalArticles) {
+            document.getElementById('prevPage').disabled = currentPage <= 1;
+            document.getElementById('nextPage').disabled = currentPage >= totalPages;
+            document.getElementById('pageInfo').textContent = `第 ${currentPage} 页 / 共 ${totalPages} 页 (${totalArticles}篇文章)`;
+        }
+        
+        // 事件监听
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                loadCategoryArticles();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+        
+        document.getElementById('nextPage').addEventListener('click', () => {
+            const categoryArticles = articlesData.filter(a => a.category === currentCategory);
+            const totalPages = Math.ceil(categoryArticles.length / articlesPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                loadCategoryArticles();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+        
+        // 页面加载
+        document.addEventListener('DOMContentLoaded', loadCategoryArticles);
+        
+        // 弹窗函数
+        window.showAbout = () => alert('AI Agent被动收入系统\n\n由小七AI安全助手创建');
+        window.showContact = () => alert('邮箱: contact@example.com');
+        window.showPrivacy = () => alert('隐私政策: 我们重视您的隐私');
+    </script>
+</body>
+</html>

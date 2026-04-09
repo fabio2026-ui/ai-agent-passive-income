@@ -1,0 +1,112 @@
+{
+  "campaign_name": "AI Agent 被动收入 - 5 天促销序列",
+  "target_audience": "对 AI Agent 和被动收入感兴趣的创作者、开发者、自由职业者",
+  "sequence": [
+    {
+      "day": 1,
+      "delay_hours": 0,
+      "subject": "你的 AI Agent 工作流，缺了这一环",
+      "preview_text": "99% 的人都在这一步失败...",
+      "template": "promotion-day1.html",
+      "goal": "引发好奇，指出痛点",
+      "content": {
+        "headline": "为什么你的 AI Agent 赚不到钱？",
+        "body": "过去一年，我分析了 200+ 个 AI Agent 项目。发现绝大多数失败的原因不是技术问题，而是缺少一个关键环节——变现策略。\n\n大多数人都在做：\n❌ 盲目追求新技术\n❌ 做出产品却不知道怎么卖\n❌ 花几周做项目，几天就放弃\n\n明天，我会告诉你那个让一切不同的秘密。",
+        "cta": "保持关注",
+        "cta_link": "{{waitlist_link}}"
+      }
+    },
+    {
+      "day": 2,
+      "delay_hours": 24,
+      "subject": "我花了 6 个月悟出的道理",
+      "preview_text": "AI Agent + 被动收入 = ?",
+      "template": "promotion-day2.html",
+      "goal": "建立信任，分享故事",
+      "content": {
+        "headline": "从 0 到月入 $3,000 的真实故事",
+        "body": "6 个月前，我还在为房租发愁。\n\n每天工作 12 小时，做自由职业者，收入却越来越不稳定。\n\n直到我发现了一个秘密：\n\nAI Agent 不是用来替代工作的，\n它是用来放大你的能力的。\n\n我花 3 周构建了我的第一个自动化工作流——一个自动内容分发系统。\n\n现在它每个月为我带来 $3,000+ 的被动收入，而我几乎不需要维护它。\n\n这不是魔法，这只是正确的策略 + 持续执行。",
+        "cta": "我想了解更多",
+        "cta_link": "{{course_sales_page}}"
+      }
+    },
+    {
+      "day": 3,
+      "delay_hours": 48,
+      "subject": "限时 48 小时：AI Agent 赚钱系统",
+      "preview_text": "早鸟价即将结束...",
+      "template": "promotion-day3.html",
+      "goal": "介绍产品，制造紧迫感",
+      "content": {
+        "headline": "《AI Agent 被动收入实战课》开放报名",
+        "body": "我把这 6 个月的所有经验，浓缩成了一个 4 周的实战课程。\n\n你将学到：\n\n✅ 10 个经过验证的 AI Agent 收入模式\n✅ 从零构建你的第一个自动化工作流\n✅ 无需编程基础的可视化工具（n8n/Make）\n✅ 如何找到你的第一个付费用户\n✅ 规模化：从 $100/月 到 $5,000/月 的路径\n\n🎁 早鸟福利（仅限前 50 名）：\n• 课程价格 $199 → $99（50% OFF）\n• 价值 $97 的 n8n 模板包\n• 1 个月 Discord 社区 VIP 权限\n• 我的个人案例库访问权限",
+        "urgency": "⏰ 早鸟价 48 小时后结束",
+        "cta": "立即抢占早鸟价",
+        "cta_link": "{{checkout_link}}"
+      }
+    },
+    {
+      "day": 4,
+      "delay_hours": 72,
+      "subject": "最后 24 小时：价格即将上涨",
+      "preview_text": "还剩 12 个早鸟名额...",
+      "template": "promotion-day4.html",
+      "goal": "强化紧迫感，消除顾虑",
+      "content": {
+        "headline": "最后提醒：早鸟价即将结束",
+        "body": "还有不到 24 小时，价格将从 $99 涨回 $199。\n\n目前仅剩 12 个早鸟名额。\n\n❓ 常见问题：\n\nQ: 我没有编程基础，能学会吗？\nA: 课程专为非技术背景设计，使用可视化工具，不需要写代码。\n\nQ: 多久能看到效果？\nA: 大部分学员在 2-4 周内构建出第一个工作流，1-3 个月开始产生收入。\n\nQ: 如果学不会怎么办？\nA: 30 天无条件退款保证。如果课程对你没有帮助，全额退款，不问任何问题。\n\nQ: 课程包含什么？\nA: 20+ 视频教程、10+ 可下载模板、私人社区访问权、每月直播答疑。",
+        "social_proof": "💬 \"这门课帮我省下了 3 个月的摸索时间，第一个月就赚到了 $400。\" - 李明",
+        "urgency": "⏰ 24 小时后价格涨至 $199",
+        "cta": "在涨价前报名",
+        "cta_link": "{{checkout_link}}"
+      }
+    },
+    {
+      "day": 5,
+      "delay_hours": 95,
+      "subject": "最后的最后：价格今晚上涨",
+      "preview_text": "这是你最后的机会...",
+      "template": "promotion-day5.html",
+      "goal": "最后冲刺，转化犹豫用户",
+      "content": {
+        "headline": "⏰ 最后 6 小时",
+        "body": "这是你在价格上涨前报名的最后机会。\n\n今晚 23:59 后：\n• 价格从 $99 涨至 $199\n• 早鸟福利全部取消\n• 需要等待下一期开课（至少 2 个月后）\n\n🎯 问问你自己：\n\n6 个月后，你希望在哪里？\n\n选项 A：还在观望，收入和现在一样\n选项 B：已经构建了自己的 AI Agent，每月多赚 $500-$3000\n\n选择权在你手中。",
+        "urgency": "⏰ 6 小时后涨价",
+        "guarantee": "✅ 30 天无条件退款保证",
+        "cta": "立即报名 - $99",
+        "cta_link": "{{checkout_link}}",
+        "secondary_cta": "稍后提醒",
+        "secondary_cta_link": "{{reminder_link}}"
+      }
+    }
+  ],
+  "trigger_conditions": {
+    "opt_in_source": ["lead_magnet_download", "webinar_attendee", "newsletter_subscriber"],
+    "exclude_tags": ["already_purchased", "course_student", "unsubscribed"]
+  },
+  "a_b_test": {
+    "enabled": true,
+    "variants": [
+      {
+        "name": "control",
+        "subject_emojis": false,
+        "personalization": false
+      },
+      {
+        "name": "emojis",
+        "subject_emojis": true,
+        "personalization": false
+      },
+      {
+        "name": "personalized",
+        "subject_emojis": true,
+        "personalization": true
+      }
+    ]
+  },
+  "metrics": {
+    "open_rate_target": 0.35,
+    "click_rate_target": 0.08,
+    "conversion_rate_target": 0.03
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-04-09T19:17:36.394Z",
+  "totalArticles": 100,
+  "batches": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "articlesPerBatch": 20,
+  "outputDirectory": "/root/.openclaw/workspace/ai-agent-passive-income/content/batch11-15",
+  "categories": [
+    "AI Agent",
+    "Passive Income",
+    "Automation",
+    "Development",
+    "Marketing"
+  ]
+}

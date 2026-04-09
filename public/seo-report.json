@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-04-09T19:16:28.856Z",
+  "siteUrl": "https://ai-agent-income.com",
+  "sitemap": {
+    "urlCount": 79,
+    "path": "seo-output/sitemap.xml"
+  },
+  "files": {
+    "sitemap": "sitemap.xml",
+    "robots": "robots.txt",
+    "structuredData": "structured-data-templates.json",
+    "rss": "rss.xml"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "sender": {
+    "name": "AI Agent团队",
+    "email": "team@ai-agent-income.com"
+  },
+  "sequences": [
+    {
+      "name": "welcome",
+      "emails": 3,
+      "trigger": "subscription"
+    }
+  ],
+  "newsletters": {
+    "frequency": "weekly",
+    "day": "tuesday",
+    "time": "09:00"
+  },
+  "generatedAt": "2026-04-09T19:16:28.861Z"
+}
