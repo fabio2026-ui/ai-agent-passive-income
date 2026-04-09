@@ -1,0 +1,94 @@
+{
+  "lastUpdated": "2026-03-21T04:47:00+08:00",
+  "accountRotation": {
+    "primary": {
+      "name": "primary_account",
+      "postsThisWeek": 0,
+      "weekStart": "2026-03-16",
+      "karma": 250,
+      "status": "active"
+    }
+  },
+  "postHistory": [
+    {
+      "date": "2026-03-17",
+      "postId": "post_2_platform_fees",
+      "subreddit": "r/smallbusiness",
+      "title": "I built a tool to calculate platform fees across Amazon, eBay, Etsy, Shopify",
+      "status": "posted",
+      "engagement": {
+        "upvotes": 12,
+        "comments": 3,
+        "clicks": 8
+      }
+    },
+    {
+      "date": "2026-03-19", 
+      "postId": "post_3_brexit",
+      "subreddit": "r/UKBusiness",
+      "title": "Post-Brexit import costs catching anyone else off guard?",
+      "status": "posted",
+      "engagement": {
+        "upvotes": 7,
+        "comments": 2,
+        "clicks": 5
+      }
+    }
+  ],
+  "rotationIndex": 3,
+  "weeklyQuota": {
+    "max": 3,
+    "used": 2,
+    "remaining": 1
+  },
+  "subredditPerformance": {
+    "r/ecommerce": {
+      "posts": 0,
+      "avgUpvotes": 0,
+      "avgComments": 0,
+      "clicks": 0,
+      "status": "untapped"
+    },
+    "r/smallbusiness": {
+      "posts": 1,
+      "avgUpvotes": 12,
+      "avgComments": 3,
+      "clicks": 8,
+      "status": "good"
+    },
+    "r/Entrepreneur": {
+      "posts": 0,
+      "avgUpvotes": 0,
+      "avgComments": 0,
+      "clicks": 0,
+      "status": "untapped"
+    },
+    "r/UKBusiness": {
+      "posts": 1,
+      "avgUpvotes": 7,
+      "avgComments": 2,
+      "clicks": 5,
+      "status": "moderate"
+    }
+  },
+  "upcomingQueue": [
+    {
+      "postId": "post_1_eu_vat",
+      "subreddit": "r/ecommerce",
+      "priority": "high",
+      "reason": "Untapped subreddit, strong content"
+    },
+    {
+      "postId": "post_4_us_tax", 
+      "subreddit": "r/smallbusiness",
+      "priority": "medium",
+      "reason": "Good performance in this subreddit"
+    },
+    {
+      "postId": "post_5_mental_health",
+      "subreddit": "r/Entrepreneur", 
+      "priority": "medium",
+      "reason": "Untapped subreddit, emotional content performs well"
+    }
+  ]
+}

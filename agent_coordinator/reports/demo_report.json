@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-03-21T19:03:58.709137",
+  "agents": {
+    "total": 2,
+    "running": 2,
+    "completed": 0,
+    "failed": 0,
+    "timestamp": "2026-03-21T19:04:00.710817"
+  },
+  "tasks": {
+    "total": 5,
+    "pending": 3,
+    "running": 2,
+    "completed": 0,
+    "failed": 0
+  },
+  "resources": {}
+}

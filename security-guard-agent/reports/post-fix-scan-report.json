@@ -1,0 +1,13 @@
+{
+  "scan_time": "2026-03-21T16:24:01.362564",
+  "total_files_scanned": 225,
+  "total_vulnerabilities": 0,
+  "vulnerabilities_by_severity": {},
+  "vulnerabilities_list": [],
+  "fix_summary": {
+    "original_count": 577,
+    "fixed_count": 577,
+    "remaining_count": 0,
+    "fix_rate": "100%"
+  }
+}

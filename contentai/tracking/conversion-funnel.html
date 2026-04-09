@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转化漏斗分析 - ContentAI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            max-width: 1200px;
+            margin: 0 auto 24px;
+        }
+        .header h1 {
+            color: #1a1a2e;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .card h2 {
+            color: #1a1a2e;
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        
+        /* 漏斗图样式 */
+        .funnel-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .funnel-step {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .funnel-bar {
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .funnel-bar:hover {
+            transform: translateX(5px);
+        }
+        .funnel-bar.step-1 {
+            width: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        .funnel-bar.step-2 {
+            width: 65%;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+        .funnel-bar.step-3 {
+            width: 42%;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .funnel-bar.step-4 {
+            width: 28%;
+            background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .funnel-bar.step-5 {
+            width: 18%;
+            background: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+        }
+        .step-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .step-stats {
+            position: absolute;
+            right: -200px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .step-count {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .step-rate {
+            font-size: 13px;
+            color: #666;
+        }
+        .step-dropoff {
+            font-size: 12px;
+            color: #ef4444;
+        }
+        .arrow-down {
+            text-align: center;
+            color: #ccc;
+            font-size: 20px;
+            margin: 4px 0;
+        }
+
+        /* 渠道对比 */
+        .channel-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .channel-tab {
+            padding: 8px 16px;
+            border: 1px solid #e0e0e0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .channel-tab:hover,
+        .channel-tab.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        /* 对比表格 */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 14px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .comparison-table th {
+            color: #666;
+            font-weight: 600;
+            background: #fafbfc;
+        }
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table .channel-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .channel-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .cr-cell {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .cr-high { color: #10b981; }
+        .cr-medium { color: #f59e0b; }
+        .cr-low { color: #ef4444; }
+
+        /* 流失分析 */
+        .dropoff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .dropoff-card {
+            background: #fafbfc;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #ef4444;
+        }
+        .dropoff-card h4 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .dropoff-card .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ef4444;
+            margin-bottom: 8px;
+        }
+        .dropoff-card .suggestion {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* 优化建议 */
+        .tips-list {
+            list-style: none;
+        }
+        .tips-list li {
+            display: flex;
+            gap: 12px;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+        .tip-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .tip-content h4 {
+            font-size: 15px;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+        .tip-content p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .tip-priority {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .priority-high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .priority-medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .priority-low {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔄 转化漏斗分析</h1>
+        <p>分析用户从访问到付费的完整转化路径</p>
+    </div>
+
+    <div class="container">
+        <!-- 总体漏斗 -->
+        <div class="card">
+            <h2>整体转化漏斗</h2>
+            <div class="funnel-container">
+                <div class="funnel-step">
+                    <div class="funnel-bar step-1">
+                        <div class="step-info">
+                            <span class="step-number">1</span>
+                            <span>网站访问</span>
+                        </div>
+                    </div>
+                    <div class="step-stats">
+                        <span class="step-count">3,200</span>
+                        <span class="step-rate">100% 基准</span>
+                    </div>
+                </div>
+                
+                <div class="arrow-down">↓</div>
+                
+                <div class="funnel-step">
+                    <div class="funnel-bar step-2">
+                        <div class="step-info">
+                            <span class="step-number">2</span>
+                            <span>查看定价/功能</span>
+                        </div>
+                    </div>
+                    <div class="step-stats">
+                        <span class="step-count">2,080</span>
+                        <span class="step-rate">65% 留存</span>
+                        <span class="step-dropoff">流失 35%</span>
+                    </div>
+                </div>
+                
+                <div class="arrow-down">↓</div>
+                
+                <div class="funnel-step">
+                    <div class="funnel-bar step-3">
+                        <div class="step-info">
+                            <span class="step-number">3</span>
+                            <span>注册账号</span>
+                        </div>
+                    </div>
+                    <div class="step-stats">
+                        <span class="step-count">1,344</span>
+                        <span class="step-rate">42% 留存</span>
+                        <span class="step-dropoff">流失 23%</span>
+                    </div>
+                </div>
+                
+                <div class="arrow-down">↓</div>
+                
+                <div class="funnel-step">
+                    <div class="funnel-bar step-4">
+                        <div class="step-info">
+                            <span class="step-number">4</span>
+                            <span>开始试用</span>
+                        </div>
+                    </div>
+                    <div class="step-stats">
+                        <span class="step-count">896</span>
+                        <span class="step-rate">28% 留存</span>
+                        <span class="step-dropoff">流失 14%</span>
+                    </div>
+                </div>
+                
+                <div class="arrow-down">↓</div>
+                
+                <div class="funnel-step">
+                    <div class="funnel-bar step-5">
+                        <div class="step-info">
+                            <span class="step-number">5</span>
+                            <span>付费订阅</span>
+                        </div>
+                    </div>
+                    <div class="step-stats">
+                        <span class="step-count">224</span>
+                        <span class="step-rate">7% 转化</span>
+                        <span class="step-dropoff">流失 21%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 渠道漏斗对比 -->
+        <div class="card">
+            <h2>各渠道转化对比</h2>
+            
+            <div class="channel-tabs">
+                <button class="channel-tab active">全部</button>
+                <button class="channel-tab">Indie Hackers</button>
+                <button class="channel-tab">Hacker News</button>
+                <button class="channel-tab">Twitter</button>
+                <button class="channel-tab">Reddit</button>
+                <button class="channel-tab">Product Hunt</button>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>渠道</th>
+                        <th>访问 → 注册</th>
+                        <th>注册 → 试用</th>
+                        <th>试用 → 付费</th>
+                        <th>总转化率</th>
+                        <th>行业基准</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="channel-cell">
+                                <span class="channel-icon" style="background: #fef3c7;">💡</span>
+                                Indie Hackers
+                            </div>
+                        </td>
+                        <td>52%</td>
+                        <td>72%</td>
+                        <td>28%</td>
+                        <td class="cr-cell cr-high">10.5%</td>
+                        <td><span style="color: #10b981;">+4.5% ↑</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="channel-cell">
+                                <span class="channel-icon" style="background: #ffedd5;">🚀</span>
+                                Hacker News
+                            </div>
+                        </td>
+                        <td>48%</td>
+                        <td>68%</td>
+                        <td>24%</td>
+                        <td class="cr-cell cr-high">7.8%</td>
+                        <td><span style="color: #10b981;">+1.8% ↑</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="channel-cell">
+                                <span class="channel-icon" style="background: #dbeafe;">🐦</span>
+                                Twitter/X
+                            </div>
+                        </td>
+                        <td>35%</td>
+                        <td>55%</td>
+                        <td>18%</td>
+                        <td class="cr-cell cr-medium">3.5%</td>
+                        <td><span style="color: #ef4444;">-2.5% ↓</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="channel-cell">
+                                <span class="channel-icon" style="background: #fee2e2;">🔴</span>
+                                Reddit
+                            </div>
+                        </td>
+                        <td>28%</td>
+                        <td>48%</td>
+                        <td>15%</td>
+                        <td class="cr-cell cr-low">2.0%</td>
+                        <td><span style="color: #ef4444;">-4.0% ↓</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="channel-cell">
+                                <span class="channel-icon" style="background: #fce7f3;">🐱</span>
+                                Product Hunt
+                            </div>
+                        </td>
+                        <td>45%</td>
+                        <td>62%</td>
+                        <td>22%</td>
+                        <td class="cr-cell cr-high">6.1%</td>
+                        <td><span style="color: #10b981;">+0.1% ↑</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 流失分析 -->
+        <div class="card">
+            <h2>🔍 关键流失点分析</h2>
+            
+            <div class="dropoff-grid">
+                <div class="dropoff-card">
+                    <h4>定价页 → 注册流失</h4>
+                    <div class="value">35% 用户离开</div>
+                    <div class="suggestion">
+                        <strong>建议:</strong> 优化定价页文案，增加社会证明（用户数、评价），添加实时演示视频
+                    </div>
+                </div>
+                
+                <div class="dropoff-card">
+                    <h4>注册 → 试用流失</h4>
+                    <div class="value">33% 未开始试用</div>
+                    <div class="suggestion">
+                        <strong>建议:</strong> 发送引导邮件序列，提供快速上手指南，设置新手任务奖励
+                    </div>
+                </div>
+                
+                <div class="dropoff-card">
+                    <h4>试用 → 付费流失</h4>
+                    <div class="value">75% 未转化付费</div>
+                    <div class="suggestion">
+                        <strong>建议:</strong> 延长试用期至14天，增加产品内引导，发送个性化使用案例
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 优化建议 -->
+        <div class="card">
+            <h2>💡 转化优化建议</h2>
+            
+            <ul class="tips-list">
+                <li>
+                    <div class="tip-icon">1</div>
+                    <div class="tip-content">
+                        <h4>优化 Indie Hackers 内容策略 <span class="tip-priority priority-high">高优先级</span></h4>
+                        <p>IH 渠道转化率最高(10.5%)，建议增加在该平台的曝光频率，发布更多产品迭代日志和收入透明报告</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tip-icon">2</div>
+                    <div class="tip-content">
+                        <h4>改进 Reddit 推广方式 <span class="tip-priority priority-high">高优先级</span></h4>
+                        <p>Reddit 转化率最低(2%)，可能原因：过于直接的推广。建议改为提供价值内容， Soft-sell 方式植入产品</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tip-icon">3</div>
+                    <div class="tip-content">
+                        <h4>缩短试用到付费的转化周期 <span class="tip-priority priority-medium">中优先级</span></h4>
+                        <p>当前75%的试用用户未转化。建议设置试用期内的里程碑邮件，展示用户已获得的价值，制造紧迫感</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="tip-icon">4</div>
+                    <div class="tip-content">
+                        <h4>A/B 测试定价页 <span class="tip-priority priority-medium">中优先级</span></h4>
+                        <p>定价页流失率35%，建议测试不同的价格展示方式：月付vs年付对比、突出最受欢迎方案、增加退款保证标识</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 渠道标签切换
+        document.querySelectorAll('.channel-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.channel-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                // 这里可以添加切换数据逻辑
+            });
+        });
+    </script>
+</body>
+</html>

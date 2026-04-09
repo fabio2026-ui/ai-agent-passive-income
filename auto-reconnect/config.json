@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "description": "断线自动重连守护进程配置",
+  "check_interval": 60,
+  "retry_policy": {
+    "delays": [0, 5, 15, 60],
+    "max_retries": 100
+  },
+  "notification": {
+    "enabled": true,
+    "email": "ai_67dd6c1a002c@sharebot.net",
+    "smtp": {
+      "host": "smtp.sharebot.net",
+      "port": 587,
+      "user": "notify@sharebot.net"
+    }
+  },
+  "backup_channels": [
+    "systemctl_restart",
+    "network_restart"
+  ],
+  "safe_mode": {
+    "enabled": true,
+    "action": "notify_and_wait"
+  }
+}

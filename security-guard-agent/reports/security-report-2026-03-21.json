@@ -1,0 +1,40 @@
+{
+  "date": "2026-03-21",
+  "generated_at": "2026-03-21T16:15:21.709590",
+  "summary": "🚨 发现 1203 个高危问题，需要立即处理 | 🔧 自动修复了 2/2 个问题 | 💻 系统运行正常",
+  "scan_stats": {
+    "scanned_files": 0,
+    "total_vulnerabilities": 1208,
+    "high_risk_count": 1203
+  },
+  "fix_stats": {
+    "total_fixes": 2,
+    "successful": 2,
+    "failed": 0,
+    "by_type": {
+      "code_fix": 2
+    }
+  },
+  "system_stats": {
+    "avg_cpu": 11.19,
+    "max_cpu": 11.19,
+    "avg_memory": 55.49,
+    "max_memory": 55.49,
+    "max_disk": 57.05,
+    "data_points": 1
+  },
+  "alert_stats": {
+    "total": 5,
+    "by_level": {
+      "info": 3,
+      "critical": 2
+    }
+  },
+  "risk_predictions": [
+    {
+      "level": "high",
+      "description": "发现 1203 个高危漏洞，建议立即修复",
+      "category": "security"
+    }
+  ]
+}

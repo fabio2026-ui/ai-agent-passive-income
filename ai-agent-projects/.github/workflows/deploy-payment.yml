@@ -1,0 +1,44 @@
+name: Deploy Payment Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'workers/**'
+      - 'src/payment-gateway.js'
+      - 'src/direct-crypto-payment.js'
+      - 'wrangler.toml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Wrangler
+        run: npm install -g wrangler
+      
+      - name: Deploy to Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          COINBASE_COMMERCE_API_KEY_1: ${{ secrets.COINBASE_COMMERCE_API_KEY_1 }}
+          COINBASE_COMMERCE_API_KEY_2: ${{ secrets.COINBASE_COMMERCE_API_KEY_2 }}
+        run: |
+          wrangler deploy --name codeguard-payments --env=""
+      
+      - name: Deploy Pricing Page
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Upload pricing.html to Pages
+          curl -X POST "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/codeguard-payments/deployments" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -F "file=@public/pricing.html"

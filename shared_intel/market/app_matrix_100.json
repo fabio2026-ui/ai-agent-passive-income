@@ -1,0 +1,4266 @@
+{
+  "value": {
+    "generated_at": "2026-03-17T19:38:23.142047",
+    "apps": [
+      {
+        "id": "APP_001",
+        "name": "AI 专注 Copilot",
+        "name_cn": "AI专注助手",
+        "category": "productivity",
+        "variant": "专注",
+        "bundle_id": "com.aiempire.专注",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI建议",
+          "数据统计",
+          "云同步"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 928
+      },
+      {
+        "id": "APP_002",
+        "name": "AI 记账 Copilot",
+        "name_cn": "AI记账助手",
+        "category": "productivity",
+        "variant": "记账",
+        "bundle_id": "com.aiempire.记账",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "小组件",
+          "数据统计",
+          "提醒"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 1091
+      },
+      {
+        "id": "APP_003",
+        "name": "AI 日记 Copilot",
+        "name_cn": "AI日记助手",
+        "category": "productivity",
+        "variant": "日记",
+        "bundle_id": "com.aiempire.日记",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI建议",
+          "提醒",
+          "数据统计"
+        ],
+        "monetization": "买断",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 2690
+      },
+      {
+        "id": "APP_004",
+        "name": "AI 目标 Copilot",
+        "name_cn": "AI目标助手",
+        "category": "productivity",
+        "variant": "目标",
+        "bundle_id": "com.aiempire.目标",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "数据统计",
+          "小组件",
+          "云同步"
+        ],
+        "monetization": "买断",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 4540
+      },
+      {
+        "id": "APP_005",
+        "name": "AI 习惯 Copilot",
+        "name_cn": "AI习惯助手",
+        "category": "productivity",
+        "variant": "习惯",
+        "bundle_id": "com.aiempire.习惯",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "云同步",
+          "AI建议"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 3442
+      },
+      {
+        "id": "APP_006",
+        "name": "AI 番茄 Copilot",
+        "name_cn": "AI番茄助手",
+        "category": "productivity",
+        "variant": "番茄",
+        "bundle_id": "com.aiempire.番茄",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "数据统计",
+          "云同步"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 4044
+      },
+      {
+        "id": "APP_007",
+        "name": "AI 待办 Copilot",
+        "name_cn": "AI待办助手",
+        "category": "productivity",
+        "variant": "待办",
+        "bundle_id": "com.aiempire.待办",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "数据统计",
+          "提醒",
+          "AI建议"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 2230
+      },
+      {
+        "id": "APP_008",
+        "name": "AI 笔记 Copilot",
+        "name_cn": "AI笔记助手",
+        "category": "productivity",
+        "variant": "笔记",
+        "bundle_id": "com.aiempire.笔记",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "云同步",
+          "数据统计",
+          "AI建议"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 12,
+        "target_mrr": 657
+      },
+      {
+        "id": "APP_009",
+        "name": "AI 阅读 Copilot",
+        "name_cn": "AI阅读助手",
+        "category": "productivity",
+        "variant": "阅读",
+        "bundle_id": "com.aiempire.阅读",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "数据统计",
+          "小组件",
+          "云同步"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 2878
+      },
+      {
+        "id": "APP_010",
+        "name": "AI 写作 Copilot",
+        "name_cn": "AI写作助手",
+        "category": "productivity",
+        "variant": "写作",
+        "bundle_id": "com.aiempire.写作",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "小组件",
+          "提醒",
+          "AI建议"
+        ],
+        "monetization": "买断",
+        "price": {
+          "subscription": "$2.99-4.99/mo",
+          "one_time": "$9.99-19.99"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 3321
+      },
+      {
+        "id": "APP_011",
+        "name": "AI 睡眠 Copilot",
+        "name_cn": "AI睡眠助手",
+        "category": "health",
+        "variant": "睡眠",
+        "bundle_id": "com.aiempire.睡眠",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "课程",
+          "提醒",
+          "数据追踪"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 915
+      },
+      {
+        "id": "APP_012",
+        "name": "AI 冥想 Copilot",
+        "name_cn": "AI冥想助手",
+        "category": "health",
+        "variant": "冥想",
+        "bundle_id": "com.aiempire.冥想",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI教练",
+          "社区",
+          "提醒"
+        ],
+        "monetization": "课程付费",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 1520
+      },
+      {
+        "id": "APP_013",
+        "name": "AI 瑜伽 Copilot",
+        "name_cn": "AI瑜伽助手",
+        "category": "health",
+        "variant": "瑜伽",
+        "bundle_id": "com.aiempire.瑜伽",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "课程",
+          "数据追踪"
+        ],
+        "monetization": "课程付费",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 1142
+      },
+      {
+        "id": "APP_014",
+        "name": "AI 健身 Copilot",
+        "name_cn": "AI健身助手",
+        "category": "health",
+        "variant": "健身",
+        "bundle_id": "com.aiempire.健身",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "提醒",
+          "数据追踪"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 4740
+      },
+      {
+        "id": "APP_015",
+        "name": "AI 饮食 Copilot",
+        "name_cn": "AI饮食助手",
+        "category": "health",
+        "variant": "饮食",
+        "bundle_id": "com.aiempire.饮食",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "课程",
+          "提醒"
+        ],
+        "monetization": "课程付费",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 947
+      },
+      {
+        "id": "APP_016",
+        "name": "AI 喝水 Copilot",
+        "name_cn": "AI喝水助手",
+        "category": "health",
+        "variant": "喝水",
+        "bundle_id": "com.aiempire.喝水",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "数据追踪",
+          "课程",
+          "提醒"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 1181
+      },
+      {
+        "id": "APP_017",
+        "name": "AI 呼吸 Copilot",
+        "name_cn": "AI呼吸助手",
+        "category": "health",
+        "variant": "呼吸",
+        "bundle_id": "com.aiempire.呼吸",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "课程",
+          "数据追踪",
+          "社区"
+        ],
+        "monetization": "课程付费",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 4008
+      },
+      {
+        "id": "APP_018",
+        "name": "AI 经期 Copilot",
+        "name_cn": "AI经期助手",
+        "category": "health",
+        "variant": "经期",
+        "bundle_id": "com.aiempire.经期",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "课程",
+          "提醒"
+        ],
+        "monetization": "课程付费",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 3055
+      },
+      {
+        "id": "APP_019",
+        "name": "AI 视力 Copilot",
+        "name_cn": "AI视力助手",
+        "category": "health",
+        "variant": "视力",
+        "bundle_id": "com.aiempire.视力",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "社区",
+          "数据追踪"
+        ],
+        "monetization": "课程付费",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 1716
+      },
+      {
+        "id": "APP_020",
+        "name": "AI 颈椎 Copilot",
+        "name_cn": "AI颈椎助手",
+        "category": "health",
+        "variant": "颈椎",
+        "bundle_id": "com.aiempire.颈椎",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI教练",
+          "数据追踪",
+          "提醒"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 662
+      },
+      {
+        "id": "APP_021",
+        "name": "AI 记账 Copilot",
+        "name_cn": "AI记账助手",
+        "category": "finance",
+        "variant": "记账",
+        "bundle_id": "com.aiempire.记账",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "预测",
+          "AI分析"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 1214
+      },
+      {
+        "id": "APP_022",
+        "name": "AI 预算 Copilot",
+        "name_cn": "AI预算助手",
+        "category": "finance",
+        "variant": "预算",
+        "bundle_id": "com.aiempire.预算",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "报表",
+          "预测"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 3518
+      },
+      {
+        "id": "APP_023",
+        "name": "AI 投资 Copilot",
+        "name_cn": "AI投资助手",
+        "category": "finance",
+        "variant": "投资",
+        "bundle_id": "com.aiempire.投资",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "预测",
+          "AI分析",
+          "提醒"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 12,
+        "target_mrr": 4249
+      },
+      {
+        "id": "APP_024",
+        "name": "AI 股票 Copilot",
+        "name_cn": "AI股票助手",
+        "category": "finance",
+        "variant": "股票",
+        "bundle_id": "com.aiempire.股票",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI分析",
+          "提醒",
+          "银行同步"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 2371
+      },
+      {
+        "id": "APP_025",
+        "name": "AI 汇率 Copilot",
+        "name_cn": "AI汇率助手",
+        "category": "finance",
+        "variant": "汇率",
+        "bundle_id": "com.aiempire.汇率",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI分析",
+          "报表",
+          "银行同步"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 3800
+      },
+      {
+        "id": "APP_026",
+        "name": "AI 房贷 Copilot",
+        "name_cn": "AI房贷助手",
+        "category": "finance",
+        "variant": "房贷",
+        "bundle_id": "com.aiempire.房贷",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "预测",
+          "银行同步",
+          "AI分析"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 4634
+      },
+      {
+        "id": "APP_027",
+        "name": "AI 税务 Copilot",
+        "name_cn": "AI税务助手",
+        "category": "finance",
+        "variant": "税务",
+        "bundle_id": "com.aiempire.税务",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "预测",
+          "报表",
+          "提醒"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 4138
+      },
+      {
+        "id": "APP_028",
+        "name": "AI 报销 Copilot",
+        "name_cn": "AI报销助手",
+        "category": "finance",
+        "variant": "报销",
+        "bundle_id": "com.aiempire.报销",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "报表",
+          "银行同步",
+          "预测"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 3910
+      },
+      {
+        "id": "APP_029",
+        "name": "AI 分账 Copilot",
+        "name_cn": "AI分账助手",
+        "category": "finance",
+        "variant": "分账",
+        "bundle_id": "com.aiempire.分账",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "报表",
+          "预测",
+          "提醒"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 3748
+      },
+      {
+        "id": "APP_030",
+        "name": "AI 储蓄 Copilot",
+        "name_cn": "AI储蓄助手",
+        "category": "finance",
+        "variant": "储蓄",
+        "bundle_id": "com.aiempire.储蓄",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "预测",
+          "AI分析",
+          "报表"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$3.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 12,
+        "target_mrr": 2105
+      },
+      {
+        "id": "APP_031",
+        "name": "AI 单词 Copilot",
+        "name_cn": "AI单词助手",
+        "category": "learning",
+        "variant": "单词",
+        "bundle_id": "com.aiempire.单词",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "游戏化",
+          "AI老师",
+          "社区"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 748
+      },
+      {
+        "id": "APP_032",
+        "name": "AI 听力 Copilot",
+        "name_cn": "AI听力助手",
+        "category": "learning",
+        "variant": "听力",
+        "bundle_id": "com.aiempire.听力",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "证书",
+          "社区",
+          "游戏化"
+        ],
+        "monetization": "课程",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 1250
+      },
+      {
+        "id": "APP_033",
+        "name": "AI 口语 Copilot",
+        "name_cn": "AI口语助手",
+        "category": "learning",
+        "variant": "口语",
+        "bundle_id": "com.aiempire.口语",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "游戏化",
+          "社区",
+          "证书"
+        ],
+        "monetization": "课程",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 2214
+      },
+      {
+        "id": "APP_034",
+        "name": "AI 阅读 Copilot",
+        "name_cn": "AI阅读助手",
+        "category": "learning",
+        "variant": "阅读",
+        "bundle_id": "com.aiempire.阅读",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI老师",
+          "游戏化",
+          "进度追踪"
+        ],
+        "monetization": "认证",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 636
+      },
+      {
+        "id": "APP_035",
+        "name": "AI 写作 Copilot",
+        "name_cn": "AI写作助手",
+        "category": "learning",
+        "variant": "写作",
+        "bundle_id": "com.aiempire.写作",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "证书",
+          "AI老师",
+          "社区"
+        ],
+        "monetization": "课程",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 3480
+      },
+      {
+        "id": "APP_036",
+        "name": "AI 编程 Copilot",
+        "name_cn": "AI编程助手",
+        "category": "learning",
+        "variant": "编程",
+        "bundle_id": "com.aiempire.编程",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "证书",
+          "AI老师"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 4325
+      },
+      {
+        "id": "APP_037",
+        "name": "AI 乐器 Copilot",
+        "name_cn": "AI乐器助手",
+        "category": "learning",
+        "variant": "乐器",
+        "bundle_id": "com.aiempire.乐器",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI老师",
+          "社区",
+          "游戏化"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 13,
+        "target_mrr": 3010
+      },
+      {
+        "id": "APP_038",
+        "name": "AI 绘画 Copilot",
+        "name_cn": "AI绘画助手",
+        "category": "learning",
+        "variant": "绘画",
+        "bundle_id": "com.aiempire.绘画",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI老师",
+          "进度追踪",
+          "社区"
+        ],
+        "monetization": "认证",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 1715
+      },
+      {
+        "id": "APP_039",
+        "name": "AI 棋类 Copilot",
+        "name_cn": "AI棋类助手",
+        "category": "learning",
+        "variant": "棋类",
+        "bundle_id": "com.aiempire.棋类",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "证书",
+          "AI老师",
+          "社区"
+        ],
+        "monetization": "认证",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 2128
+      },
+      {
+        "id": "APP_040",
+        "name": "AI 记忆 Copilot",
+        "name_cn": "AI记忆助手",
+        "category": "learning",
+        "variant": "记忆",
+        "bundle_id": "com.aiempire.记忆",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "AI老师",
+          "进度追踪"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-14.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 4724
+      },
+      {
+        "id": "APP_041",
+        "name": "AI 日记 Copilot",
+        "name_cn": "AI日记助手",
+        "category": "social",
+        "variant": "日记",
+        "bundle_id": "com.aiempire.日记",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "付费内容",
+          "AI匹配",
+          "活动"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 3,
+        "target_mrr": 3167
+      },
+      {
+        "id": "APP_042",
+        "name": "AI 树洞 Copilot",
+        "name_cn": "AI树洞助手",
+        "category": "social",
+        "variant": "树洞",
+        "bundle_id": "com.aiempire.树洞",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI匹配",
+          "付费内容",
+          "社区"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 1071
+      },
+      {
+        "id": "APP_043",
+        "name": "AI 匹配 Copilot",
+        "name_cn": "AI匹配助手",
+        "category": "social",
+        "variant": "匹配",
+        "bundle_id": "com.aiempire.匹配",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "付费内容",
+          "AI匹配",
+          "活动"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 951
+      },
+      {
+        "id": "APP_044",
+        "name": "AI 活动 Copilot",
+        "name_cn": "AI活动助手",
+        "category": "social",
+        "variant": "活动",
+        "bundle_id": "com.aiempire.活动",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "付费内容",
+          "活动",
+          "社区"
+        ],
+        "monetization": "打赏",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 1451
+      },
+      {
+        "id": "APP_045",
+        "name": "AI 兴趣 Copilot",
+        "name_cn": "AI兴趣助手",
+        "category": "social",
+        "variant": "兴趣",
+        "bundle_id": "com.aiempire.兴趣",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "付费内容",
+          "社区",
+          "活动"
+        ],
+        "monetization": "打赏",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 13,
+        "target_mrr": 4429
+      },
+      {
+        "id": "APP_046",
+        "name": "AI 同城 Copilot",
+        "name_cn": "AI同城助手",
+        "category": "social",
+        "variant": "同城",
+        "bundle_id": "com.aiempire.同城",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI匹配",
+          "付费内容",
+          "社区"
+        ],
+        "monetization": "打赏",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 2161
+      },
+      {
+        "id": "APP_047",
+        "name": "AI 职场 Copilot",
+        "name_cn": "AI职场助手",
+        "category": "social",
+        "variant": "职场",
+        "bundle_id": "com.aiempire.职场",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "付费内容",
+          "AI匹配",
+          "社区"
+        ],
+        "monetization": "打赏",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 602
+      },
+      {
+        "id": "APP_048",
+        "name": "AI 校园 Copilot",
+        "name_cn": "AI校园助手",
+        "category": "social",
+        "variant": "校园",
+        "bundle_id": "com.aiempire.校园",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI匹配",
+          "活动",
+          "社区"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 13,
+        "target_mrr": 2330
+      },
+      {
+        "id": "APP_049",
+        "name": "AI 亲子 Copilot",
+        "name_cn": "AI亲子助手",
+        "category": "social",
+        "variant": "亲子",
+        "bundle_id": "com.aiempire.亲子",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "活动",
+          "社区",
+          "付费内容"
+        ],
+        "monetization": "打赏",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 2956
+      },
+      {
+        "id": "APP_050",
+        "name": "AI 宠物 Copilot",
+        "name_cn": "AI宠物助手",
+        "category": "social",
+        "variant": "宠物",
+        "bundle_id": "com.aiempire.宠物",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "活动",
+          "AI匹配",
+          "社区"
+        ],
+        "monetization": "会员",
+        "price": {
+          "subscription": "$2.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 12,
+        "target_mrr": 4490
+      },
+      {
+        "id": "APP_051",
+        "name": "AI 扫描 Copilot",
+        "name_cn": "AI扫描助手",
+        "category": "utility",
+        "variant": "扫描",
+        "bundle_id": "com.aiempire.扫描",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "小组件",
+          "快捷指令",
+          "云端"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 13,
+        "target_mrr": 4203
+      },
+      {
+        "id": "APP_052",
+        "name": "AI 识别 Copilot",
+        "name_cn": "AI识别助手",
+        "category": "utility",
+        "variant": "识别",
+        "bundle_id": "com.aiempire.识别",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "云端",
+          "AI增强",
+          "快捷指令"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 11,
+        "target_mrr": 1376
+      },
+      {
+        "id": "APP_053",
+        "name": "AI 转换 Copilot",
+        "name_cn": "AI转换助手",
+        "category": "utility",
+        "variant": "转换",
+        "bundle_id": "com.aiempire.转换",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI增强",
+          "云端",
+          "小组件"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 3,
+        "target_mrr": 2992
+      },
+      {
+        "id": "APP_054",
+        "name": "AI 计算 Copilot",
+        "name_cn": "AI计算助手",
+        "category": "utility",
+        "variant": "计算",
+        "bundle_id": "com.aiempire.计算",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI增强",
+          "云端",
+          "快捷指令"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 3465
+      },
+      {
+        "id": "APP_055",
+        "name": "AI 测量 Copilot",
+        "name_cn": "AI测量助手",
+        "category": "utility",
+        "variant": "测量",
+        "bundle_id": "com.aiempire.测量",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "小组件",
+          "快捷指令",
+          "AI增强"
+        ],
+        "monetization": "买断",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 11,
+        "target_mrr": 1788
+      },
+      {
+        "id": "APP_056",
+        "name": "AI 计时 Copilot",
+        "name_cn": "AI计时助手",
+        "category": "utility",
+        "variant": "计时",
+        "bundle_id": "com.aiempire.计时",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI增强",
+          "小组件",
+          "快捷指令"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 2913
+      },
+      {
+        "id": "APP_057",
+        "name": "AI 日历 Copilot",
+        "name_cn": "AI日历助手",
+        "category": "utility",
+        "variant": "日历",
+        "bundle_id": "com.aiempire.日历",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "云端",
+          "AI增强",
+          "快捷指令"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 2338
+      },
+      {
+        "id": "APP_058",
+        "name": "AI 天气 Copilot",
+        "name_cn": "AI天气助手",
+        "category": "utility",
+        "variant": "天气",
+        "bundle_id": "com.aiempire.天气",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "快捷指令",
+          "云端",
+          "AI增强"
+        ],
+        "monetization": "广告",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 2115
+      },
+      {
+        "id": "APP_059",
+        "name": "AI 翻译 Copilot",
+        "name_cn": "AI翻译助手",
+        "category": "utility",
+        "variant": "翻译",
+        "bundle_id": "com.aiempire.翻译",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "快捷指令",
+          "云端",
+          "AI增强"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 4268
+      },
+      {
+        "id": "APP_060",
+        "name": "AI 导航 Copilot",
+        "name_cn": "AI导航助手",
+        "category": "utility",
+        "variant": "导航",
+        "bundle_id": "com.aiempire.导航",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI增强",
+          "小组件",
+          "快捷指令"
+        ],
+        "monetization": "广告",
+        "price": {
+          "one_time": "$1.99-4.99",
+          "subscription": "$0.99-2.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 3,
+        "target_mrr": 3294
+      },
+      {
+        "id": "APP_061",
+        "name": "AI 写诗 Copilot",
+        "name_cn": "AI写诗助手",
+        "category": "creative",
+        "variant": "写诗",
+        "bundle_id": "com.aiempire.写诗",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "导出",
+          "分享",
+          "AI生成"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 2930
+      },
+      {
+        "id": "APP_062",
+        "name": "AI 作曲 Copilot",
+        "name_cn": "AI作曲助手",
+        "category": "creative",
+        "variant": "作曲",
+        "bundle_id": "com.aiempire.作曲",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "导出",
+          "AI生成",
+          "模板"
+        ],
+        "monetization": "积分",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 1470
+      },
+      {
+        "id": "APP_063",
+        "name": "AI 画画 Copilot",
+        "name_cn": "AI画画助手",
+        "category": "creative",
+        "variant": "画画",
+        "bundle_id": "com.aiempire.画画",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "模板",
+          "分享",
+          "素材库"
+        ],
+        "monetization": "积分",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 2771
+      },
+      {
+        "id": "APP_064",
+        "name": "AI 设计 Copilot",
+        "name_cn": "AI设计助手",
+        "category": "creative",
+        "variant": "设计",
+        "bundle_id": "com.aiempire.设计",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI生成",
+          "素材库",
+          "导出"
+        ],
+        "monetization": "积分",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 4653
+      },
+      {
+        "id": "APP_065",
+        "name": "AI 剪辑 Copilot",
+        "name_cn": "AI剪辑助手",
+        "category": "creative",
+        "variant": "剪辑",
+        "bundle_id": "com.aiempire.剪辑",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "素材库",
+          "AI生成",
+          "分享"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 3952
+      },
+      {
+        "id": "APP_066",
+        "name": "AI 配音 Copilot",
+        "name_cn": "AI配音助手",
+        "category": "creative",
+        "variant": "配音",
+        "bundle_id": "com.aiempire.配音",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "素材库",
+          "分享",
+          "导出"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 1950
+      },
+      {
+        "id": "APP_067",
+        "name": "AI 修图 Copilot",
+        "name_cn": "AI修图助手",
+        "category": "creative",
+        "variant": "修图",
+        "bundle_id": "com.aiempire.修图",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI生成",
+          "导出",
+          "素材库"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 3203
+      },
+      {
+        "id": "APP_068",
+        "name": "AI 配色 Copilot",
+        "name_cn": "AI配色助手",
+        "category": "creative",
+        "variant": "配色",
+        "bundle_id": "com.aiempire.配色",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "素材库",
+          "分享",
+          "导出"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 4702
+      },
+      {
+        "id": "APP_069",
+        "name": "AI 字体 Copilot",
+        "name_cn": "AI字体助手",
+        "category": "creative",
+        "variant": "字体",
+        "bundle_id": "com.aiempire.字体",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "导出",
+          "素材库",
+          "模板"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 11,
+        "target_mrr": 807
+      },
+      {
+        "id": "APP_070",
+        "name": "AI Logo Copilot",
+        "name_cn": "AILogo助手",
+        "category": "creative",
+        "variant": "Logo",
+        "bundle_id": "com.aiempire.logo",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "导出",
+          "素材库",
+          "AI生成"
+        ],
+        "monetization": "高级功能",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 3,
+        "target_mrr": 4590
+      },
+      {
+        "id": "APP_071",
+        "name": "AI CRM Copilot",
+        "name_cn": "AICRM助手",
+        "category": "business",
+        "variant": "CRM",
+        "bundle_id": "com.aiempire.crm",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "报表",
+          "自动化",
+          "AI助手"
+        ],
+        "monetization": "SaaS订阅",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 1939
+      },
+      {
+        "id": "APP_072",
+        "name": "AI HR Copilot",
+        "name_cn": "AIHR助手",
+        "category": "business",
+        "variant": "HR",
+        "bundle_id": "com.aiempire.hr",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "报表",
+          "协作",
+          "AI助手"
+        ],
+        "monetization": "企业版",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 4602
+      },
+      {
+        "id": "APP_073",
+        "name": "AI 项目管理 Copilot",
+        "name_cn": "AI项目管理助手",
+        "category": "business",
+        "variant": "项目管理",
+        "bundle_id": "com.aiempire.项目管理",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "协作",
+          "AI助手",
+          "自动化"
+        ],
+        "monetization": "SaaS订阅",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 8,
+        "target_mrr": 4699
+      },
+      {
+        "id": "APP_074",
+        "name": "AI 文档 Copilot",
+        "name_cn": "AI文档助手",
+        "category": "business",
+        "variant": "文档",
+        "bundle_id": "com.aiempire.文档",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI助手",
+          "协作",
+          "报表"
+        ],
+        "monetization": "SaaS订阅",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 684
+      },
+      {
+        "id": "APP_075",
+        "name": "AI 会议 Copilot",
+        "name_cn": "AI会议助手",
+        "category": "business",
+        "variant": "会议",
+        "bundle_id": "com.aiempire.会议",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI助手",
+          "协作",
+          "报表"
+        ],
+        "monetization": "企业版",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 2501
+      },
+      {
+        "id": "APP_076",
+        "name": "AI 邮件 Copilot",
+        "name_cn": "AI邮件助手",
+        "category": "business",
+        "variant": "邮件",
+        "bundle_id": "com.aiempire.邮件",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "报表",
+          "API",
+          "AI助手"
+        ],
+        "monetization": "SaaS订阅",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 4385
+      },
+      {
+        "id": "APP_077",
+        "name": "AI 客户 Copilot",
+        "name_cn": "AI客户助手",
+        "category": "business",
+        "variant": "客户",
+        "bundle_id": "com.aiempire.客户",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI助手",
+          "自动化",
+          "协作"
+        ],
+        "monetization": "SaaS订阅",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 798
+      },
+      {
+        "id": "APP_078",
+        "name": "AI 合同 Copilot",
+        "name_cn": "AI合同助手",
+        "category": "business",
+        "variant": "合同",
+        "bundle_id": "com.aiempire.合同",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "自动化",
+          "协作",
+          "API"
+        ],
+        "monetization": "企业版",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 13,
+        "target_mrr": 4841
+      },
+      {
+        "id": "APP_079",
+        "name": "AI 发票 Copilot",
+        "name_cn": "AI发票助手",
+        "category": "business",
+        "variant": "发票",
+        "bundle_id": "com.aiempire.发票",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI助手",
+          "协作",
+          "自动化"
+        ],
+        "monetization": "企业版",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 3208
+      },
+      {
+        "id": "APP_080",
+        "name": "AI 库存 Copilot",
+        "name_cn": "AI库存助手",
+        "category": "business",
+        "variant": "库存",
+        "bundle_id": "com.aiempire.库存",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "自动化",
+          "协作",
+          "报表"
+        ],
+        "monetization": "SaaS订阅",
+        "price": {
+          "subscription": "$9.99-49.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 3355
+      },
+      {
+        "id": "APP_081",
+        "name": "AI 旅行 Copilot",
+        "name_cn": "AI旅行助手",
+        "category": "lifestyle",
+        "variant": "旅行",
+        "bundle_id": "com.aiempire.旅行",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "商城",
+          "AI推荐"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 6,
+        "target_mrr": 976
+      },
+      {
+        "id": "APP_082",
+        "name": "AI 美食 Copilot",
+        "name_cn": "AI美食助手",
+        "category": "lifestyle",
+        "variant": "美食",
+        "bundle_id": "com.aiempire.美食",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "内容",
+          "AI推荐",
+          "商城"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 4954
+      },
+      {
+        "id": "APP_083",
+        "name": "AI 穿搭 Copilot",
+        "name_cn": "AI穿搭助手",
+        "category": "lifestyle",
+        "variant": "穿搭",
+        "bundle_id": "com.aiempire.穿搭",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI推荐",
+          "社区",
+          "内容"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 2121
+      },
+      {
+        "id": "APP_084",
+        "name": "AI 家居 Copilot",
+        "name_cn": "AI家居助手",
+        "category": "lifestyle",
+        "variant": "家居",
+        "bundle_id": "com.aiempire.家居",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "商城",
+          "AI推荐",
+          "内容"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 13,
+        "target_mrr": 4548
+      },
+      {
+        "id": "APP_085",
+        "name": "AI 园艺 Copilot",
+        "name_cn": "AI园艺助手",
+        "category": "lifestyle",
+        "variant": "园艺",
+        "bundle_id": "com.aiempire.园艺",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "内容",
+          "AI推荐"
+        ],
+        "monetization": "广告",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 3018
+      },
+      {
+        "id": "APP_086",
+        "name": "AI 手工 Copilot",
+        "name_cn": "AI手工助手",
+        "category": "lifestyle",
+        "variant": "手工",
+        "bundle_id": "com.aiempire.手工",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "内容",
+          "AI推荐",
+          "商城"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 2244
+      },
+      {
+        "id": "APP_087",
+        "name": "AI 收藏 Copilot",
+        "name_cn": "AI收藏助手",
+        "category": "lifestyle",
+        "variant": "收藏",
+        "bundle_id": "com.aiempire.收藏",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI推荐",
+          "内容",
+          "社区"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 1545
+      },
+      {
+        "id": "APP_088",
+        "name": "AI 占卜 Copilot",
+        "name_cn": "AI占卜助手",
+        "category": "lifestyle",
+        "variant": "占卜",
+        "bundle_id": "com.aiempire.占卜",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "商城",
+          "社区",
+          "内容"
+        ],
+        "monetization": "会员",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 1398
+      },
+      {
+        "id": "APP_089",
+        "name": "AI 运势 Copilot",
+        "name_cn": "AI运势助手",
+        "category": "lifestyle",
+        "variant": "运势",
+        "bundle_id": "com.aiempire.运势",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "商城",
+          "内容",
+          "社区"
+        ],
+        "monetization": "会员",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 10,
+        "target_mrr": 3511
+      },
+      {
+        "id": "APP_090",
+        "name": "AI 心理 Copilot",
+        "name_cn": "AI心理助手",
+        "category": "lifestyle",
+        "variant": "心理",
+        "bundle_id": "com.aiempire.心理",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "商城",
+          "内容",
+          "社区"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$2.99-6.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 2930
+      },
+      {
+        "id": "APP_091",
+        "name": "AI 育儿 Copilot",
+        "name_cn": "AI育儿助手",
+        "category": "parenting",
+        "variant": "育儿",
+        "bundle_id": "com.aiempire.育儿",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "社区",
+          "AI顾问"
+        ],
+        "monetization": "课程",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 4,
+        "target_mrr": 3605
+      },
+      {
+        "id": "APP_092",
+        "name": "AI 胎教 Copilot",
+        "name_cn": "AI胎教助手",
+        "category": "parenting",
+        "variant": "胎教",
+        "bundle_id": "com.aiempire.胎教",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "商城",
+          "AI顾问",
+          "提醒"
+        ],
+        "monetization": "课程",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 2359
+      },
+      {
+        "id": "APP_093",
+        "name": "AI 辅食 Copilot",
+        "name_cn": "AI辅食助手",
+        "category": "parenting",
+        "variant": "辅食",
+        "bundle_id": "com.aiempire.辅食",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "提醒",
+          "商城"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 12,
+        "target_mrr": 1855
+      },
+      {
+        "id": "APP_094",
+        "name": "AI 早教 Copilot",
+        "name_cn": "AI早教助手",
+        "category": "parenting",
+        "variant": "早教",
+        "bundle_id": "com.aiempire.早教",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "记录",
+          "社区",
+          "商城"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 4002
+      },
+      {
+        "id": "APP_095",
+        "name": "AI 故事 Copilot",
+        "name_cn": "AI故事助手",
+        "category": "parenting",
+        "variant": "故事",
+        "bundle_id": "com.aiempire.故事",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "AI顾问",
+          "商城",
+          "社区"
+        ],
+        "monetization": "课程",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 9,
+        "target_mrr": 1910
+      },
+      {
+        "id": "APP_096",
+        "name": "AI 成长 Copilot",
+        "name_cn": "AI成长助手",
+        "category": "parenting",
+        "variant": "成长",
+        "bundle_id": "com.aiempire.成长",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "AI顾问",
+          "商城"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 14,
+        "target_mrr": 1691
+      },
+      {
+        "id": "APP_097",
+        "name": "AI 安全 Copilot",
+        "name_cn": "AI安全助手",
+        "category": "parenting",
+        "variant": "安全",
+        "bundle_id": "com.aiempire.安全",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "社区",
+          "商城"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 636
+      },
+      {
+        "id": "APP_098",
+        "name": "AI 健康 Copilot",
+        "name_cn": "AI健康助手",
+        "category": "parenting",
+        "variant": "健康",
+        "bundle_id": "com.aiempire.健康",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "提醒",
+          "商城",
+          "社区"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 5,
+        "target_mrr": 2456
+      },
+      {
+        "id": "APP_099",
+        "name": "AI 疫苗 Copilot",
+        "name_cn": "AI疫苗助手",
+        "category": "parenting",
+        "variant": "疫苗",
+        "bundle_id": "com.aiempire.疫苗",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "商城",
+          "AI顾问",
+          "提醒"
+        ],
+        "monetization": "订阅",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 7,
+        "target_mrr": 1489
+      },
+      {
+        "id": "APP_100",
+        "name": "AI 作业 Copilot",
+        "name_cn": "AI作业助手",
+        "category": "parenting",
+        "variant": "作业",
+        "bundle_id": "com.aiempire.作业",
+        "opportunity_score": 0,
+        "market_signals": [],
+        "features": [
+          "社区",
+          "记录",
+          "商城"
+        ],
+        "monetization": "电商",
+        "price": {
+          "subscription": "$4.99-9.99/mo"
+        },
+        "platforms": [
+          "iOS",
+          "Android",
+          "Web"
+        ],
+        "status": "concept",
+        "priority": "low",
+        "estimated_development_days": 3,
+        "target_mrr": 4753
+      }
+    ],
+    "roadmap": {
+      "phase_1_month_1": {
+        "name": "核心20个App",
+        "apps": [],
+        "focus": "高机会、快速验证",
+        "platform": "Web + iOS",
+        "estimated_revenue": "$10,000-50,000/mo"
+      },
+      "phase_2_month_2_3": {
+        "name": "扩展30个App",
+        "apps": [],
+        "focus": "品类覆盖、用户增长",
+        "platform": "Web + 小程序",
+        "estimated_revenue": "$20,000-100,000/mo"
+      },
+      "phase_3_month_4_6": {
+        "name": "完整100个App矩阵",
+        "apps": [
+          {
+            "id": "APP_001",
+            "name": "AI 专注 Copilot",
+            "name_cn": "AI专注助手",
+            "category": "productivity",
+            "variant": "专注",
+            "bundle_id": "com.aiempire.专注",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI建议",
+              "数据统计",
+              "云同步"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 5,
+            "target_mrr": 928
+          },
+          {
+            "id": "APP_002",
+            "name": "AI 记账 Copilot",
+            "name_cn": "AI记账助手",
+            "category": "productivity",
+            "variant": "记账",
+            "bundle_id": "com.aiempire.记账",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "小组件",
+              "数据统计",
+              "提醒"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 9,
+            "target_mrr": 1091
+          },
+          {
+            "id": "APP_003",
+            "name": "AI 日记 Copilot",
+            "name_cn": "AI日记助手",
+            "category": "productivity",
+            "variant": "日记",
+            "bundle_id": "com.aiempire.日记",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI建议",
+              "提醒",
+              "数据统计"
+            ],
+            "monetization": "买断",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 2690
+          },
+          {
+            "id": "APP_004",
+            "name": "AI 目标 Copilot",
+            "name_cn": "AI目标助手",
+            "category": "productivity",
+            "variant": "目标",
+            "bundle_id": "com.aiempire.目标",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "数据统计",
+              "小组件",
+              "云同步"
+            ],
+            "monetization": "买断",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 6,
+            "target_mrr": 4540
+          },
+          {
+            "id": "APP_005",
+            "name": "AI 习惯 Copilot",
+            "name_cn": "AI习惯助手",
+            "category": "productivity",
+            "variant": "习惯",
+            "bundle_id": "com.aiempire.习惯",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "提醒",
+              "云同步",
+              "AI建议"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 6,
+            "target_mrr": 3442
+          },
+          {
+            "id": "APP_006",
+            "name": "AI 番茄 Copilot",
+            "name_cn": "AI番茄助手",
+            "category": "productivity",
+            "variant": "番茄",
+            "bundle_id": "com.aiempire.番茄",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "提醒",
+              "数据统计",
+              "云同步"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 8,
+            "target_mrr": 4044
+          },
+          {
+            "id": "APP_007",
+            "name": "AI 待办 Copilot",
+            "name_cn": "AI待办助手",
+            "category": "productivity",
+            "variant": "待办",
+            "bundle_id": "com.aiempire.待办",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "数据统计",
+              "提醒",
+              "AI建议"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 8,
+            "target_mrr": 2230
+          },
+          {
+            "id": "APP_008",
+            "name": "AI 笔记 Copilot",
+            "name_cn": "AI笔记助手",
+            "category": "productivity",
+            "variant": "笔记",
+            "bundle_id": "com.aiempire.笔记",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "云同步",
+              "数据统计",
+              "AI建议"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 12,
+            "target_mrr": 657
+          },
+          {
+            "id": "APP_009",
+            "name": "AI 阅读 Copilot",
+            "name_cn": "AI阅读助手",
+            "category": "productivity",
+            "variant": "阅读",
+            "bundle_id": "com.aiempire.阅读",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "数据统计",
+              "小组件",
+              "云同步"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 2878
+          },
+          {
+            "id": "APP_010",
+            "name": "AI 写作 Copilot",
+            "name_cn": "AI写作助手",
+            "category": "productivity",
+            "variant": "写作",
+            "bundle_id": "com.aiempire.写作",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "小组件",
+              "提醒",
+              "AI建议"
+            ],
+            "monetization": "买断",
+            "price": {
+              "subscription": "$2.99-4.99/mo",
+              "one_time": "$9.99-19.99"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 10,
+            "target_mrr": 3321
+          },
+          {
+            "id": "APP_011",
+            "name": "AI 睡眠 Copilot",
+            "name_cn": "AI睡眠助手",
+            "category": "health",
+            "variant": "睡眠",
+            "bundle_id": "com.aiempire.睡眠",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "课程",
+              "提醒",
+              "数据追踪"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 10,
+            "target_mrr": 915
+          },
+          {
+            "id": "APP_012",
+            "name": "AI 冥想 Copilot",
+            "name_cn": "AI冥想助手",
+            "category": "health",
+            "variant": "冥想",
+            "bundle_id": "com.aiempire.冥想",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI教练",
+              "社区",
+              "提醒"
+            ],
+            "monetization": "课程付费",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 6,
+            "target_mrr": 1520
+          },
+          {
+            "id": "APP_013",
+            "name": "AI 瑜伽 Copilot",
+            "name_cn": "AI瑜伽助手",
+            "category": "health",
+            "variant": "瑜伽",
+            "bundle_id": "com.aiempire.瑜伽",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "提醒",
+              "课程",
+              "数据追踪"
+            ],
+            "monetization": "课程付费",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 1142
+          },
+          {
+            "id": "APP_014",
+            "name": "AI 健身 Copilot",
+            "name_cn": "AI健身助手",
+            "category": "health",
+            "variant": "健身",
+            "bundle_id": "com.aiempire.健身",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "社区",
+              "提醒",
+              "数据追踪"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 8,
+            "target_mrr": 4740
+          },
+          {
+            "id": "APP_015",
+            "name": "AI 饮食 Copilot",
+            "name_cn": "AI饮食助手",
+            "category": "health",
+            "variant": "饮食",
+            "bundle_id": "com.aiempire.饮食",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "社区",
+              "课程",
+              "提醒"
+            ],
+            "monetization": "课程付费",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 947
+          },
+          {
+            "id": "APP_016",
+            "name": "AI 喝水 Copilot",
+            "name_cn": "AI喝水助手",
+            "category": "health",
+            "variant": "喝水",
+            "bundle_id": "com.aiempire.喝水",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "数据追踪",
+              "课程",
+              "提醒"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 8,
+            "target_mrr": 1181
+          },
+          {
+            "id": "APP_017",
+            "name": "AI 呼吸 Copilot",
+            "name_cn": "AI呼吸助手",
+            "category": "health",
+            "variant": "呼吸",
+            "bundle_id": "com.aiempire.呼吸",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "课程",
+              "数据追踪",
+              "社区"
+            ],
+            "monetization": "课程付费",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 4008
+          },
+          {
+            "id": "APP_018",
+            "name": "AI 经期 Copilot",
+            "name_cn": "AI经期助手",
+            "category": "health",
+            "variant": "经期",
+            "bundle_id": "com.aiempire.经期",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "社区",
+              "课程",
+              "提醒"
+            ],
+            "monetization": "课程付费",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 14,
+            "target_mrr": 3055
+          },
+          {
+            "id": "APP_019",
+            "name": "AI 视力 Copilot",
+            "name_cn": "AI视力助手",
+            "category": "health",
+            "variant": "视力",
+            "bundle_id": "com.aiempire.视力",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "提醒",
+              "社区",
+              "数据追踪"
+            ],
+            "monetization": "课程付费",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 1716
+          },
+          {
+            "id": "APP_020",
+            "name": "AI 颈椎 Copilot",
+            "name_cn": "AI颈椎助手",
+            "category": "health",
+            "variant": "颈椎",
+            "bundle_id": "com.aiempire.颈椎",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI教练",
+              "数据追踪",
+              "提醒"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 5,
+            "target_mrr": 662
+          },
+          {
+            "id": "APP_021",
+            "name": "AI 记账 Copilot",
+            "name_cn": "AI记账助手",
+            "category": "finance",
+            "variant": "记账",
+            "bundle_id": "com.aiempire.记账",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "提醒",
+              "预测",
+              "AI分析"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 1214
+          },
+          {
+            "id": "APP_022",
+            "name": "AI 预算 Copilot",
+            "name_cn": "AI预算助手",
+            "category": "finance",
+            "variant": "预算",
+            "bundle_id": "com.aiempire.预算",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "提醒",
+              "报表",
+              "预测"
+            ],
+            "monetization": "高级功能",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 3518
+          },
+          {
+            "id": "APP_023",
+            "name": "AI 投资 Copilot",
+            "name_cn": "AI投资助手",
+            "category": "finance",
+            "variant": "投资",
+            "bundle_id": "com.aiempire.投资",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "预测",
+              "AI分析",
+              "提醒"
+            ],
+            "monetization": "高级功能",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 12,
+            "target_mrr": 4249
+          },
+          {
+            "id": "APP_024",
+            "name": "AI 股票 Copilot",
+            "name_cn": "AI股票助手",
+            "category": "finance",
+            "variant": "股票",
+            "bundle_id": "com.aiempire.股票",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI分析",
+              "提醒",
+              "银行同步"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 9,
+            "target_mrr": 2371
+          },
+          {
+            "id": "APP_025",
+            "name": "AI 汇率 Copilot",
+            "name_cn": "AI汇率助手",
+            "category": "finance",
+            "variant": "汇率",
+            "bundle_id": "com.aiempire.汇率",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI分析",
+              "报表",
+              "银行同步"
+            ],
+            "monetization": "高级功能",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 3800
+          },
+          {
+            "id": "APP_026",
+            "name": "AI 房贷 Copilot",
+            "name_cn": "AI房贷助手",
+            "category": "finance",
+            "variant": "房贷",
+            "bundle_id": "com.aiempire.房贷",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "预测",
+              "银行同步",
+              "AI分析"
+            ],
+            "monetization": "高级功能",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 4634
+          },
+          {
+            "id": "APP_027",
+            "name": "AI 税务 Copilot",
+            "name_cn": "AI税务助手",
+            "category": "finance",
+            "variant": "税务",
+            "bundle_id": "com.aiempire.税务",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "预测",
+              "报表",
+              "提醒"
+            ],
+            "monetization": "高级功能",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 5,
+            "target_mrr": 4138
+          },
+          {
+            "id": "APP_028",
+            "name": "AI 报销 Copilot",
+            "name_cn": "AI报销助手",
+            "category": "finance",
+            "variant": "报销",
+            "bundle_id": "com.aiempire.报销",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "报表",
+              "银行同步",
+              "预测"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 5,
+            "target_mrr": 3910
+          },
+          {
+            "id": "APP_029",
+            "name": "AI 分账 Copilot",
+            "name_cn": "AI分账助手",
+            "category": "finance",
+            "variant": "分账",
+            "bundle_id": "com.aiempire.分账",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "报表",
+              "预测",
+              "提醒"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 3748
+          },
+          {
+            "id": "APP_030",
+            "name": "AI 储蓄 Copilot",
+            "name_cn": "AI储蓄助手",
+            "category": "finance",
+            "variant": "储蓄",
+            "bundle_id": "com.aiempire.储蓄",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "预测",
+              "AI分析",
+              "报表"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$3.99-6.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 12,
+            "target_mrr": 2105
+          },
+          {
+            "id": "APP_031",
+            "name": "AI 单词 Copilot",
+            "name_cn": "AI单词助手",
+            "category": "learning",
+            "variant": "单词",
+            "bundle_id": "com.aiempire.单词",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "游戏化",
+              "AI老师",
+              "社区"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 9,
+            "target_mrr": 748
+          },
+          {
+            "id": "APP_032",
+            "name": "AI 听力 Copilot",
+            "name_cn": "AI听力助手",
+            "category": "learning",
+            "variant": "听力",
+            "bundle_id": "com.aiempire.听力",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "证书",
+              "社区",
+              "游戏化"
+            ],
+            "monetization": "课程",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 1250
+          },
+          {
+            "id": "APP_033",
+            "name": "AI 口语 Copilot",
+            "name_cn": "AI口语助手",
+            "category": "learning",
+            "variant": "口语",
+            "bundle_id": "com.aiempire.口语",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "游戏化",
+              "社区",
+              "证书"
+            ],
+            "monetization": "课程",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 2214
+          },
+          {
+            "id": "APP_034",
+            "name": "AI 阅读 Copilot",
+            "name_cn": "AI阅读助手",
+            "category": "learning",
+            "variant": "阅读",
+            "bundle_id": "com.aiempire.阅读",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI老师",
+              "游戏化",
+              "进度追踪"
+            ],
+            "monetization": "认证",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 636
+          },
+          {
+            "id": "APP_035",
+            "name": "AI 写作 Copilot",
+            "name_cn": "AI写作助手",
+            "category": "learning",
+            "variant": "写作",
+            "bundle_id": "com.aiempire.写作",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "证书",
+              "AI老师",
+              "社区"
+            ],
+            "monetization": "课程",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 5,
+            "target_mrr": 3480
+          },
+          {
+            "id": "APP_036",
+            "name": "AI 编程 Copilot",
+            "name_cn": "AI编程助手",
+            "category": "learning",
+            "variant": "编程",
+            "bundle_id": "com.aiempire.编程",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "社区",
+              "证书",
+              "AI老师"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 8,
+            "target_mrr": 4325
+          },
+          {
+            "id": "APP_037",
+            "name": "AI 乐器 Copilot",
+            "name_cn": "AI乐器助手",
+            "category": "learning",
+            "variant": "乐器",
+            "bundle_id": "com.aiempire.乐器",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI老师",
+              "社区",
+              "游戏化"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 13,
+            "target_mrr": 3010
+          },
+          {
+            "id": "APP_038",
+            "name": "AI 绘画 Copilot",
+            "name_cn": "AI绘画助手",
+            "category": "learning",
+            "variant": "绘画",
+            "bundle_id": "com.aiempire.绘画",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI老师",
+              "进度追踪",
+              "社区"
+            ],
+            "monetization": "认证",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 10,
+            "target_mrr": 1715
+          },
+          {
+            "id": "APP_039",
+            "name": "AI 棋类 Copilot",
+            "name_cn": "AI棋类助手",
+            "category": "learning",
+            "variant": "棋类",
+            "bundle_id": "com.aiempire.棋类",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "证书",
+              "AI老师",
+              "社区"
+            ],
+            "monetization": "认证",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 9,
+            "target_mrr": 2128
+          },
+          {
+            "id": "APP_040",
+            "name": "AI 记忆 Copilot",
+            "name_cn": "AI记忆助手",
+            "category": "learning",
+            "variant": "记忆",
+            "bundle_id": "com.aiempire.记忆",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "社区",
+              "AI老师",
+              "进度追踪"
+            ],
+            "monetization": "订阅",
+            "price": {
+              "subscription": "$4.99-14.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 4724
+          },
+          {
+            "id": "APP_041",
+            "name": "AI 日记 Copilot",
+            "name_cn": "AI日记助手",
+            "category": "social",
+            "variant": "日记",
+            "bundle_id": "com.aiempire.日记",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "付费内容",
+              "AI匹配",
+              "活动"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 3,
+            "target_mrr": 3167
+          },
+          {
+            "id": "APP_042",
+            "name": "AI 树洞 Copilot",
+            "name_cn": "AI树洞助手",
+            "category": "social",
+            "variant": "树洞",
+            "bundle_id": "com.aiempire.树洞",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI匹配",
+              "付费内容",
+              "社区"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 8,
+            "target_mrr": 1071
+          },
+          {
+            "id": "APP_043",
+            "name": "AI 匹配 Copilot",
+            "name_cn": "AI匹配助手",
+            "category": "social",
+            "variant": "匹配",
+            "bundle_id": "com.aiempire.匹配",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "付费内容",
+              "AI匹配",
+              "活动"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 6,
+            "target_mrr": 951
+          },
+          {
+            "id": "APP_044",
+            "name": "AI 活动 Copilot",
+            "name_cn": "AI活动助手",
+            "category": "social",
+            "variant": "活动",
+            "bundle_id": "com.aiempire.活动",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "付费内容",
+              "活动",
+              "社区"
+            ],
+            "monetization": "打赏",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 7,
+            "target_mrr": 1451
+          },
+          {
+            "id": "APP_045",
+            "name": "AI 兴趣 Copilot",
+            "name_cn": "AI兴趣助手",
+            "category": "social",
+            "variant": "兴趣",
+            "bundle_id": "com.aiempire.兴趣",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "付费内容",
+              "社区",
+              "活动"
+            ],
+            "monetization": "打赏",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 13,
+            "target_mrr": 4429
+          },
+          {
+            "id": "APP_046",
+            "name": "AI 同城 Copilot",
+            "name_cn": "AI同城助手",
+            "category": "social",
+            "variant": "同城",
+            "bundle_id": "com.aiempire.同城",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI匹配",
+              "付费内容",
+              "社区"
+            ],
+            "monetization": "打赏",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 4,
+            "target_mrr": 2161
+          },
+          {
+            "id": "APP_047",
+            "name": "AI 职场 Copilot",
+            "name_cn": "AI职场助手",
+            "category": "social",
+            "variant": "职场",
+            "bundle_id": "com.aiempire.职场",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "付费内容",
+              "AI匹配",
+              "社区"
+            ],
+            "monetization": "打赏",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 5,
+            "target_mrr": 602
+          },
+          {
+            "id": "APP_048",
+            "name": "AI 校园 Copilot",
+            "name_cn": "AI校园助手",
+            "category": "social",
+            "variant": "校园",
+            "bundle_id": "com.aiempire.校园",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "AI匹配",
+              "活动",
+              "社区"
+            ],
+            "monetization": "广告",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 13,
+            "target_mrr": 2330
+          },
+          {
+            "id": "APP_049",
+            "name": "AI 亲子 Copilot",
+            "name_cn": "AI亲子助手",
+            "category": "social",
+            "variant": "亲子",
+            "bundle_id": "com.aiempire.亲子",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "活动",
+              "社区",
+              "付费内容"
+            ],
+            "monetization": "打赏",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 6,
+            "target_mrr": 2956
+          },
+          {
+            "id": "APP_050",
+            "name": "AI 宠物 Copilot",
+            "name_cn": "AI宠物助手",
+            "category": "social",
+            "variant": "宠物",
+            "bundle_id": "com.aiempire.宠物",
+            "opportunity_score": 0,
+            "market_signals": [],
+            "features": [
+              "活动",
+              "AI匹配",
+              "社区"
+            ],
+            "monetization": "会员",
+            "price": {
+              "subscription": "$2.99-9.99/mo"
+            },
+            "platforms": [
+              "iOS",
+              "Android",
+              "Web"
+            ],
+            "status": "concept",
+            "priority": "low",
+            "estimated_development_days": 12,
+            "target_mrr": 4490
+          }
+        ],
+        "focus": "长尾市场、自动化运营",
+        "platform": "全平台",
+        "estimated_revenue": "$50,000-500,000/mo"
+      }
+    }
+  },
+  "cached_at": "2026-03-17T19:38:23.142236",
+  "expires_at": "2026-03-24T19:38:23.142240",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-17T19:38:23.142248"
+}

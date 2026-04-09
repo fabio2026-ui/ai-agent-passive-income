@@ -1,0 +1,25 @@
+name = "currency-monitor"
+main = "src/index.ts"
+compatibility_date = "2025-01-29"
+
+# Use Frankfurter API (free, no key needed) - comment out EXCHANGE_API_KEY secret
+# If using exchangerate-api.com, set EXCHANGE_API_KEY via wrangler secret
+
+# D1 Database for user data
+[[d1_databases]]
+binding = "DB"
+database_name = "currency-monitor-db"
+database_id = "00000000-0000-0000-0000-000000000000"  # Replace with actual ID after creating database
+
+# KV namespace for caching rates
+[[kv_namespaces]]
+binding = "CACHE"
+id = "00000000000000000000000000000000"  # Replace with actual ID after creating KV
+
+# Cron trigger for daily rate checks at 9 AM UTC
+[[triggers]]
+crons = ["0 9 * * *"]
+
+# Secrets to set via wrangler secret put:
+# - RESEND_API_KEY: For email notifications (get from resend.com)
+# - EXCHANGE_API_KEY: Optional, if using exchangerate-api.com

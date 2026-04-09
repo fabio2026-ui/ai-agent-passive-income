@@ -1,0 +1,29 @@
+{
+  "scan_interval": 3600,
+  "report_interval": 86400,
+  "monitor_interval": 60,
+  "auto_fix": true,
+  "alert_thresholds": {
+    "cpu_percent": 80,
+    "memory_percent": 85,
+    "disk_percent": 90,
+    "load_average": 10
+  },
+  "scan_paths": [
+    "/root/.openclaw/workspace"
+  ],
+  "log_level": "INFO",
+  "notification_channels": ["log", "file", "console"],
+  "webhook_url": "",
+  "api_endpoints": [],
+  "exclude_patterns": [
+    "node_modules",
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+    ".env",
+    "dist",
+    "build"
+  ]
+}

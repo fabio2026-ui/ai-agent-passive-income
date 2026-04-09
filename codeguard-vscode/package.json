@@ -1,0 +1,92 @@
+{
+  "name": "codeguard-vscode",
+  "displayName": "CodeGuard AI - Code Review",
+  "description": "AI-powered code security and quality scanner",
+  "version": "1.0.0",
+  "publisher": "codeguard-ai",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Linters",
+    "Machine Learning",
+    "Security"
+  ],
+  "keywords": [
+    "code review",
+    "security",
+    "ai",
+    "static analysis",
+    "quality"
+  ],
+  "activationEvents": [
+    "onCommand:codeguard.scanFile",
+    "onCommand:codeguard.scanProject"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeguard.scanFile",
+        "title": "CodeGuard: Scan Current File",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "codeguard.scanProject",
+        "title": "CodeGuard: Scan Entire Project",
+        "icon": "$(workspace-trusted)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "codeguard.scanFile",
+          "group": "9_cutcopypaste@5"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "codeguard.scanProject",
+          "group": "2_workspace@10"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CodeGuard AI",
+      "properties": {
+        "codeguard.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your CodeGuard API key"
+        },
+        "codeguard.autoScan": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically scan files on save"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeguard-ai/codeguard-vscode"
+  },
+  "homepage": "https://codeguard-ai-prod.yhongwb.workers.dev",
+  "bugs": {
+    "url": "https://github.com/codeguard-ai/codeguard-vscode/issues"
+  },
+  "license": "MIT"
+}

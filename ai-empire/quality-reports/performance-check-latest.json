@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-03-19T23:14:02.189Z",
+  "averageScore": 0.8666666666666667,
+  "results": [
+    {
+      "name": "ai-diet-coach",
+      "type": "vite",
+      "score": 0.8,
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "name": "ai-diary-pro",
+      "type": "vite",
+      "score": 1,
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "name": "focus-forest-ai",
+      "type": "vite",
+      "score": 0.8,
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "name": "breath-ai",
+      "type": "vite",
+      "score": 0.8,
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "name": "habit-ai-app",
+      "type": "vite",
+      "score": 0.8,
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "name": "api-aggregator",
+      "type": "worker",
+      "score": 1,
+      "issues": [],
+      "recommendations": []
+    }
+  ]
+}

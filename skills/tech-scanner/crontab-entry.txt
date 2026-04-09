@@ -1,0 +1,4 @@
+0 9 * * * cd /root/.openclaw/workspace && python3 skills/tech-scanner/tech_scanner.py >> output/tech-scanner/cron.log 2>&1
+# Tech Scanner - 每日技术扫描
+# 每天上午9点自动扫描最新技术、工具和机会
+# 报告保存到: output/tech-scanner/report-YYYY-MM-DD.md

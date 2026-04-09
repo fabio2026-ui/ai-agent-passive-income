@@ -1,0 +1,8 @@
+name = "eu-crossborder-api"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# 自定义域名
+routes = [
+  { pattern = "eucrossborder-api.yhongwb.workers.dev", custom_domain = true }
+]

@@ -1,0 +1,16 @@
+🚀 **Just shipped: CodeGuard AI - Your AI-powered code reviewer**
+
+Tired of catching bugs in production? 
+
+Here's how CodeGuard AI helps dev teams ship cleaner code:
+
+🧠 AI analyzes your PRs in real-time
+⚡ Catches bugs before they reach prod  
+📊 Security & performance scoring
+🔌 Works with GitHub, GitLab, Bitbucket
+
+Try it free → https://codeguard-ai-prod.yhongwb.workers.dev
+
+Want early access to new features? Drop a 👋 below
+
+#buildinpublic #AIcoding #developerTools #codeReview #indiehackers

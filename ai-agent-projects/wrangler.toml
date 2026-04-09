@@ -1,0 +1,12 @@
+name = "codeguard-payments"
+main = "workers/payment-api.js"
+compatibility_date = "2024-01-01"
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Secrets (set via wrangler secret)
+# STRIPE_SECRET_KEY
+# COINBASE_COMMERCE_API_KEY_1
+# COINBASE_COMMERCE_API_KEY_2
+# STRIPE_WEBHOOK_SECRET

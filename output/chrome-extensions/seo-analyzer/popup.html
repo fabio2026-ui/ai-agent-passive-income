@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Analyzer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 400px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    
+    .header p {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    
+    .score-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .score-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 20px;
+    }
+    
+    .score-value {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    
+    .score-label {
+      font-size: 12px;
+    }
+    
+    .grade {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    
+    .grade-a { color: #4caf50; }
+    .grade-b { color: #8bc34a; }
+    .grade-c { color: #ffc107; }
+    .grade-d { color: #ff9800; }
+    .grade-f { color: #f44336; }
+    
+    .content {
+      padding: 20px;
+    }
+    
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .section h3 {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .info-row:last-child {
+      border-bottom: none;
+    }
+    
+    .info-label {
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .info-value {
+      font-weight: 500;
+      font-size: 13px;
+    }
+    
+    .recommendation {
+      display: flex;
+      align-items: flex-start;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      background: #f8f9fa;
+    }
+    
+    .priority-badge {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    
+    .priority-high {
+      background: #ffebee;
+      color: #c62828;
+    }
+    
+    .priority-medium {
+      background: #fff3e0;
+      color: #ef6c00;
+    }
+    
+    .priority-low {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    
+    .rec-content {
+      flex: 1;
+    }
+    
+    .rec-content strong {
+      font-size: 13px;
+    }
+    
+    .rec-content small {
+      color: #666;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 10px;
+      padding: 15px 20px;
+      background: white;
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+    
+    .btn-secondary:hover {
+      background: #e0e0e0;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🔍 SEO Analyzer</h1>
+    <p>Free On-Page SEO Analysis</p>
+  </div>
+
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Analyzing page...</p>
+  </div>
+
+  <div id="results">
+    <div class="score-section">
+      <div class="score-circle">
+        <span id="scoreValue" class="score-value">0</span>
+        <span class="score-label">SCORE</span>
+      </div>
+      <div id="scoreGrade" class="grade grade-f">-</div>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <h3>📄 Page Information</h3>
+        <div class="info-row">
+          <span class="info-label">Title</span>
+          <span id="titleLength" class="info-value">-</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Meta Description</span>
+          <span id="metaDesc" class="info-value">-</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">H1 Tags</span>
+          <span id="h1Count" class="info-value">-</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Images</span>
+          <span id="imageCount" class="info-value">-</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Links</span>
+          <span id="linkCount" class="info-value">-</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>💡 Recommendations</h3>
+        <div id="recommendations">
+          <p style="color: #666; text-align: center; padding: 20px;">
+            No issues found! Great job! 🎉
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="analyzeBtn" class="btn btn-primary">🔄 Reanalyze</button>
+    <button id="exportBtn" class="btn btn-secondary">📥 Export</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

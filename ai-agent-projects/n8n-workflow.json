@@ -1,0 +1,68 @@
+# n8n工作流配置
+# 用于编排AI Agent自动化任务
+
+{
+  "name": "AI Agent Content Factory",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Daily Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+        "options": {}
+      },
+      "name": "Fetch CVEs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const cves = $input.all()[0].json.vulnerabilities || [];\nreturn cves.slice(0, 3).map(c => ({\n  json: {\n    cveId: c.cve.id,\n    description: c.cve.descriptions[0]?.value\n  }\n}));"
+      },
+      "name": "Process CVEs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    }
+  ],
+  "connections": {
+    "Daily Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch CVEs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch CVEs": {
+      "main": [
+        [
+          {
+            "node": "Process CVEs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

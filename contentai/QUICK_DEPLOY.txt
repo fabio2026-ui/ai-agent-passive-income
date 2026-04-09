@@ -1,0 +1,54 @@
+# ContentAI - 2分钟快速部署指南
+
+## 🚀 最快部署方式 (Netlify Drop)
+
+### 步骤 (2分钟)
+
+1. **打开Netlify Drop**
+   ```
+   https://app.netlify.com/drop
+   ```
+
+2. **上传文件**
+   ```
+   拖拽文件夹: /root/.openclaw/workspace/contentai/final-deploy
+   到网页中
+   ```
+
+3. **完成！**
+   - 自动获得域名: xxx.netlify.app
+   - 立即访问使用
+
+---
+
+## 📦 文件位置
+
+```
+/root/.openclaw/workspace/contentai/
+├── final-deploy/          ← 拖拽这个文件夹
+│   ├── index.html        (首页)
+│   ├── generate.html     (生成页)
+│   └── _next/            (资源文件)
+│
+└── CONTENTAI-MVP-v1.0.tar.gz  (备份包)
+```
+
+---
+
+## ✅ 部署后
+
+- 网站上线: https://xxx.netlify.app
+- 自定义域名: 在Netlify设置中添加
+- HTTPS: 自动启用
+
+---
+
+## 📱 下一步 (运营)
+
+1. 微信小程序申请
+2. 小红书账号注册
+3. 内容营销
+
+---
+
+**总耗时**: 2分钟部署 + 15分钟运营准备

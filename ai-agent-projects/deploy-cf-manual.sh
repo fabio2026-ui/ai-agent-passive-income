@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "☁️ Cloudflare Pages部署指南"
+echo "项目名称: ai-agent-passive-income"
+echo ""
+echo "手动部署步骤:"
+echo "1. 访问 https://dash.cloudflare.com"
+echo "2. Workers & Pages → Create → Pages → Upload assets"
+echo "3. 项目名称: ai-agent-passive-income"
+echo "4. 上传目录: /root/.openclaw/workspace/ai-agent-projects/public"
+echo "5. Save and Deploy"
+echo ""
+echo "将获得: https://ai-agent-passive-income.pages.dev"

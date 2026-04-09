@@ -1,0 +1,295 @@
+{
+  "info": {
+    "_postman_id": "tax-api-aggregator-001",
+    "name": "Tax API Aggregator",
+    "description": "税务API聚合器 - 统一接口访问12个税务API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": "{{base_url}}/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"name\": \"Test Company\",\n  \"password\": \"secure-password\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tax Calculations",
+      "item": [
+        {
+          "name": "VAT Calculation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/vat",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 100,\n  \"country\": \"DE\",\n  \"category\": \"standard\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Corporate Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/corporate",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 50000,\n  \"country\": \"DE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Personal Income Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/personal-income",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 60000,\n  \"country\": \"DE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Customs Duty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/customs",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 1000,\n  \"productType\": \"electronics\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Excise Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/excise",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 50,\n  \"productCategory\": \"alcohol\",\n  \"quantity\": 10\n}"
+            }
+          }
+        },
+        {
+          "name": "Property Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/property",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propertyValue\": 300000,\n  \"propertyType\": \"residential\",\n  \"country\": \"DE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Stamp Duty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/stamp-duty",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 200000,\n  \"transactionType\": \"property\",\n  \"country\": \"DE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Vehicle Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/vehicle",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"engineSize\": 2000,\n  \"co2Emissions\": 130,\n  \"vehicleType\": \"car\",\n  \"country\": \"DE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Resource Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/resource",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 100,\n  \"resourceType\": \"mineral\",\n  \"volume\": 500\n}"
+            }
+          }
+        },
+        {
+          "name": "Land Value Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/land-value",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"landValue\": 500000,\n  \"holdingPeriod\": 3\n}"
+            }
+          }
+        },
+        {
+          "name": "Land Use Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/land-use",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"area\": 2000,\n  \"locationType\": \"urban\",\n  \"country\": \"DE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Environmental Tax",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/tax/environmental",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"emissionAmount\": 50,\n  \"pollutantType\": \"co2\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subscription",
+      "item": [
+        {
+          "name": "Get Subscription Status",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Authorization", "value": "Bearer {{api_key}}"}],
+            "url": "{{base_url}}/v1/subscription/status"
+          }
+        },
+        {
+          "name": "Create Checkout Session",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Authorization", "value": "Bearer {{api_key}}"}],
+            "url": "{{base_url}}/v1/subscription/checkout"
+          }
+        },
+        {
+          "name": "Create Customer Portal",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Authorization", "value": "Bearer {{api_key}}"}],
+            "url": "{{base_url}}/v1/subscription/portal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "API Keys Management",
+      "item": [
+        {
+          "name": "List API Keys",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Authorization", "value": "Bearer {{api_key}}"}],
+            "url": "{{base_url}}/v1/api-keys"
+          }
+        },
+        {
+          "name": "Create API Key",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Authorization", "value": "Bearer {{api_key}}"},
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "url": "{{base_url}}/v1/api-keys",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Production Key\",\n  \"permissions\": [\"*\"],\n  \"rateLimit\": 1000\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Usage",
+      "item": [
+        {
+          "name": "Get Usage Stats",
+          "request": {
+            "method": "GET",
+            "header": [{"key": "Authorization", "value": "Bearer {{api_key}}"}],
+            "url": "{{base_url}}/v1/usage"
+          }
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://api.taxaggregator.eu",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "your-api-key-here",
+      "type": "string"
+    }
+  ]
+}

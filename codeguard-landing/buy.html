@@ -1,0 +1,182 @@
+<!-- Stripe-Only Pricing Page - No Workers Required -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeGuard - Get Credits</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #0f172a; color: white; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h1 { font-size: 3rem; margin-bottom: 16px; }
+        .header p { color: #94a3b8; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 40px 32px;
+            border: 2px solid #334155;
+            transition: all 0.3s;
+        }
+        .card:hover { border-color: #3b82f6; transform: translateY(-4px); }
+        .card.popular { border-color: #3b82f6; position: relative; }
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3b82f6;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .name { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .credits { font-size: 3rem; font-weight: 800; color: #3b82f6; }
+        .credits span { font-size: 1rem; color: #94a3b8; }
+        .price { font-size: 2.5rem; font-weight: 700; margin: 16px 0; }
+        .features { list-style: none; margin: 24px 0; }
+        .features li { padding: 8px 0; color: #cbd5e1; display: flex; align-items: center; gap: 8px; }
+        .features li::before { content: "✓"; color: #22c55e; }
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary { background: #3b82f6; color: white; }
+        .btn-primary:hover { background: #2563eb; }
+        .btn-crypto { background: #f59e0b; color: #000; margin-top: 12px; }
+        .btn-crypto:hover { background: #d97706; }
+        .crypto-section { margin-top: 60px; background: #1e293b; border-radius: 16px; padding: 32px; text-align: center; }
+        .wallet { background: #0f172a; padding: 16px; border-radius: 8px; margin: 16px 0; font-family: monospace; word-break: break-all; }
+        .wallet.btc { border: 2px solid #f59e0b; }
+        .wallet.eth { border: 2px solid #627eea; }
+        .tabs { display: flex; gap: 12px; justify-content: center; margin-bottom: 24px; }
+        .tab { padding: 10px 20px; background: #334155; border: none; border-radius: 8px; color: white; cursor: pointer; }
+        .tab.active { background: #3b82f6; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💳 Get Credits</h1>
+            <p>Choose your package and start scanning</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="name">Starter</div>
+                <div class="credits">100 <span>credits</span></div>
+                <div class="price">$10</div>
+                <ul class="features">
+                    <li>~100 basic scans</li>
+                    <li>20 deep scans</li>
+                    <li>10 AI fixes</li>
+                </ul>
+                <button class="btn btn-primary" onclick="payStripe('starter')">Pay with Card</button>
+                <button class="btn btn-crypto" onclick="showCrypto('starter')">Pay with Crypto ₿</button>
+            </div>
+
+            <div class="card popular">
+                <div class="badge">Most Popular</div>
+                <div class="name">Pro</div>
+                <div class="credits">1,000 <span>credits</span></div>
+                <div class="price">$85</div>
+                <ul class="features">
+                    <li>~1,000 basic scans</li>
+                    <li>200 deep scans</li>
+                    <li>100 AI fixes</li>
+                    <li>API access</li>
+                </ul>
+                <button class="btn btn-primary" onclick="payStripe('pro')">Pay with Card</button>
+                <button class="btn btn-crypto" onclick="showCrypto('pro')">Pay with Crypto ₿</button>
+            </div>
+
+            <div class="card">
+                <div class="name">Enterprise</div>
+                <div class="credits">10,000 <span>credits</span></div>
+                <div class="price">$750</div>
+                <ul class="features">
+                    <li>~10,000 basic scans</li>
+                    <li>2,000 deep scans</li>
+                    <li>1,000 AI fixes</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn btn-primary" onclick="payStripe('enterprise')">Pay with Card</button>
+                <button class="btn btn-crypto" onclick="showCrypto('enterprise')">Pay with Crypto ₿</button>
+            </div>
+        </div>
+
+        <div class="crypto-section" id="cryptoSection" style="display:none;">
+            <h2>🪙 Pay with Cryptocurrency</h2>
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('btc')">Bitcoin</button>
+                <button class="tab" onclick="switchTab('eth')">Ethereum</button>
+            </div>
+
+            <div id="btcTab" class="tab-content active">
+                <p>Send Bitcoin to this address:</p>
+                <div class="wallet btc" id="btcAmount">Loading...</div>
+                <div class="wallet btc">bc1q6d6zffkv4h6g7qjx8g6527g3tz3qptnxg5cuvg</div>
+                <p style="margin-top:16px;color:#94a3b8;">After sending, email your TXID to payments@codeguard.dev</p>
+            </div>
+
+            <div id="ethTab" class="tab-content">
+                <p>Send Ethereum to this address:</p>
+                <div class="wallet eth" id="ethAmount">Loading...</div>
+                <div class="wallet eth">0xb8ff64CDE31013D2c4Ad6c11B12F0e7b54EfECCB</div>
+                <p style="margin-top:16px;color:#94a3b8;">After sending, email your TXID to payments@codeguard.dev</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const prices = {
+            starter: { usd: 10, btc: '0.00015', eth: '0.0031', credits: 100 },
+            pro: { usd: 85, btc: '0.0013', eth: '0.026', credits: 1000 },
+            enterprise: { usd: 750, btc: '0.011', eth: '0.23', credits: 10000 }
+        };
+
+        let currentPackage = 'pro';
+
+        function payStripe(pkg) {
+            // Stripe Payment Links
+            const stripeLinks = {
+                starter: 'https://buy.stripe.com/6oUdR9f3Y5F0ftH8EkgQE0m',
+                pro: 'https://buy.stripe.com/00w6oHg82ffA81f4o4gQE0l',
+                enterprise: 'https://buy.stripe.com/cNi3cv3lg6J4dlz2fWgQE0n'
+            };
+            
+            window.location.href = stripeLinks[pkg];
+        }
+
+        function showCrypto(pkg) {
+            currentPackage = pkg;
+            document.getElementById('cryptoSection').style.display = 'block';
+            document.getElementById('cryptoSection').scrollIntoView({ behavior: 'smooth' });
+            
+            const p = prices[pkg];
+            document.getElementById('btcAmount').textContent = `Send ${p.btc} BTC (${p.credits} credits)`;
+            document.getElementById('ethAmount').textContent = `Send ${p.eth} ETH (${p.credits} credits)`;
+        }
+
+        function switchTab(coin) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(coin + 'Tab').classList.add('active');
+        }
+    </script>
+</body>
+</html>

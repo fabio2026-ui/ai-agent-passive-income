@@ -1,0 +1,22 @@
+{
+  "name": "breath-ai-reddit-reply",
+  "version": "1.0.0",
+  "description": "Breath AI Reddit Auto-Reply System",
+  "main": "src/autoReply.js",
+  "scripts": {
+    "start": "node src/autoReply.js",
+    "monitor": "node src/monitor.js",
+    "test": "node src/testReply.js",
+    "logs": "cat logs/interactions.jsonl | tail -50"
+  },
+  "dependencies": {
+    "snoowrap": "^1.23.0",
+    "dotenv": "^16.0.3",
+    "dayjs": "^1.11.7",
+    "winston": "^3.8.2",
+    "rss-parser": "^3.13.0"
+  },
+  "keywords": ["reddit", "bot", "automation", "breath-ai"],
+  "author": "Breath AI Team",
+  "license": "MIT"
+}

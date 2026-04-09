@@ -1,0 +1,17 @@
+{
+  "last_check": "2026-04-01T20:09:00+08:00",
+  "config_exists": true,
+  "secret_key_available": true,
+  "secret_key_valid": false,
+  "secret_key_error": "API key expired",
+  "accounts_configured": ["EU CrossBorder", "UK CrossBorder", "US Tax API", "Canada Tax API", "Amazon Calculator", "Shopify Calculator"],
+  "accounts_checked": 0,
+  "new_payments_found": 0,
+  "first_sales_detected": [],
+  "total_revenue_eur": 0,
+  "total_revenue_checked": "€0.00",
+  "check_summary": "API authentication failed - secret key expired",
+  "checks_today": 4,
+  "note": "Silent run - Stripe API key expired, no first sales data available",
+  "next_action": "Requires new valid Stripe secret key to check payments"
+}

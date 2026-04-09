@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReplyAI 隐私政策</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+        }
+        .effective-date {
+            color: #666;
+            font-style: italic;
+        }
+        .highlight {
+            background: #f0f7ff;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        a {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔒 ReplyAI 隐私政策</h1>
+    <p class="effective-date">生效日期: 2024年4月</p>
+
+    <div class="highlight">
+        <strong>核心原则:</strong> ReplyAI 采取最小化数据收集原则。您的数据主要存储在本地浏览器中，我们不会收集或存储您的邮件内容。
+    </div>
+
+    <h2>📊 我们收集什么数据</h2>
+    
+    <h3>1. 本地存储数据 (仅浏览器本地)</h3>
+    <ul>
+        <li><strong>OpenAI API Key</strong> - 您主动输入的API密钥，用于调用OpenAI服务</li>
+        <li><strong>用户偏好设置</strong> - 回复风格、默认设置等</li>
+        <li><strong>存储位置:</strong> 浏览器本地 storage，不会上传到我们的服务器</li>
+    </ul>
+
+    <h3>2. 处理过程中的数据</h3>
+    <ul>
+        <li><strong>邮件内容</strong> - 仅在您点击"生成回复"时临时处理</li>
+        <li><strong>处理方式:</strong> 通过您的API Key直接发送到OpenAI API</li>
+        <li><strong>我们不存储:</strong> 邮件内容不会存储在我们的服务器上</li>
+    </ul>
+
+    <h2>🚫 我们不收集的数据</h2>
+    <ul>
+        <li>❌ 用户身份信息 (姓名、邮箱、电话等)</li>
+        <li>❌ 浏览历史记录</li>
+        <li>❌ 个人敏感信息</li>
+        <li>❌ 设备信息</li>
+        <li>❌ 位置信息</li>
+    </ul>
+
+    <h2>🔧 数据如何使用</h2>
+    
+    <h3>OpenAI API 调用</h3>
+    <ul>
+        <li>邮件内容仅用于生成AI回复</li>
+        <li>通过<strong>您自己的API Key</strong>直接调用OpenAI服务</li>
+        <li>遵循 <a href="https://openai.com/privacy" target="_blank">OpenAI隐私政策</a></li>
+    </ul>
+
+    <h3>数据留存</h3>
+    <ul>
+        <li>API Key和设置: 保留在本地，直到您主动清除</li>
+        <li>邮件内容: 处理后立即丢弃，不做任何存储</li>
+    </ul>
+
+    <h2>🛡️ 数据安全</h2>
+    <ul>
+        <li>所有本地数据使用Chrome浏览器提供的安全存储机制</li>
+        <li>API传输使用HTTPS加密</li>
+        <li>可随时通过扩展设置一键清除所有数据</li>
+    </ul>
+
+    <h2>👥 第三方服务</h2>
+    <p>本扩展使用以下第三方服务:</p>
+    <ul>
+        <li><strong>OpenAI API</strong> (api.openai.com) - 用于生成邮件回复</li>
+    </ul>
+
+    <h2>🔐 您的权利</h2>
+    <ul>
+        <li><strong>查看数据:</strong> 所有存储的数据都在扩展设置页面可见</li>
+        <li><strong>删除数据:</strong> 可随时一键清除所有本地数据</li>
+        <li><strong>撤销授权:</strong> 可随时卸载扩展，所有本地数据将被删除</li>
+    </ul>
+
+    <h2>📞 联系我们</h2>
+    <p>如有隐私相关问题，请联系:</p>
+    <ul>
+        <li>邮箱: support@replyai.app</li>
+    </ul>
+
+    <h2>📝 政策变更</h2>
+    <p>我们可能会不时更新本隐私政策。重大变更时，我们会通过扩展内通知告知用户。</p>
+
+    <div class="highlight">
+        <strong>总结:</strong> ReplyAI 是一个隐私优先的工具。您的邮件内容仅用于生成回复，不会被存储或用于其他目的。所有敏感数据都保存在您的本地浏览器中。
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
+        <p>© 2024 ReplyAI. 保留所有权利。</p>
+    </footer>
+</body>
+</html>

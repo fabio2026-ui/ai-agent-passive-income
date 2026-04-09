@@ -1,0 +1,161 @@
+# 🔐 AI Empire 配置文件模板
+**文件名**: `ai-empire-config.txt`
+**用途**: 安全传输API密钥和Token
+**填写说明**: 将`[你的...]`替换为实际值，保持格式不变
+
+---
+
+## 1️⃣ Cloudflare 配置（部署API服务）
+
+### 方式A: API Token（推荐）
+```
+CLOUDFLARE_API_TOKEN=[你的Cloudflare API Token]
+```
+
+**如何获取**:
+1. 访问 https://dash.cloudflare.com/profile/api-tokens
+2. 点击 "Create Token"
+3. 选择模板 "Edit Cloudflare Workers"
+4. 选择你的域名区域 (如: eucrossborder.com)
+5. 点击 "Continue" → "Create Token"
+6. 复制生成的Token（长字符串）
+
+### 方式B: Global API Key（备用）
+```
+CLOUDFLARE_EMAIL=[你的Cloudflare注册邮箱]
+CLOUDFLARE_GLOBAL_API_KEY=[你的Global API Key]
+```
+
+**如何获取**:
+1. 访问 https://dash.cloudflare.com/profile/api-tokens
+2. 拉到页面底部 "Global API Key"
+3. 点击 "View"，验证密码后复制
+
+---
+
+## 2️⃣ Stripe 配置（收款功能）
+
+### 生产环境密钥（live）
+```
+STRIPE_PUBLISHABLE_KEY_LIVE=[你的pk_live_...]
+STRIPE_SECRET_KEY_LIVE=[你的sk_live_...]
+STRIPE_WEBHOOK_SECRET_LIVE=[你的whsec_...] (可选，用于webhook)
+```
+
+### 测试环境密钥（test）
+```
+STRIPE_PUBLISHABLE_KEY_TEST=[你的pk_test_...]
+STRIPE_SECRET_KEY_TEST=[你的sk_test_...]
+```
+
+**如何获取**:
+1. 访问 https://dashboard.stripe.com/apikeys
+2. 确保切换到 "Live mode"（测试用Test mode）
+3. 复制 Publishable key 和 Secret key
+
+---
+
+## 3️⃣ Chrome Web Store 配置（上架扩展）
+
+```
+CHROME_CLIENT_ID=[你的Client ID]
+CHROME_CLIENT_SECRET=[你的Client Secret]
+CHROME_REFRESH_TOKEN=[你的Refresh Token]
+```
+
+**如何获取**:
+1. 访问 https://chrome.google.com/webstore/devconsole
+2. 注册开发者账号（支付$5）
+3. 进入 "设置" → "开发者账号"
+4. 按照 https://developer.chrome.com/docs/webstore/using-api 获取OAuth凭证
+
+---
+
+## 4️⃣ 域名配置（已购买域名）
+
+```
+DOMAIN_EU=[你的欧盟域名，如: eucrossborder.com]
+DOMAIN_UK=[你的英国域名，如: ukcrossborder.com]
+DOMAIN_US=[你的美国域名，如: ustaxhelper.com]
+DOMAIN_CA=[你的加拿大域名，如: cataxhelper.com]
+```
+
+---
+
+## 5️⃣ Reddit 配置（自动发帖）
+
+```
+REDDIT_USERNAME=[你的Reddit用户名]
+REDDIT_PASSWORD=[你的Reddit密码]
+REDDIT_CLIENT_ID=[你的App Client ID]
+REDDIT_CLIENT_SECRET=[你的App Client Secret]
+```
+
+**如何获取**:
+1. 访问 https://www.reddit.com/prefs/apps
+2. 点击 "create another app..."
+3. 选择 "script" 类型
+4. 复制 Client ID 和 Client Secret
+
+---
+
+## 6️⃣ Twitter/X 配置（可选）
+
+```
+TWITTER_API_KEY=[你的API Key]
+TWITTER_API_SECRET=[你的API Secret]
+TWITTER_ACCESS_TOKEN=[你的Access Token]
+TWITTER_ACCESS_TOKEN_SECRET=[你的Access Token Secret]
+```
+
+**如何获取**:
+1. 访问 https://developer.twitter.com/en/portal/dashboard
+2. 创建 Project → App
+3. 生成 Access Token
+
+---
+
+## 📋 填写示例
+
+```
+# Cloudflare
+CLOUDFLARE_API_TOKEN=1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t
+
+# Stripe
+STRIPE_PUBLISHABLE_KEY_LIVE=pk_live_51Abcdefghijklmnopqrs
+STRIPE_SECRET_KEY_LIVE=sk_live_51Abcdefghijklmnopqrs
+
+# 域名
+DOMAIN_EU=eucrossborder.com
+DOMAIN_UK=ukcrossborder.com
+```
+
+---
+
+## ✅ 填写检查清单
+
+填写完成后，请检查:
+- [ ] Cloudflare Token 或 API Key 已填写
+- [ ] Stripe Live Key 已填写（用于真实收款）
+- [ ] Stripe Test Key 已填写（用于测试）
+- [ ] 域名已填写（对应你已购买的域名）
+- [ ] Reddit 配置已填写（用于自动发帖）
+
+---
+
+## 🚀 发送给我后
+
+1. 保存此文件为 `ai-empire-config.txt`
+2. 在聊天中发送文件给我
+3. 我会自动:
+   - 配置Cloudflare部署
+   - 配置Stripe收款
+   - 配置所有API服务
+   - 测试连接是否成功
+
+---
+
+**安全提示**: 
+- 此文件包含敏感信息，请勿分享给他人
+- 发送给我后，建议删除本地文件
+- 所有密钥仅存储在你的服务器本地，不会上传到云端

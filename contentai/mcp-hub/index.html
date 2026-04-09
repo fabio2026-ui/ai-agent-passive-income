@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Hub - MCP连接器市场</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo" onclick="router.navigate('home')">
+                    <div class="logo-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <span class="logo-text">MCP Hub</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#" onclick="router.navigate('home')" class="nav-link active">连接器</a>
+                    <a href="#" onclick="router.navigate('docs')" class="nav-link">文档</a>
+                    <a href="https://github.com/modelcontextprotocol" target="_blank" class="nav-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#" onclick="router.navigate('home'); toggleMobileMenu()">连接器</a>
+            <a href="#" onclick="router.navigate('docs'); toggleMobileMenu()">文档</a>
+            <a href="https://github.com/modelcontextprotocol" target="_blank">GitHub</a>
+        </div>
+
+        <!-- 主内容区域 -->
+        <main id="mainContent">
+            <!-- 页面内容将通过JavaScript动态加载 -->
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        <span>MCP Hub</span>
+                    </div>
+                    <p class="footer-desc">首个专注MCP的商业平台，让AI连接一切</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>产品</h4>
+                        <a href="#" onclick="router.navigate('home')">连接器市场</a>
+                        <a href="#" onclick="router.navigate('docs')">开发文档</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>资源</h4>
+                        <a href="https://modelcontextprotocol.io" target="_blank">MCP官方</a>
+                        <a href="https://github.com/modelcontextprotocol" target="_blank">开源社区</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MCP Hub. Built for the AI-native era.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 部署模态框 -->
+    <div class="modal-overlay" id="deployModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-rocket"></i> 一键部署</h3>
+                <button class="modal-close" onclick="closeDeployModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="deployModalBody">
+                <!-- 部署内容将动态插入 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

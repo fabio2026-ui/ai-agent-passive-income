@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-900 text-white antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold 
+           px-6 py-3 rounded-xl hover:from-primary-600 hover:to-primary-700 
+           transition-all duration-200 shadow-lg shadow-primary-500/25
+           active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-white/20 transition-all duration-200
+           active:scale-95;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-accent-purple bg-clip-text text-transparent;
+  }
+  
+  .habit-card {
+    @apply glass-card p-4 hover:bg-white/10 transition-all duration-300 cursor-pointer;
+  }
+  
+  .check-in-btn {
+    @apply w-12 h-12 rounded-full flex items-center justify-center
+           transition-all duration-300 active:scale-90;
+  }
+  
+  .check-in-btn.checked {
+    @apply bg-accent-green text-white shadow-lg shadow-accent-green/50;
+  }
+  
+  .check-in-btn.unchecked {
+    @apply bg-white/10 text-white/50 hover:bg-white/20;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animation for streak fire */
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.streak-fire {
+  animation: flicker 0.5s ease-in-out infinite;
+}

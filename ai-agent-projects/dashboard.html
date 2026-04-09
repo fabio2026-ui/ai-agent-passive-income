@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小七AI Agent 项目仪表板</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 2.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card h2 { color: #333; font-size: 1.2rem; margin-bottom: 16px; }
+    .metric { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; }
+    .metric-value { font-size: 2rem; font-weight: bold; color: #667eea; }
+    .metric-label { color: #666; font-size: 0.9rem; }
+    .progress-bar {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 4px;
+    }
+    .status { 
+      display: inline-block; 
+      padding: 4px 12px; 
+      border-radius: 20px; 
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .status-online { background: #d4edda; color: #155724; }
+    .status-pending { background: #fff3cd; color: #856404; }
+    .links { margin-top: 20px; text-align: center; }
+    .links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 24px;
+      background: white;
+      color: #667eea;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .links a:hover { background: #f0f0f0; transform: scale(1.05); }
+    .footer { text-align: center; color: rgba(255,255,255,0.8); margin-top: 30px; }
+    .revenue-card { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
+    .revenue-card h2, .revenue-card .metric-label { color: white; }
+    .revenue-card .metric-value { color: white; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 小七AI Agent 项目仪表板</h1>
+    
+    <div class="grid">
+      <!-- 内容统计 -->
+      <div class="card">
+        <h2>📝 内容资产</h2>
+        <div class="metric">
+          <span class="metric-label">文章总数</span>
+          <span class="metric-value">24</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 48%"></div>
+        </div>
+        <div class="metric" style="margin-top: 16px;">
+          <span class="metric-label">总字数</span>
+          <span class="metric-value">24</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">目标</span>
+          <span style="color: #667eea; font-weight: 600;">50篇</span>
+        </div>
+      </div>
+
+      <!-- GitHub统计 -->
+      <div class="card">
+        <h2>🐙 GitHub</h2>
+        <div class="metric">
+          <span class="metric-label">⭐ Stars</span>
+          <span class="metric-value">0</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">🍴 Forks</span>
+          <span class="metric-value">0</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">提交数</span>
+          <span class="metric-value">14</span>
+        </div>
+      </div>
+
+      <!-- 收入预估 -->
+      <div class="card revenue-card">
+        <h2>💰 收入预估 (月)</h2>
+        <div class="metric">
+          <span class="metric-label">Credits系统</span>
+          <span class="metric-value">€1,500</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">数字产品</span>
+          <span class="metric-value">€800</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Affiliate</span>
+          <span class="metric-value">~€110</span>
+        </div>
+        <div class="metric" style="border-top: 2px solid rgba(255,255,255,0.3); padding-top: 12px;">
+          <span class="metric-label">总计</span>
+          <span class="metric-value">€2,410</span>
+        </div>
+      </div>
+
+      <!-- 系统状态 -->
+      <div class="card">
+        <h2>⚙️ 系统状态</h2>
+        <div class="metric">
+          <span class="metric-label">网站</span>
+          <span class="status status-online">在线</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">自动化</span>
+          <span class="status status-online">运行中</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">GitHub同步</span>
+          <span class="status status-online">已同步</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Affiliate</span>
+          <span class="status status-pending">待注册</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://fabio2026-ui.github.io/ai-agent-passive-income" target="_blank">🌐 访问网站</a>
+      <a href="https://github.com/fabio2026-ui/ai-agent-passive-income" target="_blank">📦 GitHub仓库</a>
+      <a href="content/" target="_blank">📄 查看文章</a>
+    </div>
+
+    <div class="footer">
+      <p>最后更新: 2026/4/7 21:34:26 | 小七AI Agent 自动生成</p>
+    </div>
+  </div>
+</body>
+</html>

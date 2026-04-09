@@ -1,0 +1,23 @@
+{
+  "name": "tax-api-aggregator",
+  "version": "1.0.0",
+  "description": "税务API聚合器订阅服务 - 统一接口，€29/月",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "wrangler d1 migrations apply tax-api-db"
+  },
+  "dependencies": {
+    "stripe": "^14.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.22.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  opportunity-bot:
+    build: .
+    container_name: opportunity-bot
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+    command: node src/index.js

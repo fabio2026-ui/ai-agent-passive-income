@@ -1,0 +1,200 @@
+{
+  "version": "1.0",
+  "description": "智能磁盘清理规则配置",
+  "thresholds": {
+    "warning": 70,
+    "auto_cleanup": 80,
+    "emergency": 90
+  },
+  "priorities": {
+    "P0": {
+      "name": "立即清理",
+      "description": "最不重要，可立即删除",
+      "auto_clean": true,
+      "notify": false,
+      "rules": [
+        {
+          "type": "directory_pattern",
+          "pattern": "**/node_modules",
+          "description": "可重新安装的依赖",
+          "exclude_paths": ["system", "/usr/local/lib"]
+        },
+        {
+          "type": "directory_pattern", 
+          "pattern": "**/.next",
+          "description": "Next.js构建输出"
+        },
+        {
+          "type": "directory_pattern",
+          "pattern": "**/dist",
+          "description": "构建输出目录"
+        },
+        {
+          "type": "directory_pattern",
+          "pattern": "**/build",
+          "description": "构建输出目录"
+        },
+        {
+          "type": "directory_pattern",
+          "pattern": "**/.cache",
+          "description": "缓存目录"
+        },
+        {
+          "type": "directory_pattern",
+          "pattern": "**/__pycache__",
+          "description": "Python缓存"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/*.log",
+          "older_than_days": 7,
+          "description": "7天前的日志文件"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/.npm/_cacache/**",
+          "description": "npm缓存"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/.cache/pip/**",
+          "description": "pip缓存"
+        },
+        {
+          "type": "duplicate_files",
+          "min_size_mb": 10,
+          "description": "重复文件(大于10MB)"
+        }
+      ]
+    },
+    "P1": {
+      "name": "需要时清理",
+      "description": "非关键文件，需要时清理",
+      "auto_clean": true,
+      "notify": true,
+      "rules": [
+        {
+          "type": "directory_pattern",
+          "pattern": "**/tmp/**",
+          "older_than_days": 30,
+          "description": "30天前的临时文件"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/*.tmp",
+          "older_than_days": 30,
+          "description": "临时文件"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/*.temp",
+          "older_than_days": 30,
+          "description": "临时文件"
+        },
+        {
+          "type": "directory_pattern",
+          "pattern": "**/backup/*",
+          "older_than_days": 60,
+          "keep_versions": 3,
+          "description": "旧的备份(保留最近3个)"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/*.tar.gz",
+          "older_than_days": 90,
+          "description": "旧的压缩包"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/*.zip",
+          "older_than_days": 90,
+          "description": "旧的压缩包"
+        },
+        {
+          "type": "file_pattern",
+          "pattern": "**/test*/**",
+          "older_than_days": 60,
+          "description": "测试文件"
+        }
+      ]
+    },
+    "P2": {
+      "name": "谨慎清理",
+      "description": "需要确认的重要文件",
+      "auto_clean": false,
+      "notify": true,
+      "confirm_required": true,
+      "rules": [
+        {
+          "type": "large_files",
+          "min_size_mb": 500,
+          "older_than_days": 180,
+          "description": "大媒体文件(>500MB, 半年以上)"
+        },
+        {
+          "type": "directory_pattern",
+          "pattern": "**/archive/**",
+          "older_than_days": 365,
+          "description": "历史数据归档"
+        }
+      ]
+    }
+  },
+  "never_clean": {
+    "description": "永不删除的文件/目录",
+    "protected_paths": [
+      "/root/.openclaw/workspace/AGENTS.md",
+      "/root/.openclaw/workspace/USER.md",
+      "/root/.openclaw/workspace/MEMORY.md",
+      "/root/.openclaw/workspace/BOOTSTRAP.md",
+      "/root/.openclaw/workspace/SOUL.md",
+      "/root/.openclaw/workspace/memory/",
+      "/root/.openclaw/workspace/.git/",
+      "/root/.openclaw/workspace/**/.git/",
+      "/root/.openclaw/workspace/**/*.conf",
+      "/root/.openclaw/workspace/**/*.config.*",
+      "/root/.openclaw/workspace/**/.env*",
+      "/root/.openclaw/workspace/**/*.db",
+      "/root/.openclaw/workspace/**/*.sqlite",
+      "/root/.openclaw/workspace/**/src/**",
+      "/root/.openclaw/workspace/**/*.py",
+      "/root/.openclaw/workspace/**/*.js",
+      "/root/.openclaw/workspace/**/*.ts",
+      "/root/.openclaw/workspace/**/*.jsx",
+      "/root/.openclaw/workspace/**/*.tsx",
+      "/root/.openclaw/workspace/**/*.go",
+      "/root/.openclaw/workspace/**/*.rs",
+      "/root/.openclaw/workspace/**/*.java",
+      "/root/.openclaw/workspace/**/*.cpp",
+      "/root/.openclaw/workspace/**/*.c",
+      "/root/.openclaw/workspace/**/*.h",
+      "/root/.openclaw/workspace/**/*.sh",
+      "/etc/",
+      "/usr/bin/",
+      "/usr/local/bin/",
+      "/var/lib/",
+      "/home/*/.ssh/"
+    ],
+    "protected_extensions": [
+      ".md",
+      ".yml",
+      ".yaml",
+      ".json",
+      ".toml",
+      ".ini",
+      ".cfg"
+    ]
+  },
+  "retention": {
+    "logs_keep_days": 7,
+    "backup_versions": 3,
+    "max_log_file_size_mb": 50
+  },
+  "notifications": {
+    "enabled": true,
+    "channels": ["log", "console"],
+    "before_cleanup": true,
+    "after_cleanup": true,
+    "on_emergency": true
+  }
+}

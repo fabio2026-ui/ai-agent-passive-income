@@ -1,0 +1,18 @@
+{
+  "name": "currency-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "vitest",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
+    "@cloudflare/workers-types": "^4.20250129.0",
+    "typescript": "^5.5.2",
+    "vitest": "^2.1.8",
+    "wrangler": "^3.105.0"
+  }
+}

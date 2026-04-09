@@ -1,0 +1,148 @@
+{
+  "date": "2026-03-28",
+  "summary": {
+    "total_machines": 6,
+    "online": 4,
+    "issues": 2,
+    "total_sales": 15179,
+    "total_transactions": 695
+  },
+  "machines": [
+    {
+      "machine_id": "VM-001",
+      "location": "科技园A栋大堂",
+      "status": "故障待修",
+      "stock_levels": {
+        "饮料": 51,
+        "零食": 18,
+        "日用品": 34
+      },
+      "daily_sales": 2691,
+      "transactions": 138,
+      "avg_ticket": 19.5,
+      "uptime_percent": 98.6,
+      "issues": [
+        "货道卡住"
+      ],
+      "last_online": "02:48"
+    },
+    {
+      "machine_id": "VM-002",
+      "location": "科技园B栋1楼",
+      "status": "故障待修",
+      "stock_levels": {
+        "饮料": 70,
+        "零食": 50,
+        "日用品": 67
+      },
+      "daily_sales": 3088,
+      "transactions": 48,
+      "avg_ticket": 64.33,
+      "uptime_percent": 97.6,
+      "issues": [
+        "制冷系统异常"
+      ],
+      "last_online": "02:56"
+    },
+    {
+      "machine_id": "VM-003",
+      "location": "地铁站A出口",
+      "status": "正常",
+      "stock_levels": {
+        "饮料": 47,
+        "零食": 17,
+        "日用品": 76
+      },
+      "daily_sales": 2610,
+      "transactions": 124,
+      "avg_ticket": 21.05,
+      "uptime_percent": 95.6,
+      "issues": [
+        "库存不足"
+      ],
+      "last_online": "02:38"
+    },
+    {
+      "machine_id": "VM-004",
+      "location": "写字楼大堂",
+      "status": "正常",
+      "stock_levels": {
+        "饮料": 62,
+        "零食": 36,
+        "日用品": 63
+      },
+      "daily_sales": 1835,
+      "transactions": 157,
+      "avg_ticket": 11.69,
+      "uptime_percent": 99.5,
+      "issues": [],
+      "last_online": "02:43"
+    },
+    {
+      "machine_id": "VM-005",
+      "location": "商场1楼中庭",
+      "status": "正常",
+      "stock_levels": {
+        "饮料": 59,
+        "零食": 48,
+        "日用品": 55
+      },
+      "daily_sales": 2106,
+      "transactions": 99,
+      "avg_ticket": 21.27,
+      "uptime_percent": 94.9,
+      "issues": [],
+      "last_online": "02:53"
+    },
+    {
+      "machine_id": "VM-006",
+      "location": "工业园区东门",
+      "status": "正常",
+      "stock_levels": {
+        "饮料": 26,
+        "零食": 44,
+        "日用品": 79
+      },
+      "daily_sales": 2849,
+      "transactions": 129,
+      "avg_ticket": 22.09,
+      "uptime_percent": 96.2,
+      "issues": [
+        "库存不足"
+      ],
+      "last_online": "02:39"
+    }
+  ],
+  "alerts": [
+    {
+      "time": "03:07",
+      "level": "🔴 紧急",
+      "machine": "VM-001",
+      "message": "设备故障: 货道卡住"
+    },
+    {
+      "time": "03:07",
+      "level": "🔴 紧急",
+      "machine": "VM-002",
+      "message": "设备故障: 制冷系统异常"
+    },
+    {
+      "time": "03:07",
+      "level": "🟠 注意",
+      "machine": "VM-003",
+      "message": "在线率偏低: 95.6%"
+    },
+    {
+      "time": "03:07",
+      "level": "🟠 注意",
+      "machine": "VM-005",
+      "message": "在线率偏低: 94.9%"
+    },
+    {
+      "time": "03:07",
+      "level": "🟠 注意",
+      "machine": "VM-006",
+      "message": "在线率偏低: 96.2%"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渠道效果追踪 - ContentAI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            max-width: 1400px;
+            margin: 0 auto 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            color: #1a1a2e;
+            font-size: 28px;
+        }
+        .date-filter {
+            display: flex;
+            gap: 8px;
+        }
+        .date-filter button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .date-filter button:hover,
+        .date-filter button.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .metric-card .label {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .metric-card .value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .metric-card .change {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .metric-card .change.positive {
+            color: #10b981;
+        }
+        .metric-card .change.negative {
+            color: #ef4444;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .card h2 {
+            color: #1a1a2e;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 .icon {
+            font-size: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            color: #666;
+            font-weight: 600;
+            border-bottom: 2px solid #f0f0f0;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+        td {
+            border-bottom: 1px solid #f5f5f5;
+            color: #333;
+        }
+        tr:hover td {
+            background: #fafbfc;
+        }
+        .channel-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .channel-tag.indiehackers {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .channel-tag.hackernews {
+            background: #ffedd5;
+            color: #ea580c;
+        }
+        .channel-tag.reddit {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .channel-tag.twitter {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .channel-tag.producthunt {
+            background: #fce7f3;
+            color: #db2777;
+        }
+        .channel-tag.direct {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        .number {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+        .percent {
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .percent.high {
+            background: #d1fae5;
+            color: #059669;
+        }
+        .percent.medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .percent.low {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge.best {
+            background: #d1fae5;
+            color: #059669;
+        }
+        .badge.good {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .badge.avg {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 1024px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+        .trend-chart {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding: 20px 0;
+        }
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(to top, #667eea, #764ba2);
+            border-radius: 4px 4px 0 0;
+            min-height: 20px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .chart-bar:hover {
+            opacity: 0.8;
+        }
+        .chart-bar .label {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            color: #666;
+            white-space: nowrap;
+        }
+        .chart-bar .value {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        .empty-state .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 渠道效果追踪</h1>
+        <div class="date-filter">
+            <button class="active">今天</button>
+            <button>7天</button>
+            <button>30天>/button>
+            <button>90天</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 核心指标卡片 -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="label">总访问量</div>
+                <div class="value" id="totalVisitors">0</div>
+                <div class="change positive">+12.5% vs 上周</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">独立访客</div>
+                <div class="value" id="uniqueVisitors">0</div>
+                <div class="change positive">+8.3% vs 上周</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">总转化数</div>
+                <div class="value" id="totalConversions">0</div>
+                <div class="change positive">+23.1% vs 上周</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">平均转化率</div>
+                <div class="value" id="avgConversionRate">0%</div>
+                <div class="change positive">+1.2% vs 上周</div>
+            </div>
+        </div>
+
+        <!-- 渠道详细数据 -->
+        <div class="card">
+            <h2><span class="icon">📈</span> 渠道详细表现</h2>
+            <div id="channelTableContainer">
+                <div class="empty-state">
+                    <div class="icon">📊</div>
+                    <p>暂无数据，请先在网站中集成 tracking.js</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <!-- 渠道对比图表 -->
+            <div class="card">
+                <h2><span class="icon">🏆</span> 渠道流量对比</h2>
+                <div class="trend-chart" id="channelChart">
+                    <div class="chart-bar" style="height: 80%">
+                        <span class="value">45%</span>
+                        <span class="label">IH</span>
+                    </div>
+                    <div class="chart-bar" style="height: 60%">
+                        <span class="value">28%</span>
+                        <span class="label">HN</span>
+                    </div>
+                    <div class="chart-bar" style="height: 40%">
+                        <span class="value">15%</span>
+                        <span class="label">TW</span>
+                    </div>
+                    <div class="chart-bar" style="height: 25%">
+                        <span class="value">8%</span>
+                        <span class="label">RD</span>
+                    </div>
+                    <div class="chart-bar" style="height: 15%">
+                        <span class="value">4%</span>
+                        <span class="label">其他</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最佳渠道排名 -->
+            <div class="card">
+                <h2><span class="icon">⭐</span> 渠道效果排名</h2>
+                <div id="rankingContainer">
+                    <!-- 动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 模拟数据 - 实际使用时从 API 获取
+        const mockData = {
+            channels: [
+                { name: 'indiehackers', display: 'Indie Hackers', visitors: 1250, clicks: 1890, conversions: 89, cost: 0, revenue: 2490 },
+                { name: 'hackernews', display: 'Hacker News', visitors: 780, clicks: 1200, conversions: 67, cost: 0, revenue: 1870 },
+                { name: 'twitter', display: 'Twitter/X', visitors: 420, clicks: 680, conversions: 23, cost: 150, revenue: 640 },
+                { name: 'reddit', display: 'Reddit', visitors: 220, clicks: 380, conversions: 8, cost: 0, revenue: 220 },
+                { name: 'producthunt', display: 'Product Hunt', visitors: 180, clicks: 290, conversions: 15, cost: 0, revenue: 450 },
+                { name: 'direct', display: 'Direct', visitors: 350, clicks: 520, conversions: 12, cost: 0, revenue: 360 }
+            ]
+        };
+
+        // 计算指标
+        function calculateMetrics(channel) {
+            const cr = (channel.conversions / channel.visitors * 100).toFixed(2);
+            const cpc = channel.clicks > 0 ? (channel.cost / channel.clicks).toFixed(2) : 0;
+            const cac = channel.conversions > 0 ? (channel.cost / channel.conversions).toFixed(2) : 0;
+            const roi = channel.cost > 0 ? ((channel.revenue - channel.cost) / channel.cost * 100).toFixed(0) : (channel.revenue > 0 ? 999 : 0);
+            const arpu = (channel.revenue / channel.visitors).toFixed(2);
+            
+            return { ...channel, cr, cpc, cac, roi, arpu };
+        }
+
+        // 获取绩效等级
+        function getPerformanceBadge(cr) {
+            if (cr >= 7) return '<span class="badge best">优秀</span>';
+            if (cr >= 4) return '<span class="badge good">良好</span>';
+            return '<span class="badge avg">一般</span>';
+        }
+
+        // 获取转化率颜色
+        function getCRClass(cr) {
+            if (cr >= 7) return 'high';
+            if (cr >= 3) return 'medium';
+            return 'low';
+        }
+
+        // 渲染渠道表格
+        function renderChannelTable() {
+            const data = mockData.channels.map(calculateMetrics);
+            
+            const totalVisitors = data.reduce((sum, c) => sum + c.visitors, 0);
+            const totalConversions = data.reduce((sum, c) => sum + c.conversions, 0);
+            const avgCR = (totalConversions / totalVisitors * 100).toFixed(2);
+
+            document.getElementById('totalVisitors').textContent = totalVisitors.toLocaleString();
+            document.getElementById('uniqueVisitors').textContent = totalVisitors.toLocaleString();
+            document.getElementById('totalConversions').textContent = totalConversions.toLocaleString();
+            document.getElementById('avgConversionRate').textContent = avgCR + '%';
+
+            const html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>渠道</th>
+                            <th>访客数</th>
+                            <th>点击数</th>
+                            <th>转化数</th>
+                            <th>转化率</th>
+                            <th>花费</th>
+                            <th>收入</th>
+                            <th>ROI</th>
+                            <th>CAC</th>
+                            <th>评级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data.map(c => `
+                            <tr>
+                                <td><span class="channel-tag ${c.name}">${c.display}</span></td>
+                                <td class="number">${c.visitors.toLocaleString()}</td>
+                                <td class="number">${c.clicks.toLocaleString()}</td>
+                                <td class="number">${c.conversions.toLocaleString()}</td>
+                                <td><span class="percent ${getCRClass(c.cr)}">${c.cr}%</span></td>
+                                <td class="number">$${c.cost.toLocaleString()}</td>
+                                <td class="number">$${c.revenue.toLocaleString()}</td>
+                                <td class="number">${c.roi}%</td>
+                                <td class="number">$${c.cac}</td>
+                                <td>${getPerformanceBadge(c.cr)}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            document.getElementById('channelTableContainer').innerHTML = html;
+        }
+
+        // 渲染排名
+        function renderRanking() {
+            const data = mockData.channels.map(calculateMetrics).sort((a, b) => b.cr - a.cr);
+            
+            const html = data.map((c, i) => `
+                <div style="display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="width: 30px; font-weight: 700; color: ${i < 3 ? '#667eea' : '#999'};">#${i + 1}</div>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600;">${c.display}</div>
+                        <div style="font-size: 12px; color: #666;">${c.visitors.toLocaleString()} 访客 · $${c.revenue.toLocaleString()} 收入</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-weight: 700; color: #667eea;">${c.cr}%</div>
+                        <div style="font-size: 12px; color: #999;">转化率</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('rankingContainer').innerHTML = html;
+        }
+
+        // 加载真实数据（如果有）
+        function loadRealData() {
+            // 从 localStorage 读取追踪数据
+            const conversions = JSON.parse(localStorage.getItem('contentai_conversions') || '[]');
+            const revenue = JSON.parse(localStorage.getItem('contentai_revenue') || '[]');
+            
+            if (conversions.length > 0) {
+                console.log('Real data found:', { conversions, revenue });
+                // 这里可以聚合真实数据并更新展示
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderChannelTable();
+            renderRanking();
+            loadRealData();
+        });
+    </script>
+</body>
+</html>

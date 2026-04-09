@@ -1,0 +1,7 @@
+{
+  "last_check": "2026-03-22T07:59:00+01:00",
+  "accounts_configured": ["EU CrossBorder", "UK CrossBorder", "US Tax API"],
+  "accounts_missing": ["Canada Tax API", "Amazon Calculator", "Shopify Calculator"],
+  "secret_key_available": false,
+  "notes": "Configuration exists but Stripe Secret Key not found. Cannot query payment data."
+}

@@ -1,0 +1,110 @@
+{
+  "value": {
+    "high_volume_low_competition": [
+      {
+        "keyword": "grip yoga socks for women",
+        "volume": "10K",
+        "competition": "low",
+        "cpc": 0.8
+      },
+      {
+        "keyword": "pilates socks non slip",
+        "volume": "8K",
+        "competition": "low",
+        "cpc": 0.7
+      },
+      {
+        "keyword": "pet grooming gloves",
+        "volume": "15K",
+        "competition": "medium",
+        "cpc": 1.2
+      },
+      {
+        "keyword": "dog toothbrush toy",
+        "volume": "12K",
+        "competition": "low",
+        "cpc": 0.9
+      },
+      {
+        "keyword": "silk sleep mask adjustable",
+        "volume": "6K",
+        "competition": "low",
+        "cpc": 0.6
+      },
+      {
+        "keyword": "white noise machine baby",
+        "volume": "20K",
+        "competition": "medium",
+        "cpc": 1.5
+      },
+      {
+        "keyword": "kitchen gadgets 2026",
+        "volume": "25K",
+        "competition": "high",
+        "cpc": 2.1
+      },
+      {
+        "keyword": "vegetable chopper manual",
+        "volume": "18K",
+        "competition": "medium",
+        "cpc": 1.3
+      },
+      {
+        "keyword": "jade roller face massager",
+        "volume": "22K",
+        "competition": "medium",
+        "cpc": 1.4
+      },
+      {
+        "keyword": "gua sha set rose quartz",
+        "volume": "14K",
+        "competition": "low",
+        "cpc": 0.9
+      }
+    ],
+    "tiktok_trending_hashtags": [
+      "#yogalife",
+      "#petsupplies",
+      "#sleephacks",
+      "#kitchenhacks",
+      "#beautytips",
+      "#officelife",
+      "#fitnessmotivation",
+      "#momlife",
+      "#carorganization",
+      "#plantmom"
+    ],
+    "amazon_ppc_keywords": {
+      "yoga_socks": [
+        "yoga socks women",
+        "pilates grip socks",
+        "barre socks"
+      ],
+      "pet_products": [
+        "pet grooming tools",
+        "dog accessories",
+        "cat toys"
+      ],
+      "sleep_products": [
+        "sleep mask",
+        "white noise machine",
+        "sleep aid"
+      ],
+      "kitchen": [
+        "kitchen gadgets",
+        "vegetable chopper",
+        "kitchen organizer"
+      ],
+      "beauty": [
+        "face roller",
+        "gua sha",
+        "skincare tools"
+      ]
+    }
+  },
+  "cached_at": "2026-03-17T15:40:27.879222",
+  "expires_at": "2026-03-24T15:40:27.879228",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-17T15:40:27.879235"
+}

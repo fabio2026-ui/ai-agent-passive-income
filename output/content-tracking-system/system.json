@@ -1,0 +1,38 @@
+{
+  "system_name": "内容升级追踪系统",
+  "version": "1.0",
+  "initialized": "2026-04-04",
+  "components": {
+    "tracking_table": {
+      "file": "data/content_tracking.csv",
+      "articles_count": 20,
+      "fields": ["url", "publish_time", "theme", "target_audience", "utm_source", "utm_medium", "utm_campaign", "status"]
+    },
+    "utm_system": {
+      "channels": 15,
+      "campaigns": 10,
+      "generator": "utm_generator.py"
+    },
+    "monitoring": {
+      "api_endpoint": "http://localhost:5000/api/stats",
+      "data_files": ["subscribers_history.csv", "content_performance.csv"],
+      "script": "scripts/monitor.py"
+    },
+    "ab_testing": {
+      "preset_tests": 5,
+      "types": ["headline", "cta", "content", "multi"],
+      "framework": "scripts/ab_test_framework.py"
+    },
+    "reporting": {
+      "generator": "scripts/weekly_report.py",
+      "output_format": ["markdown", "png"],
+      "schedule": "weekly"
+    }
+  },
+  "quick_commands": {
+    "monitor": "python3 scripts/monitor.py",
+    "weekly_report": "python3 scripts/weekly_report.py",
+    "generate_utm": "python3 utm_generator.py <url> <channel> <campaign>",
+    "setup_tests": "python3 setup_ab_tests.py"
+  }
+}

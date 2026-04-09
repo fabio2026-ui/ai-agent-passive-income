@@ -1,0 +1,23 @@
+{
+  "id": "mem_1775409413065_4ziez",
+  "timestamp": 1775409413065,
+  "content": {
+    "sessionId": "session_1775409413028_lxx9ku56j",
+    "timestamp": 1775409413065,
+    "stats": {
+      "total": 0,
+      "decisions": 0,
+      "facts": 0,
+      "tasks": 0
+    },
+    "keyDecisions": [],
+    "keyFacts": []
+  },
+  "type": "session_summary",
+  "tags": [
+    "consolidated",
+    "session_1775409413028_lxx9ku56j"
+  ],
+  "summary": null,
+  "sessionId": "session_1775409413028_lxx9ku56j"
+}

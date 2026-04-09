@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReplyAI 设置</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    
+    header p {
+      opacity: 0.9;
+    }
+    
+    main {
+      padding: 30px;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .section:last-child {
+      border-bottom: none;
+    }
+    
+    .section h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #555;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .input-group input {
+      flex: 1;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+    
+    .btn-secondary:hover {
+      background: #e0e0e0;
+    }
+    
+    .hint {
+      font-size: 13px;
+      color: #888;
+      margin-top: 6px;
+    }
+    
+    .card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .feature-list li::before {
+      content: '✅';
+    }
+    
+    footer {
+      padding: 20px 30px;
+      background: #f8f9fa;
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+    }
+    
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    
+    .status {
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-size: 14px;
+      display: none;
+    }
+    
+    .status.success {
+      display: block;
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .status.error {
+      display: block;
+      background: #f8d7da;
+      color: #721c24;
+    }
+    
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .toggle-switch input[type="checkbox"] {
+      width: 50px;
+      height: 26px;
+      appearance: none;
+      background: #ccc;
+      border-radius: 13px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch input[type="checkbox"]::after {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s;
+    }
+    
+    .toggle-switch input[type="checkbox"]:checked {
+      background: #667eea;
+    }
+    
+    .toggle-switch input[type="checkbox"]:checked::after {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚙️ ReplyAI 设置</h1>
+      <p>智能客服邮件助手 - 零成本运营，用户自带API Key</p>
+    </header>
+
+    <main>
+      <!-- API设置 -->
+      <section class="section">
+        <h2>🔑 OpenAI API 设置</h2>
+        
+        <div class="card">
+          <h3>如何获取API Key</h3>
+          <p>1. 访问 <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI官网</a></p>
+          <p>2. 注册/登录您的OpenAI账号</p>
+          <p>3. 点击 "Create new secret key"</p>
+          <p>4. 复制生成的密钥（以 sk- 开头）</p>
+        </div>
+
+        <div class="form-group">
+          <label for="apiKey">API Key</label>
+          <div class="input-group">
+            <input type="password" id="apiKey" placeholder="sk-..." />
+            <button id="toggleApiKey" class="btn btn-secondary">显示</button>
+          </div>
+          <p class="hint">您的API Key仅存储在浏览器本地，不会上传到任何服务器</p>
+        </div>
+
+        <div class="form-group">
+          <label for="model">AI模型</label>
+          <select id="model">
+            <option value="gpt-4o-mini">GPT-4o Mini (推荐，性价比高)</option>
+            <option value="gpt-4o">GPT-4o (更智能，费用较高)</option>
+            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (经济选择)</option>
+          </select>
+        </div>
+
+        <button id="saveSettings" class="btn btn-primary">保存设置</button>
+        <div id="status" class="status"></div>
+      </section>
+
+      <!-- 默认设置 -->
+      <section class="section">
+        <h2>🎨 默认回复风格</h2>
+        
+        <div class="form-group">
+          <label for="defaultStyle">默认风格</label>
+          <select id="defaultStyle">
+            <option value="professional">专业正式</option>
+            <option value="friendly">友好亲切</option>
+            <option value="concise">简洁明了</option>
+            <option value="custom">自定义</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="customStyleGroup">
+          <label for="customStyle">自定义风格描述</label>
+          <textarea id="customStyle" rows="3" placeholder="例如：礼貌但有决断力，多用数据支撑，语气亲和但不失专业..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="signature">默认签名</label>
+          <textarea id="signature" rows="3" placeholder="您的默认邮件签名，会自动附加到回复中"></textarea>
+        </div>
+
+        <button id="saveDefaults" class="btn btn-primary">保存默认设置</button>
+        <div id="defaultsStatus" class="status"></div>
+      </section>
+
+      <!-- 数据管理 -->
+      <section class="section">
+        <h2>📊 数据管理</h2>
+        
+        <div class="form-group">
+          <div class="toggle-switch">
+            <input type="checkbox" id="historyEnabled" checked>
+            <label for="historyEnabled">启用历史记录</label>
+          </div>
+          <p class="hint">保存您的回复历史，方便复用</p>
+        </div>
+
+        <button id="clearData" class="btn btn-secondary">🗑️ 清除所有本地数据</button>
+        <div id="clearStatus" class="status"></div>
+      </section>
+
+      <!-- 关于 -->
+      <section class="section">
+        <h2>ℹ️ 关于 ReplyAI</h2>
+        
+        <div class="card">
+          <h3>产品特点</h3>
+          <ul class="feature-list">
+            <li>一键生成专业邮件回复</li>
+            <li>支持Gmail和Outlook</li>
+            <li>多种回复风格可选</li>
+            <li>用户自带API Key，零成本</li>
+            <li>数据完全本地存储</li>
+            <li>支持自定义风格</li>
+          </ul>
+        </div>
+
+        <div class="card"
+>
+          <h3>费用说明</h3>
+          <p>ReplyAI本身是免费工具，但使用OpenAI API会产生费用。GPT-4o Mini模型每1000 tokens约$0.00015，一封普通邮件约花费 $0.001-0.003。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>ReplyAI © 2024 | <a href="#" id="feedback">问题反馈</a></p>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

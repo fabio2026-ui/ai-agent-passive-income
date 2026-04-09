@@ -1,0 +1,66 @@
+{
+  "tests": [
+    {
+      "test_id": "article01_headline",
+      "test_name": "\u6807\u9898\u4f18\u5316\u6d4b\u8bd5",
+      "test_type": "headline",
+      "url": "https://telegra.ph/article-01-intro",
+      "variants": [
+        {
+          "variant_id": "control",
+          "headline": "AI\u5de5\u5177\u5165\u95e8\u6307\u5357",
+          "subheadline": null,
+          "cta_text": "\u4e86\u89e3\u66f4\u591a",
+          "cta_color": "#007bff",
+          "content_block": null,
+          "traffic_allocation": 50
+        },
+        {
+          "variant_id": "variant-a",
+          "headline": "7\u5929\u638c\u63e1AI\u5de5\u5177\uff1a\u4ece\u65b0\u624b\u5230\u4e13\u5bb6",
+          "subheadline": null,
+          "cta_text": "\u4e86\u89e3\u66f4\u591a",
+          "cta_color": "#007bff",
+          "content_block": null,
+          "traffic_allocation": 50
+        }
+      ],
+      "start_date": "2026-04-04T02:22:09.089203",
+      "end_date": null,
+      "min_sample_size": 200,
+      "confidence_level": 0.95,
+      "status": "active"
+    },
+    {
+      "test_id": "article02_cta",
+      "test_name": "CTA\u6309\u94ae\u4f18\u5316\u6d4b\u8bd5",
+      "test_type": "cta",
+      "url": "https://telegra.ph/article-02-prompts",
+      "variants": [
+        {
+          "variant_id": "control",
+          "headline": "\u9ed8\u8ba4\u6807\u9898",
+          "subheadline": null,
+          "cta_text": "\u4e86\u89e3\u66f4\u591a",
+          "cta_color": "#007bff",
+          "content_block": null,
+          "traffic_allocation": 50
+        },
+        {
+          "variant_id": "variant-a",
+          "headline": "\u9ed8\u8ba4\u6807\u9898",
+          "subheadline": null,
+          "cta_text": "\u7acb\u5373\u5b66\u4e60",
+          "cta_color": "#28a745",
+          "content_block": null,
+          "traffic_allocation": 50
+        }
+      ],
+      "start_date": "2026-04-04T02:22:09.090459",
+      "end_date": null,
+      "min_sample_size": 300,
+      "confidence_level": 0.95,
+      "status": "active"
+    }
+  ]
+}

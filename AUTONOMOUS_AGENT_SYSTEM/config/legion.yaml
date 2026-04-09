@@ -1,0 +1,53 @@
+# ============================================
+# 小七军团v1.0 - 全局配置文件
+# XiaoQi Legion v1.0 - Global Configuration
+# ============================================
+
+legion:
+  name: "小七军团v1.0"
+  version: "1.0.0"
+  max_agents: 10
+  heartbeat_interval: 30  # 秒
+  
+# 监控系统配置
+monitor:
+  health_check_interval: 10  # 秒
+  metrics_retention_days: 7
+  alert_thresholds:
+    cpu_percent: 80
+    memory_percent: 85
+    agent_response_time_ms: 5000
+    
+# 任务调度配置
+scheduler:
+  max_concurrent_tasks: 20
+  task_timeout_seconds: 300
+  retry_attempts: 3
+  retry_delay_seconds: 5
+  
+# Agent池配置
+agent_pool:
+  min_idle_agents: 2
+  max_idle_agents: 5
+  agent_lifetime_seconds: 3600
+  auto_scale: true
+  
+# 自我修复配置
+healer:
+  enabled: true
+  check_interval: 60  # 秒
+  max_restart_attempts: 5
+  restart_cooldown_seconds: 300
+  
+# 存储配置
+storage:
+  db_path: "./storage/legion.db"
+  logs_path: "./logs"
+  backup_interval_hours: 24
+  
+# 日志配置
+logging:
+  level: "INFO"
+  max_file_size_mb: 100
+  max_backup_files: 5
+  format: "%(asctime)s | %(levelname)s | [%(name)s] %(message)s"

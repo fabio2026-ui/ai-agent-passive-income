@@ -1,0 +1,17 @@
+ContentAI MVP v1.0 - 部署说明
+================================
+
+📦 交付文件:
+- final-deploy/ - 部署文件目录
+- CONTENTAI-MVP-v1.0.tar.gz - 完整包
+
+🚀 部署 (2分钟):
+1. 访问 https://app.netlify.com/drop
+2. 上传 final-deploy/ 文件夹
+3. 获得域名，完成！
+
+📱 运营准备:
+- 微信小程序: mp.weixin.qq.com
+- 小红书: xiaohongshu.com
+
+✅ 状态: 项目完成

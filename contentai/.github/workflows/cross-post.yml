@@ -1,0 +1,122 @@
+name: Cross-Platform Post Publisher
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/post.md'
+      - '.github/workflows/cross-post.yml'
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Force publish even if already published'
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Parse post content
+      id: parse
+      run: |
+        node .github/scripts/parse-post.js content/post.md
+      env:
+        FORCE_PUBLISH: ${{ github.event.inputs.force_publish || 'false' }}
+
+    - name: Load publish status
+      id: load-status
+      run: |
+        if [ -f .github/publish-status.json ]; then
+          echo "status=$(cat .github/publish-status.json | tr -d '\n')" >> $GITHUB_OUTPUT
+        else
+          echo "status={}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Publish to Dev.to
+      if: steps.parse.outputs.title != ''
+      id: publish-devto
+      run: node .github/scripts/publish-devto.js
+      env:
+        DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+        POST_TITLE: ${{ steps.parse.outputs.title }}
+        POST_BODY: ${{ steps.parse.outputs.body }}
+        POST_TAGS: ${{ steps.parse.outputs.tags }}
+        POST_DESCRIPTION: ${{ steps.parse.outputs.description }}
+        POST_CANONICAL_URL: ${{ steps.parse.outputs.canonical_url }}
+        PUBLISH_STATUS: ${{ steps.load-status.outputs.status }}
+
+    - name: Publish to Hashnode
+      if: steps.parse.outputs.title != ''
+      id: publish-hashnode
+      run: node .github/scripts/publish-hashnode.js
+      env:
+        HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
+        HASHNODE_PUBLICATION_ID: ${{ secrets.HASHNODE_PUBLICATION_ID }}
+        POST_TITLE: ${{ steps.parse.outputs.title }}
+        POST_BODY: ${{ steps.parse.outputs.body }}
+        POST_TAGS: ${{ steps.parse.outputs.tags }}
+        POST_DESCRIPTION: ${{ steps.parse.outputs.description }}
+        POST_CANONICAL_URL: ${{ steps.parse.outputs.canonical_url }}
+        POST_COVER_IMAGE: ${{ steps.parse.outputs.cover_image }}
+        PUBLISH_STATUS: ${{ steps.load-status.outputs.status }}
+
+    - name: Publish to Medium
+      if: steps.parse.outputs.title != ''
+      id: publish-medium
+      run: node .github/scripts/publish-medium.js
+      env:
+        MEDIUM_API_KEY: ${{ secrets.MEDIUM_API_KEY }}
+        MEDIUM_AUTHOR_ID: ${{ secrets.MEDIUM_AUTHOR_ID }}
+        POST_TITLE: ${{ steps.parse.outputs.title }}
+        POST_BODY: ${{ steps.parse.outputs.body }}
+        POST_TAGS: ${{ steps.parse.outputs.tags }}
+        POST_CANONICAL_URL: ${{ steps.parse.outputs.canonical_url }}
+        PUBLISH_STATUS: ${{ steps.load-status.outputs.status }}
+
+    - name: Post to Twitter/X
+      if: steps.parse.outputs.title != ''
+      id: publish-twitter
+      run: node .github/scripts/publish-twitter.js
+      env:
+        TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+        TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+        TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+        TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        POST_TITLE: ${{ steps.parse.outputs.title }}
+        POST_DESCRIPTION: ${{ steps.parse.outputs.description }}
+        POST_URL: ${{ steps.parse.outputs.canonical_url }}
+        POST_TAGS: ${{ steps.parse.outputs.tags }}
+        PUBLISH_STATUS: ${{ steps.load-status.outputs.status }}
+
+    - name: Update publish status
+      run: node .github/scripts/update-status.js
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        POST_TITLE: ${{ steps.parse.outputs.title }}
+        DEVTO_RESULT: ${{ steps.publish-devto.outputs.result }}
+        HASHNODE_RESULT: ${{ steps.publish-hashnode.outputs.result }}
+        MEDIUM_RESULT: ${{ steps.publish-medium.outputs.result }}
+        TWITTER_RESULT: ${{ steps.publish-twitter.outputs.result }}
+
+    - name: Commit publish status
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .github/publish-status.json
+        git diff --staged --quiet || git commit -m "Update publish status for: ${{ steps.parse.outputs.title }}"
+        git push

@@ -1,0 +1,64 @@
+{
+  "value": {
+    "generated_at": "2026-03-17T15:22:26.209496",
+    "based_on": "google_trends",
+    "next_launches": [
+      {
+        "priority": 1,
+        "project": "汽车配件",
+        "timeline": "本周",
+        "actions": [
+          "AI设计: 生成汽车配件产品图 (Midjourney)",
+          "供应链: 联系1688厂商询价",
+          "内容: 准备TikTok脚本3条",
+          "上架: Amazon"
+        ],
+        "signals": [
+          "dog accessories cute",
+          "baby accessories must have",
+          "car organizer backseat"
+        ],
+        "expected_margin": "35%"
+      },
+      {
+        "priority": 2,
+        "project": "宠物用品",
+        "timeline": "本周",
+        "actions": [
+          "AI设计: 生成宠物用品产品图 (Midjourney)",
+          "供应链: 联系1688厂商询价",
+          "内容: 准备TikTok脚本3条",
+          "上架: Shopify+TikTok Shop"
+        ],
+        "signals": [
+          "pet grooming tools",
+          "dog accessories cute",
+          "baby accessories must have"
+        ],
+        "expected_margin": "40%"
+      },
+      {
+        "priority": 3,
+        "project": "办公用品",
+        "timeline": "本周",
+        "actions": [
+          "AI设计: 生成办公用品产品图 (Midjourney)",
+          "供应链: 联系1688厂商询价",
+          "内容: 准备TikTok脚本3条",
+          "上架: Amazon"
+        ],
+        "signals": [
+          "dog accessories cute",
+          "desk organizer aesthetic",
+          "baby accessories must have"
+        ],
+        "expected_margin": "42%"
+      }
+    ]
+  },
+  "cached_at": "2026-03-17T15:22:26.209696",
+  "expires_at": "2026-03-24T15:22:26.209702",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-17T15:22:26.209709"
+}

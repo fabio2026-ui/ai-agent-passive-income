@@ -1,0 +1,25 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# API Keys and secrets
+*.key
+*.pem
+secrets/
+config/secrets*
+
+# Logs
+logs/
+*.log
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+contentai/*.tar.gz
+*.tar.gz
+*.tar.gz
+*.zip

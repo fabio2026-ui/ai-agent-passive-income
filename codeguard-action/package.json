@@ -1,0 +1,40 @@
+{
+  "name": "codeguard-scorer",
+  "version": "1.0.0",
+  "description": "Lightweight CLI for code quality scoring - part of CodeGuard AI",
+  "main": "dist/index.js",
+  "bin": {
+    "codeguard-scorer": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "keywords": [
+    "code-quality",
+    "static-analysis",
+    "security",
+    "performance",
+    "cli",
+    "code-review"
+  ],
+  "author": "CodeGuard AI",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "glob": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeguard-ai/codeguard-scorer"
+  },
+  "homepage": "https://codeguard-ai-prod.yhongwb.workers.dev",
+  "bugs": {
+    "url": "https://github.com/codeguard-ai/codeguard-scorer/issues"
+  }
+}

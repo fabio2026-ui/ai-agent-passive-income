@@ -1,0 +1,104 @@
+{
+  "value": {
+    "rising": [
+      {
+        "term": "yoga socks grip",
+        "growth": "+3200%",
+        "category": "fitness"
+      },
+      {
+        "term": "pilates equipment",
+        "growth": "+2800%",
+        "category": "fitness"
+      },
+      {
+        "term": "pet grooming tools",
+        "growth": "+2500%",
+        "category": "pet"
+      },
+      {
+        "term": "dog accessories cute",
+        "growth": "+1800%",
+        "category": "pet"
+      },
+      {
+        "term": "sleep mask silk",
+        "growth": "+2200%",
+        "category": "wellness"
+      },
+      {
+        "term": "white noise machine",
+        "growth": "+1900%",
+        "category": "wellness"
+      },
+      {
+        "term": "kitchen gadgets 2026",
+        "growth": "+1600%",
+        "category": "kitchen"
+      },
+      {
+        "term": "food chopper",
+        "growth": "+1400%",
+        "category": "kitchen"
+      },
+      {
+        "term": "face roller jade",
+        "growth": "+3100%",
+        "category": "beauty"
+      },
+      {
+        "term": "gua sha tool",
+        "growth": "+2900%",
+        "category": "beauty"
+      },
+      {
+        "term": "desk organizer aesthetic",
+        "growth": "+1200%",
+        "category": "office"
+      },
+      {
+        "term": "resistance bands set",
+        "growth": "+2100%",
+        "category": "fitness"
+      },
+      {
+        "term": "baby accessories must have",
+        "growth": "+2600%",
+        "category": "baby"
+      },
+      {
+        "term": "car organizer backseat",
+        "growth": "+1500%",
+        "category": "automotive"
+      },
+      {
+        "term": "indoor plant accessories",
+        "growth": "+1800%",
+        "category": "garden"
+      }
+    ],
+    "top": [
+      {
+        "term": "home workout",
+        "volume": "high"
+      },
+      {
+        "term": "self care",
+        "volume": "high"
+      },
+      {
+        "term": "pet owners",
+        "volume": "high"
+      },
+      {
+        "term": "sleep better",
+        "volume": "medium"
+      }
+    ]
+  },
+  "cached_at": "2026-03-17T15:22:22.712367",
+  "expires_at": "2026-03-24T15:22:22.712388",
+  "metadata": {},
+  "access_count": 8,
+  "last_accessed": "2026-03-17T19:41:46.505589"
+}

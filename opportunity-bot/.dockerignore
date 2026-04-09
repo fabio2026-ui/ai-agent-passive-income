@@ -1,0 +1,12 @@
+# 数据目录
+/data
+
+# 日志目录
+/logs
+
+# 报告目录
+/reports
+
+# 忽略所有 JSON 数据文件，但保留 .gitkeep
+*.json
+!.gitkeep

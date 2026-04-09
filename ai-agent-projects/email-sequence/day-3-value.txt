@@ -1,0 +1,37 @@
+Subject: 5-Minute Security Audit (Template Inside)
+Type: Value
+Day: 3
+
+---
+
+Quick question:
+
+When was your last security audit? If you're like most teams, it's been too long.
+
+Here's a simple 5-minute audit you can do today:
+
+
+☐ Check for exposed API keys
+☐ Review recent access logs
+☐ Verify backup integrity
+☐ Update dependencies
+☐ Test incident response
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Get the Automated Version]: #audit-tool
+
+---
+Best regards,
+The AI Security Monitor Team

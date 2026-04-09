@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContentAI 多Agent代码审查</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .header h1 { font-size: 42px; margin-bottom: 10px; }
+        .header p { font-size: 18px; opacity: 0.9; }
+        
+        /* Main Layout */
+        .main {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 1024px) {
+            .main { grid-template-columns: 1fr; }
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group small {
+            color: #9ca3af;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102,126,234,0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Content Area */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Agent Status */
+        .agent-status {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .agent-status h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .agent-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #ccc;
+            transition: all 0.3s;
+        }
+        
+        .agent-card.active {
+            border-left-color: var(--info);
+            background: #eff6ff;
+        }
+        
+        .agent-card.complete {
+            border-left-color: var(--success);
+            background: #ecfdf5;
+        }
+        
+        .agent-card.error {
+            border-left-color: var(--danger);
+            background: #fef2f2;
+        }
+        
+        .agent-card .icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .agent-card .name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .agent-card .desc {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+        
+        .agent-card .status {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .agent-card .status.pending {
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+        
+        .agent-card .status.active {
+            background: #dbeafe;
+            color: var(--info);
+        }
+        
+        .agent-card .status.complete {
+            background: #d1fae5;
+            color: var(--success);
+        }
+        
+        .agent-card .status.error {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+        
+        /* Results */
+        .results {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+        }
+        
+        .results.show { display: block; }
+        
+        .results h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .file-tree {
+            margin-bottom: 20px;
+        }
+        
+        .file-tree h4 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .file-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .file-tag {
+            background: var(--light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-family: monospace;
+            color: var(--dark);
+        }
+        
+        .review-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn:hover {
+            border-color: var(--primary);
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .review-content {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            min-height: 200px;
+        }
+        
+        .review-section {
+            margin-bottom: 25px;
+        }
+        
+        .review-section h4 {
+            color: var(--dark);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .review-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .review-section li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .review-section li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .severity.high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .severity.medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .severity.low {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        
+        /* Progress */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: width 0.5s ease;
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e5e7eb;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Code Block */
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        /* Donation Section */
+        .donation-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .donation-section h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .donation-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .donation-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .donation-card .crypto-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .donation-card .crypto-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .donation-card .crypto-address {
+            font-family: monospace;
+            font-size: 11px;
+            color: #6b7280;
+            word-break: break-all;
+            background: white;
+            padding: 8px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        
+        .donation-card .copy-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+        
+        .donation-card .copy-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .donation-card .copy-btn.copied {
+            background: var(--success);
+        }
+        
+        /* Paywall Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-content h2 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .modal-content .limit-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-content .usage-bar {
+            width: 100%;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .modal-content .usage-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: width 0.5s ease;
+        }
+        
+        .modal-content .usage-text {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-content .paywall-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .paywall-option {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .paywall-option:hover {
+            border-color: var(--primary);
+        }
+        
+        .paywall-option .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .paywall-option .plan-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+        
+        .paywall-option .plan-desc {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .btn-upgrade {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-close {
+            background: #e5e7eb;
+            color: #6b7280;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        /* Usage Counter */
+        .usage-counter {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .usage-counter .counter-text {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .usage-counter .counter-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .usage-counter .counter-limit {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        
+        /* Summary Card */
+        .summary-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-card h4 {
+            margin-bottom: 15px;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 ContentAI 多Agent代码审查</h1>
+            <p>AI驱动的多维度代码审查 - 安全、快速、零成本</p>
+        </div>
+        
+        <div class="main">
+            <div class="sidebar">
+                <h2>⚙️ 配置</h2>
+                
+                <div class="usage-counter" id="usageCounter">
+                    <div class="counter-text">今日剩余免费次数</div>
+                    <div class="counter-number"><span id="freeUsesLeft">3</span> / 3</div>
+                    <div class="counter-limit">免费版每日限3次</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>📁 GitHub 仓库 URL</label>
+                    <input type="text" id="repoUrl" placeholder="https://github.com/owner/repo" required>
+                    <small>支持公开和私有仓库（需要Token）</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>🔐 GitHub Token <span style="color:#999">(可选)</span></label>
+                    <input type="password" id="githubToken" placeholder="ghp_...">
+                    <small>用于访问私有仓库或提高API限制</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>🤖 Moonshot API Key</label>
+                    <input type="password" id="apiKey" placeholder="sk-..." required>
+                    <small><a href="https://platform.moonshot.cn/" target="_blank" style="color: var(--primary);">免费获取 API Key</a>（2分钟）</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>📋 代码路径 <span style="color:#999">(可选)</span></label>
+                    <input type="text" id="codePath" placeholder="src/ 或留空审查全部">
+                    <small>指定要审查的目录路径</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>🌐 分支</label>
+                    <input type="text" id="branch" value="main" placeholder="main">
+                </div>
+                
+                <button class="btn btn-primary" id="startBtn" onclick="startReview()">
+                    🚀 开始代码审查
+                </button>
+                
+                <div class="progress-bar" style="display: none;" id="progressBar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <!-- Agent Status -->
+                <div class="agent-status">
+                    <h3>🎭 多Agent系统状态</h3>
+                    <div class="agent-grid">
+                        <div class="agent-card" id="agent-architect">
+                            <div class="icon">🏗️</div>
+                            <div class="name">架构师 Agent</div>
+                            <div class="desc">分析代码结构、设计模式、架构合理性</div>
+                            <div class="status pending">等待中</div>
+                        </div>
+                        <div class="agent-card" id="agent-security">
+                            <div class="icon">🔒</div>
+                            <div class="name">安全专家 Agent</div>
+                            <div class="desc">检测安全漏洞、注入风险、敏感信息</div>
+                            <div class="status pending">等待中</div>
+                        </div>
+                        <div class="agent-card" id="agent-performance">
+                            <div class="icon">⚡</div>
+                            <div class="name">性能优化 Agent</div>
+                            <div class="desc">分析性能瓶颈、资源泄漏、算法效率</div>
+                            <div class="status pending">等待中</div>
+                        </div>
+                        <div class="agent-card" id="agent-quality">
+                            <div class="icon">✨</div>
+                            <div class="name">代码质量 Agent</div>
+                            <div class="desc">检查代码规范、可读性、可维护性</div>
+                            <div class="status pending">等待中</div>
+                        </div>
+                        <div class="agent-card" id="agent-bug">
+                            <div class="icon">🐛</div>
+                            <div class="name">Bug猎手 Agent</div>
+                            <div class="desc">发现潜在Bug、逻辑错误、边界情况</div>
+                            <div class="status pending">等待中</div>
+                        </div>
+                        <div class="agent-card" id="agent-summary">
+                            <div class="icon">📝</div>
+                            <div class="name">报告生成 Agent</div>
+                            <div class="desc">汇总所有审查结果，生成综合报告</div>
+                            <div class="status pending">等待中</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results -->
+                <div class="results" id="results">
+                    <h3>📊 审查结果</h3>
+                    
+                    <div class="summary-card" id="summaryCard" style="display: none;">
+                        <h4>📈 综合评分</h4>
+                        <div class="summary-stats">
+                            <div class="stat-item">
+                                <div class="stat-value" id="scoreOverall">-</div>
+                                <div class="stat-label">综合评分</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="scoreArch">-</div>
+                                <div class="stat-label">架构</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="scoreSec">-</div>
+                                <div class="stat-label">安全</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="scorePerf">-</div>
+                                <div class="stat-label">性能</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="scoreQual">-</div>
+                                <div class="stat-label">质量</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="file-tree">
+                        <h4>📁 审查文件列表</h4>
+                        <div class="file-list" id="fileList">
+                            <!-- 动态填充 -->
+                        </div>
+                    </div>
+                    
+                    <div class="review-tabs">
+                        <button class="tab-btn active" onclick="switchTab('architect')">🏗️ 架构分析</button>
+                        <button class="tab-btn" onclick="switchTab('security')">🔒 安全审查</button>
+                        <button class="tab-btn" onclick="switchTab('performance')">⚡ 性能分析</button>
+                        <button class="tab-btn" onclick="switchTab('quality')">✨ 代码质量</button>
+                        <button class="tab-btn" onclick="switchTab('bug')">🐛 Bug检测</button>
+                        <button class="tab-btn" onclick="switchTab('summary')">📝 综合报告</button>
+                    </div>
+                    
+                    <div class="review-content" id="reviewContent">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>等待开始审查...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>ContentAI Code Review v1.0 | 纯前端部署 | 零成本运行</p>
+            <p style="font-size: 12px; margin-top: 10px;">所有API调用均在浏览器本地完成，代码和密钥不会上传到任何服务器</p>
+        </div>
+        
+        <!-- Donation Section -->
+        <div class="container">
+            <div class="donation-section">
+                <h3>☕ 支持我们持续开发</h3>
+                <p style="color: #6b7280; margin-bottom: 10px;">如果这个项目帮到了你，欢迎捐赠支持我们！</p>
+                
+                <div class="donation-grid">
+                    <div class="donation-card" onclick="copyAddress('eth')">
+                        <div class="crypto-icon">💎</div>
+                        <div class="crypto-name">Ethereum (ETH)</div>
+                        <div class="crypto-address" id="eth-address">0xd43b2D60B0b03cEcce6f71dF765648dA511dAa98</div>
+                        <button class="copy-btn" id="eth-btn">📋 复制地址</button>
+                    </div>
+                    
+                    <div class="donation-card" onclick="copyAddress('btc')">
+                        <div class="crypto-icon">₿</div>
+                        <div class="crypto-name">Bitcoin (BTC)</div>
+                        <div class="crypto-address" id="btc-address">bc1q6d6zffkv4h6g7qjx8g6527g3tz3qptnxg5cuvg</div>
+                        <button class="copy-btn" id="btc-btn">📋 复制地址</button>
+                    </div>
+                </div>
+                
+                <p style="color: #9ca3af; font-size: 12px; margin-top: 20px;">
+                    您的支持将用于服务器成本和功能开发 ❤️
+                </p>
+            </div>
+        </div>
+        
+        <!-- Paywall Modal -->
+        <div class="modal-overlay" id="paywallModal">
+            <div class="modal-content">
+                <div class="limit-icon">🚫</div>
+                <h2>免费次数已用完</h2>
+                <p style="color: #6b7280;">您今日的免费审查次数已用完</p>
+                
+                <div class="usage-bar">
+                    <div class="usage-fill" style="width: 100%"></div>
+                </div>
+                <div class="usage-text">3/3 次已使用</div>
+                
+                <p style="color: #374151; margin: 20px 0;">升级以继续享受无限次代码审查</p>
+                
+                <div class="paywall-options">
+                    <div class="paywall-option">
+                        <div class="price">$9</div>
+                        <div class="plan-name">月付</div>
+                        <div class="plan-desc">无限审查 / 30天</div>
+                    </div>
+                    
+                    <div class="paywall-option">
+                        <div class="price">$79</div>
+                        <div class="plan-name">年付</div>
+                        <div class="plan-desc">省$29 / 365天</div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-upgrade" onclick="showDonation()">
+                    💎 通过加密货币捐赠解锁
+                </button>
+                
+                <button class="btn btn-close" onclick="closePaywall()">
+                    稍后再说
+                </button>
+                
+                <p style="color: #9ca3af; font-size: 11px; margin-top: 15px;">
+                    捐赠后请联系 support@contentai.dev 解锁账户
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 全局状态
+        let reviewState = {
+            files: [],
+            currentFileIndex: 0,
+            results: {},
+            isRunning: false
+        };
+        
+        // 使用限制配置
+        const FREE_DAILY_LIMIT = 3;
+        const STORAGE_KEY = 'codeReview_usage';
+        
+        // 获取今日使用次数
+        function getTodayUsage() {
+            const data = localStorage.getItem(STORAGE_KEY);
+            if (!data) return { date: getToday(), count: 0 };
+            
+            const usage = JSON.parse(data);
+            if (usage.date !== getToday()) {
+                return { date: getToday(), count: 0 };
+            }
+            return usage;
+        }
+        
+        // 获取今日日期字符串
+        function getToday() {
+            return new Date().toISOString().split('T')[0];
+        }
+        
+        // 增加使用次数
+        function incrementUsage() {
+            const usage = getTodayUsage();
+            usage.count++;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(usage));
+            updateUsageDisplay();
+        }
+        
+        // 检查是否还有免费次数
+        function hasFreeUsesLeft() {
+            const usage = getTodayUsage();
+            return usage.count < FREE_DAILY_LIMIT;
+        }
+        
+        // 更新使用次数显示
+        function updateUsageDisplay() {
+            const usage = getTodayUsage();
+            const left = Math.max(0, FREE_DAILY_LIMIT - usage.count);
+            const counter = document.getElementById('freeUsesLeft');
+            if (counter) {
+                counter.textContent = left;
+                if (left === 0) {
+                    counter.style.color = '#ef4444';
+                }
+            }
+        }
+        
+        // 显示付费墙
+        function showPaywall() {
+            document.getElementById('paywallModal').classList.add('show');
+        }
+        
+        // 关闭付费墙
+        function closePaywall() {
+            document.getElementById('paywallModal').classList.remove('show');
+        }
+        
+        // 显示捐赠区域
+        function showDonation() {
+            closePaywall();
+            document.querySelector('.donation-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // 复制地址
+        async function copyAddress(type) {
+            const address = type === 'eth' 
+                ? '0xd43b2D60B0b03cEcce6f71dF765648dA511dAa98'
+                : 'bc1q6d6zffkv4h6g7qjx8g6527g3tz3qptnxg5cuvg';
+            
+            try {
+                await navigator.clipboard.writeText(address);
+                const btn = document.getElementById(type + '-btn');
+                btn.textContent = '✅ 已复制';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.textContent = '📋 复制地址';
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                // 降级方案
+                const el = document.getElementById(type + '-address');
+                const range = document.createRange();
+                range.selectNode(el);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+                
+                const btn = document.getElementById(type + '-btn');
+                btn.textContent = '✅ 已复制';
+                setTimeout(() => {
+                    btn.textContent = '📋 复制地址';
+                }, 2000);
+            }
+        }
+        
+        // 加载保存的密钥
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedGithubToken = localStorage.getItem('github_token');
+            const savedApiKey = localStorage.getItem('moonshot_api_key');
+            if (savedGithubToken) document.getElementById('githubToken').value = savedGithubToken;
+            if (savedApiKey) document.getElementById('apiKey').value = savedApiKey;
+            
+            // 更新使用次数显示
+            updateUsageDisplay();
+        });
+        
+        // 开始代码审查
+        async function startReview() {
+            // 检查免费次数
+            if (!hasFreeUsesLeft()) {
+                showPaywall();
+                return;
+            }
+            
+            const repoUrl = document.getElementById('repoUrl').value.trim();
+            const githubToken = document.getElementById('githubToken').value.trim();
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const codePath = document.getElementById('codePath').value.trim();
+            const branch = document.getElementById('branch').value.trim() || 'main';
+            
+            // 验证输入
+            if (!repoUrl) {
+                alert('请输入GitHub仓库URL');
+                return;
+            }
+            
+            if (!apiKey || !apiKey.startsWith('sk-')) {
+                alert('请输入有效的 Moonshot API Key');
+                return;
+            }
+            
+            // 保存密钥
+            localStorage.setItem('github_token', githubToken);
+            localStorage.setItem('moonshot_api_key', apiKey);
+            
+            // 解析仓库信息
+            const repoInfo = parseRepoUrl(repoUrl);
+            if (!repoInfo) {
+                alert('无效的GitHub仓库URL格式');
+                return;
+            }
+            
+            // 初始化状态
+            reviewState = {
+                files: [],
+                currentFileIndex: 0,
+                results: {},
+                isRunning: true
+            };
+            
+            // 更新UI
+            document.getElementById('startBtn').disabled = true;
+            document.getElementById('progressBar').style.display = 'block';
+            document.getElementById('results').classList.add('show');
+            document.getElementById('reviewContent').innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>正在获取仓库文件列表...</p>
+                </div>
+            `;
+            
+            try {
+                // 1. 获取仓库文件列表
+                updateAgentStatus('agent-architect', 'active');
+                const files = await fetchRepoFiles(repoInfo.owner, repoInfo.repo, codePath, branch, githubToken);
+                reviewState.files = files.filter(f => isCodeFile(f.path));
+                
+                if (reviewState.files.length === 0) {
+                    throw new Error('未找到代码文件，请检查路径或仓库');
+                }
+                
+                // 增加使用次数（审查成功开始时）
+                incrementUsage();
+                
+                // 显示文件列表
+                document.getElementById('fileList').innerHTML = reviewState.files
+                    .map(f => `<span class="file-tag">${f.path}</span>`)
+                    .join('');
+                
+                // 2. 开始多Agent审查
+                await runMultiAgentReview(repoInfo, branch, githubToken, apiKey);
+                
+            } catch (error) {
+                document.getElementById('reviewContent').innerHTML = `
+                    <div style="color: #dc2626; padding: 20px;">
+                        <h4>❌ 错误</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+                updateAgentStatus('agent-architect', 'error');
+            } finally {
+                document.getElementById('startBtn').disabled = false;
+                reviewState.isRunning = false;
+            }
+        }
+        
+        // 解析GitHub URL
+        function parseRepoUrl(url) {
+            const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+            if (match) {
+                return { owner: match[1], repo: match[2].replace(/\.git$/, '') };
+            }
+            return null;
+        }
+        
+        // 获取仓库文件列表
+        async function fetchRepoFiles(owner, repo, path, branch, token) {
+            const headers = {
+                'Accept': 'application/vnd.github.v3+json'
+            };
+            if (token) {
+                headers['Authorization'] = `token ${token}`;
+            }
+            
+            const apiPath = path ? `${path}` : '';
+            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${apiPath}?ref=${branch}`;
+            
+            const response = await fetch(url, { headers });
+            if (!response.ok) {
+                if (response.status === 404) {
+                    throw new Error('仓库或路径不存在');
+                } else if (response.status === 401 || response.status === 403) {
+                    throw new Error('访问被拒绝，请检查GitHub Token');
+                }
+                throw new Error(`GitHub API错误: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            let files = [];
+            
+            for (const item of data) {
+                if (item.type === 'file' && isCodeFile(item.path)) {
+                    files.push(item);
+                } else if (item.type === 'dir') {
+                    // 递归获取子目录（限制深度）
+                    if (item.path.split('/').length < 4) {
+                        const subFiles = await fetchRepoFiles(owner, repo, item.path, branch, token);
+                        files = files.concat(subFiles);
+                    }
+                }
+            }
+            
+            // 限制文件数量（避免过多API调用）
+            return files.slice(0, 10);
+        }
+        
+        // 判断是否为代码文件
+        function isCodeFile(path) {
+            const codeExtensions = ['.js', '.ts', '.jsx', '.tsx', '.py', '.java', '.go', '.rs', '.cpp', '.c', '.h', '.rb', '.php', '.swift', '.kt', '.scala', '.r', '.m', '.cs', '.vb', '.fs', '.clj', '.cljs', '.erl', '.ex', '.exs', '.hs', '.lua', '.pl', '.pm', '.t', '.sh', '.bash', '.zsh', '.ps1', '.sql', '.html', '.css', '.scss', '.sass', '.less', '.vue', '.svelte', '.json', '.yaml', '.yml', '.xml', '.toml', '.ini', '.conf', '.md'];
+            return codeExtensions.some(ext => path.toLowerCase().endsWith(ext));
+        }
+        
+        // 获取文件内容
+        async function fetchFileContent(file, token) {
+            const headers = {};
+            if (token) {
+                headers['Authorization'] = `token ${token}`;
+            }
+            
+            const response = await fetch(file.download_url, { headers });
+            if (!response.ok) {
+                throw new Error(`无法获取文件内容: ${file.path}`);
+            }
+            
+            return await response.text();
+        }
+        
+        // 运行多Agent审查
+        async function runMultiAgentReview(repoInfo, branch, githubToken, apiKey) {
+            const allFileContents = [];
+            
+            // 获取所有文件内容
+            for (let i = 0; i < reviewState.files.length; i++) {
+                const file = reviewState.files[i];
+                updateProgress((i + 1) / reviewState.files.length * 20);
+                
+                try {
+                    const content = await fetchFileContent(file, githubToken);
+                    allFileContents.push({
+                        path: file.path,
+                        content: content.substring(0, 5000) // 限制单个文件大小
+                    });
+                } catch (e) {
+                    console.error(`获取文件失败: ${file.path}`, e);
+                }
+            }
+            
+            // 构建代码上下文
+            const codeContext = allFileContents.map(f => 
+                `文件: ${f.path}\n\`\`\`\n${f.content}\n\`\`\`
+            ).join('\n\n---\n\n');
+            
+            // 并行运行所有Agent
+            const agents = [
+                { name: 'architect', id: 'agent-architect', fn: runArchitectAgent },
+                { name: 'security', id: 'agent-security', fn: runSecurityAgent },
+                { name: 'performance', id: 'agent-performance', fn: runPerformanceAgent },
+                { name: 'quality', id: 'agent-quality', fn: runQualityAgent },
+                { name: 'bug', id: 'agent-bug', fn: runBugAgent }
+            ];
+            
+            const agentPromises = agents.map(async (agent, index) => {
+                // 错开启动时间，避免同时大量API调用
+                await new Promise(r => setTimeout(r, index * 500));
+                
+                updateAgentStatus(agent.id, 'active');
+                try {
+                    const result = await agent.fn(codeContext, apiKey);
+                    reviewState.results[agent.name] = result;
+                    updateAgentStatus(agent.id, 'complete');
+                    return result;
+                } catch (error) {
+                    console.error(`${agent.name} Agent失败:`, error);
+                    reviewState.results[agent.name] = { error: error.message };
+                    updateAgentStatus(agent.id, 'error');
+                    return null;
+                }
+            });
+            
+            // 等待所有Agent完成
+            await Promise.all(agentPromises);
+            
+            // 生成综合报告
+            updateAgentStatus('agent-summary', 'active');
+            await runSummaryAgent(codeContext, apiKey);
+            updateAgentStatus('agent-summary', 'complete');
+            
+            updateProgress(100);
+            
+            // 显示结果
+            displayResults();
+        }
+        
+        // 架构师 Agent
+        async function runArchitectAgent(codeContext, apiKey) {
+            const prompt = `你是一位资深软件架构师，请分析以下代码库的架构设计。
+
+## 代码库内容
+
+${codeContext.substring(0, 8000)}
+
+## 分析要求
+
+请从以下维度进行分析：
+1. 整体架构设计是否合理
+2. 模块划分是否清晰
+3. 设计模式的使用情况
+4. 代码组织结构
+5. 依赖关系是否健康
+6. 可扩展性评估
+
+## 输出格式
+
+请按以下JSON格式输出：
+{
+  "score": 85,
+  "summary": "架构整体良好，但存在...",
+  "strengths": ["优点1", "优点2"],
+  "issues": [
+    {"severity": "high/medium/low", "file": "相关文件", "description": "问题描述", "suggestion": "改进建议"}
+  ],
+  "recommendations": ["建议1", "建议2"]
+}
+
+注意：score为0-100的整数，issues最多返回5个最重要的问题。`;
+            
+            return await callAI(prompt, apiKey);
+        }
+        
+        // 安全专家 Agent
+        async function runSecurityAgent(codeContext, apiKey) {
+            const prompt = `你是一位网络安全专家，请审查以下代码库的安全问题。
+
+## 代码库内容
+
+${codeContext.substring(0, 8000)}
+
+## 审查重点
+
+1. 敏感信息泄露（密码、密钥、token）
+2. SQL注入风险
+3. XSS漏洞
+4. 命令注入
+5. 不安全的反序列化
+6. 路径遍历
+7. 不安全的随机数生成
+8. 硬编码凭证
+
+## 输出格式
+
+请按以下JSON格式输出：
+{
+  "score": 90,
+  "summary": "安全状况良好，发现X个低风险问题...",
+  "vulnerabilities": [
+    {"severity": "high/medium/low", "file": "相关文件", "line": "行号", "type": "漏洞类型", "description": "描述", "fix": "修复建议"}
+  ],
+  "recommendations": ["建议1", "建议2"]
+}
+
+注意：score为0-100的整数，vulnerabilities最多返回5个最重要的问题。`;
+            
+            return await callAI(prompt, apiKey);
+        }
+        
+        // 性能优化 Agent
+        async function runPerformanceAgent(codeContext, apiKey) {
+            const prompt = `你是一位性能优化专家，请分析以下代码库的性能问题。
+
+## 代码库内容
+
+${codeContext.substring(0, 8000)}
+
+## 分析重点
+
+1. 时间复杂度问题
+2. 内存泄漏风险
+3. 不必要的循环或递归
+4. 数据库查询优化
+5. 缓存策略
+6. 异步处理
+7. 资源使用效率
+
+## 输出格式
+
+请按以下JSON格式输出：
+{
+  "score": 75,
+  "summary": "性能整体可接受，但存在优化空间...",
+  "issues": [
+    {"severity": "high/medium/low", "file": "相关文件", "description": "性能问题", "impact": "影响程度", "optimization": "优化建议"}
+  ],
+  "recommendations": ["建议1", "建议2"]
+}
+
+注意：score为0-100的整数，issues最多返回5个最重要的问题。`;
+            
+            return await callAI(prompt, apiKey);
+        }
+        
+        // 代码质量 Agent
+        async function runQualityAgent(codeContext, apiKey) {
+            const prompt = `你是一位代码质量专家，请审查以下代码库的代码质量。
+
+## 代码库内容
+
+${codeContext.substring(0, 8000)}
+
+## 审查重点
+
+1. 代码规范遵循情况
+2. 命名规范
+3. 注释质量
+4. 代码重复
+5. 函数/方法长度
+6. 圈复杂度
+7. 代码可读性
+8. 测试覆盖率（如可判断）
+
+## 输出格式
+
+请按以下JSON格式输出：
+{
+  "score": 80,
+  "summary": "代码质量良好，建议改进...",
+  "issues": [
+    {"severity": "high/medium/low", "file": "相关文件", "description": "质量问题", "suggestion": "改进建议"}
+  ],
+  "recommendations": ["建议1", "建议2"]
+}
+
+注意：score为0-100的整数，issues最多返回5个最重要的问题。`;
+            
+            return await callAI(prompt, apiKey);
+        }
+        
+        // Bug猎手 Agent
+        async function runBugAgent(codeContext, apiKey) {
+            const prompt = `你是一位资深Bug猎人，请仔细审查以下代码库中的潜在Bug。
+
+## 代码库内容
+
+${codeContext.substring(0, 8000)}
+
+## 审查重点
+
+1. 逻辑错误
+2. 边界条件处理
+3. 空指针/未定义值
+4. 异步处理错误
+5. 资源未释放
+6. 竞态条件
+7. 类型错误
+8. 异常处理不完善
+
+## 输出格式
+
+请按以下JSON格式输出：
+{
+  "score": 85,
+  "summary": "发现X个潜在问题...",
+  "bugs": [
+    {"severity": "high/medium/low", "file": "相关文件", "line": "行号或函数", "type": "Bug类型", "description": "描述", "fix": "修复建议"}
+  ],
+  "recommendations": ["建议1", "建议2"]
+}
+
+注意：score为0-100的整数（分数越高Bug越少），bugs最多返回5个最重要的问题。`;
+            
+            return await callAI(prompt, apiKey);
+        }
+        
+        // 报告生成 Agent
+        async function runSummaryAgent(codeContext, apiKey) {
+            const results = reviewState.results;
+            const prompt = `请基于以下多Agent审查结果，生成一份综合代码审查报告。
+
+## 各Agent评分
+- 架构评分: ${results.architect?.score || 'N/A'}
+- 安全评分: ${results.security?.score || 'N/A'}
+- 性能评分: ${results.performance?.score || 'N/A'}
+- 质量评分: ${results.quality?.score || 'N/A'}
+- Bug评分: ${results.bug?.score || 'N/A'}
+
+## 架构分析摘要
+${results.architect?.summary || '无'}
+
+## 安全审查摘要
+${results.security?.summary || '无'}
+
+## 性能分析摘要
+${results.performance?.summary || '无'}
+
+## 代码质量摘要
+${results.quality?.summary || '无'}
+
+## Bug检测摘要
+${results.bug?.summary || '无'}
+
+## 输出格式
+
+请按以下JSON格式输出：
+{
+  "overallScore": 82,
+  "executiveSummary": "一句话总结",
+  "topIssues": [
+    {"priority": 1, "category": "类别", "description": "问题描述", "action": "建议行动"}
+  ],
+  "strengths": ["优势1", "优势2"],
+  "actionItems": ["行动项1", "行动项2"],
+  "conclusion": "结论和建议"
+}
+
+注意：overallScore为综合评分（0-100），topIssues最多返回3个最重要的问题。`;
+            
+            const result = await callAI(prompt, apiKey);
+            reviewState.results.summary = result;
+        }
+        
+        // 调用AI API
+        async function callAI(prompt, apiKey) {
+            const response = await fetch('https://api.moonshot.cn/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'moonshot-v1-128k',
+                    messages: [
+                        { role: 'system', content: '你是一位专业的代码审查专家，请严格按照要求的JSON格式输出结果。' },
+                        { role: 'user', content: prompt }
+                    ],
+                    temperature: 0.3
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`API错误: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            const content = data.choices[0].message.content;
+            
+            // 提取JSON
+            try {
+                const jsonMatch = content.match(/\{[\s\S]*\}/);
+                if (jsonMatch) {
+                    return JSON.parse(jsonMatch[0]);
+                }
+                return { summary: content, score: 70 };
+            } catch (e) {
+                return { summary: content, score: 70, parseError: true };
+            }
+        }
+        
+        // 更新Agent状态
+        function updateAgentStatus(agentId, status) {
+            const card = document.getElementById(agentId);
+            if (!card) return;
+            
+            card.className = 'agent-card ' + status;
+            const statusEl = card.querySelector('.status');
+            statusEl.className = 'status ' + status;
+            
+            const statusText = {
+                pending: '等待中',
+                active: '审查中...',
+                complete: '已完成',
+                error: '失败'
+            };
+            statusEl.textContent = statusText[status];
+        }
+        
+        // 更新进度条
+        function updateProgress(percent) {
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+        
+        // 切换Tab
+        function switchTab(tab) {
+            // 更新按钮状态
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 显示对应内容
+            displayReviewContent(tab);
+        }
+        
+        // 显示审查结果
+        function displayResults() {
+            const summary = reviewState.results.summary;
+            if (summary) {
+                document.getElementById('summaryCard').style.display = 'block';
+                document.getElementById('scoreOverall').textContent = summary.overallScore || '-';
+                document.getElementById('scoreArch').textContent = reviewState.results.architect?.score || '-';
+                document.getElementById('scoreSec').textContent = reviewState.results.security?.score || '-';
+                document.getElementById('scorePerf').textContent = reviewState.results.performance?.score || '-';
+                document.getElementById('scoreQual').textContent = reviewState.results.quality?.score || '-';
+            }
+            
+            displayReviewContent('summary');
+        }
+        
+        // 显示审查内容
+        function displayReviewContent(tab) {
+            const content = document.getElementById('reviewContent');
+            const result = reviewState.results[tab];
+            
+            if (!result) {
+                content.innerHTML = '<p style="color: #999; padding: 20px;">暂无数据</p>';
+                return;
+            }
+            
+            if (result.error) {
+                content.innerHTML = `<p style="color: #dc2626; padding: 20px;">错误: ${result.error}</p>`;
+                return;
+            }
+            
+            let html = '';
+            
+            if (tab === 'summary') {
+                html = `
+                    <div class="review-section">
+                        <h4>📋 执行摘要</h4>
+                        <p>${result.executiveSummary || result.summary || '暂无摘要'}</p>
+                    </div>
+                    ${result.topIssues ? `
+                    <div class="review-section">
+                        <h4>🚨 优先处理项</h4>
+                        <ul>
+                            ${result.topIssues.map(i => `<li><span class="severity high">P${i.priority}</span> <strong>${i.category}</strong>: ${i.description}<br><em>建议: ${i.action}</em></li>`).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    ${result.strengths ? `
+                    <div class="review-section">
+                        <h4>💪 代码优势</h4>
+                        <ul>
+                            ${result.strengths.map(s => `<li>${s}</li>`).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    ${result.actionItems ? `
+                    <div class="review-section">
+                        <h4>✅ 行动建议</h4>
+                        <ul>
+                            ${result.actionItems.map(a => `<li>${a}</li>`).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    ${result.conclusion ? `
+                    <div class="review-section">
+                        <h4>📝 结论</h4>
+                        <p>${result.conclusion}</p>
+                    </div>
+                    ` : ''}
+                `;
+            } else {
+                html = `
+                    <div class="review-section">
+                        <h4>📊 评分: ${result.score || 'N/A'}/100</h4>
+                        <p>${result.summary || '暂无摘要'}</p>
+                    </div>
+                `;
+                
+                // 根据不同Agent显示不同的issues
+                const issues = result.issues || result.vulnerabilities || result.bugs || [];
+                if (issues.length > 0) {
+                    html += `
+                        <div class="review-section">
+                            <h4>⚠️ 发现的问题 (${issues.length})</h4>
+                            <ul>
+                                ${issues.map(i => `
+                                    <li>
+                                        <span class="severity ${i.severity}">${i.severity}</span>
+                                        ${i.file ? `<code>${i.file}</code>: ` : ''}
+                                        ${i.description}
+                                        ${i.suggestion || i.fix || i.optimization ? `<br><em>💡 ${i.suggestion || i.fix || i.optimization}</em>` : ''}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+                
+                if (result.strengths && result.strengths.length > 0) {
+                    html += `
+                        <div class="review-section">
+                            <h4>💪 优点</h4>
+                            <ul>
+                                ${result.strengths.map(s => `<li>${s}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+                
+                if (result.recommendations && result.recommendations.length > 0) {
+                    html += `
+                        <div class="review-section">
+                            <h4>📋 建议</h4>
+                            <ul>
+                                ${result.recommendations.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+            }
+            
+            content.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

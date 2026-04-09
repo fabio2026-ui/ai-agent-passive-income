@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-03-21T19:03:58.710438",
+  "uptime": "0:00:00.001303",
+  "agents": {
+    "total": 2,
+    "running": 2,
+    "completed": 0,
+    "failed": 0,
+    "timestamp": "2026-03-21T19:03:58.710447"
+  },
+  "tasks": {
+    "total": 5,
+    "pending": 4,
+    "running": 1,
+    "completed": 0,
+    "failed": 0
+  },
+  "conflicts": 0
+}

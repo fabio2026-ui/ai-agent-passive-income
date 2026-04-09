@@ -1,0 +1,93 @@
+{
+  "value": {
+    "top_apps": [
+      {
+        "name": "Temu",
+        "category": "Shopping",
+        "rank": 1,
+        "downloads": "100M+"
+      },
+      {
+        "name": "TikTok",
+        "category": "Social",
+        "rank": 2,
+        "downloads": "1B+"
+      },
+      {
+        "name": "CapCut",
+        "category": "Video Players",
+        "rank": 3,
+        "downloads": "500M+"
+      },
+      {
+        "name": "SHEIN",
+        "category": "Shopping",
+        "rank": 4,
+        "downloads": "100M+"
+      },
+      {
+        "name": "ChatGPT",
+        "category": "Productivity",
+        "rank": 5,
+        "downloads": "100M+"
+      },
+      {
+        "name": "Canva",
+        "category": "Art & Design",
+        "rank": 6,
+        "downloads": "100M+"
+      },
+      {
+        "name": "Remini",
+        "category": "Photography",
+        "rank": 7,
+        "downloads": "50M+"
+      },
+      {
+        "name": "Pinterest",
+        "category": "Lifestyle",
+        "rank": 8,
+        "downloads": "500M+"
+      }
+    ],
+    "trending": [
+      {
+        "name": "AI Photo Enhancer",
+        "category": "Photography",
+        "trend_reason": "AI功能"
+      },
+      {
+        "name": "Auto Subtitle",
+        "category": "Video Players",
+        "trend_reason": "内容创作"
+      },
+      {
+        "name": "Pet Care Tracker",
+        "category": "Lifestyle",
+        "trend_reason": "宠物经济"
+      },
+      {
+        "name": "Sleep Sounds Pro",
+        "category": "Health",
+        "trend_reason": "睡眠健康"
+      },
+      {
+        "name": "Plant Identifier",
+        "category": "Education",
+        "trend_reason": "园艺热"
+      }
+    ],
+    "top_categories": {
+      "Shopping": 2,
+      "Productivity": 2,
+      "Video Players": 2,
+      "Photography": 1,
+      "Lifestyle": 1
+    }
+  },
+  "cached_at": "2026-03-17T15:40:27.878716",
+  "expires_at": "2026-03-24T15:40:27.878735",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-17T15:40:27.878758"
+}

@@ -1,0 +1,250 @@
+{
+  "date": "2026-03-22",
+  "total_designs": 10,
+  "estimated_revenue": 113.9,
+  "designs": [
+    {
+      "id": "design_20260322_001",
+      "product_type": "phone_case",
+      "title": "Minimalist Geometric Mountain Landscape Phone Case",
+      "style": "minimalist geometric",
+      "theme": "mountain landscape",
+      "midjourney_prompt": "minimalist geometric phone case design, mountain landscape, minimalist aesthetic, high quality product photo, white background",
+      "price": 15.99,
+      "cost": 8.5,
+      "profit": 7.49,
+      "platforms": [
+        "Etsy",
+        "Redbubble",
+        "Society6"
+      ],
+      "tags": [
+        "minimalist geometric",
+        "mountain landscape",
+        "phone_case",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_002",
+      "product_type": "t_shirt",
+      "title": "Abstract Watercolor Ocean Waves T Shirt",
+      "style": "abstract watercolor",
+      "theme": "ocean waves",
+      "midjourney_prompt": "abstract watercolor t-shirt design, ocean waves, trendy, wearable art, mockup on model",
+      "price": 24.99,
+      "cost": 12.0,
+      "profit": 12.99,
+      "platforms": [
+        "Etsy",
+        "Teespring",
+        "Merch by Amazon"
+      ],
+      "tags": [
+        "abstract watercolor",
+        "ocean waves",
+        "t_shirt",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_003",
+      "product_type": "poster",
+      "title": "Botanical Illustration Celestial Moon And Stars Poster",
+      "style": "botanical illustration",
+      "theme": "celestial moon and stars",
+      "midjourney_prompt": "botanical illustration wall art poster, celestial moon and stars, modern home decor, high resolution, gallery quality",
+      "price": 19.99,
+      "cost": 5.0,
+      "profit": 14.99,
+      "platforms": [
+        "Etsy",
+        "Redbubble"
+      ],
+      "tags": [
+        "botanical illustration",
+        "celestial moon and stars",
+        "poster",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_004",
+      "product_type": "phone_case",
+      "title": "Typography Art Tropical Leaves Phone Case",
+      "style": "typography art",
+      "theme": "tropical leaves",
+      "midjourney_prompt": "typography art phone case design, tropical leaves, minimalist aesthetic, high quality product photo, white background",
+      "price": 15.99,
+      "cost": 8.5,
+      "profit": 7.49,
+      "platforms": [
+        "Etsy",
+        "Redbubble",
+        "Society6"
+      ],
+      "tags": [
+        "typography art",
+        "tropical leaves",
+        "phone_case",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_005",
+      "product_type": "t_shirt",
+      "title": "Celestial Boho Abstract Faces T Shirt",
+      "style": "celestial boho",
+      "theme": "abstract faces",
+      "midjourney_prompt": "celestial boho t-shirt design, abstract faces, trendy, wearable art, mockup on model",
+      "price": 24.99,
+      "cost": 12.0,
+      "profit": 12.99,
+      "platforms": [
+        "Etsy",
+        "Teespring",
+        "Merch by Amazon"
+      ],
+      "tags": [
+        "celestial boho",
+        "abstract faces",
+        "t_shirt",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_006",
+      "product_type": "poster",
+      "title": "Retro Vintage Inspirational Quotes Poster",
+      "style": "retro vintage",
+      "theme": "inspirational quotes",
+      "midjourney_prompt": "retro vintage wall art poster, inspirational quotes, modern home decor, high resolution, gallery quality",
+      "price": 19.99,
+      "cost": 5.0,
+      "profit": 14.99,
+      "platforms": [
+        "Etsy",
+        "Redbubble"
+      ],
+      "tags": [
+        "retro vintage",
+        "inspirational quotes",
+        "poster",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_007",
+      "product_type": "phone_case",
+      "title": "Minimalist Geometric Mountain Landscape Phone Case",
+      "style": "minimalist geometric",
+      "theme": "mountain landscape",
+      "midjourney_prompt": "minimalist geometric phone case design, mountain landscape, minimalist aesthetic, high quality product photo, white background",
+      "price": 15.99,
+      "cost": 8.5,
+      "profit": 7.49,
+      "platforms": [
+        "Etsy",
+        "Redbubble",
+        "Society6"
+      ],
+      "tags": [
+        "minimalist geometric",
+        "mountain landscape",
+        "phone_case",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_008",
+      "product_type": "t_shirt",
+      "title": "Abstract Watercolor Ocean Waves T Shirt",
+      "style": "abstract watercolor",
+      "theme": "ocean waves",
+      "midjourney_prompt": "abstract watercolor t-shirt design, ocean waves, trendy, wearable art, mockup on model",
+      "price": 24.99,
+      "cost": 12.0,
+      "profit": 12.99,
+      "platforms": [
+        "Etsy",
+        "Teespring",
+        "Merch by Amazon"
+      ],
+      "tags": [
+        "abstract watercolor",
+        "ocean waves",
+        "t_shirt",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_009",
+      "product_type": "poster",
+      "title": "Botanical Illustration Celestial Moon And Stars Poster",
+      "style": "botanical illustration",
+      "theme": "celestial moon and stars",
+      "midjourney_prompt": "botanical illustration wall art poster, celestial moon and stars, modern home decor, high resolution, gallery quality",
+      "price": 19.99,
+      "cost": 5.0,
+      "profit": 14.99,
+      "platforms": [
+        "Etsy",
+        "Redbubble"
+      ],
+      "tags": [
+        "botanical illustration",
+        "celestial moon and stars",
+        "poster",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "design_20260322_010",
+      "product_type": "phone_case",
+      "title": "Typography Art Tropical Leaves Phone Case",
+      "style": "typography art",
+      "theme": "tropical leaves",
+      "midjourney_prompt": "typography art phone case design, tropical leaves, minimalist aesthetic, high quality product photo, white background",
+      "price": 15.99,
+      "cost": 8.5,
+      "profit": 7.49,
+      "platforms": [
+        "Etsy",
+        "Redbubble",
+        "Society6"
+      ],
+      "tags": [
+        "typography art",
+        "tropical leaves",
+        "phone_case",
+        "digital art",
+        "printable"
+      ],
+      "status": "pending"
+    }
+  ],
+  "workflow": [
+    "1. 用Midjourney生成设计图 (30分钟)",
+    "2. 上传到Etsy (20分钟)",
+    "3. 设置Printful自动发货 (10分钟)",
+    "4. 分享到Pinterest引流 (10分钟)"
+  ]
+}

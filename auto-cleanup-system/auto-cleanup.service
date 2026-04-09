@@ -1,0 +1,17 @@
+[Unit]
+Description=智能磁盘清理系统监控服务
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/.openclaw/workspace/auto-cleanup-system
+ExecStart=/root/.openclaw/workspace/auto-cleanup-system/disk-monitor.sh start
+ExecStop=/root/.openclaw/workspace/auto-cleanup-system/disk-monitor.sh stop
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

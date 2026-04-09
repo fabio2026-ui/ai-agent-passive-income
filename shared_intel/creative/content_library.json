@@ -1,0 +1,569 @@
+{
+  "value": {
+    "yoga_socks": {
+      "tiktok_script": {
+        "hook_3s": "🧘 不再滑倒！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个瑜伽袜，稳定抓地，保护关节",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#yoga_socks",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "🧘 挖到宝了！这个瑜伽袜真的不再滑倒",
+          "姐妹们！稳定抓地，保护关节的秘密武器找到了",
+          "用了瑜伽袜一个月，来交作业了",
+          "🧘 被问爆的瑜伽袜，链接来了！"
+        ],
+        "content": "🧘 不再滑倒！稳定抓地，保护关节\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个瑜伽袜\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n🧘 小贴士：\n[使用技巧]\n\n#好物分享 #yoga_socks #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "professional product photography, yoga grip socks on wooden floor, soft natural lighting, minimalist background, cream and sage green color palette, lifestyle aesthetic, high-end feel, 8k --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 瑜伽袜 - 稳定抓地，保护关节 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 稳定抓地，保护关节 - Experience the difference with our premium 瑜伽袜",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 瑜伽袜</h2>\n<p>Tired of [pain point]? Our 瑜伽袜 is designed to 稳定抓地，保护关节, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 瑜伽袜?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "瑜伽袜",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198242"
+    },
+    "pet_grooming": {
+      "tiktok_script": {
+        "hook_3s": "🐕 撸狗顺便除毛！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个宠物美容手套，宠物享受，地板干净",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#pet_grooming",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "🐕 挖到宝了！这个宠物美容手套真的撸狗顺便除毛",
+          "姐妹们！宠物享受，地板干净的秘密武器找到了",
+          "用了宠物美容手套一个月，来交作业了",
+          "🐕 被问爆的宠物美容手套，链接来了！"
+        ],
+        "content": "🐕 撸狗顺便除毛！宠物享受，地板干净\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个宠物美容手套\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n🐕 小贴士：\n[使用技巧]\n\n#好物分享 #pet_grooming #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "product photography, silicone pet grooming glove with soft bristles, held in hand with golden retriever fur, warm lighting, cozy home background, pet lover aesthetic, professional --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 宠物美容手套 - 宠物享受，地板干净 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 宠物享受，地板干净 - Experience the difference with our premium 宠物美容手套",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 宠物美容手套</h2>\n<p>Tired of [pain point]? Our 宠物美容手套 is designed to 宠物享受，地板干净, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 宠物美容手套?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "宠物美容手套",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198272"
+    },
+    "sleep_mask": {
+      "tiktok_script": {
+        "hook_3s": "😴 秒入睡神器！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个真丝眼罩，深度睡眠，告别黑眼圈",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#sleep_mask",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "😴 挖到宝了！这个真丝眼罩真的秒入睡神器",
+          "姐妹们！深度睡眠，告别黑眼圈的秘密武器找到了",
+          "用了真丝眼罩一个月，来交作业了",
+          "😴 被问爆的真丝眼罩，链接来了！"
+        ],
+        "content": "😴 秒入睡神器！深度睡眠，告别黑眼圈\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个真丝眼罩\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n😴 小贴士：\n[使用技巧]\n\n#好物分享 #sleep_mask #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "luxury product shot, silk sleep mask on white bedding with lavender flowers, soft morning light, spa-like atmosphere, blush pink and white tones, premium feel --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 真丝眼罩 - 深度睡眠，告别黑眼圈 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 深度睡眠，告别黑眼圈 - Experience the difference with our premium 真丝眼罩",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 真丝眼罩</h2>\n<p>Tired of [pain point]? Our 真丝眼罩 is designed to 深度睡眠，告别黑眼圈, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 真丝眼罩?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "真丝眼罩",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198284"
+    },
+    "kitchen_chopper": {
+      "tiktok_script": {
+        "hook_3s": "🥒 5秒切一盘！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个多功能切菜器，告别切手，效率翻倍",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#kitchen_chopper",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "🥒 挖到宝了！这个多功能切菜器真的5秒切一盘",
+          "姐妹们！告别切手，效率翻倍的秘密武器找到了",
+          "用了多功能切菜器一个月，来交作业了",
+          "🥒 被问爆的多功能切菜器，链接来了！"
+        ],
+        "content": "🥒 5秒切一盘！告别切手，效率翻倍\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个多功能切菜器\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n🥒 小贴士：\n[使用技巧]\n\n#好物分享 #kitchen_chopper #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "modern kitchen product photo, vegetable chopper with fresh vegetables, clean white marble countertop, bright natural light, organized aesthetic, food photography style --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 多功能切菜器 - 告别切手，效率翻倍 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 告别切手，效率翻倍 - Experience the difference with our premium 多功能切菜器",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 多功能切菜器</h2>\n<p>Tired of [pain point]? Our 多功能切菜器 is designed to 告别切手，效率翻倍, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 多功能切菜器?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "多功能切菜器",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198295"
+    },
+    "face_roller": {
+      "tiktok_script": {
+        "hook_3s": "✨ 早起不水肿！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个玉石滚轮，V脸提拉，促进吸收",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#face_roller",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "✨ 挖到宝了！这个玉石滚轮真的早起不水肿",
+          "姐妹们！V脸提拉，促进吸收的秘密武器找到了",
+          "用了玉石滚轮一个月，来交作业了",
+          "✨ 被问爆的玉石滚轮，链接来了！"
+        ],
+        "content": "✨ 早起不水肿！V脸提拉，促进吸收\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个玉石滚轮\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n✨ 小贴士：\n[使用技巧]\n\n#好物分享 #face_roller #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "beauty product photography, jade face roller on vanity with skincare products, soft diffused lighting, rose gold accents, luxury spa aesthetic, instagram worthy --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 玉石滚轮 - V脸提拉，促进吸收 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ V脸提拉，促进吸收 - Experience the difference with our premium 玉石滚轮",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 玉石滚轮</h2>\n<p>Tired of [pain point]? Our 玉石滚轮 is designed to v脸提拉，促进吸收, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 玉石滚轮?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "玉石滚轮",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198308"
+    },
+    "desk_organizer": {
+      "tiktok_script": {
+        "hook_3s": "🖥️ 桌面瞬间干净！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个桌面收纳架，效率提升，心情变好",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#desk_organizer",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "🖥️ 挖到宝了！这个桌面收纳架真的桌面瞬间干净",
+          "姐妹们！效率提升，心情变好的秘密武器找到了",
+          "用了桌面收纳架一个月，来交作业了",
+          "🖥️ 被问爆的桌面收纳架，链接来了！"
+        ],
+        "content": "🖥️ 桌面瞬间干净！效率提升，心情变好\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个桌面收纳架\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n🖥️ 小贴士：\n[使用技巧]\n\n#好物分享 #desk_organizer #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "minimalist office setup, bamboo desk organizer with notebooks and plants, clean aesthetic, natural lighting, productivity vibe, organized workspace --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 桌面收纳架 - 效率提升，心情变好 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 效率提升，心情变好 - Experience the difference with our premium 桌面收纳架",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 桌面收纳架</h2>\n<p>Tired of [pain point]? Our 桌面收纳架 is designed to 效率提升，心情变好, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 桌面收纳架?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "桌面收纳架",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198325"
+    },
+    "resistance_bands": {
+      "tiktok_script": {
+        "hook_3s": "💪 随时随地健身！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个阻力带套装，练遍全身，便携便宜",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#resistance_bands",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "💪 挖到宝了！这个阻力带套装真的随时随地健身",
+          "姐妹们！练遍全身，便携便宜的秘密武器找到了",
+          "用了阻力带套装一个月，来交作业了",
+          "💪 被问爆的阻力带套装，链接来了！"
+        ],
+        "content": "💪 随时随地健身！练遍全身，便携便宜\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个阻力带套装\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n💪 小贴士：\n[使用技巧]\n\n#好物分享 #resistance_bands #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "fitness product shot, colorful resistance bands set on yoga mat, gym background, energetic lighting, active lifestyle aesthetic, workout motivation --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 阻力带套装 - 练遍全身，便携便宜 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 练遍全身，便携便宜 - Experience the difference with our premium 阻力带套装",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 阻力带套装</h2>\n<p>Tired of [pain point]? Our 阻力带套装 is designed to 练遍全身，便携便宜, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 阻力带套装?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "阻力带套装",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198335"
+    },
+    "baby_bibs": {
+      "tiktok_script": {
+        "hook_3s": "👶 吃饭不再脏！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个防水围兜，一擦就净，妈妈省心",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#baby_bibs",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "👶 挖到宝了！这个防水围兜真的吃饭不再脏",
+          "姐妹们！一擦就净，妈妈省心的秘密武器找到了",
+          "用了防水围兜一个月，来交作业了",
+          "👶 被问爆的防水围兜，链接来了！"
+        ],
+        "content": "👶 吃饭不再脏！一擦就净，妈妈省心\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个防水围兜\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n👶 小贴士：\n[使用技巧]\n\n#好物分享 #baby_bibs #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "cute baby product photography, waterproof silicone bib with food pattern, on high chair tray, soft pastel colors, parenting aesthetic, clean and modern --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 防水围兜 - 一擦就净，妈妈省心 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 一擦就净，妈妈省心 - Experience the difference with our premium 防水围兜",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 防水围兜</h2>\n<p>Tired of [pain point]? Our 防水围兜 is designed to 一擦就净，妈妈省心, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 防水围兜?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "防水围兜",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198345"
+    },
+    "car_organizer": {
+      "tiktok_script": {
+        "hook_3s": "🚗 车内不再乱！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个车载收纳盒，随手可取，安全第一",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#car_organizer",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "🚗 挖到宝了！这个车载收纳盒真的车内不再乱",
+          "姐妹们！随手可取，安全第一的秘密武器找到了",
+          "用了车载收纳盒一个月，来交作业了",
+          "🚗 被问爆的车载收纳盒，链接来了！"
+        ],
+        "content": "🚗 车内不再乱！随手可取，安全第一\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个车载收纳盒\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n🚗 小贴士：\n[使用技巧]\n\n#好物分享 #car_organizer #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "car interior product shot, seat back organizer with items in pockets, clean car interior, natural daylight, organized travel aesthetic, practical design --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 车载收纳盒 - 随手可取，安全第一 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 随手可取，安全第一 - Experience the difference with our premium 车载收纳盒",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 车载收纳盒</h2>\n<p>Tired of [pain point]? Our 车载收纳盒 is designed to 随手可取，安全第一, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 车载收纳盒?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "车载收纳盒",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198358"
+    },
+    "plant_tools": {
+      "tiktok_script": {
+        "hook_3s": "🌱 绿植不再死！后悔没早买！",
+        "problem": "之前总是[具体痛点]，太烦了",
+        "solution": "直到我发现这个园艺工具套装，科学养护，满屋生机",
+        "demo": "看，就这样用，超简单",
+        "cta": "链接在bio，现在下单有优惠！",
+        "hashtags": [
+          "#TikTokMadeMeBuyIt",
+          "#AmazonFinds",
+          "#MustHave",
+          "#plant_tools",
+          "#LifeHack"
+        ],
+        "duration": "30-45秒",
+        "music": "trending sound - upbeat"
+      },
+      "xiaohongshu_post": {
+        "titles": [
+          "🌱 挖到宝了！这个园艺工具套装真的绿植不再死",
+          "姐妹们！科学养护，满屋生机的秘密武器找到了",
+          "用了园艺工具套装一个月，来交作业了",
+          "🌱 被问爆的园艺工具套装，链接来了！"
+        ],
+        "content": "🌱 绿植不再死！科学养护，满屋生机\n\n之前[具体痛点场景]，试过很多方法都不行\n直到朋友推荐了这个园艺工具套装\n\n✨ 使用感受：\n• [具体优点1]\n• [具体优点2]  \n• [具体优点3]\n\n💰 价格：XX元（性价比超高）\n🔗 购买方式：评论区/私信\n\n🌱 小贴士：\n[使用技巧]\n\n#好物分享 #plant_tools #生活好物 #种草 #实用好物",
+        "images_needed": 6,
+        "image_types": [
+          "产品全景",
+          "使用场景",
+          "细节特写",
+          "前后对比",
+          "包装展示",
+          "价格截图"
+        ]
+      },
+      "midjourney_prompt": "botanical product photography, gardening tool set with potted plants, terracotta pots, natural sunlight, indoor jungle aesthetic, plant parent vibe --ar 3:4 --style raw",
+      "amazon_listing": {
+        "title_template": "[Brand] 园艺工具套装 - 科学养护，满屋生机 | Premium Quality | [Key Feature] | Perfect for [Target User]",
+        "bullet_points": [
+          "✅ 科学养护，满屋生机 - Experience the difference with our premium 园艺工具套装",
+          "✅ Premium Quality Materials - Built to last with high-grade, durable construction",
+          "✅ Easy to Use - Intuitive design, no learning curve required",
+          "✅ Perfect Gift Idea - Loved by [target users], comes in beautiful packaging",
+          "✅ Risk-Free Purchase - 30-day money back guarantee, your satisfaction is our priority"
+        ],
+        "description": "\n<h2>Transform Your Daily Routine with 园艺工具套装</h2>\n<p>Tired of [pain point]? Our 园艺工具套装 is designed to 科学养护，满屋生机, making your life easier and more enjoyable.</p>\n\n<h3>Why Choose Our 园艺工具套装?</h3>\n<ul>\n<li>Premium quality that lasts</li>\n<li>Thoughtfully designed for maximum convenience</li>\n<li>Trusted by thousands of happy customers</li>\n</ul>\n\n<h3>Perfect For:</h3>\n<p>[Target audience description]</p>\n",
+        "search_terms": [
+          "园艺工具套装",
+          "premium",
+          "quality",
+          "best",
+          "2026"
+        ]
+      },
+      "generated_at": "2026-03-21T19:19:35.198367"
+    }
+  },
+  "cached_at": "2026-03-21T19:19:35.198596",
+  "expires_at": "2026-04-20T19:19:35.198602",
+  "metadata": {},
+  "access_count": 1,
+  "last_accessed": "2026-03-21T19:19:35.201258"
+}

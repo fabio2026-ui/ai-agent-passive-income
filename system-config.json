@@ -1,0 +1,25 @@
+{
+  "system": "小七全自动问题解决系统",
+  "version": "3.1",
+  "mode": "全自动",
+  "rules": [
+    "发现即解决，不等确认",
+    "能解决立即解决",
+    "不能解决想办法解决",
+    "持续升级能力",
+    "只汇报结果"
+  ],
+  "capabilities": {
+    "auto_fix": true,
+    "auto_deploy": true,
+    "auto_optimize": true,
+    "auto_monitor": true
+  },
+  "schedule": {
+    "health_check": "每30分钟",
+    "optimization": "每小时",
+    "report": "每小时"
+  },
+  "status": "运行中",
+  "activated": "2026-03-21 16:10 CST"
+}

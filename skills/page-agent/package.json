@@ -1,0 +1,9 @@
+{
+  "name": "page-agent",
+  "version": "1.0.0",
+  "description": "浏览器页面自动化AI Agent",
+  "main": "agent.ts",
+  "dependencies": {
+    "playwright": "^1.42.0"
+  }
+}

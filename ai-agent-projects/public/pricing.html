@@ -1,0 +1,227 @@
+<!-- Updated Pricing Page with Crypto Support -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeGuard - Credits Pricing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0f172a; color: white; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h1 { font-size: 3rem; margin-bottom: 16px; }
+        .header p { color: #94a3b8; font-size: 1.2rem; }
+        .crypto-badge { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            background: #f59e0b; 
+            color: #000; 
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-weight: 600; 
+            margin-top: 16px;
+        }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px; }
+        .pricing-card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 40px 32px;
+            border: 2px solid #334155;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .pricing-card:hover { border-color: #3b82f6; transform: translateY(-4px); }
+        .pricing-card.popular { border-color: #3b82f6; }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3b82f6;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .plan-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+        .plan-credits { font-size: 3rem; font-weight: 800; color: #3b82f6; }
+        .plan-credits span { font-size: 1rem; color: #94a3b8; }
+        .plan-price { font-size: 2.5rem; font-weight: 700; margin: 16px 0; }
+        .plan-price span { font-size: 1rem; color: #94a3b8; }
+        .crypto-price { font-size: 1rem; color: #f59e0b; margin-top: -10px; margin-bottom: 16px; }
+        .features { list-style: none; margin: 24px 0; }
+        .features li { padding: 8px 0; color: #cbd5e1; display: flex; align-items: center; gap: 8px; }
+        .features li::before { content: "✓"; color: #22c55e; }
+        .pay-options { display: flex; gap: 12px; margin-top: 24px; }
+        .pay-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pay-card { background: #3b82f6; color: white; }
+        .pay-card:hover { background: #2563eb; }
+        .pay-crypto { background: #f59e0b; color: #000; }
+        .pay-crypto:hover { background: #d97706; }
+        .usage-table { background: #1e293b; border-radius: 16px; padding: 32px; margin-bottom: 40px; }
+        .usage-table h2 { margin-bottom: 24px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 16px; text-align: left; border-bottom: 1px solid #334155; }
+        th { color: #94a3b8; font-weight: 500; }
+        .credit-cost { color: #3b82f6; font-weight: 600; }
+        .crypto-section { background: #1e293b; border-radius: 16px; padding: 32px; text-align: center; }
+        .crypto-section h2 { margin-bottom: 16px; }
+        .crypto-icons { font-size: 3rem; margin: 16px 0; }
+        .crypto-text { color: #94a3b8; max-width: 600px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💳 Pay-As-You-Go Credits</h1>
+            <p>Purchase credits for security scans. No subscription needed.</p>
+            <div class="crypto-badge">
+                ₿ Now Accepting Crypto
+            </div>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Free Tier -->
+            <div class="pricing-card">
+                <div class="plan-name">Free</div>
+                <div class="plan-credits">10 <span>credits/month</span></div>
+                <div class="plan-price">$0 <span>forever</span></div>
+                <ul class="features">
+                    <li>Basic security scans</li>
+                    <li>Standard reports</li>
+                    <li>Community support</li>
+                </ul>
+                <button class="pay-btn pay-card" style="background: #334155; cursor: default;">Current Plan</button>
+            </div>
+
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="plan-name">Starter</div>
+                <div class="plan-credits">100 <span>credits</span></div>
+                <div class="plan-price">$10 <span>USD</span></div>
+                <div class="crypto-price">~₿0.00015 / ~Ξ0.003</div>
+                <ul class="features">
+                    <li>~100 basic scans</li>
+                    <li>20 deep scans</li>
+                    <li>10 AI fixes</li>
+                    <li>Email support</li>
+                </ul>
+                <div class="pay-options">
+                    <button class="pay-btn pay-card" onclick="buy('starter', 'card')">Pay Card</button>
+                    <button class="pay-btn pay-crypto" onclick="buy('starter', 'crypto')">Pay Crypto ₿</button>
+                </div>
+            </div>
+
+            <!-- Pro - Popular -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <div class="plan-name">Pro</div>
+                <div class="plan-credits">1,000 <span>credits</span></div>
+                <div class="plan-price">$85 <span>USD</span></div>
+                <div class="crypto-price">~₿0.0013 / ~Ξ0.026</div>
+                <ul class="features">
+                    <li>~1,000 basic scans</li>
+                    <li>200 deep scans</li>
+                    <li>100 AI fixes</li>
+                    <li>API access</li>
+                    <li>Priority support</li>
+                    <li>Save 15%</li>
+                </ul>
+                <div class="pay-options">
+                    <button class="pay-btn pay-card" onclick="buy('pro', 'card')">Pay Card</button>
+                    <button class="pay-btn pay-crypto" onclick="buy('pro', 'crypto')">Pay Crypto ₿</button>
+                </div>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card">
+                <div class="plan-name">Enterprise</div>
+                <div class="plan-credits">10,000 <span>credits</span></div>
+                <div class="plan-price">$750 <span>USD</span></div>
+                <div class="crypto-price">~₿0.011 / ~Ξ0.23</div>
+                <ul class="features">
+                    <li>~10,000 basic scans</li>
+                    <li>2,000 deep scans</li>
+                    <li>1,000 AI fixes</li>
+                    <li>Full API access</li>
+                    <li>Dedicated support</li>
+                    <li>Save 25%</li>
+                </ul>
+                <div class="pay-options">
+                    <button class="pay-btn pay-card" onclick="buy('enterprise', 'card')">Pay Card</button>
+                    <button class="pay-btn pay-crypto" onclick="buy('enterprise', 'crypto')">Pay Crypto ₿</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-table">
+            <h2>📊 Credit Usage Rates</h2>
+            <table>
+                <tr>
+                    <th>Action</th>
+                    <th>Credits</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Basic Scan</td>
+                    <td class="credit-cost">1 credit</td>
+                    <td>Quick vulnerability check</td>
+                </tr>
+                <tr>
+                    <td>Deep Scan</td>
+                    <td class="credit-cost">5 credits</td>
+                    <td>Comprehensive analysis</td>
+                </tr>
+                <tr>
+                    <td>AI Fix</td>
+                    <td class="credit-cost">10 credits</td>
+                    <td>Auto-generated fix</td>
+                </tr>
+                <tr>
+                    <td>Report</td>
+                    <td class="credit-cost">2 credits</td>
+                    <td>Detailed PDF report</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="crypto-section">
+            <h2>🪙 Pay with Cryptocurrency</h2>
+            <div class="crypto-icons">₿ Ξ ◈</div>
+            <p class="crypto-text">We accept Bitcoin, Ethereum, and 10+ other cryptocurrencies via Coinbase Commerce. <br>No KYC required. Instant delivery.</p>
+        </div>
+    </div>
+
+    <script>
+        async function buy(packageType, method) {
+            const email = prompt('Enter your email:');
+            if (!email) return;
+
+            const response = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    package: packageType, 
+                    email: email,
+                    method: method 
+                })
+            });
+            
+            const data = await response.json();
+            if (data.url) {
+                window.location.href = data.url;
+            }
+        }
+    </script>
+</body>
+</html>

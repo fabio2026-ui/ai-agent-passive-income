@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "philosophy": {
+      "version": "1.0.0",
+      "installedAt": 1774042868558
+    },
+    "deep-thinking": {
+      "version": "1.0.0",
+      "installedAt": 1774042921739
+    },
+    "adaptive-reasoning": {
+      "version": "1.0.0",
+      "installedAt": 1774042921752
+    },
+    "critical-thinking-framework": {
+      "version": "1.0.0",
+      "installedAt": 1774042922452
+    },
+    "ethics": {
+      "version": "1.0.0",
+      "installedAt": 1774042981967
+    },
+    "sequential-thinking": {
+      "version": "1.0.0",
+      "installedAt": 1774042982054
+    }
+  }
+}

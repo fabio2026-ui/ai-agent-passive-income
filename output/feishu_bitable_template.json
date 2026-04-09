@@ -1,0 +1,40 @@
+{
+  "sheets": [
+    {
+      "sheetName": "任务执行总览",
+      "fields": [
+        {"fieldName": "任务ID", "type": 1},
+        {"fieldName": "任务类型", "type": 3, "property": {"options": [{"name": "竞品分析", "color": "0"}, {"name": "内容生成", "color": "1"}, {"name": "代码审查", "color": "2"}]}},
+        {"fieldName": "状态", "type": 3, "property": {"options": [{"name": "已完成", "color": "0"}, {"name": "超时", "color": "1"}, {"name": "进行中", "color": "2"}]}},
+        {"fieldName": "执行时间", "type": 1},
+        {"fieldName": "输出文件", "type": 15},
+        {"fieldName": "核心产出", "type": 1},
+        {"fieldName": "问题数量", "type": 2},
+        {"fieldName": "评分", "type": 2},
+        {"fieldName": "关键发现", "type": 1}
+      ]
+    },
+    {
+      "sheetName": "竞品分析汇总",
+      "fields": [
+        {"fieldName": "报告名称", "type": 1},
+        {"fieldName": "分析对象", "type": 1},
+        {"fieldName": "市场规模", "type": 1},
+        {"fieldName": "关键发现", "type": 1},
+        {"fieldName": "战略建议", "type": 1},
+        {"fieldName": "文件链接", "type": 15}
+      ]
+    },
+    {
+      "sheetName": "代码问题追踪",
+      "fields": [
+        {"fieldName": "问题类型", "type": 3, "property": {"options": [{"name": "安全", "color": "0"}, {"name": "Bug", "color": "1"}, {"name": "性能", "color": "2"}, {"name": "规范", "color": "3"}]}},
+        {"fieldName": "严重程度", "type": 3, "property": {"options": [{"name": "严重", "color": "0"}, {"name": "高", "color": "1"}, {"name": "中", "color": "2"}, {"name": "低", "color": "3"}]}},
+        {"fieldName": "文件位置", "type": 1},
+        {"fieldName": "问题描述", "type": 1},
+        {"fieldName": "修复建议", "type": 1},
+        {"fieldName": "优先级", "type": 3, "property": {"options": [{"name": "P0", "color": "0"}, {"name": "P1", "color": "1"}, {"name": "P2", "color": "2"}, {"name": "P3", "color": "3"}]}}
+      ]
+    }
+  ]
+}

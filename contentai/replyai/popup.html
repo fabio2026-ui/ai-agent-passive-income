@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReplyAI - 智能客服邮件助手</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="icon">✉️</span>
+        <h1>ReplyAI</h1>
+      </div>
+      <p class="subtitle">智能客服邮件助手</p>
+    </header>
+
+    <main>
+      <!-- API Key 设置 -->
+      <section class="section api-section">
+        <div class="section-header">
+          <span class="section-icon">🔑</span>
+          <h3>OpenAI API Key</h3>
+        </div>
+        <div class="input-group">
+          <input type="password" id="apiKey" placeholder="sk-..." />
+          <button id="toggleApiKey" class="btn-icon">👁️</button>
+        </div>
+        <p class="hint">您的API Key仅存储在本地，不会上传到任何服务器</p>
+        <button id="saveApiKey" class="btn btn-primary">保存API Key</button>
+        <div id="apiStatus" class="status"></div>
+      </section>
+
+      <!-- 邮件内容 -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-icon">📧</span>
+          <h3>邮件内容</h3>
+        </div>
+        <button id="readEmail" class="btn btn-secondary">📥 读取当前邮件</button>
+        <div id="emailContent" class="content-box" placeholder="点击上方按钮读取邮件内容..."></div>
+      </section>
+
+      <!-- 回复风格 -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-icon">🎨</span>
+          <h3>回复风格</h3>
+        </div>
+        <div class="style-options">
+          <label class="radio-label">
+            <input type="radio" name="style" value="professional" checked>
+            <span>👔 专业正式</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="style" value="friendly">
+            <span>😊 友好亲切</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="style" value="concise">
+            <span>⚡ 简洁明了</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="style" value="custom">
+            <span>✨ 自定义</span>
+          </label>
+        </div>
+        <textarea id="customStyle" class="custom-style" placeholder="描述您的回复风格，例如：礼貌但有决断力，多用数据支撑..."></textarea>
+      </section>
+
+      <!-- 生成回复 -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-icon">🤖</span>
+          <h3>AI回复</h3>
+        </div>
+        <button id="generateReply" class="btn btn-primary btn-large" disabled>
+          ✨ 生成智能回复
+        </button>
+        <div id="loading" class="loading hidden">
+          <span class="spinner"></span>
+          <span>AI思考中...</span>
+        </div>
+        <div id="replyContent" class="content-box reply-box hidden"></div>
+        <div id="replyActions" class="reply-actions hidden">
+          <button id="copyReply" class="btn btn-secondary">📋 复制</button>
+          <button id="insertReply" class="btn btn-primary">📤 插入到邮件</button>
+        </div>
+      </section>
+
+      <!-- 历史记录 -->
+      <section class="section">
+        <div class="section-header">
+          <span class="section-icon">📚</span>
+          <h3>快捷回复模板</h3>
+        </div>
+        <div class="templates">
+          <button class="template-tag" data-template="感谢">🙏 感谢</button>
+          <button class="template-tag" data-template="确认">✅ 确认</button>
+          <button class="template-tag" data-template="道歉">😔 道歉</button>
+          <button class="template-tag" data-template="跟进">🔄 跟进</button>
+          <button class="template-tag" data-template="拒绝">❌ 拒绝</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="options.html" target="_blank">⚙️ 高级设置</a>
+      <span class="divider">|</span>
+      <a href="#" id="feedbackLink">💬 反馈</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "eu-crossborder-api",
+  "version": "1.0.0",
+  "description": "EU VAT Calculator API - Calculate VAT for all 27 EU member states",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "vat",
+    "eu",
+    "tax",
+    "calculator",
+    "api",
+    "crossborder",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

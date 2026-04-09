@@ -1,0 +1,61 @@
+--- Post 1: XSS防护 ---
+🛡️ XSS防护小贴士:
+
+1️⃣ 始终净化用户输入
+2️⃣ 使用CSP策略  
+3️⃣ 现代框架自动转义
+
+🔗 完整指南: https://fabio2026-ui.github.io/ai-agent-passive-income
+
+#CyberSecurity #WebDev #XSS
+
+--- Post 2: SQL注入 ---
+⚠️ SQL注入仍是2025年Top 3漏洞
+
+防御很简单:
+✅ 参数化查询
+❌ 永不拼接SQL
+
+新手必读指南 👇
+https://fabio2026-ui.github.io/ai-agent-passive-income
+
+#DatabaseSecurity #DevSecOps
+
+--- Post 3: API安全 ---
+🔐 API安全清单:
+
+☑️ HTTPS强制
+☑️ 速率限制  
+☑️ 输入验证
+☑️ 认证授权
+☑️ 安全日志
+
+完整指南 (免费) ⬇️
+https://fabio2026-ui.github.io/ai-agent-passive-income
+
+#APISecurity #BestPractices
+
+--- Post 4: 被动收入 ---
+🚀 刚上线: AI Agent被动收入系统
+
+✅ 16篇网络安全文章
+✅ 全自动内容生成
+✅ 预计月收€2,900
+
+全部开源免费 👇
+https://fabio2026-ui.github.io/ai-agent-passive-income
+
+#PassiveIncome #SideProject #CyberSecurity
+
+--- Post 5: WAF ---
+☁️ WAF选型对比 (2025):
+
+🥇 Cloudflare - 免费起步
+🥈 AWS WAF - 按量计费
+🥉 ModSecurity - 开源免费
+
+完整对比 ⬇️
+https://fabio2026-ui.github.io/ai-agent-passive-income
+
+#WebSecurity #WAF #Cloudflare
+

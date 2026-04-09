@@ -1,0 +1,61 @@
+# SEO Analyzer Extension - Description for Chrome Web Store
+
+## Short Description (132 characters max)
+Free on-page SEO analyzer with actionable recommendations. Check titles, meta, headings & more in one click.
+
+## Detailed Description
+
+🔍 SEO Analyzer - Your Free On-Page SEO Companion
+
+Analyze any webpage's SEO health instantly with our free Chrome extension. No signup required, no hidden fees.
+
+✨ Key Features:
+
+📊 Comprehensive Analysis
+• Title tag optimization check
+• Meta description analysis
+• Heading structure (H1-H6) audit
+• Image alt text verification
+• Internal & external link count
+• Page load speed insights
+
+🎯 Actionable Recommendations
+• Get specific, actionable SEO tips
+• Priority-based fix suggestions
+• Best practices compliance check
+• Mobile-friendliness indicators
+
+⚡ One-Click Analysis
+• Instant scan of current page
+• Clean, easy-to-read report
+• Export results as JSON
+• Copy recommendations to clipboard
+
+🔒 Privacy First
+• No data collection
+• No server calls - all analysis happens locally
+• No account required
+• Completely free forever
+
+📈 Perfect For:
+• SEO professionals
+• Content marketers
+• Website owners
+• Developers
+• Bloggers
+
+🆓 100% Free
+No premium tiers. No feature restrictions. All features available to everyone.
+
+💻 Open Source
+Built with transparency. Check our GitHub for the full source code.
+
+---
+
+Support & Feedback:
+• Report issues: [GitHub Issues Link]
+• Feature requests: [GitHub Discussions]
+• Email: support@example.com
+
+Version: 1.0.0
+Developer: Breathing AI Team

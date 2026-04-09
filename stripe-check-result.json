@@ -1,0 +1,9 @@
+{
+  "check_time": "2026-04-01T11:08:00+00:00",
+  "api_valid": false,
+  "error": "API key expired",
+  "payments_24h": 0,
+  "revenue_eur": 0,
+  "first_sales_count": 0,
+  "first_sales": []
+}

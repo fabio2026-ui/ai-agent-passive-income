@@ -1,0 +1,14 @@
+name = "code-review-service"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# 自定义域名 (可选)
+# routes = [{ pattern = "code-review-api.yourdomain.com", custom_domain = true }]
+
+[vars]
+ENVIRONMENT = "production"
+
+# KV存储 (可选，用于缓存)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTM 链接生成器 - ContentAI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        label .required {
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+        input[type="text"],
+        input[type="url"],
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="url"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .channel-btn {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .channel-btn:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        .channel-btn.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        .channel-btn .icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .result {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 30px;
+        }
+        .result h3 {
+            color: #333;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .url-box {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #667eea;
+            margin-bottom: 12px;
+        }
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #5a6fd6;
+        }
+        .copy-btn.copied {
+            background: #27ae60;
+        }
+        .shortcuts {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        .shortcuts h4 {
+            color: #856404;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        .shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .shortcut-item {
+            font-size: 13px;
+            color: #856404;
+            font-family: monospace;
+        }
+        .history {
+            margin-top: 30px;
+        }
+        .history h3 {
+            color: #333;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .history-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .history-item .channel-tag {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        .history-item .url-text {
+            flex: 1;
+            color: #666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .history-item .date {
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 UTM 链接生成器</h1>
+        <p class="subtitle">为 ContentAI 创建带追踪参数的营销链接</p>
+
+        <div class="form-group">
+            <label>目标网址 (URL) <span class="required">*</span></label>
+            <input type="url" id="baseUrl" placeholder="https://contentai.com" value="https://contentai.com">
+        </div>
+
+        <div class="form-group">
+            <label>选择渠道 (Source)</label>
+            <div class="channel-grid">
+                <button class="channel-btn" data-source="indiehackers" data-medium="social">
+                    <span class="icon">💡</span>
+                    Indie Hackers
+                </button>
+                <button class="channel-btn" data-source="hackernews" data-medium="social">
+                    <span class="icon">🚀</span>
+                    Hacker News
+                </button>
+                <button class="channel-btn" data-source="reddit" data-medium="social">
+                    <span class="icon">🔴</span>
+                    Reddit
+                </button>
+                <button class="channel-btn" data-source="twitter" data-medium="social">
+                    <span class="icon">🐦</span>
+                    Twitter/X
+                </button>
+                <button class="channel-btn" data-source="producthunt" data-medium="launch">
+                    <span class="icon">🐱</span>
+                    Product Hunt
+                </button>
+                <button class="channel-btn" data-source="linkedin" data-medium="social">
+                    <span class="icon">💼</span>
+                    LinkedIn
+                </button>
+                <button class="channel-btn" data-source="youtube" data-medium="video">
+                    <span class="icon">📺</span>
+                    YouTube
+                </button>
+                <button class="channel-btn" data-source="newsletter" data-medium="email">
+                    <span class="icon">📧</span>
+                    Newsletter
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>utm_source <span class="required">*</span></label>
+            <input type="text" id="utmSource" placeholder="例如: twitter, indiehackers, reddit">
+        </div>
+
+        <div class="form-group">
+            <label>utm_medium</label>
+            <select id="utmMedium">
+                <option value="social">social - 社交媒体</option>
+                <option value="post">post - 帖子</option>
+                <option value="comment">comment - 评论</option>
+                <option value="bio">bio - 个人简介</option>
+                <option value="email">email - 邮件</option>
+                <option value="launch">launch - 产品发布</option>
+                <option value="ad">ad - 付费广告</option>
+                <option value="organic">organic - 自然流量</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>utm_campaign</label>
+            <input type="text" id="utmCampaign" placeholder="例如: launch-week, summer-promo, content-series-1">
+        </div>
+
+        <div class="form-group">
+            <label>utm_content (用于A/B测试或区分同一广告的不同版本)</label>
+            <input type="text" id="utmContent" placeholder="例如: version-a, version-b, header-link">
+        </div>
+
+        <div class="form-group">
+            <label>utm_term (用于付费搜索关键词)</label>
+            <input type="text" id="utmTerm" placeholder="例如: ai-content-tool, automated-writing">
+        </div>
+
+        <div class="result" id="result" style="display: none;">
+            <h3>✅ 生成的追踪链接</h3>
+            <div class="url-box" id="generatedUrl"></div>
+            <button class="copy-btn" id="copyBtn" onclick="copyUrl()">复制链接</button>
+        </div>
+
+        <div class="shortcuts">
+            <h4>📝 渠道缩写规范</h4>
+            <div class="shortcuts-grid">
+                <div class="shortcut-item">indiehackers → IH</div>
+                <div class="shortcut-item">hackernews → HN</div>
+                <div class="shortcut-item">reddit → RD</div>
+                <div class="shortcut-item">twitter → TW</div>
+                <div class="shortcut-item">producthunt → PH</div>
+                <div class="shortcut-item">linkedin → LI</div>
+                <div class="shortcut-item">youtube → YT</div>
+                <div class="shortcut-item">newsletter → NL</div>
+            </div>
+        </div>
+
+        <div class="history" id="history" style="display: none;">
+            <h3>📋 最近生成的链接</h3>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script>
+        let generatedHistory = JSON.parse(localStorage.getItem('utmHistory') || '[]');
+        
+        // 渠道按钮点击
+        document.querySelectorAll('.channel-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.channel-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('utmSource').value = this.dataset.source;
+                document.getElementById('utmMedium').value = this.dataset.medium;
+                generateUrl();
+            });
+        });
+
+        // 输入变化时生成URL
+        ['baseUrl', 'utmSource', 'utmMedium', 'utmCampaign', 'utmContent', 'utmTerm'].forEach(id => {
+            document.getElementById(id).addEventListener('input', generateUrl);
+        });
+
+        function generateUrl() {
+            const baseUrl = document.getElementById('baseUrl').value.trim();
+            const source = document.getElementById('utmSource').value.trim();
+            
+            if (!baseUrl || !source) {
+                document.getElementById('result').style.display = 'none';
+                return;
+            }
+
+            const params = new URLSearchParams();
+            params.append('utm_source', source);
+            
+            const medium = document.getElementById('utmMedium').value;
+            if (medium) params.append('utm_medium', medium);
+            
+            const campaign = document.getElementById('utmCampaign').value.trim();
+            if (campaign) params.append('utm_campaign', campaign);
+            
+            const content = document.getElementById('utmContent').value.trim();
+            if (content) params.append('utm_content', content);
+            
+            const term = document.getElementById('utmTerm').value.trim();
+            if (term) params.append('utm_term', term);
+
+            const separator = baseUrl.includes('?') ? '&' : '?';
+            const fullUrl = baseUrl + separator + params.toString();
+
+            document.getElementById('generatedUrl').textContent = fullUrl;
+            document.getElementById('result').style.display = 'block';
+            
+            // 保存到历史
+            saveToHistory(fullUrl, source);
+        }
+
+        function copyUrl() {
+            const url = document.getElementById('generatedUrl').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.textContent = '✓ 已复制';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '复制链接';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function saveToHistory(url, source) {
+            // 检查是否已存在相同的URL
+            if (generatedHistory.some(h => h.url === url)) return;
+            
+            generatedHistory.unshift({
+                url: url,
+                source: source,
+                date: new Date().toISOString()
+            });
+            
+            // 只保留最近10条
+            generatedHistory = generatedHistory.slice(0, 10);
+            localStorage.setItem('utmHistory', JSON.stringify(generatedHistory));
+            renderHistory();
+        }
+
+        function renderHistory() {
+            if (generatedHistory.length === 0) return;
+            
+            document.getElementById('history').style.display = 'block';
+            const list = document.getElementById('historyList');
+            list.innerHTML = generatedHistory.map(h => `
+                <div class="history-item">
+                    <span class="channel-tag">${h.source}</span>
+                    <span class="url-text">${h.url}</span>
+                    <span class="date">${new Date(h.date).toLocaleDateString()}</span>
+                </div>
+            `).join('');
+        }
+
+        // 初始化
+        renderHistory();
+    </script>
+</body>
+</html>

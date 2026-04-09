@@ -1,0 +1,21 @@
+# SSH密钥备份
+# 创建时间: 2026-04-04 02:00
+# 用途: GitHub/服务器部署
+# 安全级别: 高 - 私钥已存在于~/.ssh/
+
+## 公钥
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOe1x7Q+j6fYx9XFg5uC++QdkNtqPIQKGWMimM67KwVn fabio2026-ui@github.com
+
+## 指纹信息
+- Cloo: SHA256:xuhNluIC2Gh8Q9dSy7vec469D4ryYDz5CDU7AgMWNXI
+- GitHub: SHA256:C6O3xjrKjxlI5AIhC76atz/tDPl/1YoDZ72z8WYRQ2Y
+
+## 使用场景
+- GitHub仓库推送
+- 服务器自动化部署
+- CI/CD流水线
+
+## 注意事项
+- 私钥保存在 ~/.ssh/id_ed25519 (请勿泄露)
+- 公钥已备份至此文件
+- 如需在新服务器使用，需复制私钥文件

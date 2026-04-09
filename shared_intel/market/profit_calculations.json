@@ -1,0 +1,84 @@
+{
+  "value": {
+    "amazon": {
+      "selling_price": 24.99,
+      "costs": {
+        "product": 3.5,
+        "shipping": 2.0,
+        "landed_cost": 5.5,
+        "platform_fee": 9.25,
+        "packaging": 0.5,
+        "ads": 3.75,
+        "returns": 0.28
+      },
+      "total_cost": 19.27,
+      "profit_per_unit": 5.72,
+      "margin_percent": 22.9,
+      "roi_percent": 104.0,
+      "monthly_projection": {
+        "volume": 1000,
+        "revenue": 24990.0,
+        "profit": 5718.0
+      },
+      "breakeven": {
+        "ads_rate": "15.0%",
+        "max_cac": 5.72
+      }
+    },
+    "shopify": {
+      "selling_price": 24.99,
+      "costs": {
+        "product": 3.5,
+        "shipping": 2.0,
+        "landed_cost": 5.5,
+        "platform_fee": 1.75,
+        "packaging": 0.5,
+        "ads": 3.75,
+        "returns": 0.28
+      },
+      "total_cost": 11.77,
+      "profit_per_unit": 13.22,
+      "margin_percent": 52.9,
+      "roi_percent": 240.3,
+      "monthly_projection": {
+        "volume": 1000,
+        "revenue": 24990.0,
+        "profit": 13217.0
+      },
+      "breakeven": {
+        "ads_rate": "15.0%",
+        "max_cac": 13.22
+      }
+    },
+    "tiktok_shop": {
+      "selling_price": 24.99,
+      "costs": {
+        "product": 3.5,
+        "shipping": 2.0,
+        "landed_cost": 5.5,
+        "platform_fee": 1.87,
+        "packaging": 0.5,
+        "ads": 3.75,
+        "returns": 0.28
+      },
+      "total_cost": 11.9,
+      "profit_per_unit": 13.09,
+      "margin_percent": 52.4,
+      "roi_percent": 238.0,
+      "monthly_projection": {
+        "volume": 1000,
+        "revenue": 24990.0,
+        "profit": 13092.0
+      },
+      "breakeven": {
+        "ads_rate": "15.0%",
+        "max_cac": 13.09
+      }
+    }
+  },
+  "cached_at": "2026-03-21T19:19:35.216599",
+  "expires_at": "2026-03-28T19:19:35.216614",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-21T19:19:35.216623"
+}

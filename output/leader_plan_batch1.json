@@ -1,0 +1,199 @@
+{
+  "plan_metadata": {
+    "plan_id": "leader_plan_batch1",
+    "created_at": "2026-04-01T21:24:00+08:00",
+    "leader_agent": "Leader",
+    "task_group": "任务组1",
+    "description": "AI Agent/LLM应用市场分析、行业趋势报告生成、Python代码审查"
+  },
+  "task_breakdown_logic": {
+    "principle": "按技能专业度+依赖关系拆解",
+    "steps": [
+      "1. 识别任务类型：研究型(竞品分析)、创作型(内容生成)、技术型(代码审查)",
+      "2. 匹配专业Agent：Analyzer擅长研究、Writer擅长创作、Reviewer擅长审查",
+      "3. 分析依赖关系：内容生成需要竞品分析的数据支撑，形成顺序依赖",
+      "4. 识别并行机会：代码审查与其他任务无依赖，可并行执行",
+      "5. 预估资源：网络搜索密集型、计算密集型、IO密集型分类"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "T1",
+      "task_name": "AI Agent/LLM应用市场竞品分析",
+      "task_type": "research",
+      "description": "分析当前AI Agent/LLM应用市场的主要竞品，包括直接竞品和间接竞品",
+      "assigned_agent": {
+        "role": "Analyzer",
+        "specialty": "市场研究、竞品拆解、数据收集",
+        "skills": ["web_search", "data_analysis", "kimi_search"]
+      },
+      "estimated_duration": {
+        "min_minutes": 8,
+        "max_minutes": 12,
+        "confidence": "medium"
+      },
+      "resource_requirements": {
+        "compute": "medium",
+        "network": "high",
+        "memory": "low",
+        "io": "low"
+      },
+      "dependencies": {
+        "prerequisites": [],
+        "blocking": ["T2"],
+        "parallelizable_with": ["T3"]
+      },
+      "deliverables": [
+        "竞品矩阵表格",
+        "核心功能对比",
+        "差异化分析",
+        "市场定位图"
+      ],
+      "output_file": "/root/.openclaw/workspace/output/analysis_competitors_batch1.md"
+    },
+    {
+      "task_id": "T2",
+      "task_name": "AI Agent行业趋势报告生成",
+      "task_type": "content_creation",
+      "description": "基于竞品分析结果，生成一份专业的AI Agent行业趋势报告",
+      "assigned_agent": {
+        "role": "Writer",
+        "specialty": "报告撰写、内容创作、结构化输出",
+        "skills": ["content_generation", "markdown", "report_formatting"]
+      },
+      "estimated_duration": {
+        "min_minutes": 5,
+        "max_minutes": 8,
+        "confidence": "high"
+      },
+      "resource_requirements": {
+        "compute": "low",
+        "network": "low",
+        "memory": "medium",
+        "io": "medium"
+      },
+      "dependencies": {
+        "prerequisites": ["T1"],
+        "blocking": [],
+        "parallelizable_with": []
+      },
+      "deliverables": [
+        "行业趋势报告(完整版)",
+        "执行摘要",
+        "关键洞察列表",
+        "战略建议"
+      ],
+      "output_file": "/root/.openclaw/workspace/output/content_report_batch1.md"
+    },
+    {
+      "task_id": "T3",
+      "task_name": "Python代码片段质量审查",
+      "task_type": "code_review",
+      "description": "审查指定Python代码片段的质量，包括代码规范、性能、安全性等方面",
+      "assigned_agent": {
+        "role": "Reviewer",
+        "specialty": "代码审查、质量评估、最佳实践检查",
+        "skills": ["code_analysis", "linting", "security_audit"]
+      },
+      "estimated_duration": {
+        "min_minutes": 3,
+        "max_minutes": 5,
+        "confidence": "high"
+      },
+      "resource_requirements": {
+        "compute": "low",
+        "network": "none",
+        "memory": "low",
+        "io": "low"
+      },
+      "dependencies": {
+        "prerequisites": [],
+        "blocking": [],
+        "parallelizable_with": ["T1"]
+      },
+      "deliverables": [
+        "代码审查报告",
+        "问题清单",
+        "改进建议",
+        "评分卡"
+      ],
+      "output_file": "/root/.openclaw/workspace/output/review_code_batch1.md",
+      "note": "需要提供待审查的Python代码片段"
+    }
+  ],
+  "execution_strategy": {
+    "mode": "hybrid_parallel",
+    "description": "T1和T3并行执行，T2在T1完成后执行",
+    "timeline": {
+      "phase_1": {
+        "name": "并行启动",
+        "duration": "8-12分钟",
+        "tasks": ["T1", "T3"],
+        "rationale": "竞品分析(T1)和代码审查(T3)无依赖关系，可最大化并行效率"
+      },
+      "phase_2": {
+        "name": "顺序执行",
+        "duration": "5-8分钟",
+        "tasks": ["T2"],
+        "rationale": "报告生成(T2)依赖竞品分析(T1)的输出数据，必须顺序执行"
+      },
+      "total_estimated_time": {
+        "min_minutes": 13,
+        "max_minutes": 20,
+        "optimal_minutes": 15
+      }
+    },
+    "critical_path": ["T1", "T2"],
+    "bottleneck": "T1竞品分析耗时最长且阻塞T2"
+  },
+  "agent_allocation": {
+    "Analyzer": {
+      "assigned_tasks": ["T1"],
+      "workload": "high",
+      "availability_after": "T1完成"
+    },
+    "Writer": {
+      "assigned_tasks": ["T2"],
+      "workload": "medium",
+      "availability_after": "T2完成"
+    },
+    "Reviewer": {
+      "assigned_tasks": ["T3"],
+      "workload": "low",
+      "availability_after": "T3完成"
+    }
+  },
+  "risk_mitigation": {
+    "risks": [
+      {
+        "risk": "T1耗时超预期，阻塞T2",
+        "mitigation": "设置超时机制(15分钟)，超时后使用部分数据启动T2"
+      },
+      {
+        "risk": "T3代码未提供",
+        "mitigation": "若代码缺失，Reviewer转为协助T1数据分析"
+      },
+      {
+        "risk": "网络搜索限制",
+        "mitigation": "准备本地知识库作为fallback"
+      }
+    ]
+  },
+  "quality_gates": {
+    "T1_exit_criteria": [
+      "至少分析3家直接竞品",
+      "数据标注来源",
+      "差异化结论清晰"
+    ],
+    "T2_exit_criteria": [
+      "报告结构完整(摘要/正文/结论)",
+      "引用T1的竞品数据",
+      "包含可执行建议"
+    ],
+    "T3_exit_criteria": [
+      "代码问题分类(严重/警告/建议)",
+      "提供改进代码示例",
+      "总体质量评分"
+    ]
+  }
+}

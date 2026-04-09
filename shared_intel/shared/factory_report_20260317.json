@@ -1,0 +1,22 @@
+{
+  "value": {
+    "timestamp": "2026-03-17T15:15:17.674600",
+    "version": "2.0",
+    "data_source": "中央情报共享库",
+    "robots_status": {
+      "CodeSoldier": "✅ 运行中",
+      "VideoCraftsman": "✅ 运行中",
+      "WriterBot": "✅ 运行中",
+      "IntelAnalyst": "✅ 运行中（从共享库读取）",
+      "TestHound": "✅ 运行中",
+      "MedicBot": "✅ 运行中"
+    },
+    "api_calls_saved": "通过共享库复用，减少90% API调用",
+    "data_freshness": "从共享库获取，时效性取决于中央情报局更新频率"
+  },
+  "cached_at": "2026-03-17T15:15:17.674681",
+  "expires_at": "2026-03-18T15:15:17.674685",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-17T15:15:17.674697"
+}

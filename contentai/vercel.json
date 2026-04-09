@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "contentai",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "KIMI_API_KEY": "@kimi_api_key"
+  }
+}

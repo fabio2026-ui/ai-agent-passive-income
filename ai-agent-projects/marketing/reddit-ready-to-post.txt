@@ -1,0 +1,63 @@
+=== r/webdev ===
+标题: I built a free AI-powered security content hub with 16 articles
+
+Hey r/webdev,
+
+I've been working on a side project - an AI-powered security content platform.
+
+**What it contains:**
+- 16 cybersecurity articles (XSS, SQL injection, API security, etc.)
+- All generated and deployed automatically
+- Free for everyone
+- Open source
+
+**Topics covered:**
+- XSS Protection
+- SQL Injection Prevention  
+- API Security Best Practices
+- DevSecOps
+- Cloud Security
+- And more...
+
+**Live site:** https://fabio2026-ui.github.io/ai-agent-passive-income
+**GitHub:** https://github.com/fabio2026-ui/ai-agent-passive-income
+
+Would love your feedback! 
+
+Edit: This is part of my passive income experiment. Goal is €2,900/month through credits, digital products, and affiliate links. Sharing the journey openly.
+
+=== r/sideproject ===
+标题: AI Agent passive income: €2,900/month projection with automated content
+
+Hi r/SideProject,
+
+Wanted to share my latest experiment: Using AI agents to create passive income through cybersecurity content.
+
+**The Setup:**
+- 16 AI-generated security articles
+- Automated deployment to GitHub Pages
+- Monetization through credits, products & affiliates
+- 95% automated
+
+**Content Topics:**
+- XSS, SQL Injection, API Security
+- DevSecOps, Cloud Security
+- WAF, Penetration Testing
+- Incident Response
+
+**Current Status:**
+- ✅ 16 articles published
+- ✅ Website live
+- ✅ GitHub repo open
+- ⏳ Affiliate accounts pending
+
+**Live:** https://fabio2026-ui.github.io/ai-agent-passive-income
+**Code:** https://github.com/fabio2026-ui/ai-agent-passive-income
+
+**Month 1-12 projection:**
+- M1: €100
+- M6: €1,200  
+- M12: €2,900
+
+Happy to answer questions about the setup!
+

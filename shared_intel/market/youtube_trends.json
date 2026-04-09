@@ -1,0 +1,144 @@
+{
+  "value": {
+    "trending_videos": [
+      {
+        "title": "I Tried Viral Yoga Socks For 30 Days",
+        "views": "2.5M",
+        "category": "fitness",
+        "engagement": "high"
+      },
+      {
+        "title": "My Dog's Reaction To New Grooming Tools",
+        "views": "1.8M",
+        "category": "pet",
+        "engagement": "high"
+      },
+      {
+        "title": "Sleep Hacks That Actually Work",
+        "views": "3.2M",
+        "category": "wellness",
+        "engagement": "high"
+      },
+      {
+        "title": "Kitchen Gadgets You Didn't Know You Needed",
+        "views": "4.1M",
+        "category": "kitchen",
+        "engagement": "high"
+      },
+      {
+        "title": "Morning Skincare Routine 2026",
+        "views": "2.9M",
+        "category": "beauty",
+        "engagement": "medium"
+      },
+      {
+        "title": "Desk Setup Transformation",
+        "views": "1.5M",
+        "category": "office",
+        "engagement": "medium"
+      },
+      {
+        "title": "Home Workout No Equipment",
+        "views": "5.6M",
+        "category": "fitness",
+        "engagement": "high"
+      },
+      {
+        "title": "New Mom Must-Haves",
+        "views": "2.1M",
+        "category": "baby",
+        "engagement": "high"
+      },
+      {
+        "title": "Car Organization Ideas",
+        "views": "980K",
+        "category": "automotive",
+        "engagement": "medium"
+      },
+      {
+        "title": "Indoor Plant Care Tips",
+        "views": "1.3M",
+        "category": "garden",
+        "engagement": "medium"
+      }
+    ],
+    "trending_shorts": [
+      {
+        "title": "POV: You Found The Perfect Yoga Socks",
+        "views": "8.5M",
+        "category": "fitness"
+      },
+      {
+        "title": "Dog Before vs After Grooming",
+        "views": "12M",
+        "category": "pet"
+      },
+      {
+        "title": "This Sleep Mask Changed My Life",
+        "views": "6.2M",
+        "category": "wellness"
+      },
+      {
+        "title": "Kitchen Gadget Test #shorts",
+        "views": "15M",
+        "category": "kitchen"
+      },
+      {
+        "title": "Jade Roller Routine",
+        "views": "9.8M",
+        "category": "beauty"
+      }
+    ],
+    "trending_hashtags": [
+      "#Shorts",
+      "#AmazonFinds",
+      "#TikTokMadeMeBuyIt",
+      "#ProductReview",
+      "#HomeWorkout",
+      "#PetTok",
+      "#BeautyHacks",
+      "#KitchenHacks",
+      "#Organization",
+      "#SelfCare"
+    ],
+    "content_gaps": [
+      {
+        "topic": "Yoga socks for beginners",
+        "search_volume": "high",
+        "competition": "low"
+      },
+      {
+        "topic": "Pet grooming at home tutorial",
+        "search_volume": "high",
+        "competition": "medium"
+      },
+      {
+        "topic": "Sleep product comparison",
+        "search_volume": "medium",
+        "competition": "low"
+      }
+    ],
+    "ad_performance_indicators": {
+      "yoga_socks": {
+        "cpm": 3.5,
+        "ctr": "2.8%",
+        "conversion": "3.2%"
+      },
+      "pet_products": {
+        "cpm": 4.2,
+        "ctr": "3.1%",
+        "conversion": "2.9%"
+      },
+      "sleep_products": {
+        "cpm": 5.1,
+        "ctr": "2.5%",
+        "conversion": "3.5%"
+      }
+    }
+  },
+  "cached_at": "2026-03-17T15:43:08.443800",
+  "expires_at": "2026-03-24T15:43:08.443834",
+  "metadata": {},
+  "access_count": 3,
+  "last_accessed": "2026-03-17T19:41:46.506467"
+}

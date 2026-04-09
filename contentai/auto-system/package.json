@@ -1,0 +1,26 @@
+{
+  "name": "contentai-auto-system",
+  "version": "1.0.0",
+  "description": "ContentAI 全自动闭环系统 - Cloudflare Workers",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "logs": "wrangler tail",
+    "db:create": "wrangler d1 create contentai-db",
+    "db:migrate": "wrangler d1 migrations apply contentai-db",
+    "db:schema": "node scripts/export-schema.js"
+  },
+  "keywords": [
+    "content-ai",
+    "automation",
+    "crypto-payment",
+    "cloudflare-workers"
+  ],
+  "author": "ContentAI",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

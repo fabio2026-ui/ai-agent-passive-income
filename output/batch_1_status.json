@@ -1,0 +1,10 @@
+{
+  "batch_id": "batch-1",
+  "triggered_at": "2026-04-01T17:44:00+08:00",
+  "status": "running",
+  "tasks": [
+    {"id": "T1", "name": "竞品分析", "agent": "Analyzer", "status": "pending"},
+    {"id": "T2", "name": "内容生成", "agent": "Writer", "status": "pending"},
+    {"id": "T3", "name": "代码审查", "agent": "Reviewer", "status": "pending"}
+  ]
+}

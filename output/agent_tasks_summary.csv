@@ -1,0 +1,26 @@
+任务ID,任务类型,状态,执行时间,输出文件,核心产出,问题数量,评分,关键发现
+竞品分析-1,AI编程助手,已完成,2m16s,competitor_analysis_20260328_011730.md,5家竞品分析 Cursor ARR破10亿,0,0,AI编程助手市场规模257亿美元
+内容生成-1,AI效率主题,已完成,1m18s,content_package_20260328_011743.md,9篇社媒+10邮件标题,0,0,LinkedIn/Twitter/小红书多平台
+代码审查-1,模拟审查,已完成,1m40s,code_review_20250328_011700.md,19个问题修复,19,44→92分,SQL注入/MD5/硬编码密钥
+竞品分析-2,AI助手/Agent,已完成,2m1s,output-1-competitor-analysis-2026-03-28.md,7家玩家 DeepSeek崛起,0,0,OpenAI企业市场下滑至27%
+内容生成-2,Breathing AI,已完成,4m34s,output-2-content-generation-2026-03-28.md,完整营销包33KB,0,0,Product Hunt+Reddit+Twitter
+代码审查-2,AI Diet Coach,已完成,2m30s,output-3-code-review-2026-03-28.md,15个问题,15,7.2/10,framer-motion缺失/Token安全
+竞品分析-3,电商工具,已完成,2m22s,competitor-analysis.md,22家竞品分析,0,0,CrossBorder VAT API蓝海
+内容生成-3,多平台,已完成,1m33s,content-package.md,5卖点+小红书+微博+邮件,0,0,差异化定位
+代码审查-3,全目录扫描,已完成,2m20s,code_review.md,47个问题,47,5.8/10,SQL注入/MD5/硬编码密钥
+内容生成-4,AI Agent市场,已完成,50s,content_generation.md,市场规模$72.9B→$1391.9B,0,0,CAGR 40.5%
+代码审查-4,全目录扫描,已完成,1m40s,code_review.md,124个问题,124,0,237个文件扫描
+竞品分析-4,7款AI产品,已完成,1m51s,competitor_analysis.md,ChatGPT/Claude/Gemini等,0,0,ChatGPT~60%份额
+内容生成-5,AI Agent趋势,已完成,1m9s,ai_agent_trends_2026-03-28.md,3000字深度文章,0,0,12+数据表格 10+权威机构
+代码审查-5,全目录扫描,已完成,1m44s,code_review_2026-03-28.md,186个问题,186,0,220个文件扫描
+竞品分析-5,AI SaaS市场,已完成,1m47s,competitor_analysis_2026-03-28.md,5家竞品7800字,0,0,OpenAI $850B Anthropic $380B
+内容生成-6,AI呼吸冥想,已完成,1m53s,output-2-content-generation-2026-03-28.md,营销包20KB,0,0,5标题+10描述+8卖点
+竞品分析-6,AI助手/Agent情报,已完成,1m50s,output-1-competitor-analysis-2026-03-28.md,2026年3月最新动态,0,0,52%企业已投入生产
+竞品分析-7,AI助手格局,已完成,1m51s,output/competitor_analysis.md,7款核心产品,0,0,ChatGPT~60%份额
+内容生成-7,AI Diet Coach,已完成,1m21s,output-2-content-generation-2026-03-28.md,15700字节营销包,0,0,Reddit+ProductHunt+Twitter
+代码审查-6,AI Diet Coach详细,已完成,1m34s,output-3-code-review-2026-03-28.md,15个问题,15,7.2/10,架构评估详细
+内容生成-8,AI呼吸冥想超时重试,已完成,1m53s,agent-batch-1/output-2-content-generation-2026-03-28.md,20497字节,0,0,完整营销内容包
+代码审查-7,AI Diet Coach超时重试,已完成,1m52s,agent-batch-1/output-3-code-review-2026-03-28.md,代码示例输出,0,0,WeeklyChart组件修复
+内容生成-9,商业分析,已完成,46s,agent2_content_generation.md,1000字商业分析,0,0,AI Agent市场竞争格局
+竞品分析-8,呼吸冥想,已完成,1m33s,agent1_competitor_analysis.md,Headspace/Calm/潮汐,0,0,AI个性化呼吸指导机会
+代码审查-8,多文件扫描,已完成,1m37s,agent3_code_review.md,30项问题,30,0,MD5/SQL注入/eval风险

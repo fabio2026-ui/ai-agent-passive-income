@@ -1,0 +1,8 @@
+name = "ebay-calculator"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+account_id = "887661eb67cb99034bfc3f9bfef805c8"
+
+[observability]
+enabled = true
+head_sampling_rate = 1

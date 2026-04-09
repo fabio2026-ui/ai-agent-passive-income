@@ -1,0 +1,37 @@
+{
+  "batch_id": "batch-1",
+  "triggered_at": "2026-04-01T17:44:00+08:00",
+  "completed_at": "2026-04-01T17:44:30+08:00",
+  "status": "completed",
+  "summary": {
+    "total_tasks": 3,
+    "completed": 3,
+    "failed": 0
+  },
+  "tasks": [
+    {
+      "id": "T1",
+      "name": "竞品分析",
+      "agent": "Analyzer",
+      "status": "completed",
+      "output_file": "/root/.openclaw/workspace/output/analysis_competitor_2026-04-01.md",
+      "summary": "分析了5个主流AI Agent框架，识别出市场空白点"
+    },
+    {
+      "id": "T2",
+      "name": "内容生成",
+      "agent": "Writer",
+      "status": "completed",
+      "output_file": "/root/.openclaw/workspace/output/content_multiagent_2026-04-01.md",
+      "summary": "撰写了约1850字的Multi-Agent技术文章"
+    },
+    {
+      "id": "T3",
+      "name": "代码审查",
+      "agent": "Reviewer",
+      "status": "completed",
+      "output_file": "/root/.openclaw/workspace/output/review_code_2026-04-01.md",
+      "summary": "发现2个Critical问题、3个Warning、4个Info建议，评分5.5/10"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+name = "breath-ai-backend"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Environment variables (set these in Cloudflare dashboard)
+[vars]
+# STRIPE_SECRET_KEY = "sk_test_..."
+# STRIPE_WEBHOOK_SECRET = "whsec_..."
+
+# KV Namespaces
+[[kv_namespaces]]
+binding = "SUBSCRIPTIONS"
+id = "a20d6fe95e9c41988c488f3dc1f549ad"
+
+[[kv_namespaces]]
+binding = "DUO_SESSIONS"
+id = "cefce67078ce44d8a916f16f0b64fbeb"
+
+# Durable Objects (for WebRTC signaling)
+[[durable_objects.bindings]]
+name = "SIGNAL_QUEUE"
+class_name = "SignalQueue"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SignalQueue"]

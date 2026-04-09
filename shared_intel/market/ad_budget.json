@@ -1,0 +1,54 @@
+{
+  "value": {
+    "yoga_socks": {
+      "stage": "ready_to_scale",
+      "daily_budget_usd": 50,
+      "recommended_platforms": [
+        "tiktok",
+        "amazon_ppc"
+      ],
+      "expected_roas": 3.5,
+      "keywords": [
+        "yoga socks grip",
+        "pilates socks",
+        "barre socks"
+      ],
+      "audience": "women 25-45, fitness enthusiasts"
+    },
+    "pet_products": {
+      "stage": "testing",
+      "daily_budget_usd": 30,
+      "recommended_platforms": [
+        "tiktok",
+        "facebook"
+      ],
+      "expected_roas": 2.8,
+      "keywords": [
+        "pet grooming",
+        "dog accessories",
+        "cat supplies"
+      ],
+      "audience": "pet owners 25-55"
+    },
+    "sleep_products": {
+      "stage": "testing",
+      "daily_budget_usd": 40,
+      "recommended_platforms": [
+        "amazon_ppc",
+        "google"
+      ],
+      "expected_roas": 3.0,
+      "keywords": [
+        "sleep mask",
+        "white noise",
+        "sleep aid"
+      ],
+      "audience": "sleep problems, wellness seekers"
+    }
+  },
+  "cached_at": "2026-03-17T15:40:27.879716",
+  "expires_at": "2026-03-24T15:40:27.879723",
+  "metadata": {},
+  "access_count": 0,
+  "last_accessed": "2026-03-17T15:40:27.879728"
+}

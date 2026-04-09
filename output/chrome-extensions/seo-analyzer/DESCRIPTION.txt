@@ -1,0 +1,34 @@
+SEO Analyzer - Free Website Audit Tool
+
+🚀 One-click SEO analysis for any website
+
+FEATURES:
+✅ Meta Tags Analysis - Title, description, Open Graph, Twitter Cards
+✅ Heading Structure - H1-H6 hierarchy check
+✅ Image SEO - Alt text analysis, missing attributes
+✅ Link Analysis - Internal/external links, broken link detection
+✅ Page Speed - Basic performance metrics
+✅ Mobile Friendly - Viewport and responsive check
+✅ Actionable Suggestions - Get specific optimization tips
+
+HOW TO USE:
+1. Click the SEO Analyzer icon on any website
+2. Get instant SEO audit report
+3. Follow suggestions to improve your SEO
+
+PERFECT FOR:
+- Website owners
+- SEO professionals
+- Digital marketers
+- Web developers
+- Content creators
+
+100% FREE - No registration required
+100% PRIVATE - All analysis done locally in your browser
+
+Start optimizing your website today!
+
+---
+
+SEO ANALYZER
+Free • Simple • Effective

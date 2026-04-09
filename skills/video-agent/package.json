@@ -1,0 +1,13 @@
+{
+  "name": "video-agent",
+  "version": "1.0.0",
+  "description": "视频理解与任务执行 AI Agent",
+  "main": "video-agent.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {},
+  "bin": {
+    "video-agent": "./video-agent.js"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "value": {
+    "top_apps": [
+      {
+        "name": "ChatGPT",
+        "category": "Productivity",
+        "rank": 1
+      },
+      {
+        "name": "CapCut",
+        "category": "Photo & Video",
+        "rank": 2
+      },
+      {
+        "name": "Temu",
+        "category": "Shopping",
+        "rank": 3
+      },
+      {
+        "name": "Notion",
+        "category": "Productivity",
+        "rank": 4
+      },
+      {
+        "name": "Canva",
+        "category": "Graphics & Design",
+        "rank": 5
+      }
+    ],
+    "trending": [
+      {
+        "name": "AI Photo Generator",
+        "category": "Photo & Video",
+        "trend_reason": "AI feature"
+      },
+      {
+        "name": "Auto Caption",
+        "category": "Productivity",
+        "trend_reason": "content creation"
+      }
+    ]
+  },
+  "cached_at": "2026-03-17T15:19:45.897569",
+  "expires_at": "2026-03-24T15:19:45.897574",
+  "metadata": {},
+  "access_count": 4,
+  "last_accessed": "2026-03-17T19:41:46.507146"
+}

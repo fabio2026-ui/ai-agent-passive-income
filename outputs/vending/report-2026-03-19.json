@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-03-19T22:12:12.503774",
+  "summary": {
+    "total_machines": 2,
+    "active_machines": 2,
+    "alerts_count": 1,
+    "weekly_revenue": 1117.62
+  },
+  "inventory_alerts": [
+    {
+      "machine_id": "VM001",
+      "location": "Novara Stazione",
+      "product": "coffee",
+      "current_stock": 3,
+      "threshold": 5,
+      "urgency": "medium"
+    }
+  ],
+  "revenue_forecast": {
+    "period": "7天",
+    "machines": [
+      {
+        "id": "VM001",
+        "location": "Novara Stazione",
+        "daily_gross": 81.0,
+        "daily_net": 64.8,
+        "period_net": 453.6,
+        "commission_rate": 0.2
+      },
+      {
+        "id": "VM002",
+        "location": "Ospedale Maggiore",
+        "daily_gross": 111.6,
+        "daily_net": 94.86,
+        "period_net": 664.02,
+        "commission_rate": 0.15
+      }
+    ],
+    "total": 1117.62
+  },
+  "actions": [
+    "🚨 需要补货: VM001(coffee)",
+    "📊 本周预计收入: €1117.62"
+  ]
+}

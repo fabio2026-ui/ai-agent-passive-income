@@ -1,0 +1,122 @@
+[
+  {
+    "id": "agent-opportunity-discovery-001",
+    "name": "商机发现Agent",
+    "type": "opportunity-discovery",
+    "task": "每日扫描Google Trends、Reddit、Product Hunt发现新商机，输出商机列表",
+    "priority": 9,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["kimi_search", "web_search", "reddit_monitoring"]
+  },
+  {
+    "id": "agent-opportunity-research-001",
+    "name": "商机研究Agent",
+    "type": "opportunity-research",
+    "task": "对发现的商机进行深度研究：市场规模、竞品分析、用户需求、进入壁垒",
+    "priority": 8,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["kimi_search", "kimi_fetch", "competitive_analysis"]
+  },
+  {
+    "id": "agent-opportunity-validation-001",
+    "name": "商机验证Agent",
+    "type": "opportunity-validation",
+    "task": "验证商机可行性：技术难度、开发周期、收入预测、风险评估",
+    "priority": 8,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["business_analysis", "financial_modeling", "risk_assessment"]
+  },
+  {
+    "id": "agent-ui-designer-001",
+    "name": "UI设计Agent",
+    "type": "ui-designer",
+    "task": "设计用户界面：Wireframe、Mockup、交互流程，输出设计规范",
+    "priority": 7,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["ui_design", "wireframing", "design_systems"]
+  },
+  {
+    "id": "agent-visual-designer-001",
+    "name": "视觉设计Agent",
+    "type": "visual-designer",
+    "task": "创建视觉设计：Logo、品牌色、图标、营销素材，生成AI图像",
+    "priority": 7,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["visual_design", "ai_image_generation", "brand_identity"]
+  },
+  {
+    "id": "agent-copywriter-001",
+    "name": "文案Agent",
+    "type": "copywriter",
+    "task": "撰写营销文案：Landing Page、广告文案、产品描述、邮件内容",
+    "priority": 6,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["copywriting", "seo_writing", "email_marketing"]
+  },
+  {
+    "id": "agent-ppt-creator-001",
+    "name": "PPT制作Agent",
+    "type": "ppt-creator",
+    "task": "制作演示文稿：Pitch Deck、产品介绍、数据分析报告",
+    "priority": 5,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["presentation_design", "data_visualization", "storytelling"]
+  },
+  {
+    "id": "agent-deployer-001",
+    "name": "部署Agent",
+    "type": "deployer",
+    "task": "部署产品上线：Cloudflare Pages、Vercel、域名配置、SSL证书",
+    "priority": 8,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["deployment", "cloudflare", "vercel", "dns"]
+  },
+  {
+    "id": "agent-marketer-001",
+    "name": "营销Agent",
+    "type": "marketer",
+    "task": "产品推广：Reddit发帖、Twitter运营、SEO优化、内容营销",
+    "priority": 7,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["social_media", "seo", "content_marketing", "community_management"]
+  },
+  {
+    "id": "agent-customer-service-001",
+    "name": "客服Agent",
+    "type": "customer-service",
+    "task": "用户支持：回答用户问题、收集反馈、处理投诉、FAQ维护",
+    "priority": 5,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["customer_support", "faq_management", "feedback_collection"]
+  },
+  {
+    "id": "agent-competitor-monitor-001",
+    "name": "竞品监控Agent",
+    "type": "competitor-monitor",
+    "task": "监控竞品动态：价格变化、新功能、用户评价、市场活动",
+    "priority": 6,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["competitive_intelligence", "price_monitoring", "sentiment_analysis"]
+  },
+  {
+    "id": "agent-analyst-001",
+    "name": "数据分析Agent",
+    "type": "analyst",
+    "task": "数据分析：用户行为分析、收入分析、转化率优化、报告生成",
+    "priority": 6,
+    "status": "queued",
+    "created_at": "2026-03-21T19:00:00+08:00",
+    "skills": ["data_analysis", "analytics", "reporting", "a_b_testing"]
+  }
+]

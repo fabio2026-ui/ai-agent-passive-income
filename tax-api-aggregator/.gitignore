@@ -1,0 +1,22 @@
+# 忽略文件
+node_modules/
+.env
+.env.local
+.wrangler/
+dist/
+*.log
+.DS_Store
+
+# 本地开发
+.dev.vars
+*.local.toml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 测试
+coverage/
+.nyc_output/
