@@ -1,478 +1,408 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+    <!-- 主页 -->
     <url>
-        <loc>https://ai-agent-income.com/</loc>
-        <lastmod>2026-04-09</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+    
+    <!-- 功能页面 -->
     <url>
-        <loc>https://ai-agent-income.com/navigation.html</loc>
-        <lastmod>2026-04-09</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/pricing.html</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/dashboard.html</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/crypto-payment.html</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- 分类页面 -->
+    <url>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/web-security.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/category/ai-agent/</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/category/passive-income/</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/category/automation/</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/category/development/</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/category/marketing/</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/category/tools/</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/ai-security-prompt-injection.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/api-security-guide.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512003850_XSS攻击防护.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512003851_SQL注入检测.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512003852_API安全最佳实践.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512003852_供应链攻击防范.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512105258_零信任架构.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512105259_Docker安全扫描.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512105260_Node.js安全加固.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_1775512105260_React安全开发.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054522_Web应用防火墙WAF.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054534_渗透测试入门.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054545_DevSecOps实践.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054556_加密货币安全.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054567_身份认证最佳实践.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054578_云安全基础.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054589_日志分析与监控.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch2_1775568054600_应急响应计划.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568567984_勒索软件防护.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568567995_SOC2合规指南.html</loc>
-        <lastmod>2026-04-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568568006_AI安全威胁.html</loc>
-        <lastmod>2026-04-08</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/api-security.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568568016_被动收入策略.html</loc>
-        <lastmod>2026-04-08</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/cloud-security.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568568027_网络分割架构.html</loc>
-        <lastmod>2026-04-08</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/identity-access.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568568037_威胁情报平台.html</loc>
-        <lastmod>2026-04-08</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/threat-protection.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568568048_容器安全加固.html</loc>
-        <lastmod>2026-04-08</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/compliance.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775568568059_隐私保护技术.html</loc>
-        <lastmod>2026-04-08</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/penetration-testing.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263709_勒索软件防护.html</loc>
-        <lastmod>2026-04-09</lastmod>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/category/devsecops.html</loc>
+        <lastmod>2026-04-10</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
+    
+    <!-- 文章内容页面 -->
+    <!-- Web应用安全文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263722_SOC2合规指南.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512003850_XSS攻击防护.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263733_AI安全威胁.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512003851_SQL注入检测.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263743_被动收入策略.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512105260_React安全开发.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263753_网络分割架构.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054522_Web应用防火墙WAF.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263763_威胁情报平台.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512003852_供应链攻击防范.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263773_容器安全加固.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492722_Web应用防火墙.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch3_1775675263789_隐私保护技术.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492654_安全意识培训.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492523_JWT安全最佳实践.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492710_漏洞管理程序.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- API安全文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492536_OAuth2安全实施.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512003852_API安全最佳实践.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492548_GitHub安全扫描.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492523_JWT安全最佳实践.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492558_云安全态势管理.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492536_OAuth2安全实施.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492570_SIEM日志分析.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492687_API网关安全.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492581_DevSecOps管道.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492697_数据防泄漏.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 云安全与容器文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492593_区块链智能合约安全.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512105259_Docker安全扫描.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492604_移动端应用安全.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054578_云安全基础.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492620_身份与访问管理.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568568048_容器安全加固.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492633_安全编排自动化.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492558_云安全态势管理.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492644_红队渗透测试.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492604_移动端应用安全.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 认证与访问控制文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492654_安全意识培训.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054567_身份认证最佳实践.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492664_供应链安全.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492676_零信任架构实施.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492676_零信任架构实施.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492620_身份与访问管理.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492687_API网关安全.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512105258_零信任架构.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492697_数据防泄漏.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568568027_网络分割架构.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 威胁防护文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492710_漏洞管理程序.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568567984_勒索软件防护.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492722_Web应用防火墙.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568568006_AI安全威胁.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/article_batch4_1775675492732_事件响应计划.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492664_供应链安全.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/aws-security-best-practices.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492593_区块链智能合约安全.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/bug-bounty-beginners-guide.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568568037_威胁情报平台.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/cloud-security-misconfigurations.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054556_加密货币安全.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 合规与审计文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/compliance-frameworks-guide.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568567995_SOC2合规指南.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/container-security-guide.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492570_SIEM日志分析.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/data-encryption-guide.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568568059_隐私保护技术.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/devsecops-implementation.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054589_日志分析与监控.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/incident-response-playbook.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492633_安全编排自动化.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 渗透测试文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/kubernetes-security.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054534_渗透测试入门.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/network-security-fundamentals.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492644_红队渗透测试.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/password-security-2025.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492548_GitHub安全扫描.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- DevSecOps文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/penetration-testing-methodology.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054545_DevSecOps实践.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/ransomware-defense-2025.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_1775512105260_Node.js安全加固.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/secure-coding-owasp.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492581_DevSecOps管道.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 事件响应文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/social-engineering-defense.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch2_1775568054600_应急响应计划.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/supply-chain-security.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch4_1775675492732_事件响应计划.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
+    <!-- 被动收入文章 -->
     <url>
-        <loc>https://ai-agent-income.com/content/threat-intelligence-guide.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775568568016_被动收入策略.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
+    
     <url>
-        <loc>https://ai-agent-income.com/content/zero-trust-architecture.html</loc>
-        <lastmod>2026-04-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://fabio2026-ui.github.io/ai-agent-passive-income/content/article_batch3_1775675263743_被动收入策略.md</loc>
+        <lastmod>2026-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>

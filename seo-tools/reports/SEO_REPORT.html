@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO分析报告 - AI Agent 被动收入指南</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+    .header .meta {
+      color: #666;
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .score-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .score-card:hover {
+      transform: translateY(-5px);
+    }
+    .score-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .score-good { color: #10B981; }
+    .score-medium { color: #F59E0B; }
+    .score-bad { color: #EF4444; }
+    .score-label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+    .recommendation {
+      border-left: 4px solid;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      background: #f9fafb;
+      border-radius: 0 8px 8px 0;
+    }
+    .rec-high { border-color: #EF4444; }
+    .rec-medium { border-color: #F59E0B; }
+    .rec-low { border-color: #10B981; }
+    .rec-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .rec-high .rec-title { color: #EF4444; }
+    .rec-medium .rec-title { color: #F59E0B; }
+    .rec-low .rec-title { color: #10B981; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+    tr:hover {
+      background: #f9fafb;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .badge-high { background: #FEE2E2; color: #991B1B; }
+    .badge-medium { background: #FEF3C7; color: #92400E; }
+    .badge-low { background: #D1FAE5; color: #065F46; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 SEO 综合分析报告</h1>
+      <p class="meta">AI Agent 被动收入指南 | 生成时间: 2026/4/10 03:18:27</p>
+    </div>
+    
+    <div class="score-grid">
+      <div class="score-card">
+        <div class="score-number score-medium">78</div>
+        <div class="score-label">平均SEO得分</div>
+      </div>
+      <div class="score-card">
+        <div class="score-number">51</div>
+        <div class="score-label">总文章数</div>
+      </div>
+      <div class="score-card">
+        <div class="score-number score-medium">78</div>
+        <div class="score-label">关键词优化</div>
+      </div>
+      <div class="score-card">
+        <div class="score-number score-bad">18</div>
+        <div class="score-label">高优先级修复</div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>🔧 优化建议</h2>
+
+    </div>
+    
+    <div class="section">
+      <h2>📈 TOP 10 文章</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>文章</th>
+            <th>得分</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td>API安全最佳实践 (2025完整指南)</td>
+            <td>83</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>移动端应用安全开发指南</td>
+            <td>83</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>XSS攻击防护完全指南 (2025版)</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>零信任架构实施手册 (2025企业版)</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>渗透测试入门完全指南 (2025版)</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>云安全基础: AWS/Azure/GCP安全入门</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>OAuth2安全实施指南</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>身份与访问管理(IAM)最佳实践</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>API网关安全配置指南</td>
+            <td>81</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td>Node.js生产环境安全加固指南</td>
+            <td>80</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="section">
+      <h2>📋 各维度分析</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>平均分</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>title</td>
+            <td>76</td>
+            <td><span class="badge badge-medium">良好</span></td>
+          </tr>
+
+          <tr>
+            <td>description</td>
+            <td>70</td>
+            <td><span class="badge badge-medium">良好</span></td>
+          </tr>
+
+          <tr>
+            <td>headings</td>
+            <td>92</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>keywords</td>
+            <td>80</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>readability</td>
+            <td>92</td>
+            <td><span class="badge badge-low">优秀</span></td>
+          </tr>
+
+          <tr>
+            <td>links</td>
+            <td>71</td>
+            <td><span class="badge badge-medium">良好</span></td>
+          </tr>
+
+          <tr>
+            <td>images</td>
+            <td>70</td>
+            <td><span class="badge badge-medium">良好</span></td>
+          </tr>
+
+          <tr>
+            <td>contentLength</td>
+            <td>75</td>
+            <td><span class="badge badge-medium">良好</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

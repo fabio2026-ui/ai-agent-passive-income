@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="渗透测试 - 渗透测试方法论、红队演练、代码审计">
+    <meta name="keywords" content="渗透测试,红队,蓝队,代码审计,安全测试,网络安全">
+    <meta name="author" content="小七AI安全助手">
+    <link rel="canonical" href="https://fabio2026-ui.github.io/ai-agent-passive-income/category/penetration-testing.html">
+    <title>渗透测试 | AI Agent被动收入系统</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .category-header {
+            background: linear-gradient(135deg, #e53e3e 0%, #667eea 100%);
+            color: white;
+            padding: 120px 24px 60px;
+            text-align: center;
+        }
+        .category-header h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .category-header p { font-size: 1.2rem; opacity: 0.9; }
+        .category-stats { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+        .category-stat { text-align: center; }
+        .category-stat .number { font-size: 2.5rem; font-weight: 700; }
+        .category-stat .label { font-size: 0.9rem; opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand"><a href="../">🚀 AI Agent被动收入</a></div>
+        <div class="nav-links">
+            <a href="../">首页</a>
+            <a href="./compliance.html">合规审计</a>
+            <a href="./penetration-testing.html">渗透测试</a>
+            <a href="./devsecops.html">DevSecOps</a>
+        </div>
+        <div class="nav-search">
+            <input type="text" id="globalSearch" placeholder="搜索文章...">
+            <div id="searchResults" class="search-dropdown"></div>
+        </div>
+    </nav>
+
+    <header class="category-header">
+        <div style="text-align: left; max-width: 1200px; margin: 0 auto 20px; opacity: 0.8;">
+            <a href="../">首页</a> <span>/ 渗透测试</span>
+        </div>
+        <h1>🎯 渗透测试</h1>
+        <p>渗透测试方法论、红队演练和代码审计</p>
+        <div class="category-stats">
+            <div class="category-stat"><div class="number">3</div><div class="label">篇文章</div></div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 60px 24px;">
+        <div id="categoryArticles" class="articles-grid"></div>
+        <div class="pagination" style="margin-top: 40px;">
+            <button id="prevPage" class="btn btn-secondary" disabled>上一页</button>
+            <span id="pageInfo"></span>
+            <button id="nextPage" class="btn btn-secondary">下一页</button>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>🤖 由小七AI Agent自动生成 · 2026-04-10</p>
+        </div>
+    </footer>
+
+    <script src="../articles-data.js"></script>
+    <script src="../search.js"></script>
+    <script>
+        const currentCategory = 'penetration-testing';
+        let currentPage = 1;
+        const articlesPerPage = 6;
+        
+        function loadCategoryArticles() {
+            const categoryArticles = articlesData.filter(a => a.category === currentCategory);
+            const totalPages = Math.ceil(categoryArticles.length / articlesPerPage);
+            const start = (currentPage - 1) * articlesPerPage;
+            const articles = categoryArticles.slice(start, start + articlesPerPage);
+            renderArticles(articles);
+            updatePagination(totalPages, categoryArticles.length);
+        }
+        
+        function renderArticles(articles) {
+            const container = document.getElementById('categoryArticles');
+            if (!container) return;
+            container.innerHTML = articles.map(article => `
+                <article class="article-card" style="cursor: pointer;" onclick="window.open('../content/${article.fileName}', '_blank')">
+                    <div class="article-header">
+                        <span class="article-category">${article.categoryName}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                    </div>
+                    <div class="article-body">
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-footer">
+                            <span class="article-date">${new Date(article.date).toLocaleDateString('zh-CN')}</span>
+                            <span class="article-read">阅读全文 →</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+        
+        function updatePagination(totalPages, totalArticles) {
+            document.getElementById('prevPage').disabled = currentPage <= 1;
+            document.getElementById('nextPage').disabled = currentPage >= totalPages;
+            document.getElementById('pageInfo').textContent = `第 ${currentPage} 页 / 共 ${totalPages} 页 (${totalArticles}篇文章)`;
+        }
+        
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) { currentPage--; loadCategoryArticles(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        });
+        
+        document.getElementById('nextPage').addEventListener('click', () => {
+            const categoryArticles = articlesData.filter(a => a.category === currentCategory);
+            const totalPages = Math.ceil(categoryArticles.length / articlesPerPage);
+            if (currentPage < totalPages) { currentPage++; loadCategoryArticles(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        });
+        
+        document.addEventListener('DOMContentLoaded', loadCategoryArticles);
+    </script>
+</body>
+</html>

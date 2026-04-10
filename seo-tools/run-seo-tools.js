@@ -25,8 +25,8 @@ const SEOReportGenerator = require('./seo-report');
 
 // 配置
 const CONFIG = {
-  contentDir: './public/content',
-  outputDir: './seo-tools',
+  contentDir: '../public/content',
+  outputDir: '.',
   siteName: 'AI Agent 被动收入指南',
   siteUrl: 'https://ai-agent-passive-income.com'
 };

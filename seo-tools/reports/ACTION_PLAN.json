@@ -1,0 +1,19 @@
+{
+  "immediate": [],
+  "thisWeek": [],
+  "thisMonth": [],
+  "schedule": {
+    "daily": [
+      "检查新文章SEO得分",
+      "监控关键词排名"
+    ],
+    "weekly": [
+      "运行完整SEO分析",
+      "更新sitemap"
+    ],
+    "monthly": [
+      "审查整体SEO策略",
+      "分析竞争对手"
+    ]
+  }
+}

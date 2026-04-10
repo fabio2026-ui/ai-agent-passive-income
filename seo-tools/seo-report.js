@@ -38,6 +38,11 @@ class SEOReportGenerator {
     
     const startTime = Date.now();
     
+    // 确保输出目录存在
+    if (!fs.existsSync(this.outputDir)) {
+      fs.mkdirSync(this.outputDir, { recursive: true });
+    }
+    
     // 1. SEO分析
     console.log('📊 步骤 1/4: 分析文章SEO得分...');
     const analyzer = new SEOAnalyzer({ contentDir: this.contentDir });
@@ -63,7 +68,7 @@ class SEOReportGenerator {
     console.log('\n🗺️  步骤 4/4: 生成站点地图...');
     const sitemapGenerator = new SitemapGenerator({
       contentDir: this.contentDir,
-      outputDir: './public',
+      outputDir: '../public',
       siteName: this.siteConfig.name,
       siteUrl: this.siteConfig.url
     });
