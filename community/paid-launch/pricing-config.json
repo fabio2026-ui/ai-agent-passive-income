@@ -1,0 +1,45 @@
+{
+  "community_name": "DevSecOps Hub Pro",
+  "pricing": {
+    "starter": {
+      "name": "Starter",
+      "price_monthly": 9,
+      "price_yearly": 90,
+      "features": [
+        "基础频道访问",
+        "每周安全周报",
+        "模板库下载",
+        "职位发布板"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "price_monthly": 29,
+      "price_yearly": 290,
+      "features": [
+        "全部频道访问",
+        "月度专家AMA",
+        "源码和工具",
+        "1v1咨询折扣",
+        "新功能抢先体验"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price_monthly": 99,
+      "price_yearly": 990,
+      "features": [
+        "全部Pro权益",
+        "专属顾问服务",
+        "定制培训",
+        "优先技术支持",
+        "SLA保障"
+      ]
+    }
+  },
+  "goals": {
+    "month_1": {"members": 10, "mrr": 290},
+    "month_3": {"members": 50, "mrr": 1450},
+    "month_6": {"members": 100, "mrr": 2900}
+  }
+}
