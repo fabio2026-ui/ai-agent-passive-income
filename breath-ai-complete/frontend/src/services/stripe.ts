@@ -1,8 +1,12 @@
 import { loadStripe, Stripe, StripeElements, PaymentElement } from '@stripe/stripe-js';
 import type { SubscriptionPlan, Subscription } from '@shared/types';
 
-// Stripe public key (should come from environment in production)
-const STRIPE_PUBLIC_KEY = import.meta.env.VITE_STRIPE_PUBLIC_KEY || 'pk_test_your_key_here';
+// Stripe public key from environment
+const STRIPE_PUBLIC_KEY = import.meta.env.VITE_STRIPE_PUBLIC_KEY || '';
+
+if (!STRIPE_PUBLIC_KEY) {
+  console.error('Stripe public key is not configured');
+}
 
 export interface PaymentResult {
   success: boolean;
@@ -197,7 +201,8 @@ export class StripeService {
   }
 }
 
-// Subscription plans
+// Subscription plans - Update these with your actual Stripe Price IDs
+// Run ./setup-stripe-products.sh after updating the API key to get real IDs
 export const subscriptionPlans: SubscriptionPlan[] = [
   {
     id: 'free',
@@ -227,7 +232,8 @@ export const subscriptionPlans: SubscriptionPlan[] = [
       '详细数据分析',
       '无广告体验'
     ],
-    stripePriceId: 'price_premium_monthly'
+    // TODO: Replace with actual Stripe Price ID after running setup script
+    stripePriceId: import.meta.env.VITE_STRIPE_PREMIUM_PRICE_ID || 'price_premium_placeholder'
   },
   {
     id: 'premium-plus',
@@ -242,7 +248,8 @@ export const subscriptionPlans: SubscriptionPlan[] = [
       '家庭健康报告',
       '优先客服支持'
     ],
-    stripePriceId: 'price_premium_plus_monthly'
+    // TODO: Replace with actual Stripe Price ID after running setup script
+    stripePriceId: import.meta.env.VITE_STRIPE_PREMIUM_PLUS_PRICE_ID || 'price_premium_plus_placeholder'
   }
 ];
 

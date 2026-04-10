@@ -93,6 +93,7 @@ export interface Subscription {
   planId: string;
   currentPeriodEnd: number;
   cancelAtPeriodEnd: boolean;
+  customerId?: string;
 }
 
 // Bluetooth Heart Rate Service

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing AI - 智能呼吸引导</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            padding: 20px;
+        }
+        .container { max-width: 800px; width: 100%; text-align: center; }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
+        .breathing-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            margin: 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 3px solid rgba(255,255,255,0.5);
+        }
+        .breathing-circle:hover { transform: scale(1.05); }
+        .breathing-circle.active {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .mode-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .mode-btn:hover, .mode-btn.active {
+            background: rgba(255,255,255,0.4);
+            border-color: white;
+        }
+        .timer { font-size: 2rem; margin: 20px 0; }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .btn-primary:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🫁 Breathing AI</h1>
+        <p class="subtitle">科学呼吸引导，减压助眠提效</p>
+        
+        <div class="modes">
+            <button class="mode-btn active" onclick="setMode('relax')">🧘 放松</button>
+            <button class="mode-btn" onclick="setMode('focus')">🎯 专注</button>
+            <button class="mode-btn" onclick="setMode('sleep')">😴 助眠</button>
+            <button class="mode-btn" onclick="setMode('energy')">⚡ 提神</button>
+        </div>
+        
+        <div class="breathing-circle" id="circle" onclick="toggleBreathing()">
+            <span id="status">点击开始</span>
+        </div>
+        
+        <div class="timer" id="timer">00:00</div>
+        
+        <button class="btn-primary" onclick="toggleBreathing()">开始练习</button>
+        
+        <div class="instructions" id="instructions">
+            <h3>🧘 放松模式 (4-7-8呼吸)</h3>
+            <p>吸气 4秒 → 屏息 7秒 → 呼气 8秒</p>
+            <p>帮助快速减压、缓解焦虑</p>
+        </div>
+    </div>
+
+    <script>
+        let isRunning = false;
+        let timer = 0;
+        let timerInterval;
+        let currentMode = 'relax';
+        
+        const modes = {
+            relax: { name: '放松', inhale: 4, hold: 7, exhale: 8, desc: '4-7-8呼吸，快速减压' },
+            focus: { name: '专注', inhale: 4, hold: 4, exhale: 4, desc: '盒式呼吸，提升专注' },
+            sleep: { name: '助眠', inhale: 4, hold: 0, exhale: 6, desc: '4-6呼吸，帮助入睡' },
+            energy: { name: '提神', inhale: 2, hold: 0, exhale: 2, desc: '快速呼吸，提升能量' }
+        };
+        
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            updateInstructions();
+        }
+        
+        function updateInstructions() {
+            const m = modes[currentMode];
+            document.getElementById('instructions').innerHTML = `
+                <h3>${m.name}模式</h3>
+                <p>${m.desc}</p>
+                <p>节奏: 吸气${m.inhale}秒 ${m.hold ? `→ 屏息${m.hold}秒` : ''} → 呼气${m.exhale}秒</p>
+            `;
+        }
+        
+        function toggleBreathing() {
+            const circle = document.getElementById('circle');
+            const status = document.getElementById('status');
+            
+            if (isRunning) {
+                isRunning = false;
+                circle.classList.remove('active');
+                status.textContent = '点击开始';
+                clearInterval(timerInterval);
+            } else {
+                isRunning = true;
+                circle.classList.add('active');
+                status.textContent = modes[currentMode].name;
+                timerInterval = setInterval(() => {
+                    timer++;
+                    const mins = Math.floor(timer / 60).toString().padStart(2, '0');
+                    const secs = (timer % 60).toString().padStart(2, '0');
+                    document.getElementById('timer').textContent = `${mins}:${secs}`;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

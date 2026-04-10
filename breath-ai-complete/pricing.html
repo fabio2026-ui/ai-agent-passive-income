@@ -1,0 +1,186 @@
+# Breathing AI - 支付页面
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing AI - 升级到专业版</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { text-align: center; opacity: 0.9; margin-bottom: 50px; }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+        .plan:hover { transform: translateY(-10px); }
+        .plan.featured {
+            border-color: #ffd700;
+            background: rgba(255,255,255,0.15);
+            position: relative;
+        }
+        .plan.featured::before {
+            content: "最受欢迎";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffd700;
+            color: #333;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .plan h2 { font-size: 1.8rem; margin-bottom: 10px; }
+        .price { font-size: 3rem; font-weight: bold; margin: 20px 0; }
+        .price span { font-size: 1rem; opacity: 0.8; }
+        
+        .features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .features li::before {
+            content: "✓";
+            margin-right: 10px;
+            color: #4ade80;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+        }
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn:hover { transform: scale(1.05); }
+        
+        #checkout-button { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🫁 Breathing AI</h1>
+        <p class="subtitle">选择适合你的计划，开始更健康的呼吸生活</p>
+        
+        <div class="pricing-grid">
+            <!-- 免费版 -->
+            <div class="plan">
+                <h2>免费版</h2>
+                <div class="price">$0<span>/月</span></div>
+                <ul class="features">
+                    <li>4种基础呼吸模式</li>
+                    <li>基础计时器</li>
+                    <li>浏览器访问</li>
+                    <li>无需注册</li>
+                </ul>
+                <a href="/app.html" class="btn btn-secondary">免费开始</a>
+            </div>
+            
+            <!-- 专业版 -->
+            <div class="plan featured">
+                <h2>专业版</h2>
+                <div class="price">$9.99<span>/月</span></div>
+                <ul class="features">
+                    <li>所有免费版功能</li>
+                    <li>8种高级呼吸模式</li>
+                    <li>个人统计数据</li>
+                    <li>AI个性化建议</li>
+                    <li>无广告体验</li>
+                    <li>优先客服支持</li>
+                </ul>
+                <button id="checkout-button" class="btn btn-primary">立即升级</button>
+            </div>
+            
+            <!-- 团队版 -->
+            <div class="plan">
+                <h2>团队版</h2>
+                <div class="price">$49<span>/月</span></div>
+                <ul class="features">
+                    <li>所有专业版功能</li>
+                    <li>最多10名团队成员</li>
+                    <li>管理面板</li>
+                    <li>API访问</li>
+                    <li>定制化训练计划</li>
+                    <li>专属客户经理</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="contactSales()">联系销售</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const stripe = Stripe('pk_test_51TCfcBDRLWt3rKvbzr3TuuA2pZ4rUOyBExwBUOpGVY9pK8zKfPTGT9A5oxmmBTI7Asf1M5ozadpHTFSlQ1WTyMKG00rQNT5CxB');
+        
+        const checkoutButton = document.getElementById('checkout-button');
+        
+        checkoutButton.addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ priceId: 'price_pro_monthly' })
+                });
+                
+                const session = await response.json();
+                
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id
+                });
+                
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('支付系统暂时不可用，请稍后重试');
+            }
+        });
+        
+        function contactSales() {
+            alert('请联系 sales@breathing-ai.com 获取团队版报价');
+        }
+    </script>
+</body>
+</html>

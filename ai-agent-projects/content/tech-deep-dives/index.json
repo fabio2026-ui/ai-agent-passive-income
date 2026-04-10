@@ -1,0 +1,126 @@
+{
+  "generated": "2026-04-09T16:07:53.625Z",
+  "count": 10,
+  "articles": [
+    {
+      "id": 1,
+      "title": "Implementing JWT Authentication with Refresh Tokens: A Complete Guide",
+      "difficulty": "Intermediate",
+      "keywords": [
+        "JWT",
+        "authentication",
+        "refresh tokens",
+        "security"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 2,
+      "title": "OAuth 2.0 and OpenID Connect: Enterprise Authentication Patterns",
+      "difficulty": "Advanced",
+      "keywords": [
+        "OAuth 2.0",
+        "OpenID Connect",
+        "SSO",
+        "enterprise"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 3,
+      "title": "Secure Session Management in Modern Web Applications",
+      "difficulty": "Intermediate",
+      "keywords": [
+        "session management",
+        "cookies",
+        "security",
+        "web apps"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 4,
+      "title": "Building a Real-time Security Monitoring Dashboard with WebSockets",
+      "difficulty": "Advanced",
+      "keywords": [
+        "WebSockets",
+        "real-time",
+        "monitoring",
+        "dashboard"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 5,
+      "title": "Automated Security Testing: Integrating SAST and DAST in CI/CD",
+      "difficulty": "Advanced",
+      "keywords": [
+        "SAST",
+        "DAST",
+        "CI/CD",
+        "security testing",
+        "automation"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 6,
+      "title": "Kubernetes Security: Pod Security Policies and Network Policies",
+      "difficulty": "Advanced",
+      "keywords": [
+        "Kubernetes",
+        "security",
+        "PSP",
+        "network policies"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 7,
+      "title": "Implementing Rate Limiting and Throttling for APIs",
+      "difficulty": "Intermediate",
+      "keywords": [
+        "rate limiting",
+        "throttling",
+        "API",
+        "performance"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 8,
+      "title": "Database Security: Encryption, Masking, and Access Control",
+      "difficulty": "Intermediate",
+      "keywords": [
+        "database security",
+        "encryption",
+        "masking",
+        "access control"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 9,
+      "title": "Web Application Firewall (WAF) Rules and Configuration",
+      "difficulty": "Intermediate",
+      "keywords": [
+        "WAF",
+        "firewall",
+        "web security",
+        "rules"
+      ],
+      "hasCode": true
+    },
+    {
+      "id": 10,
+      "title": "Penetration Testing Methodology: From Recon to Report",
+      "difficulty": "Advanced",
+      "keywords": [
+        "penetration testing",
+        "pentest",
+        "security assessment"
+      ],
+      "hasCode": false
+    }
+  ]
+}

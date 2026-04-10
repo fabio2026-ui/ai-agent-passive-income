@@ -1,0 +1,41 @@
+{
+  "campaignName": "Reddit Multi-Subreddit Campaign",
+  "duration": "2 weeks",
+  "posts": [
+    {
+      "day": 1,
+      "subreddit": "r/webdev",
+      "title": "I built an automated security scanner for my side project. Here's what I learned",
+      "type": "Showoff",
+      "scheduledTime": "Tuesday 9AM EST"
+    },
+    {
+      "day": 3,
+      "subreddit": "r/SideProject",
+      "title": "From $0 to $2K MRR: My 8-month SaaS journey (with numbers)",
+      "type": "Journey",
+      "scheduledTime": "Wednesday 10AM EST"
+    },
+    {
+      "day": 5,
+      "subreddit": "r/Entrepreneur",
+      "title": "The 'unsexy' SaaS making $28K/year: Security monitoring for developers",
+      "type": "Business",
+      "scheduledTime": "Thursday 11AM EST"
+    },
+    {
+      "day": 7,
+      "subreddit": "r/devops",
+      "title": "Automating security compliance: Our journey to SOC 2 Type II",
+      "type": "Technical",
+      "scheduledTime": "Tuesday 2PM EST"
+    },
+    {
+      "day": 9,
+      "subreddit": "r/ExperiencedDevs",
+      "title": "After 15 years in security consulting, I built the tool I wish existed",
+      "type": "Experience",
+      "scheduledTime": "Friday 10AM EST"
+    }
+  ]
+}

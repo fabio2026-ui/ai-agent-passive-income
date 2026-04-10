@@ -1,0 +1,23 @@
+TITLE: 3 Container Security Mistakes (60 seconds)
+
+[0:00-0:03] HOOK
+Text: "3 container security mistakes that will get you hacked"
+Visual: Hacker emoji + container logo
+
+[0:03-0:20] MISTAKE #1
+Text: "Using 'latest' tag"
+"Using 'latest' means you don't know what's running. Use specific versions like ubuntu:22.04-slim"
+Visual: Dockerfile comparison
+
+[0:20-0:40] MISTAKE #2
+Text: "Running as root"
+"Root in container = root on host. Always use non-root users"
+Visual: Security warning + USER directive
+
+[0:40-0:58] MISTAKE #3
+Text: "No resource limits"
+"No limits = DoS vulnerability. Always set CPU/memory limits"
+Visual: Kubernetes YAML with limits
+
+[0:58-1:00] CTA
+"Follow for more security tips!"

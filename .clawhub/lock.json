@@ -24,6 +24,26 @@
     "sequential-thinking": {
       "version": "1.0.0",
       "installedAt": 1774042982054
+    },
+    "obsidian": {
+      "version": "1.0.0",
+      "installedAt": 1775758863343
+    },
+    "weather": {
+      "version": "1.0.0",
+      "installedAt": 1775759101788
+    },
+    "discord-bot": {
+      "version": "1.0.0",
+      "installedAt": 1775759221473
+    },
+    "cron-scheduler": {
+      "version": "1.0.0",
+      "installedAt": 1775759221506
+    },
+    "slack": {
+      "version": "1.0.0",
+      "installedAt": 1775759281829
     }
   }
 }

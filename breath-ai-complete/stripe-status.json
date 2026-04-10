@@ -1,0 +1,15 @@
+{
+  "error": "The provided Stripe API keys have expired",
+  "message": "Please update with valid Stripe API keys to create products and prices",
+  "steps": [
+    "1. Go to https://dashboard.stripe.com/test/apikeys",
+    "2. Copy your Publishable key (pk_test_...)",
+    "3. Copy your Secret key (sk_test_...)",
+    "4. Update the keys in the configuration files"
+  ],
+  "files_to_update": [
+    "backend/wrangler.toml - STRIPE_PUBLISHABLE_KEY",
+    "frontend/.env - VITE_STRIPE_PUBLIC_KEY",
+    "setup-stripe-products.sh - STRIPE_SECRET_KEY"
+  ]
+}

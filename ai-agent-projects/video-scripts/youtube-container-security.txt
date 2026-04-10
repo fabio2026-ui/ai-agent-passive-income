@@ -1,0 +1,40 @@
+TITLE: Container Security in 10 Minutes - The Complete Guide
+
+[0:00-0:30] HOOK
+"In 2024, 63% of containers ran with known vulnerabilities. Today I'm going to show you how to secure your containers from build to runtime in just 10 minutes."
+
+[0:30-1:30] THE PROBLEM
+- Show Tesla K8s breach example
+- Explain container security layers
+- Visual: Container security stack diagram
+
+[1:30-4:00] IMAGE SECURITY
+1. Use minimal base images (Alpine/Distroless)
+2. Multi-stage builds
+3. Scan with Trivy/Snyk
+- Demo: Dockerfile before/after
+- Demo: Running Trivy scan
+
+[4:00-6:00] KUBERNETES HARDENING
+1. Pod Security Standards
+2. Network Policies
+3. RBAC
+- Demo: Applying security policies
+- Visual: Network policy diagram
+
+[6:00-8:00] RUNTIME SECURITY
+1. Falco for threat detection
+2. Monitoring with Prometheus
+3. Incident response
+- Demo: Falco detecting suspicious activity
+
+[8:00-9:30] SUPPLY CHAIN
+1. Image signing with Cosign
+2. SBOM generation
+3. Verification in CI/CD
+- Demo: Signing and verifying images
+
+[9:30-10:00] CONCLUSION
+- Recap key points
+- Call to action: GitHub repo with examples
+- Outro

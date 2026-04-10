@@ -1,0 +1,101 @@
+{
+  "deployment": {
+    "status": "configured",
+    "timestamp": "2026-04-10T02:50:00Z",
+    "components": {
+      "backend": {
+        "status": "ready_to_deploy",
+        "path": "backend/",
+        "worker_name": "breath-ai-backend",
+        "stripe_configured": true,
+        "kv_namespaces": [
+          "SUBSCRIPTIONS",
+          "DUO_SESSIONS"
+        ],
+        "durable_objects": [
+          "SIGNAL_QUEUE"
+        ]
+      },
+      "frontend": {
+        "status": "ready_to_build",
+        "path": "frontend/",
+        "stripe_integration": true,
+        "payment_flows": [
+          "checkout",
+          "subscription_management",
+          "cancellation",
+          "reactivation"
+        ]
+      }
+    },
+    "stripe": {
+      "status": "needs_key_update",
+      "provided_keys_expired": true,
+      "required_actions": [
+        "Update STRIPE_SECRET_KEY in setup-stripe-products.sh",
+        "Update VITE_STRIPE_PUBLIC_KEY in frontend/.env",
+        "Update STRIPE_PUBLISHABLE_KEY in backend/wrangler.toml",
+        "Run setup-stripe-products.sh to create products",
+        "Update Price IDs in frontend/.env"
+      ]
+    },
+    "scripts": {
+      "setup-stripe-products.sh": "Creates Stripe products and prices",
+      "deploy-full.sh": "Complete deployment script with secret configuration",
+      "test-payment-flow.sh": "Tests payment endpoints after deployment"
+    }
+  },
+  "features": {
+    "payment": {
+      "stripe_checkout": true,
+      "subscription_management": true,
+      "webhook_handling": true,
+      "cancel_at_period_end": true,
+      "reactivation": true,
+      "invoice_history": true
+    },
+    "app": {
+      "breathing_patterns": 6,
+      "heart_rate_monitoring": true,
+      "ai_recommendations": true,
+      "duo_mode": true,
+      "subscription_tiers": 3
+    }
+  },
+  "next_steps": [
+    {
+      "step": 1,
+      "action": "Update Stripe API keys with valid test keys",
+      "files": [
+        "setup-stripe-products.sh",
+        "frontend/.env",
+        "backend/wrangler.toml"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "Run setup-stripe-products.sh",
+      "command": "./setup-stripe-products.sh"
+    },
+    {
+      "step": 3,
+      "action": "Deploy backend",
+      "command": "cd backend && wrangler deploy"
+    },
+    {
+      "step": 4,
+      "action": "Configure Stripe webhook",
+      "url": "https://dashboard.stripe.com/test/webhooks"
+    },
+    {
+      "step": 5,
+      "action": "Build and deploy frontend",
+      "command": "cd frontend && npm run build"
+    },
+    {
+      "step": 6,
+      "action": "Test payment flow",
+      "command": "./test-payment-flow.sh"
+    }
+  ]
+}
