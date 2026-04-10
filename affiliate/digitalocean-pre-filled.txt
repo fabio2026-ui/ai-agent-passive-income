@@ -1,0 +1,23 @@
+DigitalOcean Affiliate Registration - Pre-filled Information
+=============================================================
+
+Personal Information:
+- First Name: [YOUR_FIRST_NAME]
+- Last Name: [YOUR_LAST_NAME]
+- Email: [YOUR_EMAIL]
+- Company: AI Agent Security
+- Website: https://fabio2026-ui.github.io/ai-agent-passive-income
+- Country: Italy
+
+Promotion Plan:
+- Primary Channel: Content/Blog
+- Audience: Developers, DevOps, Security Engineers
+- Monthly Traffic: 10,000+ visitors
+- Promotion Method: SEO articles, tutorials, tool recommendations
+
+Payment Information:
+- PayPal: [YOUR_PAYPAL_EMAIL]
+
+Legal:
+- Tax ID: [YOUR_TAX_ID]
+- Agree to Terms: [PENDING_CONFIRMATION]
