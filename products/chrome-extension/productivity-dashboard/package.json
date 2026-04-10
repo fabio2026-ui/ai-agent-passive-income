@@ -1,0 +1,13 @@
+{
+  "name": "productivity-dashboard",
+  "version": "1.0.0",
+  "description": "自定义新标签页，提升生产力",
+  "main": "newtab.js",
+  "scripts": {
+    "build": "zip -r productivity-dashboard.zip . -x '*.git*' '*.DS_Store'",
+    "test": "echo 'Run in Chrome browser'"
+  },
+  "keywords": ["chrome-extension", "productivity", "newtab"],
+  "author": "小七团队",
+  "license": "MIT"
+}
