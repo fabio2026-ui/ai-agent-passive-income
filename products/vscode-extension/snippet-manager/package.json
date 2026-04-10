@@ -1,0 +1,98 @@
+{
+  "name": "code-snippet-manager",
+  "displayName": "Code Snippet Manager",
+  "description": "轻松管理和插入代码片段",
+  "version": "1.0.0",
+  "publisher": "xiao7team",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other", "Snippets"],
+  "keywords": ["snippet", "code", "template"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "snippetManager.addSnippet",
+        "title": "💾 保存选中代码为片段",
+        "category": "Snippet Manager"
+      },
+      {
+        "command": "snippetManager.searchSnippet",
+        "title": "🔍 搜索片段",
+        "category": "Snippet Manager"
+      },
+      {
+        "command": "snippetManager.insertSnippet",
+        "title": "📋 插入片段",
+        "category": "Snippet Manager"
+      },
+      {
+        "command": "snippetManager.deleteSnippet",
+        "title": "🗑️ 删除片段",
+        "category": "Snippet Manager"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "snippetManager.searchSnippet",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s"
+      },
+      {
+        "command": "snippetManager.addSnippet",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "snippetManager.addSnippet",
+          "when": "editorHasSelection",
+          "group": "9_cutcopypaste@5"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "snippetsExplorer",
+          "name": "📦 我的代码片段",
+          "when": "true"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Snippet Manager",
+      "properties": {
+        "snippetManager.enableAutoComplete": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用代码补全"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "pricing": {
+    "free": {
+      "maxSnippets": 20
+    },
+    "pro": {
+      "price": 5,
+      "currency": "EUR",
+      "maxSnippets": 999
+    }
+  }
+}
