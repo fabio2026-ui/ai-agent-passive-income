@@ -1,0 +1,150 @@
+Category,Control ID,Control Description,Evidence Required,Status,Notes,Priority
+Corporate Security,G.1,Security policy exists and is approved,Policy document dated and signed,Pending,,High
+Corporate Security,G.2,Security roles and responsibilities defined,Org chart with security roles,Pending,,High
+Corporate Security,G.3,Security steering committee meets regularly,Meeting minutes from last 4 quarters,Pending,,Medium
+Corporate Security,G.4,Security budget allocated and tracked,Budget documentation and actuals,Pending,,Medium
+Corporate Security,G.5,Third-party risk management program,Vendor assessment procedures,Pending,,High
+Risk Management,R.1,Risk assessment methodology defined,Risk assessment policy document,Pending,,High
+Risk Management,R.2,Risk register maintained and current,Risk register with dates and owners,Pending,,High
+Risk Management,R.3,Risk treatment plans implemented,Risk treatment documentation,Pending,,Medium
+Risk Management,R.4,Risk acceptance documented and approved,Risk acceptance forms,Pending,,Medium
+Risk Management,R.5,Emerging risks monitored,Threat intelligence reports,Pending,,Low
+Access Control,AC.1,Unique user accounts required,User ID policy and system config,Pending,,High
+Access Control,AC.2,Identity proofing process exists,Identity verification procedures,Pending,,High
+Access Control,AC.3,Account provisioning automated,Provisioning system documentation,Pending,,Medium
+Access Control,AC.4,Guest/contractor accounts managed,Guest account procedures,Pending,,Medium
+Access Control,AC.5,Service accounts inventoried,Service account inventory,Pending,,High
+Authentication,AU.1,Password policy enforced,Password policy and system settings,Pending,,High
+Authentication,AU.2,MFA enabled for all users,MFA coverage report,Pending,,High
+Authentication,AU.3,MFA enabled for privileged users,PAM system configuration,Pending,,Critical
+Authentication,AU.4,MFA enabled for remote access,VPN/remote access logs,Pending,,Critical
+Authentication,AU.5,Single sign-on (SSO) implemented,SSO configuration,Pending,,Medium
+Authentication,AU.6,Password manager recommended/provided,Password manager deployment records,Pending,,Medium
+Authorization,AZ.1,Role-based access control implemented,RBAC matrix documentation,Pending,,High
+Authorization,AZ.2,Principle of least privilege enforced,Access review findings,Pending,,High
+Authorization,AZ.3,Segregation of duties documented,SOD matrix,Pending,,High
+Authorization,AZ.4,Access reviews performed quarterly,Access review records with dates,Pending,,High
+Authorization,AZ.5,Privileged access monitored,PAM logs and reports,Pending,,Critical
+Authorization,AZ.6,Just-in-time access for critical systems,JTIM implementation evidence,Pending,,Medium
+Access Removal,AR.1,Termination checklist includes IT access,Termination checklist template,Pending,,High
+Access Removal,AR.2,Access revoked within 24 hours,Access revocation logs,Pending,,Critical
+Access Removal,AR.3,Access revocation automated where possible,Automation documentation,Pending,,Medium
+Access Removal,AR.4,Transfer process updates access appropriately,Transfer procedures,Pending,,Medium
+Data Protection,DC.1,Data classification policy exists,Classification policy document,Pending,,High
+Data Protection,DC.2,Data inventory maintained,Data inventory with classifications,Pending,,High
+Data Protection,DC.3,Data owners assigned,Data owner registry,Pending,,Medium
+Data Protection,DC.4,Classification labels applied,System screenshots with labels,Pending,,Medium
+Data Protection,DC.5,Handling procedures defined per classification,Data handling procedures,Pending,,Medium
+Data Protection,DR.1,Encryption for critical data,Encryption configuration evidence,Pending,,Critical
+Data Protection,DR.2,Encryption for confidential data,Encryption configuration evidence,Pending,,Critical
+Data Protection,DR.3,Database encryption enabled,DB encryption settings,Pending,,High
+Data Protection,DR.4,File server encryption enabled,Server encryption configuration,Pending,,High
+Data Protection,DR.5,Endpoint encryption (full disk),MDM encryption reports,Pending,,High
+Data Protection,DR.6,Key management program established,KMS documentation and procedures,Pending,,Critical
+Data Protection,DT.1,TLS 1.2+ enforced for all connections,SSL/TLS scan results,Pending,,Critical
+Data Protection,DT.2,Certificate management program,Certificate inventory and procedures,Pending,,High
+Data Protection,DT.3,VPN required for remote access,VPN usage reports,Pending,,High
+Data Protection,DT.4,Email encryption for sensitive data,DLP/email encryption logs,Pending,,Medium
+Data Protection,DT.5,Secure file transfer protocols,SFTP/FTPS usage documentation,Pending,,Medium
+Data Protection,DLP.1,DLP solution implemented,DLP configuration screenshots,Pending,,High
+Data Protection,DLP.2,USB/port controls enabled,Device control policies,Pending,,Medium
+Data Protection,DLP.3,Cloud access security broker (CASB),CASB deployment evidence,Pending,,Medium
+Data Protection,DLP.4,Email DLP rules configured,Email DLP policy settings,Pending,,High
+Data Protection,DLP.5,Data masking for non-production,Data masking procedures,Pending,,Medium
+Network Security,NS.1,Firewall rules reviewed quarterly,Firewall review documentation,Pending,,High
+Network Security,NS.2,Default deny rule implemented,Firewall rule screenshots,Pending,,Critical
+Network Security,NS.3,Ingress/egress filtering enabled,Firewall configuration,Pending,,High
+Network Security,NS.4,DMZ properly segmented,Network diagram with DMZ,Pending,,High
+Network Security,NS.5,Intrusion prevention system (IPS),IPS configuration and logs,Pending,,High
+Network Security,NS.6,DDoS protection implemented,DDoS protection service records,Pending,,Medium
+Network Security,SEG.1,Network segmentation documented,Network segmentation diagram,Pending,,High
+Network Security,SEG.2,VLANs properly configured,VLAN configuration,Pending,,Medium
+Network Security,SEG.3,Critical systems isolated,Isolation verification evidence,Pending,,Critical
+Network Security,SEG.4,East-west traffic monitored,East-west monitoring logs,Pending,,Medium
+Network Security,SEG.5,Micro-segmentation where appropriate,Micro-segmentation implementation,Pending,,Low
+Network Security,WS.1,WPA2-Enterprise or WPA3 required,Wireless security configuration,Pending,,High
+Network Security,WS.2,Guest network isolated,Guest network configuration,Pending,,Medium
+Network Security,WS.3,Wireless access points inventoried,AP inventory,Pending,,Medium
+Network Security,WS.4,Rogue AP detection enabled,Rogue AP detection logs,Pending,,Medium
+Endpoint Security,EP.1,Anti-malware on all endpoints,AV deployment reports,Pending,,High
+Endpoint Security,EP.2,EDR/XDR solution deployed,EDR console screenshots,Pending,,High
+Endpoint Security,EP.3,Host firewall enabled,Host firewall policy,Pending,,Medium
+Endpoint Security,EP.4,USB controls implemented,Device control policies,Pending,,Medium
+Endpoint Security,EP.5,Application whitelisting where feasible,Whitelisting configuration,Pending,,Medium
+Endpoint Security,PM.1,Patch management policy exists,Patch management policy,Pending,,High
+Endpoint Security,PM.2,Critical patches within 7 days,Patch compliance reports,Pending,,Critical
+Endpoint Security,PM.3,High patches within 30 days,Patch compliance reports,Pending,,High
+Endpoint Security,PM.4,Automated patching where possible,Automation configuration,Pending,,Medium
+Endpoint Security,PM.5,Exception process documented,Exception process and records,Pending,,Medium
+Endpoint Security,MDM.1,MDM solution deployed,MDM console access,Pending,,High
+Endpoint Security,MDM.2,BYOD policy documented,BYOD policy document,Pending,,Medium
+Endpoint Security,MDM.3,Device encryption enforced,MDM compliance reports,Pending,,High
+Endpoint Security,MDM.4,Remote wipe capability,MDM feature verification,Pending,,High
+Endpoint Security,MDM.5,App management/containerization,MDM app management config,Pending,,Medium
+Application Security,SD.1,SDLC policy documented,SDLC policy and standards,Pending,,High
+Application Security,SD.2,Security requirements defined,Security requirements docs,Pending,,High
+Application Security,SD.3,Threat modeling performed,Threat modeling records,Pending,,Medium
+Application Security,SD.4,Secure coding standards adopted,Coding standards document,Pending,,Medium
+Application Security,SD.5,Security architecture reviews,Architecture review records,Pending,,Medium
+Application Security,TV.1,SAST integrated in CI/CD,CI/CD pipeline screenshots,Pending,,High
+Application Security,TV.2,DAST performed regularly,DAST scan reports,Pending,,High
+Application Security,TV.3,Dependency scanning implemented,SCA scan reports,Pending,,High
+Application Security,TV.4,Secrets detection in code,Secrets scanning results,Pending,,Critical
+Application Security,TV.5,Penetration testing annually,Pen test reports,Pending,,High
+Application Security,TV.6,Bug bounty or VDP established,VDP documentation,Pending,,Low
+Application Security,PS.1,WAF deployed for web apps,WAF configuration,Pending,,High
+Application Security,PS.2,API security controls,API security documentation,Pending,,High
+Application Security,PS.3,Input validation enforced,Code review evidence,Pending,,High
+Application Security,PS.4,Security headers configured,Security header scan results,Pending,,Medium
+Application Security,PS.5,Session management secure,Session management review,Pending,,High
+Security Operations,LM.1,Centralized log management,SIEM architecture diagram,Pending,,High
+Security Operations,LM.2,Log retention policy implemented,Log retention settings,Pending,,High
+Security Operations,LM.3,SIEM deployed and tuned,SIEM configuration and coverage,Pending,,High
+Security Operations,LM.4,Critical events alerted in real-time,Alert configuration,Pending,,Critical
+Security Operations,LM.5,Log integrity protected,Log integrity verification,Pending,,High
+Security Operations,VM.1,Vulnerability scanning policy,Vulnerability management policy,Pending,,High
+Security Operations,VM.2,External scanning monthly,External scan reports,Pending,,High
+Security Operations,VM.3,Internal scanning quarterly,Internal scan reports,Pending,,High
+Security Operations,VM.4,Container scanning implemented,Container scan reports,Pending,,Medium
+Security Operations,VM.5,Remediation SLAs defined,SLA documentation,Pending,,High
+Security Operations,IR.1,Incident response plan documented,IR plan document,Pending,,Critical
+Security Operations,IR.2,IR team roles defined,IR team roster and contact list,Pending,,Critical
+Security Operations,IR.3,IR procedures tested annually,IR test reports,Pending,,High
+Security Operations,IR.4,Forensic capabilities available,Forensic tools and procedures,Pending,,Medium
+Security Operations,IR.5,Communication templates ready,IR communication templates,Pending,,High
+Physical Security,PA.1,Facility access controls,Access control system documentation,Pending,,High
+Physical Security,PA.2,Visitor management process,Visitor log samples and procedures,Pending,,Medium
+Physical Security,PA.3,Badge/ID requirements,Badge policy and procedures,Pending,,Medium
+Physical Security,PA.4,Secure areas identified and protected,Secure area documentation,Pending,,High
+Physical Security,PA.5,Access logs reviewed,Access log review records,Pending,,Medium
+Physical Security,EC.1,Fire detection and suppression,Fire safety inspection records,Pending,,High
+Physical Security,EC.2,Climate control for data centers,HVAC monitoring records,Pending,,Medium
+Physical Security,EC.3,Power backup (UPS/generator),Power backup test records,Pending,,High
+Physical Security,EC.4,Environmental monitoring,Environmental monitoring logs,Pending,,Medium
+Physical Security,EC.5,Equipment disposal procedures,Disposal records and certificates,Pending,,Medium
+Business Continuity,BR.1,Backup policy documented,Backup policy and procedures,Pending,,High
+Business Continuity,BR.2,RPO and RTO defined,RPO/RTO documentation,Pending,,Critical
+Business Continuity,BR.3,Automated backups configured,Backup schedules and configs,Pending,,High
+Business Continuity,BR.4,Offsite/offline backups maintained,Offsite backup verification,Pending,,Critical
+Business Continuity,BR.5,Restoration tested quarterly,Restoration test records,Pending,,High
+Business Continuity,DR.1,DR plan documented and current,DR plan with revision date,Pending,,High
+Business Continuity,DR.2,DR site identified and ready,DR site documentation,Pending,,High
+Business Continuity,DR.3,DR tested annually,DR test reports,Pending,,High
+Business Continuity,DR.4,Crisis communication plan,Crisis communication plan,Pending,,High
+Third-Party Security,VN.1,Vendor risk assessment process,Vendor risk assessment policy,Pending,,High
+Third-Party Security,VN.2,Security requirements in contracts,Contract review checklist,Pending,,High
+Third-Party Security,VN.3,Vendor security reviews performed,Vendor assessment records,Pending,,High
+Third-Party Security,VN.4,Subprocessor monitoring,Subprocessor monitoring records,Pending,,Medium
+Third-Party Security,VN.5,Vendor SOC reports reviewed,SOC report review records,Pending,,Medium
+Third-Party Security,CL.1,Cloud security posture management,CSPM deployment evidence,Pending,,High
+Third-Party Security,CL.2,Cloud IAM properly configured,Cloud IAM review documentation,Pending,,High
+Third-Party Security,CL.3,Cloud data encryption,Cloud encryption configuration,Pending,,High
+Third-Party Security,CL.4,Cloud logging enabled,Cloud logging configuration,Pending,,High
+Third-Party Security,CL.5,Cloud compliance monitoring,Cloud compliance reports,Pending,,Medium
+Compliance,RG.1,Applicable regulations identified,Regulatory inventory,Pending,,High
+Compliance,RG.2,Compliance monitoring program,Compliance monitoring documentation,Pending,,High
+Compliance,RG.3,Legal holds process,Legal hold procedures,Pending,,Medium
+Compliance,RG.4,Privacy program implemented,Privacy program documentation,Pending,,High
+Compliance,IA.1,Internal audit charter,Internal audit charter document,Pending,,High
+Compliance,IA.2,Audit plan executed,Audit plan and execution records,Pending,,High
+Compliance,IA.3,Findings tracked to closure,Audit finding tracking log,Pending,,High
