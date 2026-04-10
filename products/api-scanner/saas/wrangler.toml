@@ -1,0 +1,9 @@
+name = "api-scanner-backend"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[env.production]
+vars = { FRONTEND_URL = "https://scanner.eucrossborder.com" }
+
+# Stripe Secret Key 需要在 Cloudflare Dashboard 设置
+# 路径: Workers & Pages → api-scanner-backend → Settings → Variables
