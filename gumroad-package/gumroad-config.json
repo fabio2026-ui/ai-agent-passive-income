@@ -1,0 +1,16 @@
+{
+  "name": "API Security Toolkit",
+  "description": "Complete security toolkit for API developers and DevOps teams",
+  "price": 2900,
+  "currency": "eur",
+  "tags": ["api", "security", "devops", "cybersecurity", "jwt", "oauth"],
+  "cover_image": "cover.png",
+  "files": [
+    "api-security-checklist.pdf",
+    "vulnerability-scanner.py",
+    "auth-templates/",
+    "rate-limiting-configs/",
+    "incident-response-playbook.pdf",
+    "security-policy-templates/"
+  ]
+}
