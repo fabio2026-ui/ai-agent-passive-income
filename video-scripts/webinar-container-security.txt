@@ -1,0 +1,34 @@
+TITLE: Production-Ready Container Security
+
+AGENDA (45 minutes):
+
+1. INTRODUCTION (5 min)
+   - Speaker intro
+   - Why container security matters
+   - Recent breach examples
+
+2. IMAGE SECURITY DEEP DIVE (15 min)
+   - Base image selection
+   - Multi-stage builds
+   - Vulnerability scanning
+   - Live demo: Trivy integration
+
+3. KUBERNETES SECURITY (15 min)
+   - Pod Security Standards
+   - Network Policies
+   - RBAC best practices
+   - Live demo: Policy enforcement
+
+4. RUNTIME PROTECTION (7 min)
+   - Threat detection with Falco
+   - Monitoring and alerting
+   - Incident response
+
+5. SUPPLY CHAIN SECURITY (2 min)
+   - Image signing
+   - SBOM generation
+   - Verification pipelines
+
+6. Q&A (1 min)
+   - Questions from chat
+   - Resources and next steps

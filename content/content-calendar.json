@@ -1,0 +1,63 @@
+{
+  "weeks": [
+    {
+      "week": 1,
+      "posts": [
+        "Zero Trust Guide",
+        "SOC 2 Checklist"
+      ],
+      "channels": [
+        "Blog",
+        "Twitter",
+        "LinkedIn"
+      ]
+    },
+    {
+      "week": 2,
+      "posts": [
+        "API Security",
+        "DevSecOps Tools"
+      ],
+      "channels": [
+        "Blog",
+        "Reddit",
+        "Twitter"
+      ]
+    },
+    {
+      "week": 3,
+      "posts": [
+        "Ransomware Protection",
+        "Passwordless Auth"
+      ],
+      "channels": [
+        "Blog",
+        "Newsletter"
+      ]
+    },
+    {
+      "week": 4,
+      "posts": [
+        "CSPM Guide",
+        "SOAR Playbook"
+      ],
+      "channels": [
+        "Blog",
+        "LinkedIn",
+        "Twitter"
+      ]
+    },
+    {
+      "week": 5,
+      "posts": [
+        "Container Security",
+        "GDPR Guide"
+      ],
+      "channels": [
+        "Blog",
+        "Reddit",
+        "Dev.to"
+      ]
+    }
+  ]
+}

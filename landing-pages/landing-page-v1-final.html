@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Security Monitor - Automated Security for Modern Development Teams</title>
+  <meta name="description" content="Automated security monitoring that finds vulnerabilities before hackers do. SOC 2 compliance, API security, and CI/CD integration in one platform.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Security Monitor - Automated Security for Modern Teams">
+  <meta property="og:description" content="Find vulnerabilities before hackers do. SOC 2 compliance made easy.">
+  <meta property="og:type" content="website">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+    
+    .hero-subtitle {
+      font-size: 24px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+    
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #667eea;
+      padding: 18px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #ffffff;
+      padding: 18px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #ffffff;
+    }
+    
+    .hero-trust {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .hero-trust p {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+    
+    .trust-logos {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+    
+    .trust-logos span {
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    /* Social Proof Section */
+    .social-proof {
+      background: #f8fafc;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .social-proof-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .stat-item h3 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #667eea;
+      margin-bottom: 8px;
+    }
+    
+    .stat-item p {
+      color: #64748b;
+      font-size: 16px;
+    }
+    
+    .testimonial {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    
+    .testimonial-quote {
+      font-size: 20px;
+      font-style: italic;
+      color: #1e293b;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .testimonial-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    
+    .testimonial-info h4 {
+      font-weight: 600;
+      color: #1e293b;
+    }
+    
+    .testimonial-info p {
+      color: #64748b;
+      font-size: 14px;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    
+    .section-header h2 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1e293b;
+    }
+    
+    .section-header p {
+      font-size: 20px;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+    
+    .feature-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+    
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1e293b;
+    }
+    
+    .feature-card p {
+      color: #64748b;
+      line-height: 1.6;
+    }
+    
+    /* How It Works */
+    .how-it-works {
+      background: #f8fafc;
+      padding: 100px 0;
+    }
+    
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .step-number {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 24px;
+    }
+    
+    .step h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1e293b;
+    }
+    
+    .step p {
+      color: #64748b;
+    }
+    
+    /* Pricing Section */
+    .pricing {
+      padding: 100px 0;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+    
+    .pricing-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+    }
+    
+    .pricing-card.popular {
+      border-color: #667eea;
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .pricing-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1e293b;
+    }
+    
+    .pricing-card .price {
+      font-size: 48px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    
+    .pricing-card .price span {
+      font-size: 16px;
+      font-weight: 400;
+      color: #64748b;
+    }
+    
+    .pricing-card .description {
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    
+    .pricing-features li {
+      padding: 8px 0;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .pricing-features li::before {
+      content: '✓';
+      color: #667eea;
+      font-weight: 700;
+    }
+    
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card.popular .pricing-cta {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+    
+    .pricing-card:not(.popular) .pricing-cta {
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+    
+    /* FAQ Section */
+    .faq {
+      background: #f8fafc;
+      padding: 100px 0;
+    }
+    
+    .faq-list {
+      max-width: 800px;
+      margin: 60px auto 0;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 24px;
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      padding: 0 24px 24px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .final-cta h2 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    
+    .final-cta p {
+      font-size: 20px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    
+    /* Footer */
+    footer {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 60px 0 30px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h4 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column li {
+      margin-bottom: 8px;
+    }
+    
+    .footer-column a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="hero-badge">🚀 Now with AI-powered threat detection</div>
+    <h1>Automated security monitoring that finds vulnerabilities before hackers do</h1>
+    <p class="hero-subtitle">Stop paying $500/month for enterprise tools. Get SOC 2 compliance, API security, and automated vulnerability scanning for $29/month.</p>
+    <div class="hero-cta-group">
+      <a href="#pricing" class="btn-primary">
+        Start Free Trial
+        <span>→</span>
+      </a>
+      <a href="#demo" class="btn-secondary">
+        <span>▶</span>
+        Watch Demo (2 min)
+      </a>
+    </div>
+    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">✓ No credit card required &nbsp; ✓ 14-day free trial &nbsp; ✓ Cancel anytime</p>
+    
+    <div class="hero-trust">
+      <p>TRUSTED BY SECURITY-CONSCIOUS TEAMS AT</p>
+      <div class="trust-logos">
+        <span>TechFlow</span>
+        <span>•</span>
+        <span>DataSync</span>
+        <span>•</span>
+        <span>CloudBase</span>
+        <span>•</span>
+        <span>SecureApps</span>
+        <span>•</span>
+        <span>500+ more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof">
+  <div class="container">
+    <div class="social-proof-stats">
+      <div class="stat-item">
+        <h3>80%</h3>
+        <p>Reduction in security incidents</p>
+      </div>
+      <div class="stat-item">
+        <h3>4mo</h3>
+        <p>Average SOC 2 timeline</p>
+      </div>
+      <div class="stat-item">
+        <h3>5min</h3>
+        <p>Setup time</p>
+      </div>
+      <div class="stat-item">
+        <h3>$29</h3>
+        <p>Starting price / month</p>
+      </div>
+    </div>
+    
+    <div class="testimonial">
+      <p class="testimonial-quote">"We went from reactive firefighting to proactive security. AI Security Monitor caught vulnerabilities our manual reviews missed, and the SOC 2 compliance features saved us $40K in consulting fees."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SK</div>
+        <div class="testimonial-info">
+          <h4>Sarah Kim</h4>
+          <p>CTO at TechFlow • 50-person SaaS team</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Everything you need for modern security</h2>
+      <p>No complex setup, no expensive consultants. Just better security that works out of the box.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Automated Vulnerability Scanning</h3>
+        <p>Continuous scanning of your code, dependencies, and infrastructure. Get notified immediately when new CVEs affect your stack.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>SOC 2 Compliance Dashboard</h3>
+        <p>Track compliance in real-time. Automated evidence collection, policy management, and audit-ready reports.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <h3>API Security Monitoring</h3>
+        <p>Discover shadow APIs, detect authentication issues, and monitor for anomalous traffic patterns.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>CI/CD Integration</h3>
+        <p>Block vulnerable code from reaching production. Native GitHub Actions, GitLab CI, and Jenkins support.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Smart Alerting</h3>
+        <p>AI-powered alert triage reduces false positives by 80%. Get notified through Slack, email, or PagerDuty.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Security Scorecards</h3>
+        <p>Track security posture over time. Identify trends, benchmark against industry standards, and show progress to stakeholders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <h2>Set up in minutes, not months</h2>
+      <p>Get started immediately. No complex configuration required.</p>
+    </div>
+    
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Connect Your Repos</h3>
+        <p>One-click integration with GitHub, GitLab, or Bitbucket. We automatically detect your tech stack.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Run First Scan</h3>
+        <p>Our AI analyzes your code, dependencies, and configurations. Results in under 5 minutes.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Review Findings</h3>
+        <p>Prioritized vulnerabilities with severity scores, impact analysis, and remediation guidance.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Stay Protected</h3>
+        <p>Continuous monitoring alerts you to new threats. Automated scans on every commit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2>Simple, transparent pricing</h2>
+      <p>Start free, upgrade when you need more. No hidden fees, no surprises.</p>
+    </div>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="price">$0<span>/month</span></div>
+        <p class="description">For side projects and personal use</p>
+        <ul class="pricing-features">
+          <li>1 project</li>
+          <li>Basic vulnerability scanning</li>
+          <li>Email alerts</li>
+          <li>Community support</li>
+        </ul>
+        <a href="#" class="pricing-cta">Get Started Free</a>
+      </div>
+      
+      <div class="pricing-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <h3>Pro</h3>
+        <div class="price">$29<span>/month</span></div>
+        <p class="description">For professional developers and small teams</p>
+        <ul class="pricing-features">
+          <li>Unlimited projects</li>
+          <li>Advanced vulnerability scanning</li>
+          <li>SOC 2 compliance tools</li>
+          <li>Slack integration</li>
+          <li>API access</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="pricing-cta">Start Free Trial</a>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Team</h3>
+        <div class="price">$79<span>/month</span></div>
+        <p class="description">For growing teams with compliance needs</p>
+        <ul class="pricing-features">
+          <li>Everything in Pro</li>
+          <li>5 team members</li>
+          <li>SSO integration</li>
+          <li>Custom rules</li>
+          <li>Dedicated support</li>
+        </ul>
+        <a href="#" class="pricing-cta">Contact Sales</a>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="price">Custom</div>
+        <p class="description">For large organizations with custom needs</p>
+        <ul class="pricing-features">
+          <li>Unlimited everything</li>
+          <li>Custom integrations</li>
+          <li>SLA guarantee</li>
+          <li>On-premise option</li>
+          <li>Dedicated success manager</li>
+        </ul>
+        <a href="#" class="pricing-cta">Book Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently asked questions</h2>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">How does the 14-day free trial work?</div>
+        <div class="faq-answer">You get full access to all Pro features for 14 days. No credit card required. At the end of the trial, choose a plan or continue with the free tier.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Can I cancel anytime?</div>
+        <div class="faq-answer">Yes. You can cancel your subscription at any time with no penalties. Your access continues until the end of your billing period.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">What technologies do you support?</div>
+        <div class="faq-answer">We support all major languages and frameworks: Node.js, Python, Ruby, Go, Java, .NET, PHP, and more. We also scan Docker containers, Kubernetes configs, and Terraform files.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How is this different from Snyk or SonarQube?</div>
+        <div class="faq-answer">We're focused on being the all-in-one security platform for small teams. Instead of buying Snyk for dependencies, a separate tool for compliance, and another for secrets scanning, you get everything integrated at a fraction of the cost.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to secure your applications?</h2>
+    <p>Join 500+ teams who've made the switch from expensive, complex security tools to simple, effective monitoring.</p>
+    <a href="#pricing" class="btn-primary" style="font-size: 20px; padding: 20px 48px;">
+      Start Your Free Trial
+      <span>→</span>
+    </a>
+    <p style="margin-top: 24px; opacity: 0.8;">✓ 14-day free trial &nbsp; ✓ No credit card &nbsp; ✓ Cancel anytime</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 AI Security Monitor. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

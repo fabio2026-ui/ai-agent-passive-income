@@ -1,0 +1,39 @@
+Subject: SOC 2 doesn't have to be painful
+Type: Problem-Solution
+Day: 5
+
+---
+
+SOC 2 compliance typically takes 6-12 months.
+
+
+
+What if you could automate 90% of the work?
+
+
+
+• Collecting evidence manually
+• Chasing down documentation
+• Expensive consultant fees
+• Audit surprises
+
+✓ Auto-collect compliance evidence
+✓ Real-time policy enforcement
+✓ Pre-built auditor reports
+✓ Cut timeline in half
+
+
+
+
+
+
+
+
+
+
+
+[Start Your SOC 2 Journey]: #soc2
+
+---
+Best regards,
+The AI Security Monitor Team
