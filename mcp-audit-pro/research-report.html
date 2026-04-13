@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Security Research Report 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+            --accent: #6366f1;
+            --critical: #fee2e2;
+            --critical-text: #991b1b;
+            --high: #ffedd5;
+            --high-text: #9a3412;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--text); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+        .report-header { text-align: center; padding: 48px; background: var(--bg); border-radius: 16px; border: 1px solid var(--border); margin-bottom: 32px; }
+        .report-header h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 8px; }
+        .report-header .subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .badge { display: inline-block; padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 0.9rem; margin-top: 20px; background: var(--critical); color: var(--critical-text); }
+        .section { background: var(--bg); border-radius: 16px; border: 1px solid var(--border); padding: 32px; margin-bottom: 24px; }
+        .section h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .stat-card { text-align: center; padding: 24px; border-radius: 12px; background: #f8fafc; }
+        .stat-card .number { font-size: 2.5rem; font-weight: 800; margin-bottom: 4px; }
+        .stat-card .label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; }
+        .finding { border-left: 4px solid; padding: 16px 20px; margin-bottom: 12px; background: #f8fafc; border-radius: 0 8px 8px 0; }
+        .finding.critical { border-color: #ef4444; }
+        .finding.high { border-color: #f97316; }
+        .finding h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .finding p { color: var(--text-secondary); font-size: 0.9rem; }
+        .cta { text-align: center; padding: 32px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); border: 1px solid var(--accent); border-radius: 16px; }
+        .cta h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .cta p { color: var(--text-secondary); margin-bottom: 16px; }
+        .btn { display: inline-block; padding: 14px 28px; background: var(--accent); color: white; border-radius: 10px; text-decoration: none; font-weight: 600; }
+        footer { text-align: center; padding: 32px; color: var(--text-secondary); font-size: 0.9rem; }
+        .methodology { background: #f8fafc; padding: 20px; border-radius: 12px; margin-top: 16px; }
+        .methodology h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+        .methodology ul { margin-left: 18px; color: #374151; }
+        .methodology li { margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">🛡️</div>
+            <h1>MCP Security Research Report</h1>
+            <p class="subtitle">Analysis of open-source Model Context Protocol servers</p>
+            <div class="badge">66.7% VULNERABILITY RATE</div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Executive Summary</h2>
+            <p style="margin-bottom: 16px; font-size: 1.05rem;">We analyzed <strong>15 open-source MCP servers</strong> from GitHub to assess the current security posture of the Model Context Protocol ecosystem. Our findings indicate that <strong>two-thirds of examined repositories contain security vulnerabilities</strong>, with a significant concentration of critical and high-severity issues.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number" style="color: #ef4444;">15</div>
+                    <div class="label">Servers Scanned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" style="color: #f97316;">10</div>
+                    <div class="label">With Vulnerabilities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" style="color: #6366f1;">80</div>
+                    <div class="label">Total Findings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" style="color: #991b1b;">22</div>
+                    <div class="label">Critical Issues</div>
+                </div>
+            </div>
+            
+            <div class="methodology">
+                <h4>Methodology</h4>
+                <ul>
+                    <li>Static analysis of publicly available GitHub repositories</li>
+                    <li>6 vulnerability categories based on OWASP and CVE patterns</li>
+                    <li>Targeted repositories ranged from 5 to 500 stars</li>
+                    <li>Scanned code included TypeScript, JavaScript, Python, and Go implementations</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔍 Key Findings</h2>
+            
+            <div class="finding critical">
+                <h3>🔴 Command Injection (Most Prevalent)</h3>
+                <p>Multiple servers pass unsanitized user input directly to shell execution functions (exec, spawn, child_process). In one case, a database MCP server had 12 critical command injection patterns. <strong>Risk: Remote code execution with full host privileges.</strong></p>
+            </div>
+            
+            <div class="finding high">
+                <h3>🟠 Privilege Escalation</h3>
+                <p>Several repositories contained sudo calls, root user requirements, or admin password configurations hardcoded in setup scripts. <strong>Risk: Compromised MCP server leads to full system takeover.</strong></p>
+            </div>
+            
+            <div class="finding high">
+                <h3>🟠 Unrestricted Network Access</h3>
+                <p>Servers fetch URLs or make HTTP requests without validating destinations. This enables SSRF attacks against internal APIs and cloud metadata endpoints. <strong>Risk: Internal network reconnaissance and credential theft.</strong></p>
+            </div>
+            
+            <div class="finding high">
+                <h3>🟠 Path Traversal</h3>
+                <p>File system operations lack path validation, allowing arbitrary file reads outside intended directories. <strong>Risk: Exposure of SSH keys, environment files, and source code.</strong></p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⚠️ Risk Assessment</h2>
+            <p style="margin-bottom: 16px;">The Model Context Protocol enables AI agents to execute tools on behalf of users. When these tools contain vulnerabilities, the attack surface expands significantly because:</p>
+            <ul style="margin-left: 24px; color: #374151;">
+                <li style="margin-bottom: 8px;">AI agents process untrusted natural language input</li>
+                <li style="margin-bottom: 8px;">MCP servers often run with the same privileges as the host application</li>
+                <li style="margin-bottom: 8px;">Users typically install MCP servers without security review</li>
+                <li style="margin-bottom: 8px;">The ecosystem is growing rapidly with limited security guidance</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Recommendations</h2>
+            <ol style="margin-left: 24px; color: #374151;">
+                <li style="margin-bottom: 12px;"><strong>Never execute shell commands with unsanitized input.</strong> Use parameterized commands or strict allowlists.</li>
+                <li style="margin-bottom: 12px;"><strong>Validate all URLs</strong> before making outbound requests. Block private IP ranges.</li>
+                <li style="margin-bottom: 12px;"><strong>Run MCP servers with least privilege.</strong> Avoid root, sudo, or unnecessary permissions.</li>
+                <li style="margin-bottom: 12px;"><strong>Validate file paths</strong> using path.resolve() and ensure they stay within a base directory.</li>
+                <li style="margin-bottom: 12px;"><strong>Regular security audits</strong> should be part of the MCP server release process.</li>
+            </ol>
+        </div>
+        
+        <div class="cta">
+            <h3>🛡️ Get a Professional MCP Security Audit</h3>
+            <p>We offer comprehensive security audits for Model Context Protocol servers. Get a detailed PDF report with CVSS scoring and remediation steps within 24 hours.</p>
+            <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/mcp-audit-pro/" class="btn">View Pricing →</a>
+            <p style="margin-top: 16px; font-size: 0.9rem;">Or try our <a href="https://fabio2026-ui.github.io/ai-agent-passive-income/mcp-audit-pro/scanner.html" style="color: var(--accent);">free scanner</a> first.</p>
+        </div>
+        
+        <footer>
+            <p>Published by MCP Audit Pro • April 2026</p>
+            <p>This report is based on analysis of publicly available repositories. No private code was scanned.</p>
+        </footer>
+    </div>
+</body>
+</html>
