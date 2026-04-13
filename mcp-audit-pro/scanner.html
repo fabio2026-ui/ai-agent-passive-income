@@ -368,20 +368,21 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
                 severity: "CRITICAL",
                 cvss: "9.8",
                 patterns: [
-                    /exec\s*\(/i,
-                    /spawn\s*\(/i,
-                    /child_process/i,
-                    /os\.system/i,
-                    /subprocess\.call/i
+                    /exec\s*\(\s*[^)]+\$\{[^}]+\}/i,
+                    /spawn\s*\([^,]+,\s*[^)]+\$\{[^}]+\}/i,
+                    /child_process\.exec\s*\(/i,
+                    /os\.system\s*\(/i,
+                    /subprocess\.call\s*\([^)]*shell\s*=\s*True/i,
+                    /shell=True/i
                 ],
-                description: "User input may be passed directly to shell execution, allowing arbitrary command execution."
+                description: "Unsanitized user input passed to command execution functions."
             },
             unrestricted_fetch: {
                 name: "Unrestricted Fetch/HTTP",
                 severity: "HIGH",
                 cvss: "8.2",
                 patterns: [
-                    /fetch\s*\([^)]*\)/i,
+                    /fetch\s*\(\s*[^)]+\$\{[^}]+\}/i,
                     /axios\.(get|post|request)/i,
                     /request\s*\(/i,
                     /urllib\.request/i
@@ -393,10 +394,10 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
                 severity: "HIGH",
                 cvss: "7.5",
                 patterns: [
-                    /fs\.(readFile|writeFile|access)/i,
+                    /fs\.(readFile|writeFile|access)\s*\(/i,
                     /open\s*\(/i,
                     /path\.join.*\+/i,
-                    /\.\.[\\/]/
+                    /require\s*\(\s*[^)]+\$\{/i
                 ],
                 description: "File operations without path validation may allow reading arbitrary files."
             },
@@ -405,25 +406,59 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
                 severity: "CRITICAL",
                 cvss: "9.1",
                 patterns: [
-                    /password\s*[=:]\s*["']/i,
-                    /api[_-]?key\s*[=:]\s*["']/i,
-                    /secret\s*[=:]\s*["']/i,
-                    /token\s*[=:]\s*["'][a-zA-Z0-9]{20,}/i
+                    /(?:password|secret|token|api_key)\s*[=:]\s*["'][^"']{8,}["']/i,
+                    /API_KEY\s*=\s*["'][^"']+["']/i,
+                    /process\.env\.[A-Z_]*(?:KEY|SECRET|TOKEN)\s*[=:]\s*["'][^"']+["']/i
                 ],
                 description: "Hardcoded credentials detected in source code."
             },
             privileged_escalation: {
                 name: "Privileged Escalation",
-                severity: "HIGH",
-                cvss: "8.4",
+                severity: "CRITICAL",
+                cvss: "8.8",
                 patterns: [
-                    /sudo\s/i,
-                    /require\s*\(\s*['"]root['"]\s*\)/i,
-                    /process\.setuid\s*\(/i
+                    /sudo\s+(?:apt|yum|npm|pip|python|node)/i,
+                    /chmod\s+777/i,
+                    /chown\s+root/i,
+                    /privileged:\s*true/i,
+                    /USER\s+root/i,
+                    /runAsUser:\s*0/i
                 ],
-                description: "Server may run with elevated privileges, increasing impact of compromises."
+                description: "MCP server running with elevated privileges."
             }
         };
+        
+        function isFalsePositive(vulnId, matchText, fullLine) {
+            const lineLower = fullLine.toLowerCase();
+            const matchLower = matchText.toLowerCase();
+            
+            if (fullLine.trim().startsWith('//') || fullLine.trim().startsWith('#')) return true;
+            if (fullLine.includes('/*') || fullLine.trim().startsWith('* ')) return true;
+            
+            if (vulnId === 'credential_exposure') {
+                const placeholders = ['your-token-here', 'your-', 'example.', 'placeholder', 'xxx',
+                    'changeme', 'secret_here', 'password_here', 'token_here',
+                    'insert_', 'replace_with', 'env.', 'getenv', 'os.environ'];
+                if (placeholders.some(ph => lineLower.includes(ph))) return true;
+                if (fullLine.includes(': ${') || fullLine.includes('=${') || fullLine.includes('-${')) return true;
+                if (['example', 'placeholder', 'your', 'my_token', 'test'].some(x => matchLower.includes(x))) return true;
+            }
+            
+            if (vulnId === 'privileged_escalation') {
+                if (fullLine.trim().startsWith('-') && lineLower.includes('sudo')) return true;
+            }
+            
+            if (vulnId === 'path_traversal') {
+                if (lineLower.includes('tsconfig') || lineLower.includes('eslint') || lineLower.includes('webpack')) return true;
+                if (lineLower.includes('import') && fullLine.includes('../')) return true;
+            }
+            
+            if (vulnId === 'command_injection') {
+                if (lineLower.includes('subprocess.run') && lineLower.includes('shell=false')) return true;
+            }
+            
+            return false;
+        }
         
         function runScan() {
             const code = document.getElementById('codeInput').value;
@@ -452,13 +487,21 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
                     const matches = [...code.matchAll(pattern)];
                     for (const match of matches) {
                         const line = code.substring(0, match.index).split('\n').length;
+                        const matchText = match[0].substring(0, 100);
+                        const lines = code.split('\n');
+                        const fullLine = lines[line - 1] || matchText;
+                        
+                        if (isFalsePositive(vulnId, matchText, fullLine)) {
+                            continue;
+                        }
+                        
                         findings.push({
                             type: vulnId,
                             name: vulnInfo.name,
                             severity: vulnInfo.severity,
                             cvss: vulnInfo.cvss,
                             line: line,
-                            match: match[0].substring(0, 50),
+                            match: matchText.substring(0, 50),
                             description: vulnInfo.description
                         });
                     }
