@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 MCP Security Mistakes (Free PDF)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer data-domain="fabio2026-ui.github.io" src="https://plausible.io/js/script.js"></script>
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --border: #2a2a3a;
+            --text: #ffffff;
+            --text-secondary: #a0a0b0;
+            --accent: #6366f1;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .subtitle { color: var(--text-secondary); font-size: 1.15rem; margin-bottom: 40px; }
+        .lead-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; }
+        input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        input[type="email"]:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover { background: #5558e0; }
+        .preview {
+            display: grid;
+            gap: 16px;
+        }
+        .preview-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .preview-number {
+            width: 40px;
+            height: 40px;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .preview-content h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        .preview-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .trust {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">🎁 Free PDF Download</div>
+        <h1>Top 10 MCP Security Mistakes</h1>
+        <p class="subtitle">
+            Based on auditing 30+ open-source MCP servers. 
+            These are the most common vulnerabilities we found — and how to fix them.
+        </p>
+        
+        <!-- Formspree form -->
+        <form class="lead-form" action="https://formspree.io/f/mcp-audit-pro" method="POST">
+            <div class="form-group">
+                <label for="email">Enter your email to get the PDF</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <input type="hidden" name="subject" value="Lead Magnet: Top 10 MCP Security Mistakes">
+            <button type="submit" class="btn">📥 Download Free PDF →</button>
+        </form>
+        
+        <div class="preview">
+            <div class="preview-item">
+                <div class="preview-number">1</div>
+                <div class="preview-content">
+                    <h3>Command Injection via exec()</h3>
+                    <p>Passing user input directly to shell commands without sanitization.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">2</div>
+                <div class="preview-content">
+                    <h3>Path Traversal in File Operations</h3>
+                    <p>Allowing ../ sequences to escape the intended directory.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">3</div>
+                <div class="preview-content">
+                    <h3>Hardcoded API Keys</h3>
+                    <p>Credentials committed to source code repositories.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">4</div>
+                <div class="preview-content">
+                    <h3>Running Containers as Root</h3>
+                    <p>Dockerfiles using USER root or chmod 777 everywhere.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">5</div>
+                <div class="preview-content">
+                    <h3>SSRF via Unrestricted Fetch</h3>
+                    <p>Allowing the MCP server to request any URL, including internal services.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">6</div>
+                <div class="preview-content">
+                    <h3>Missing Input Validation</h3>
+                    <p>Trusting AI-generated tool arguments without validation.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">7</div>
+                <div class="preview-content">
+                    <h3>Insecure Deserialization</h3>
+                    <p>Passing untrusted data to eval(), JSON.parse(), or pickle.loads().</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">8</div>
+                <div class="preview-content">
+                    <h3>Overly Broad Permissions</h3>
+                    <p>Granting filesystem or network access without scope restrictions.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">9</div>
+                <div class="preview-content">
+                    <h3>No Rate Limiting</h3>
+                    <p>Allowing infinite tool calls that can exhaust resources or budgets.</p>
+                </div>
+            </div>
+            
+            <div class="preview-item">
+                <div class="preview-number">10</div>
+                <div class="preview-content">
+                    <h3>No Security Headers</h3>
+                    <p>Missing CORS, CSP, and other HTTP security controls on MCP transports.</p>
+                </div>
+            </div>
+        </div>
+        
+        <p class="trust">🔒 We respect your inbox. No spam. Unsubscribe anytime.</p>
+    </div>
+</body>
+</html>
