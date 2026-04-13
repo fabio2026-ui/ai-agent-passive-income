@@ -520,7 +520,7 @@
                         <li>CVSS scoring</li>
                         <li>Basic remediation tips</li>
                     </ul>
-                    <a href="mailto:hello@mcp-audit.pro?subject=Starter Audit Request" class="btn btn-secondary" style="width: 100%; justify-content: center;">Get Started</a>
+                    <a href="mailto:hello@mcp-audit.pro?subject=Starter Audit Request" class="btn btn-secondary" data-plan="starter" style="width: 100%; justify-content: center;">Get Started</a>
                 </div>
                 
                 <div class="pricing-card featured">
@@ -534,7 +534,7 @@
                         <li>Detailed fix instructions</li>
                         <li>30-day email support</li>
                     </ul>
-                    <a href="mailto:hello@mcp-audit.pro?subject=Professional Audit Request" class="btn btn-primary" style="width: 100%; justify-content: center;">Most Popular</a>
+                    <a href="mailto:hello@mcp-audit.pro?subject=Professional Audit Request" class="btn btn-primary" data-plan="professional" style="width: 100%; justify-content: center;">Most Popular</a>
                 </div>
                 
                 <div class="pricing-card">
@@ -548,7 +548,7 @@
                         <li>Slack/Teams integration</li>
                         <li>Dedicated security engineer</li>
                     </ul>
-                    <a href="mailto:hello@mcp-audit.pro?subject=Enterprise Audit Request" class="btn btn-secondary" style="width: 100%; justify-content: center;">Contact Us</a>
+                    <a href="mailto:hello@mcp-audit.pro?subject=Enterprise Audit Request" class="btn btn-secondary" data-plan="enterprise" style="width: 100%; justify-content: center;">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -575,5 +575,8 @@
             <p>© 2026 MCP Audit Pro. Professional security audits for the AI agent era.</p>
         </div>
     </footer>
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="stripe-integration.js"></script>
 </body>
 </html>

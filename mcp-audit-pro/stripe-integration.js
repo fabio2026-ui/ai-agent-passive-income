@@ -1,13 +1,14 @@
 // Stripe Integration for MCP Audit Pro
 // This script handles Stripe Checkout for the landing page
 
-// Configuration - Replace with your actual Stripe keys
+// Configuration - Using existing Stripe account
+// NOTE: Price IDs need to be created in Stripe Dashboard for MCP Audit Pro products
 const STRIPE_CONFIG = {
-    publishableKey: 'pk_live_YOUR_PUBLISHABLE_KEY_HERE', // Replace with your Stripe publishable key
+    publishableKey: 'pk_test_51TCfcBDRLWt3rKvbzr3TuuA2pZ4rUOyBExwBUOpGVY9pK8zKfPTGT9A5oxmmBTI7Asf1M5ozadpHTFSlQ1WTyMKG00rQNT5CxB',
     prices: {
-        starter: 'price_YOUR_STARTER_PRICE_ID',      // $49 Starter audit
-        professional: 'price_YOUR_PRO_PRICE_ID',     // $149 Professional audit
-        enterprise: null // Enterprise uses contact form
+        starter: null,      // TODO: Create price in Stripe Dashboard for $49 Starter
+        professional: null, // TODO: Create price in Stripe Dashboard for $149 Professional
+        enterprise: null    // Enterprise uses contact form
     },
     successUrl: 'https://mcp-audit.pro/thank-you.html',
     cancelUrl: 'https://mcp-audit.pro/index.html'
