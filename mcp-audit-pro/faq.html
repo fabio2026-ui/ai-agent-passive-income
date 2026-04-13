@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - MCP Audit Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer data-domain="fabio2026-ui.github.io" src="https://plausible.io/js/script.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --border: #2a2a3a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --accent: #6366f1;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        nav {
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo { font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--accent); }
+        
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #a5a5ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-section { padding: 60px 24px; }
+        
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .faq-question:hover { background: rgba(255,255,255,0.02); }
+        
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .faq-answer a { color: var(--accent); text-decoration: none; }
+        .faq-answer a:hover { text-decoration: underline; }
+        
+        .faq-answer ul {
+            margin: 12px 0 12px 20px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+        
+        .icon { font-size: 1.5rem; transition: transform 0.3s; }
+        .faq-item.active .icon { transform: rotate(45deg); }
+        
+        .cta-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-top: 1px solid var(--border);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+        }
+        
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">🛡️ <span>MCP Audit</span> Pro</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="scanner.html">Scanner</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="research-report.html">Research</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about MCP security audits and our services.</p>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is MCP?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    MCP stands for Model Context Protocol. It's an open standard that lets AI agents (like Claude, Cursor, and Windsurf) connect to external tools, databases, and APIs. Think of it as "plugins for AI" that allow these agents to interact with your systems.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Why do MCP servers need security audits?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    MCP servers act as a bridge between AI agents and your systems. A vulnerable MCP server can let an AI agent:
+                    <ul>
+                        <li>Execute arbitrary commands on your machine</li>
+                        <li>Read files it shouldn't have access to</li>
+                        <li>Access internal APIs and cloud metadata</li>
+                        <li>Leak hardcoded credentials</li>
+                    </ul>
+                    When an AI agent has direct system access, every security bug becomes critical.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What vulnerabilities do you check for?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We analyze MCP servers for:
+                    <ul>
+                        <li><strong>Command Injection</strong> — Unsanitized user input passed to shell commands</li>
+                        <li><strong>Path Traversal</strong> — File operations without path validation</li>
+                        <li><strong>Privilege Escalation</strong> — Running with unnecessary root/sudo access</li>
+                        <li><strong>Credential Exposure</strong> — Hardcoded API keys, tokens, and passwords</li>
+                        <li><strong>Unrestricted Network Access</strong> — SSRF via arbitrary URL fetching</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is the free scanner safe to use?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. Our free scanner runs entirely in your browser using JavaScript. Your code is analyzed locally and <strong>never leaves your device</strong>. We don't have access to your code, and nothing is sent to our servers.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How long does a professional audit take?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Most professional audits are delivered within <strong>24 hours</strong> of receiving the repository link. For complex multi-server audits or private repositories requiring NDA processing, it may take up to 48 hours.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What do I get in a professional audit report?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Our professional audit reports include:
+                    <ul>
+                        <li>Executive summary with risk overview</li>
+                        <li>Detailed vulnerability findings with CVSS v3.1 scores</li>
+                        <li>CWE mapping for each issue</li>
+                        <li>Step-by-step remediation instructions</li>
+                        <li>Code examples showing vulnerable vs. secure patterns</li>
+                        <li>PDF format suitable for sharing with stakeholders</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you scan private repositories?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, for professional audits we can analyze private repositories. We sign NDAs upon request and delete all cloned code after the audit is complete. Your intellectual property is fully protected.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What's your refund policy?
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    If we can't identify at least one actionable security issue in your MCP server, we'll refund 100% of your audit fee. We're confident in our analysis, but we also believe in fair pricing for actual value delivered.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 16px;">Ready to secure your MCP server?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 32px;">Try our free scanner or request a professional audit.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="scanner.html" class="btn btn-primary">Try Free Scanner →</a>
+                <a href="index.html#pricing" class="btn btn-primary" style="background: transparent; border: 1px solid var(--accent);">View Pricing</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2026 MCP Audit Pro. Professional security audits for the AI agent era.</p>
+        <p style="margin-top: 8px;"><a href="index.html">Home</a> • <a href="scanner.html">Scanner</a> • <a href="research-report.html">Research</a> • <a href="mailto:hello@mcp-audit.pro">Contact</a></p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+                const answer = item.querySelector('.faq-answer');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Initialize all answers as hidden
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    </script>
+</body>
+</html>
