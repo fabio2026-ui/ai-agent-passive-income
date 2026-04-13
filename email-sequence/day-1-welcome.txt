@@ -1,0 +1,35 @@
+Subject: Welcome! Your security journey starts now 🛡️
+Type: Welcome
+Day: 1
+
+---
+
+Hi there,
+
+Welcome to AI Security Monitor! I'm excited to help you protect your infrastructure without the complexity.
+
+Over the next week, I'll share proven strategies to:
+
+• Reduce security alerts by 80%
+• Achieve SOC 2 compliance faster
+• Automate vulnerability detection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Get Started]: #onboarding
+
+---
+Best regards,
+The AI Security Monitor Team

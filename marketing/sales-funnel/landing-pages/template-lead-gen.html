@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Free Guide | Sales Funnel Academy</title>
+    <meta name="description" content="Download our free guide to building automated sales funnels that convert. Join 10,000+ marketers.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        /* Benefits */
+        .benefits-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .checkmark {
+            width: 24px;
+            height: 24px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        /* Form */
+        .optin-form {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 450px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .optin-form h3 {
+            color: #333;
+            margin-bottom: 24px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .optin-form input {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+        
+        .optin-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .optin-form button {
+            width: 100%;
+            padding: 18px;
+            background: #f59e0b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .optin-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+        
+        .privacy-text {
+            margin-top: 16px;
+            color: #6b7280;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            margin-top: 40px;
+            color: white;
+        }
+        
+        .social-proof p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .avatars {
+            display: flex;
+            justify-content: center;
+            margin: 16px 0;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            border: 3px solid rgba(255,255,255,0.3);
+            margin-left: -10px;
+        }
+        
+        .avatar:first-child {
+            margin-left: 0;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+        
+        .features-subtitle {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #374151;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-name {
+            font-weight: bold;
+            color: #111827;
+        }
+        
+        .author-title {
+            color: #6b7280;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .btn-large {
+            display: inline-block;
+            padding: 20px 48px;
+            background: #f59e0b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        
+        .btn-large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: #111827;
+            color: #9ca3af;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subheadline {
+                font-size: 1.1rem;
+            }
+            
+            .benefits-list {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .optin-form {
+                padding: 24px;
+            }
+            
+            .features h2,
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .quote {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Complete Guide to Sales Funnels That Convert</h1>
+                <p class="subheadline">Download our free 47-page guide and learn how to build automated funnels that generate leads and sales 24/7</p>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <span class="checkmark">✓</span>
+                        <span>Proven Templates</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="checkmark">✓</span>
+                        <span>Email Sequences</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="checkmark">✓</span>
+                        <span>A/B Testing Guide</span>
+                    </div>
+                </div>
+                
+                <form class="optin-form" action="/subscribe" method="POST">
+                    <h3>📧 Get Instant Access</h3>
+                    <div class="form-group">
+                        <input type="text" name="first_name" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <button type="submit">Get My Free Guide →</button>
+                    <p class="privacy-text">
+                        <span>🔒</span>
+                        We respect your privacy. Unsubscribe anytime.
+                    </p>
+                </form>
+                
+                <div class="social-proof">
+                    <div class="avatars">
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                        <div class="avatar"></div>
+                    </div>
+                    <p>Join <strong>10,000+ marketers</strong> who've downloaded this guide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Here's what you'll discover...</h2>
+            <p class="features-subtitle">Everything you need to build, launch, and optimize high-converting sales funnels</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Email Automation Sequences</h3>
+                    <p>Get the exact welcome, nurture, and pitch email sequences we use to convert leads into customers on autopilot.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>High-Converting Templates</h3>
+                    <p>Plug-and-play landing page templates optimized for conversions. Just swap in your content and go live.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics Setup Guide</h3>
+                    <p>Complete tracking implementation so you know exactly what's working and what needs optimization.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h3>A/B Testing Framework</h3>
+                    <p>Our systematic approach to testing that consistently delivers 20-50% conversion improvements.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Lead Magnet Ideas</h3>
+                    <p>7 proven lead magnet types with creation guides. Choose the right one for your audience and offer.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick Start Checklist</h3>
+                    <p>Step-by-step implementation guide to get your first funnel live in under 7 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <p class="quote">"This guide completely transformed how we approach marketing. We implemented the email sequences and saw a 40% increase in conversions within the first month. The templates alone are worth 10x what you'd pay for a course."</p>
+                <div class="author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <div class="author-name">Sarah Mitchell</div>
+                        <div class="author-title">Marketing Director, TechStart Inc.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Build Your Sales Funnel?</h2>
+            <p>Join 10,000+ marketers and get the complete guide for free</p>
+            <a href="#" class="btn-large">Get My Free Guide →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Sales Funnel Academy. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+        
+        // Track form submission
+        document.querySelector('.optin-form').addEventListener('submit', function() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Lead Magnet',
+                'event_label': 'Sales Funnel Guide'
+            });
+        });
+    </script>
+</body>
+</html>

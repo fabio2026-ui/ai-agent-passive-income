@@ -1,0 +1,148 @@
+# Docker Compose for Local Development
+version: '3.8'
+
+services:
+  # =============================================================================
+  # API Backend
+  # =============================================================================
+  api:
+    build:
+      context: ../..
+      dockerfile: saas/Dockerfile
+      target: development
+    container_name: api-scanner-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/apiscanner
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:-sk_test_...}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET:-whsec_...}
+      - STRIPE_PRICE_PRO=${STRIPE_PRICE_PRO:-price_...}
+      - STRIPE_PRICE_TEAM=${STRIPE_PRICE_TEAM:-price_...}
+      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:3000}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3000,http://localhost:8000}
+    volumes:
+      - ../mvp/api_scanner:/app/api_scanner
+      - ./backend:/app/backend
+      - api-reports:/app/reports
+    depends_on:
+      - db
+      - redis
+    networks:
+      - api-scanner-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # PostgreSQL Database
+  # =============================================================================
+  db:
+    image: postgres:15-alpine
+    container_name: api-scanner-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=apiscanner
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - api-scanner-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # Redis Cache & Queue
+  # =============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: api-scanner-redis
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - api-scanner-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # Celery Worker (Background Tasks)
+  # =============================================================================
+  worker:
+    build:
+      context: ../..
+      dockerfile: saas/Dockerfile
+      target: development
+    container_name: api-scanner-worker
+    command: celery -A backend.tasks worker --loglevel=info --concurrency=2
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/apiscanner
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+    volumes:
+      - ../mvp/api_scanner:/app/api_scanner
+      - ./backend:/app/backend
+      - api-reports:/app/reports
+    depends_on:
+      - db
+      - redis
+    networks:
+      - api-scanner-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # Celery Beat (Scheduled Tasks)
+  # =============================================================================
+  beat:
+    build:
+      context: ../..
+      dockerfile: saas/Dockerfile
+      target: development
+    container_name: api-scanner-beat
+    command: celery -A backend.tasks beat --loglevel=info
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/apiscanner
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-here}
+    volumes:
+      - ../mvp/api_scanner:/app/api_scanner
+      - ./backend:/app/backend
+    depends_on:
+      - db
+      - redis
+    networks:
+      - api-scanner-network
+    restart: unless-stopped
+
+  # =============================================================================
+  # Static Frontend (Nginx)
+  # =============================================================================
+  nginx:
+    image: nginx:alpine
+    container_name: api-scanner-nginx
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - api
+    networks:
+      - api-scanner-network
+    restart: unless-stopped
+
+# =============================================================================
+# Volumes
+# =============================================================================
+volumes:
+  postgres-data:
+  redis-data:
+  api-reports:
+
+# =============================================================================
+# Networks
+# =============================================================================
+networks:
+  api-scanner-network:
+    driver: bridge

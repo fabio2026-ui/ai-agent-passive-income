@@ -1,0 +1,45 @@
+{
+  "strategy": "Weekly uploads, Tuesday 10AM EST",
+  "videos": [
+    {
+      "week": 1,
+      "title": "How to Build a Security Monitoring System (Complete Tutorial)",
+      "type": "Tutorial",
+      "target": "Developers",
+      "prepTime": "3-4 hours",
+      "editTime": "4-6 hours"
+    },
+    {
+      "week": 2,
+      "title": "I Automated My Security Monitoring (Here's What Happened)",
+      "type": "Story",
+      "target": "General Tech",
+      "prepTime": "3-4 hours",
+      "editTime": "4-6 hours"
+    },
+    {
+      "week": 3,
+      "title": "SOC 2 Compliance Explained (For Startups)",
+      "type": "Educational",
+      "target": "Startup Founders",
+      "prepTime": "3-4 hours",
+      "editTime": "4-6 hours"
+    },
+    {
+      "week": 4,
+      "title": "Zero Trust Architecture in 10 Minutes",
+      "type": "Explainer",
+      "target": "DevOps Engineers",
+      "prepTime": "3-4 hours",
+      "editTime": "4-6 hours"
+    },
+    {
+      "week": 5,
+      "title": "React App Security: Common Vulnerabilities and How to Fix Them",
+      "type": "Technical",
+      "target": "React Developers",
+      "prepTime": "3-4 hours",
+      "editTime": "4-6 hours"
+    }
+  ]
+}

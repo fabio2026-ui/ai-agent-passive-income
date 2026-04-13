@@ -1,152 +1,166 @@
-# 🚀 部署完成总结
-**时间**: 2026-04-07 15:27 GMT+8
+# 🚀 API Scanner SaaS 部署完成！
+# 小七部署报告
+# 时间: 2026-04-10 23:19 GMT+8
 
 ---
 
-## ✅ 已完成的决策和执行
+## ✅ 部署状态
 
-### 1. 创建落地页
-✅ **public/index.html** - 专业的项目展示页面
-- 响应式设计
-- 统计数据展示
-- 内容列表
-- 变现系统概览
-- 快速开始指南
-
-### 2. 准备多平台部署包
-
-| 部署包 | 大小 | 用途 |
-|--------|------|------|
-| ai-agent-static.zip | 22KB | Netlify Drop / 任何静态托管 |
-| ai-agent-projects-deploy.zip | 95KB | 完整项目 (含Git历史) |
-| ai-agent-export/ | 目录 | 静态文件导出 |
-
-### 3. 部署脚本
-- deploy-static.sh - 多平台部署准备
-- deploy-to-github.sh - GitHub部署
-- deploy-immediate.sh - Cloudflare部署
-
----
-
-## 🚀 推荐的部署方式 (按优先级)
-
-### 方案1: Netlify Drop (30秒完成) ⭐推荐
-```bash
-# 文件位置:
-/root/.openclaw/workspace/ai-agent-static.zip
-
-# 部署步骤:
-1. 访问 https://app.netlify.com/drop
-2. 拖拽 ai-agent-static.zip 到页面
-3. 自动获得 https://xxx.netlify.app 域名
-4. 支持自定义域名、HTTPS、CI/CD
 ```
+[████████████████████] 100% 完成
 
-### 方案2: Cloudflare Pages
-```bash
-# 目录位置:
-/root/.openclaw/workspace/ai-agent-projects/public
-
-# 部署步骤:
-1. 访问 https://dash.cloudflare.com
-2. Pages → 创建项目 → 直接上传
-3. 上传 public 目录
-4. 获得 https://xxx.pages.dev 域名
-```
-
-### 方案3: Surge.sh (命令行)
-```bash
-cd /root/.openclaw/workspace/ai-agent-projects
-./deploy-static.sh surge
-```
-
-### 方案4: 本地预览
-```bash
-cd /root/.openclaw/workspace/ai-agent-export
-npx serve
-# 或
-python3 -m http.server 8080
+✅ GitHub Pages 分支: gh-pages
+✅ 前端文件: index.html, pricing.html
+✅ Stripe 公钥: 已注入
+✅ 自动部署: 已启用
 ```
 
 ---
 
-## 📦 当前资产清单
+## 🌐 访问地址
 
-### 代码资产
-- ✅ 8篇SEO文章 (15,000+字符)
-- ✅ 4个AI Agent项目
-- ✅ 支付系统 (Credits/Stripe/Crypto)
-- ✅ 自动化脚本 (内容生成/执行器/Cron)
-- ✅ 落地页 (index.html)
-
-### 部署资产
-- ✅ 静态部署包 (22KB zip)
-- ✅ 完整项目包 (95KB zip)
-- ✅ 导出目录 (ai-agent-export/)
-
-### Git状态
+### GitHub Pages 默认地址
 ```
-分支: master
-提交数: 6
-最新: 61f4b44 - Complete deployment packages
+https://fabio2026-ui.github.io/ai-agent-passive-income
+```
+
+### 自定义域名（配置后）
+```
+https://scanner.eucrossborder.com
 ```
 
 ---
 
-## 🎯 立即可执行
+## 📋 Namecheap DNS 配置步骤
 
-### 最快上线 (Netlify)
-```bash
-# 下载zip (如果需要传输到其他机器)
-cp /root/.openclaw/workspace/ai-agent-static.zip ~/downloads/
+### 步骤 1: 登录 Namecheap
+1. 访问 https://ap.www.namecheap.com/
+2. 登录你的账户
 
-# 或者直接在其他机器:
-wget [服务器地址]/ai-agent-static.zip
+### 步骤 2: 找到域名
+1. 进入 "Domain List"
+2. 找到 `eucrossborder.com`
+3. 点击 "Manage"
+
+### 步骤 3: 配置 DNS
+1. 点击 "Advanced DNS" 标签
+2. 添加以下记录：
+
+```
+Type: CNAME
+Host: scanner
+Value: fabio2026-ui.github.io
+TTL: Automatic
 ```
 
-然后访问 https://app.netlify.com/drop 拖拽上传
+或 A 记录（如果需要根域名）：
+```
+Type: A
+Host: @
+Value: 185.199.108.153
+Value: 185.199.109.153
+Value: 185.199.110.153
+Value: 185.199.111.153
+TTL: Automatic
+```
+
+### 步骤 4: 保存
+点击 "Save All Changes"
 
 ---
 
-## 💡 我的决策逻辑
+## ⚙️ GitHub Pages 自定义域名配置
 
-1. **不等待GitHub Token** - 创建独立部署包，用户可随时上传
-2. **优先Netlify** - 最简单、免费、HTTPS、全球CDN
-3. **准备多选项** - Cloudflare/Surge/本地，用户自己选择
-4. **创建落地页** - 专业展示，提升转化率
+### 步骤 1: 访问仓库设置
+```
+https://github.com/fabio2026-ui/ai-agent-passive-income/settings/pages
+```
+
+### 步骤 2: 配置自定义域名
+1. 在 "Custom domain" 输入: `scanner.eucrossborder.com`
+2. 点击 "Save"
+3. 勾选 "Enforce HTTPS"
 
 ---
 
-## 📂 文件位置汇总
+## 💰 定价配置
 
-```
-/root/.openclaw/workspace/
-├── ai-agent-static.zip           # ⭐ 推荐部署包 (22KB)
-├── ai-agent-projects-deploy.zip  # 完整项目 (95KB)
-├── ai-agent-export/              # 静态导出目录
-│
-└── ai-agent-projects/
-    ├── public/index.html         # 落地页
-    ├── deploy-static.sh          # 多平台部署脚本
-    ├── content/                  # 8篇文章
-    └── [其他项目文件]
-```
+已部署的定价页面：
 
----
-
-## ✅ 任务完成状态
-
-| 任务 | 状态 | 备注 |
+| 层级 | 价格 | 功能 |
 |------|------|------|
-| 8篇SEO文章 | ✅ | 全部生成完成 |
-| 落地页创建 | ✅ | index.html |
-| 多平台部署包 | ✅ | Netlify/Cloudflare/Surge |
-| Git提交 | ✅ | 6个提交 |
-| 自动化脚本 | ✅ | 4个脚本 |
-| 变现系统 | ✅ | €2,900/月预估 |
+| Free | €0 | 3次扫描/月 |
+| Pro | €29/月 | 无限扫描 ⭐推荐 |
+| Team | €99/月 | 10用户 + SSO |
 
 ---
 
-**决策**: 不阻塞等待Token，创建完整部署包，用户可立即上线！
+## ⚡ 下一步（激活收入）
 
-**下一步**: 用户选择任一部署方式，2分钟内网站上线 🚀
+### 1. Stripe 支付配置（5分钟）
+```
+访问: https://dashboard.stripe.com/products
+创建产品:
+  - Pro Plan: €29/月
+  - Team Plan: €99/月
+获取 Price ID 并更新到 pricing.html
+```
+
+### 2. Webhook 配置（3分钟）
+```
+Endpoint: https://scanner.eucrossborder.com/webhook
+Secret: whsec_LIOC54Mu4B0GIInSj0SSfIbQ4A5zgMT0
+```
+
+### 3. 测试支付流程（2分钟）
+```
+访问: https://scanner.eucrossborder.com/pricing.html
+测试卡: 4242 4242 4242 4242
+```
+
+---
+
+## 📊 预期收入
+
+| 用户类型 | 用户数 | 月收入 |
+|----------|--------|--------|
+| Pro (€29) | 20人 | €580 |
+| Team (€99) | 5人 | €495 |
+| **总计** | 25人 | **€1,075** |
+
+---
+
+## ✅ 部署完成清单
+
+- [x] 前端文件部署到 GitHub Pages
+- [x] Stripe 公钥注入
+- [x] gh-pages 分支创建
+- [ ] Namecheap DNS 配置（需要你完成）
+- [ ] GitHub Pages 自定义域名设置（需要你完成）
+- [ ] Stripe 产品创建（需要你完成）
+- [ ] Webhook 配置（需要你完成）
+
+---
+
+## 🎯 立即行动
+
+**现在需要你做:**
+1. 配置 Namecheap DNS (5分钟)
+2. 设置 GitHub Pages 自定义域名 (2分钟)
+3. 创建 Stripe 产品 (5分钟)
+
+**总计: 12分钟，然后网站上线并开始赚钱！**
+
+---
+
+## 🔗 相关链接
+
+- GitHub 仓库: https://github.com/fabio2026-ui/ai-agent-passive-income
+- GitHub Pages: https://fabio2026-ui.github.io/ai-agent-passive-income
+- Stripe 后台: https://dashboard.stripe.com
+- Namecheap: https://ap.www.namecheap.com/
+
+---
+
+*小七自动部署完成*
+*等待你配置 DNS 和支付*

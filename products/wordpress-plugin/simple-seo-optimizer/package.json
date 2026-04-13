@@ -1,0 +1,13 @@
+{
+  "name": "simple-seo-optimizer",
+  "version": "1.0.0",
+  "description": "WordPress SEO优化插件",
+  "main": "simple-seo-optimizer.php",
+  "scripts": {
+    "deploy": "echo 'Deploy to WordPress.org via SVN'",
+    "zip": "zip -r simple-seo-optimizer.zip simple-seo-optimizer/"
+  },
+  "keywords": ["wordpress", "plugin", "seo"],
+  "author": "小七团队",
+  "license": "GPL-2.0"
+}

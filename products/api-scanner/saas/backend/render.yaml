@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: api-scanner-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false  # 在 Render Dashboard 设置
+      - key: FRONTEND_URL
+        value: https://scanner.eucrossborder.com
+      - key: NODE_ENV
+        value: production
+    plan: free

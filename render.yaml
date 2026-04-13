@@ -1,0 +1,23 @@
+# Render.com 一键部署
+# 小七生成 - 2026-04-11 00:06
+
+services:
+  - type: web
+    name: api-scanner-backend
+    runtime: node
+    repo: https://github.com/fabio2026-ui/ai-agent-passive-income
+    branch: master
+    rootDir: products/api-scanner/saas/backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false  # 需要在 Render Dashboard 设置
+      - key: FRONTEND_URL
+        value: https://scanner.eucrossborder.com
+      - key: NODE_ENV
+        value: production
+    plan: free
+
+# 一键部署链接:
+# https://render.com/deploy?repo=https://github.com/fabio2026-ui/ai-agent-passive-income

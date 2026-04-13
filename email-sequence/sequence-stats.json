@@ -1,0 +1,15 @@
+{
+  "sequenceLength": 7,
+  "totalDays": 7,
+  "emailTypes": {
+    "Welcome": 1,
+    "Education": 1,
+    "Value": 1,
+    "Case Study": 1,
+    "Problem-Solution": 1,
+    "Urgency": 1,
+    "Next Steps": 1
+  },
+  "averageSubjectLength": 37,
+  "recommendedSendTime": "10:00 AM recipient timezone"
+}

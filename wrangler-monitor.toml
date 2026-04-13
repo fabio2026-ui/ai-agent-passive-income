@@ -1,0 +1,10 @@
+name = "xia7-monitor"
+main = "monitoring-worker.js"
+compatibility_date = "2024-01-01"
+
+# KV 命名空间需要在 Cloudflare Dashboard 创建
+# 名称: MONITORING_KV
+# 绑定到: xia7-monitor
+
+[triggers]
+crons = ["0 * * * *"]  # 每小时执行一次

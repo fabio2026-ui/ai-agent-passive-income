@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Funnel Mastery Course</title>
+    <meta name="description" content="Master the art of building automated sales funnels. Comprehensive course with templates, tools, and step-by-step guides.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Urgency Bar */
+        .urgency-bar {
+            background: #dc2626;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #111827;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .price-section {
+            margin: 30px 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 1.5rem;
+        }
+        
+        .current-price {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #dc2626;
+            display: block;
+        }
+        
+        .payment-plan {
+            color: #6b7280;
+            margin-top: 8px;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 20px 60px;
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+        
+        .guarantee-text {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        /* Problem/Solution */
+        .problem {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .problem h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        
+        .problem-list {
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .problem-list li {
+            margin-bottom: 16px;
+            padding-left: 30px;
+            position: relative;
+            list-style: none;
+        }
+        
+        .problem-list li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+        }
+        
+        /* Solution */
+        .solution {
+            padding: 60px 0;
+            background: #f9fafb;
+        }
+        
+        .solution h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .solution-intro {
+            text-align: center;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* What's Included */
+        .modules {
+            padding: 60px 0;
+        }
+        
+        .modules h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .module-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .module-number {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .module-card h3 {
+            margin-bottom: 8px;
+            color: #111827;
+        }
+        
+        .module-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        
+        .module-value {
+            color: #10b981;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        
+        /* Bonuses */
+        .bonuses {
+            padding: 60px 0;
+            background: #fef3c7;
+        }
+        
+        .bonuses h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .bonuses-subtitle {
+            text-align: center;
+            color: #92400e;
+            margin-bottom: 40px;
+        }
+        
+        .bonus-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .bonus-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .bonus-icon {
+            font-size: 2rem;
+        }
+        
+        .bonus-content h4 {
+            margin-bottom: 4px;
+            color: #111827;
+        }
+        
+        .bonus-content p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .bonus-value {
+            color: #dc2626;
+            font-weight: bold;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+        
+        .total-value {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #1f2937;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .total-value h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .total-value .price {
+            font-size: 2rem;
+            color: #fbbf24;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            padding: 60px 0;
+            text-align: center;
+            background: #10b981;
+            color: white;
+        }
+        
+        .guarantee-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .guarantee h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .guarantee p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+            background: #f9fafb;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        
+        .faq-item {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+        }
+        
+        .faq-item h3 {
+            margin-bottom: 12px;
+            color: #111827;
+        }
+        
+        .faq-item p {
+            color: #6b7280;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta .price-reminder {
+            margin: 30px 0;
+        }
+        
+        .final-cta .timer {
+            font-size: 2rem;
+            color: #fbbf24;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #6b7280;
+            background: #f9fafb;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .current-price {
+                font-size: 2.5rem;
+            }
+            
+            .btn-primary {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+            }
+            
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        ⚡ FLASH SALE: 50% OFF ENDS IN <span id="countdown">23:59:59</span>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge">🔥 Over 2,000 students enrolled</span>
+            
+            <h1>Sales Funnel Mastery: Build Automated Systems That Generate Sales 24/7</h1>
+            
+            <p class="hero-subtitle">
+                The complete system for creating high-converting sales funnels—from lead capture to customer acquisition—without being a tech wizard or spending thousands on agencies.
+            </p>
+            
+            <div class="price-section">
+                <span class="original-price">$497</span>
+                <span class="current-price">$247</span>
+                <p class="payment-plan">One-time payment • Lifetime access • 30-day guarantee</p>
+            </div>
+            
+            <a href="#checkout" class="btn-primary">Enroll Now →</a>
+            
+            <p class="guarantee-text">🔒 Secure checkout • Instant access to all materials</p>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <h2>Does this sound familiar?</h2>
+            <ul class="problem-list">
+                <li>You're spending hours on marketing but not seeing consistent sales</li>
+                <li>Your email list grows but subscribers don't convert to customers</li>
+                <li>You're overwhelmed by all the tech and tools needed for funnels</li>
+                <li>You've tried templates but they don't work for your business</li>
+                <li>You're tired of relying on unpredictable social media algorithms</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution">
+        <div class="container">
+            <h2>What if you had a proven system?</h2>
+            <p class="solution-intro">
+                Sales Funnel Mastery gives you the exact frameworks, templates, and automation systems used by 7 and 8-figure businesses to generate predictable revenue on autopilot.
+            </p>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="modules">
+        <div class="container">
+            <h2>Here's everything you get...</h2>
+            
+            <div class="module-grid">
+                <div class="module-card">
+                    <span class="module-number">1</span>
+                    <h3>Funnel Strategy & Architecture</h3>
+                    <p>Learn the 5 core funnel types and how to choose the right one for your business model and goals.</p>
+                    <div class="module-value">Value: $197</div>
+                </div>
+                
+                <div class="module-card">
+                    <span class="module-number">2</span>
+                    <h3>High-Converting Landing Pages</h3>
+                    <p>The psychology behind pages that convert and templates you can deploy in minutes.</p>
+                    <div class="module-value">Value: $297</div>
+                </div>
+                
+                <div class="module-card">
+                    <span class="module-number">3</span>
+                    <h3>Email Automation Mastery</h3>
+                    <p>Write sequences that nurture, engage, and convert—plus our copy-paste templates.</p>
+                    <div class="module-value">Value: $297</div>
+                </div>
+                
+                <div class="module-card">
+                    <span class="module-number">4</span>
+                    <h3>Lead Magnets That Convert</h3>
+                    <p>Create irresistible lead magnets and automated delivery systems.</p>
+                    <div class="module-value">Value: $147</div>
+                </div>
+                
+                <div class="module-card">
+                    <span class="module-number">5</span>
+                    <h3>Analytics & Optimization</h3>
+                    <p>Set up tracking that matters and use data to double your conversion rates.</p>
+                    <div class="module-value">Value: $197</div>
+                </div>
+                
+                <div class="module-card">
+                    <span class="module-number">6</span>
+                    <h3>A/B Testing Playbook</h3>
+                    <p>Our systematic approach to testing that delivers consistent improvements.</p>
+                    <div class="module-value">Value: $147</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses -->
+    <section class="bonuses">
+        <div class="container">
+            <h2>Plus These Exclusive Bonuses</h2>
+            <p class="bonuses-subtitle">Only available during this promotion</p>
+            
+            <div class="bonus-list">
+                <div class="bonus-item">
+                    <span class="bonus-icon">🎁</span>
+                    <div class="bonus-content">
+                        <h4>Done-For-You Email Templates</h4>
+                        <p>50+ email templates for every situation</p>
+                    </div>
+                    <span class="bonus-value">$197 Value</span>
+                </div>
+                
+                <div class="bonus-item">
+                    <span class="bonus-icon">🎁</span>
+                    <div class="bonus-content">
+                        <h4>Landing Page Template Library</h4>
+                        <p>10+ high-converting HTML templates</p>
+                    </div>
+                    <span class="bonus-value">$297 Value</span>
+                </div>
+                
+                <div class="bonus-item">
+                    <span class="bonus-icon">🎁</span>
+                    <div class="bonus-content">
+                        <h4>Private Community Access</h4>
+                        <p>Connect with 2,000+ funnel builders</p>
+                    </div>
+                    <span class="bonus-value">$97 Value</span>
+                </div>
+                
+                <div class="bonus-item">
+                    <span class="bonus-icon">🎁</span>
+                    <div class="bonus-content">
+                        <h4>Monthly Live Q&A Calls</h4>
+                        <p>Get your questions answered directly</p>
+                    </div>
+                    <span class="bonus-value">$297 Value</span>
+                </div>
+            </div>
+            
+            <div class="total-value">
+                <h3>Total Value: $2,170</h3>
+                <p class="price">Today's Price: Just $247</p>
+                <p style="margin-top: 10px; opacity: 0.8;">Save $1,923 (89% off)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-icon">🛡️</div>
+            <h2>30-Day "Love It or Your Money Back" Guarantee</h2>
+            <p>Try the entire course risk-free for 30 days. Go through the modules, use the templates, build your funnel. If you're not completely satisfied with your results, email us for a full refund. No questions, no hassle.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>Is this course for beginners or advanced marketers?</h3>
+                <p>Both! We start with the fundamentals and progress to advanced strategies. Whether you're building your first funnel or optimizing existing ones, you'll find actionable insights.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How long do I have access to the course?</h3>
+                <p>Lifetime access! Plus you'll get all future updates and new materials at no additional cost.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What if I'm not tech-savvy?</h3>
+                <p>No problem! We provide step-by-step video tutorials and no-code solutions. If you can use email, you can build these funnels.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How quickly can I see results?</h3>
+                <p>Many students have their first funnel live within a week. Results vary based on your offer and audience, but the system works when you work it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="checkout">
+        <div class="container">
+            <h2>Ready to Build Your Sales Funnel?</h2>
+            <p>Join 2,000+ students and start generating automated sales</p>
+            
+            <div class="price-reminder">
+                <p style="font-size: 1.2rem; opacity: 0.8;">Flash Sale Price</p>
+                <p style="font-size: 3rem; font-weight: bold; color: #fbbf24;">$247</p>
+                <p style="text-decoration: line-through; opacity: 0.6;">Regular: $497</p>
+            </div>
+            
+            <div class="timer">⏰ Offer ends in: 23:59:59</div>
+            
+            <a href="#" class="btn-primary">Enroll Now →</a>
+            
+            <p style="margin-top: 20px; opacity: 0.8;">🔒 Secure checkout • Instant access</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Sales Funnel Academy. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="#" style="color: #6b7280;">Privacy</a> • 
+                <a href="#" style="color: #6b7280;">Terms</a> • 
+                <a href="#" style="color: #6b7280;">Support</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set end time (24 hours from now for demo)
+        const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+        
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = 
+                String(hours).padStart(2, '0') + ':' +
+                String(minutes).padStart(2, '0') + ':' +
+                String(seconds).padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+
+    <!-- Analytics -->
+    <script>
+        // Track page view
+        gtag && gtag('event', 'page_view', {
+            'page_title': 'Sales Page',
+            'page_location': window.location.href
+        });
+    </script>
+</body>
+</html>

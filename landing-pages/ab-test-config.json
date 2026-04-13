@@ -1,0 +1,30 @@
+{
+  "testName": "Landing Page Conversion Optimization",
+  "variants": [
+    {
+      "id": "variant-a",
+      "name": "Variant-A-Authority",
+      "focus": "Authority and Trust",
+      "trafficSplit": 33.33
+    },
+    {
+      "id": "variant-b",
+      "name": "Variant-B-Urgency",
+      "focus": "Fear and Urgency",
+      "trafficSplit": 33.33
+    },
+    {
+      "id": "variant-c",
+      "name": "Variant-C-Simplicity",
+      "focus": "Ease and Speed",
+      "trafficSplit": 33.33
+    }
+  ],
+  "metrics": [
+    "conversion_rate",
+    "bounce_rate",
+    "time_on_page"
+  ],
+  "duration": "14_days",
+  "successCriteria": "conversion_rate > 5%"
+}
