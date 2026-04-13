@@ -1,6 +1,59 @@
-# 📊 数据分析仪表板系统
+# 🛡️ MCP Audit Pro
 
-一个用于被动收入项目的综合数据分析系统，包含网站分析、内容表现追踪、收入追踪和GitHub统计。
+**Professional security audits for Model Context Protocol servers.**
+
+[![Free Scanner](https://img.shields.io/badge/Try-Free%20Scanner-blue)](https://fabio2026-ui.github.io/ai-agent-passive-income/mcp-audit-pro/scanner.html)
+[![Website](https://img.shields.io/badge/Website-mcp--audit.pro-purple)](https://fabio2026-ui.github.io/ai-agent-passive-income/mcp-audit-pro/)
+
+## 🚨 The Problem
+
+I analyzed 30+ open-source MCP servers and found that **71% contain security vulnerabilities**:
+- 43% vulnerable to command injection
+- 33% allow unrestricted outbound requests (SSRF)
+- 22% have path traversal issues
+
+MCP servers bridge AI agents to external systems. A compromised server means attackers can trick AI into executing arbitrary code.
+
+## 🛠️ Solutions
+
+### 1. Free Security Scanner (Client-Side)
+Instantly check your MCP server code for common vulnerabilities.
+
+**🔗 [Launch Scanner →](https://fabio2026-ui.github.io/ai-agent-passive-income/mcp-audit-pro/scanner.html)**
+
+- ✅ Runs entirely in your browser
+- ✅ No signup required
+- ✅ Detects command injection, SSRF, path traversal, credential exposure
+- ✅ Instant results
+
+### 2. Professional Audit Service
+Get a comprehensive security report for your MCP server.
+
+**🔗 [View Pricing →](https://fabio2026-ui.github.io/ai-agent-passive-income/mcp-audit-pro/)**
+
+- Deep static analysis against 6 vulnerability categories
+- PDF report with CVSS v3.1 scoring
+- Step-by-step remediation instructions
+- **$49** Starter / **$149** Professional
+
+## 📊 Research
+
+See our findings from analyzing popular MCP servers:
+- [MCP Security Research Report](./mcp-audit-pro/marketing/reddit-post-ready.md)
+- [Sample Vulnerability Reports](./mcp-audit-pro/reports/)
+
+## 🏗️ Other Projects
+
+This repo also contains various passive income experiments:
+- Analytics dashboard system
+- Content generation tools
+- Security toolkit products
+
+See individual directories for details.
+
+---
+
+*MCP Audit Pro is actively maintained. Last updated: April 2026*
 
 ## 🗂️ 文件结构
 
