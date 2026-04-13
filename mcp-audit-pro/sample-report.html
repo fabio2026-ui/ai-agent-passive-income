@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Audit Report - MCP Audit Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --critical: #dc3545;
+            --high: #fd7e14;
+            --medium: #ffc107;
+            --low: #28a745;
+            --accent: #6366f1;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+        
+        .report-header {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .report-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .meta-item strong {
+            color: var(--text-primary);
+            display: block;
+            font-size: 1rem;
+            margin-top: 4px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .executive-summary h2 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .summary-stat {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .summary-stat .number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .summary-stat .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .vulnerability {
+            border-left: 4px solid;
+            padding: 20px;
+            margin-bottom: 16px;
+            background: var(--bg-secondary);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .vulnerability.critical { border-color: var(--critical); }
+        .vulnerability.high { border-color: var(--high); }
+        .vulnerability.medium { border-color: var(--medium); }
+        .vulnerability.low { border-color: var(--low); }
+        
+        .vuln-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .vuln-type {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .severity-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .severity-badge.critical { background: #fee2e2; color: var(--critical); }
+        .severity-badge.high { background: #ffedd5; color: var(--high); }
+        .severity-badge.medium { background: #fef3c7; color: #92400e; }
+        
+        .cvss-score {
+            display: inline-block;
+            margin-left: 12px;
+            padding: 2px 8px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+        
+        .remediation {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        
+        .remediation h4 {
+            color: #065f46;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .remediation p, .remediation li {
+            color: #047857;
+            font-size: 0.9rem;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cta-box h2 {
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .watermark {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <div class="report-meta">
+                <div class="meta-item">
+                    Report ID
+                    <strong>MAP-2026-0414-001</strong>
+                </div>
+                <div class="meta-item">
+                    Date
+                    <strong>April 14, 2026</strong>
+                </div>
+                <div class="meta-item">
+                    Target
+                    <strong>Sample MCP Server</strong>
+                </div>
+                <div class="meta-item">
+                    Auditor
+                    <strong>MCP Audit Pro</strong>
+                </div>
+            </div>
+            
+            <h1>MCP Security Audit Report</h1>
+            <p class="subtitle">Professional security analysis of Model Context Protocol server implementation</p>
+        </div>
+        
+        <div class="executive-summary">
+            <h2>📊 Executive Summary</h2>
+            <p>This report presents findings from a comprehensive security audit of the sample MCP server. The analysis identified security vulnerabilities across multiple categories including command injection, path traversal, and credential exposure.</p>
+            
+            <div class="summary-grid">
+                <div class="summary-stat">
+                    <span class="number">3</span>
+                    <span class="label">Total Findings</span>
+                </div>
+                <div class="summary-stat">
+                    <span class="number">1</span>
+                    <span class="label">Critical</span>
+                </div>
+                <div class="summary-stat">
+                    <span class="number">1</span>
+                    <span class="label">High</span>
+                </div>
+                <div class="summary-stat">
+                    <span class="number">9.8</span>
+                    <span class="label">Max CVSS</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔴 Critical Finding: Command Injection</h2>
+            
+            <div class="vulnerability critical">
+                <div class="vuln-header">
+                    <span class="vuln-type">CWE-78: OS Command Injection</span>
+                    <div>
+                        <span class="severity-badge critical">Critical</span>
+                        <span class="cvss-score">CVSS 9.8</span>
+                    </div>
+                </div>
+                
+                <p><strong>Location:</strong> src/tools/execute.js:45</p>
+                <p><strong>Description:</strong> User input is passed directly to child_process.exec() without sanitization, allowing arbitrary command execution.</p>
+                
+                <div class="code-block">
+// VULNERABLE CODE
+const { exec } = require('child_process');
+
+function runCommand(userInput) {
+    exec(`ls ${userInput}`, (error, stdout) => {
+        return stdout;
+    });
+}
+                </div>
+                
+                <div class="remediation">
+                    <h4>✅ Recommended Fix</h4>
+                    <ul>
+                        <li>Use child_process.execFile() with argument array instead of string concatenation</li>
+                        <li>Implement strict input validation with allowlist approach</li>
+                        <li>Consider using a sandboxed execution environment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🟠 High Finding: Path Traversal</h2>
+            
+            <div class="vulnerability high">
+                <div class="vuln-header">
+                    <span class="vuln-type">CWE-22: Path Traversal</span>
+                    <div>
+                        <span class="severity-badge high">High</span>
+                        <span class="cvss-score">CVSS 7.5</span>
+                    </div>
+                </div>
+                
+                <p><strong>Location:</strong> src/tools/filesystem.js:23</p>
+                <p><strong>Description:</strong> File paths are constructed without validation, allowing access to files outside the intended directory.</p>
+                
+                <div class="code-block">
+// VULNERABLE CODE
+const fs = require('fs');
+const path = require('path');
+
+function readFile(filename) {
+    const filePath = path.join(BASE_DIR, filename);
+    return fs.readFileSync(filePath, 'utf8');
+}
+                </div>
+                
+                <div class="remediation">
+                    <h4>✅ Recommended Fix</h4>
+                    <ul>
+                        <li>Validate resolved path stays within base directory</li>
+                        <li>Use path.resolve() and check with startsWith()</li>
+                        <li>Reject paths containing .. sequences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🟡 Medium Finding: Credential Exposure</h2>
+            
+            <div class="vulnerability medium">
+                <div class="vuln-header">
+                    <span class="vuln-type">CWE-798: Hardcoded Credentials</span>
+                    <div>
+                        <span class="severity-badge medium">Medium</span>
+                        <span class="cvss-score">CVSS 6.5</span>
+                    </div>
+                </div>
+                
+                <p><strong>Location:</strong> config/api.js:12</p>
+                <p><strong>Description:</strong> API key is hardcoded in source code instead of using environment variables.</p>
+                
+                <div class="code-block">
+// VULNERABLE CODE
+const config = {
+    apiKey: 'sk-live-abc123xyz789',
+    endpoint: 'https://api.example.com'
+};
+                </div>
+                
+                <div class="remediation">
+                    <h4>✅ Recommended Fix</h4>
+                    <ul>
+                        <li>Move credentials to environment variables</li>
+                        <li>Use .env file with dotenv library</li>
+                        <li>Rotate exposed credentials immediately</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h2>Need a professional audit for your MCP server?</h2>
+            <p>Get a detailed security report like this one with CVSS scoring and step-by-step remediation.</p>
+            <a href="index.html" class="btn">Get Your Audit Report →</a>
+        </div>
+        
+        <div class="watermark">
+            <p>© 2026 MCP Audit Pro — This is a sample report. Actual reports contain detailed analysis tailored to your codebase.</p>
+        </div>
+    </div>
+</body>
+</html>
