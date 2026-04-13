@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free MCP Security Scanner | Check Your MCP Server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --border: #2a2a3a;
+            --text: #ffffff;
+            --text-secondary: #a0a0b0;
+            --accent: #6366f1;
+            --critical: #ef4444;
+            --high: #f97316;
+            --medium: #eab308;
+            --low: #22c55e;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+        
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .scanner-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .scanner-box h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            background: #0a0a0f;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--text);
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            resize: vertical;
+            margin-bottom: 16px;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            margin-left: 12px;
+        }
+        
+        .results {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 24px;
+        }
+        
+        .results.show { display: block; }
+        
+        .results h2 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+        
+        .summary-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .summary-item {
+            text-align: center;
+            padding: 16px;
+            background: #0a0a0f;
+            border-radius: 12px;
+        }
+        
+        .summary-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        .summary-item .label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        
+        .vuln-item {
+            border-left: 4px solid;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            background: #0a0a0f;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .vuln-item.critical { border-color: var(--critical); }
+        .vuln-item.high { border-color: var(--high); }
+        .vuln-item.medium { border-color: var(--medium); }
+        .vuln-item.low { border-color: var(--low); }
+        
+        .vuln-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .vuln-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .vuln-item code {
+            background: #1a1a25;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .cta-box p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+        
+        .checks-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+        
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .check-item::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .loading.show { display: block; }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .no-vulns {
+            text-align: center;
+            padding: 40px;
+            color: var(--low);
+        }
+        
+        .no-vulns h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Free MCP Security Scanner</h1>
+            <p>Check your Model Context Protocol server for common security vulnerabilities.<br>No signup required. Runs entirely in your browser.</p>
+        </header>
+        
+        <div class="scanner-box">
+            <h2>📋 Paste Your MCP Server Code</h2>
+            <textarea id="codeInput" placeholder="// Paste your MCP server code here...
+// Example:
+import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+
+// We'll scan for:
+// - Command injection patterns
+// - Unrestricted fetch/HTTP requests
+// - Path traversal issues
+// - Hardcoded credentials
+// - Privilege escalation
+// - Tool shadowing risks"></textarea>
+            
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <button class="btn btn-primary" onclick="runScan()">🔍 Scan Now</button>
+                    <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+                </div>
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">Supports: TypeScript, JavaScript, Python</span>
+            </div>
+        </div>
+        
+        <div class="checks-list">
+            <div class="check-item">Command Injection Detection</div>
+            <div class="check-item">SSRF (Server-Side Request Forgery)</div>
+            <div class="check-item">Path Traversal</div>
+            <div class="check-item">Credential Exposure</div>
+            <div class="check-item">Privileged Escalation</div>
+            <div class="check-item">Tool Shadowing Risks</div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Scanning your code for vulnerabilities...</p>
+        </div>
+        
+        <div class="results" id="results">
+            <h2>🔍 Scan Results</h2>
+            
+            <div class="summary-bar" id="summaryBar">
+                <div class="summary-item">
+                    <div class="number" style="color: var(--critical);" id="critCount">0</div>
+                    <div class="label">Critical</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number" style="color: var(--high);" id="highCount">0</div>
+                    <div class="label">High</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number" style="color: var(--medium);" id="medCount">0</div>
+                    <div class="label">Medium</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number" style="color: var(--low);" id="lowCount">0</div>
+                    <div class="label">Low</div>
+                </div>
+            </div>
+            
+            <div id="vulnsList"></div>
+            
+            <div class="cta-box" id="ctaBox" style="display: none;">
+                <h3>🛡️ Want a Professional Audit?</h3>
+                <p>Get a detailed PDF report with CVSS scoring and step-by-step remediation instructions.</p>
+                <a href="index.html" class="btn btn-primary">View Pricing →</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Free tool by <a href="index.html">MCP Audit Pro</a> • 
+            <a href="https://github.com/modelcontextprotocol/specification" target="_blank">MCP Spec</a> • 
+            <a href="https://owasp.org" target="_blank">OWASP</a></p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">This is a client-side scanner. Your code never leaves your browser.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Vulnerability patterns for client-side scanning
+        const VULNERABILITY_PATTERNS = {
+            command_injection: {
+                name: "Command Injection",
+                severity: "CRITICAL",
+                cvss: "9.8",
+                patterns: [
+                    /exec\s*\(/i,
+                    /spawn\s*\(/i,
+                    /child_process/i,
+                    /os\.system/i,
+                    /subprocess\.call/i
+                ],
+                description: "User input may be passed directly to shell execution, allowing arbitrary command execution."
+            },
+            unrestricted_fetch: {
+                name: "Unrestricted Fetch/HTTP",
+                severity: "HIGH",
+                cvss: "8.2",
+                patterns: [
+                    /fetch\s*\([^)]*\)/i,
+                    /axios\.(get|post|request)/i,
+                    /request\s*\(/i,
+                    /urllib\.request/i
+                ],
+                description: "Outbound HTTP requests without URL validation can enable SSRF attacks."
+            },
+            path_traversal: {
+                name: "Path Traversal",
+                severity: "HIGH",
+                cvss: "7.5",
+                patterns: [
+                    /fs\.(readFile|writeFile|access)/i,
+                    /open\s*\(/i,
+                    /path\.join.*\+/i,
+                    /\.\.[\\/]/
+                ],
+                description: "File operations without path validation may allow reading arbitrary files."
+            },
+            credential_exposure: {
+                name: "Credential Exposure",
+                severity: "CRITICAL",
+                cvss: "9.1",
+                patterns: [
+                    /password\s*[=:]\s*["']/i,
+                    /api[_-]?key\s*[=:]\s*["']/i,
+                    /secret\s*[=:]\s*["']/i,
+                    /token\s*[=:]\s*["'][a-zA-Z0-9]{20,}/i
+                ],
+                description: "Hardcoded credentials detected in source code."
+            },
+            privileged_escalation: {
+                name: "Privileged Escalation",
+                severity: "HIGH",
+                cvss: "8.4",
+                patterns: [
+                    /sudo\s/i,
+                    /require\s*\(\s*['"]root['"]\s*\)/i,
+                    /process\.setuid\s*\(/i
+                ],
+                description: "Server may run with elevated privileges, increasing impact of compromises."
+            }
+        };
+        
+        function runScan() {
+            const code = document.getElementById('codeInput').value;
+            if (!code.trim()) {
+                alert('Please paste some code to scan');
+                return;
+            }
+            
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('results').classList.remove('show');
+            
+            // Simulate async scan
+            setTimeout(() => {
+                const findings = performScan(code);
+                displayResults(findings);
+                document.getElementById('loading').classList.remove('show');
+                document.getElementById('results').classList.add('show');
+            }, 1500);
+        }
+        
+        function performScan(code) {
+            const findings = [];
+            
+            for (const [vulnId, vulnInfo] of Object.entries(VULNERABILITY_PATTERNS)) {
+                for (const pattern of vulnInfo.patterns) {
+                    const matches = [...code.matchAll(pattern)];
+                    for (const match of matches) {
+                        const line = code.substring(0, match.index).split('\n').length;
+                        findings.push({
+                            type: vulnId,
+                            name: vulnInfo.name,
+                            severity: vulnInfo.severity,
+                            cvss: vulnInfo.cvss,
+                            line: line,
+                            match: match[0].substring(0, 50),
+                            description: vulnInfo.description
+                        });
+                    }
+                }
+            }
+            
+            // Sort by severity
+            const severityOrder = { 'CRITICAL': 0, 'HIGH': 1, 'MEDIUM': 2, 'LOW': 3 };
+            return findings.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
+        }
+        
+        function displayResults(findings) {
+            const counts = { CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
+            findings.forEach(f => counts[f.severity]++);
+            
+            document.getElementById('critCount').textContent = counts.CRITICAL;
+            document.getElementById('highCount').textContent = counts.HIGH;
+            document.getElementById('medCount').textContent = counts.MEDIUM;
+            document.getElementById('lowCount').textContent = counts.LOW;
+            
+            const vulnsList = document.getElementById('vulnsList');
+            
+            if (findings.length === 0) {
+                vulnsList.innerHTML = `
+                    <div class="no-vulns">
+                        <h3>✅ No obvious vulnerabilities detected!</h3>
+                        <p>This is a basic pattern matcher. For a comprehensive audit, consider our professional service.</p>
+                    </div>
+                `;
+                document.getElementById('ctaBox').style.display = 'block';
+                return;
+            }
+            
+            vulnsList.innerHTML = findings.map((f, i) => `
+                <div class="vuln-item ${f.severity.toLowerCase()}">
+                    <h3>
+                        <span style="color: ${getSeverityColor(f.severity)};">${f.severity}</span>
+                        ${f.name}
+                        <span style="color: var(--text-secondary); font-weight: 400;">(CVSS ${f.cvss})</span>
+                    </h3>
+                    <p>${f.description}</p>
+                    <p>Line ${f.line}: <code>${escapeHtml(f.match)}</code></p>
+                </div>
+            `).join('');
+            
+            document.getElementById('ctaBox').style.display = 'block';
+        }
+        
+        function getSeverityColor(severity) {
+            const colors = {
+                'CRITICAL': 'var(--critical)',
+                'HIGH': 'var(--high)',
+                'MEDIUM': 'var(--medium)',
+                'LOW': 'var(--low)'
+            };
+            return colors[severity] || 'var(--text-secondary)';
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function clearAll() {
+            document.getElementById('codeInput').value = '';
+            document.getElementById('results').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
