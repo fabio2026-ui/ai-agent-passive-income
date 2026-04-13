@@ -52,28 +52,28 @@
             <div style="font-size: 2.5rem; margin-bottom: 16px;">🛡️</div>
             <h1>MCP Security Research Report</h1>
             <p class="subtitle">Analysis of open-source Model Context Protocol servers</p>
-            <div class="badge">66.7% VULNERABILITY RATE</div>
+            <div class="badge">46.7% VULNERABILITY RATE</div>
         </div>
         
         <div class="section">
             <h2>📊 Executive Summary</h2>
-            <p style="margin-bottom: 16px; font-size: 1.05rem;">We analyzed <strong>15 open-source MCP servers</strong> from GitHub to assess the current security posture of the Model Context Protocol ecosystem. Our findings indicate that <strong>two-thirds of examined repositories contain security vulnerabilities</strong>, with a significant concentration of critical and high-severity issues.</p>
+            <p style="margin-bottom: 16px; font-size: 1.05rem;">We analyzed <strong>15 open-source MCP servers</strong> from GitHub to assess the current security posture of the Model Context Protocol ecosystem. Our findings indicate that <strong>nearly half of examined repositories contain security vulnerabilities</strong>, with a significant concentration of critical and high-severity issues.</p>
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="number" style="color: #ef4444;">15</div>
+                    <div class="number" style="color: #3b82f6;">15</div>
                     <div class="label">Servers Scanned</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number" style="color: #f97316;">10</div>
+                    <div class="number" style="color: #f97316;">7</div>
                     <div class="label">With Vulnerabilities</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number" style="color: #6366f1;">80</div>
+                    <div class="number" style="color: #8b5cf6;">56</div>
                     <div class="label">Total Findings</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number" style="color: #991b1b;">22</div>
+                    <div class="number" style="color: #ef4444;">13</div>
                     <div class="label">Critical Issues</div>
                 </div>
             </div>
@@ -82,9 +82,10 @@
                 <h4>Methodology</h4>
                 <ul>
                     <li>Static analysis of publicly available GitHub repositories</li>
-                    <li>6 vulnerability categories based on OWASP and CVE patterns</li>
+                    <li>5 vulnerability categories based on OWASP and CVE patterns</li>
+                    <li>False-positive filtering applied (environment variables, placeholders, comments, docs)</li>
                     <li>Targeted repositories ranged from 5 to 500 stars</li>
-                    <li>Scanned code included TypeScript, JavaScript, Python, and Go implementations</li>
+                    <li>Scanned code included TypeScript, JavaScript, Python, Go, and Shell implementations</li>
                 </ul>
             </div>
         </div>
@@ -93,23 +94,23 @@
             <h2>🔍 Key Findings</h2>
             
             <div class="finding critical">
-                <h3>🔴 Command Injection (Most Prevalent)</h3>
-                <p>Multiple servers pass unsanitized user input directly to shell execution functions (exec, spawn, child_process). In one case, a database MCP server had 12 critical command injection patterns. <strong>Risk: Remote code execution with full host privileges.</strong></p>
+                <h3>🔴 Path Traversal (Most Prevalent)</h3>
+                <p><strong>34 instances found.</strong> Multiple servers perform file operations (fs.readFile, fs.writeFile, path.join) without validating that paths stay within intended directories. <strong>Risk: Arbitrary file read, SSH key exposure, and configuration leaks.</strong></p>
             </div>
             
             <div class="finding high">
                 <h3>🟠 Privilege Escalation</h3>
-                <p>Several repositories contained sudo calls, root user requirements, or admin password configurations hardcoded in setup scripts. <strong>Risk: Compromised MCP server leads to full system takeover.</strong></p>
+                <p><strong>13 instances found.</strong> Dockerfiles and setup scripts contain sudo calls, root user requirements, or chmod 777. Even repositories from major vendors like Oracle and Snowflake showed privilege-related issues. <strong>Risk: Compromised MCP server leads to full system takeover.</strong></p>
+            </div>
+            
+            <div class="finding high">
+                <h3>🟠 Credential Exposure</h3>
+                <p><strong>8 instances found.</strong> Hardcoded API keys, tokens, and passwords in source code or configuration files. <strong>Risk: Unauthorized access to external services and cloud resources.</strong></p>
             </div>
             
             <div class="finding high">
                 <h3>🟠 Unrestricted Network Access</h3>
-                <p>Servers fetch URLs or make HTTP requests without validating destinations. This enables SSRF attacks against internal APIs and cloud metadata endpoints. <strong>Risk: Internal network reconnaissance and credential theft.</strong></p>
-            </div>
-            
-            <div class="finding high">
-                <h3>🟠 Path Traversal</h3>
-                <p>File system operations lack path validation, allowing arbitrary file reads outside intended directories. <strong>Risk: Exposure of SSH keys, environment files, and source code.</strong></p>
+                <p>Outbound HTTP requests without URL validation can enable SSRF attacks against internal APIs and cloud metadata endpoints. <strong>Risk: Internal network reconnaissance and credential theft.</strong></p>
             </div>
         </div>
         
